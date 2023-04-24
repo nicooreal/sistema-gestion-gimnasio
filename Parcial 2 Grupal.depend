@@ -221,11 +221,11 @@
 	<iostream>
 	<string.h>
 
-1687221054 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\fecha.cpp
+1682307789 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\fecha.cpp
 	"Fecha.h"
 	<ctime>
 
-1687221054 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\fecha.h
+1682307789 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\fecha.h
 	<iostream>
 
 1684701271 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\funciones.cpp
@@ -248,34 +248,34 @@
 	"Empleado.h"
 	"Programa.h"
 
-1687221054 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\persona.h
+1687570866 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\persona.h
 	<string.h>
 	<cstdio>
 	<iostream>
 	"Fecha.h"
 
-1686797408 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\cliente.h
+1687435063 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\cliente.h
 	<iostream>
 	"Boxeo.h"
 	"Yoga.h"
 	"Persona.h"
 	"string.h"
 
-1687221054 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\persona.cpp
+1687570866 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\persona.cpp
 	"Persona.h"
 	"funciones.h"
 
-1687221054 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\cliente.cpp
+1687571003 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 	"ClienteArchivo.h"
 	"Boxeo.h"
 
-1687221054 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleado.cpp
+1687570866 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleado.cpp
 	<iostream>
 	<cstdlib>
 	"Empleado.h"
 
-1687221054 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleado.h
+1687570866 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleado.h
 	"Persona.h"
 
 1687492516 c:\users\nico\documents\github\sistema-gestion-gimnasio\empleado.h
@@ -509,16 +509,17 @@
 	"GimnasioMenu.h"
 	"PagoTareas.h"
 
-1687309964 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\gimnasiomenu.cpp
+1687570866 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\gimnasiomenu.cpp
 	"GimnasioMenu.h"
 	"marco_menu.h"
 	"rlutil.h"
 	"ClienteTareas.h"
 	"PagoTareas.h"
 
-1684701271 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\gimnasiomenu.h
+1687570866 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\gimnasiomenu.h
 	<iostream>
 	"GimnasioTareas.h"
+	"PagoTareas.h"
 
 1684701271 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\gimnasiotareas.h
 	<iostream>
@@ -562,41 +563,42 @@
 	"marco_menu.h"
 	"rlutil.h"
 
-1686797408 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientearchivo.cpp
+1687570866 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientearchivo.cpp
 	"ClienteArchivo.h"
 	"Cliente.h"
 	<iostream>
 	<cstring>
 
-1686797408 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientearchivo.h
+1687570866 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientearchivo.h
 	"cliente.h"
 
-1687302665 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientemenu.cpp
+1687435063 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientemenu.cpp
 	"ClienteMenu.h"
 	"ClienteTareas.h"
 	"marco_menu.h"
 	"rlutil.h"
 
-1687302665 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientetareas.h
+1687570866 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientetareas.h
 	"ClienteArchivo.h"
 	"funciones.h"
 
-1687302665 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientetareas.cpp
+1688009037 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientetareas.cpp
 	"ClienteTareas.h"
 	"Cliente.h"
 	"ClienteArchivo.h"
 	"GimnasioMenu.h"
+	"PagoTareas.h"
 
 1687302665 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleadomenu.cpp
 	"EmpleadoMenu.h"
 	"marco_menu.h"
 	"rlutil.h"
 
-1687302665 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleadotareas.cpp
+1687570866 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleadotareas.cpp
 	"EmpleadoTareas.h"
 	"funciones.h"
 
-1687302665 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleadoarchivo.cpp
+1687570866 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleadoarchivo.cpp
 	"EmpleadoArchivo.h"
 
 1685398752 source:c:\users\usuario\documents\github\sistema-gestion-gimnasio\fecha.cpp
@@ -845,38 +847,41 @@
 1686797408 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\copiadeseguridadtareas.cpp
 	"CopiaDeSeguridadTareas.h"
 
-1687309641 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\pagotareas.h
-
-1686348291 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\marco_menu.cpp
-	<cstdio>
-	"marco_menu.h"
-	"rlutil.h"
-
-1687310387 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\pagotareas.cpp
+1687570866 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\pagotareas.h
 	<iostream>
 	<cstdlib>
 	"PagoTareas.h"
 	"Pago.h"
 	"PagoArchivos.h"
 	"ClienteArchivo.h"
+	"ClienteTareas.h"
+
+1686348291 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\marco_menu.cpp
+	<cstdio>
+	"marco_menu.h"
+	"rlutil.h"
+
+1687577454 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\pagotareas.cpp
+	"PagoTareas.h"
 
 1686797408 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\yoga.cpp
 	"Yoga.h"
 
-1687310425 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\pago.cpp
+1687570866 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\pago.cpp
 	<iostream>
 	<cstdlib>
 	"Pago.h"
+	"PagoArchivos.h"
 	"Cliente.h"
 
-1687309608 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\pago.h
+1687570866 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\pago.h
 	"Cliente.h"
 	"Fecha.h"
 
-1686877135 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\pagoarchivos.cpp
+1687570866 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\pagoarchivos.cpp
 	"PagoArchivos.h"
 
-1686877482 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\pagoarchivos.h
+1687570866 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\pagoarchivos.h
 	<iostream>
 	<string.h>
 	"Pago.h"

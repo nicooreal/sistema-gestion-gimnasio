@@ -22,6 +22,40 @@ void Fecha::fechaDeHoy()
 Fecha(); // constructor con fecha de hoy
 }
 
+
+bool Fecha::esBisiesto(){
+    if ((_anio % 4 == 0 && _anio % 100 != 0) || _anio % 400 == 0){
+      return true;
+    }
+    return false;
+}
+
+void Fecha::agregarDia(){
+   int dias[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+   if (esBisiesto()){
+      dias[1]++;
+   }
+
+   _dia++;
+   if (_dia > dias[_mes-1]){
+      _dia = 1;
+      _mes++;
+      if (_mes > 12){
+         _mes = 1;
+         _anio++;
+      }
+   }
+}
+
+void Fecha::agregarDias(int cantidadDias){
+
+   if (cantidadDias > 0){
+      for(int i=0; i<cantidadDias; i++){
+         agregarDia();
+      }
+   }
+
+}
 /*Fecha::Fecha()
 {
     ponerPrimerDiaDelAnio();

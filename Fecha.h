@@ -8,6 +8,8 @@ class Fecha
 {
 private:
     int _dia,_mes,_anio;
+    bool esBisiesto();
+    void agregarDia();
 
 
 
@@ -18,6 +20,7 @@ public:
     void cargar();
     void mostrar();
     void fechaDeHoy();
+    void agregarDias(int cantidadDias);
 
     void setDia(int dia);
     void setMes(int mes);

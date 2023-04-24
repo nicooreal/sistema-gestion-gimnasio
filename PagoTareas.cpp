@@ -123,21 +123,6 @@ void PagoTareas::eliminarTodosLosPagos()
     _archivoPagos.vaciar();
 }
 
-void PagoTareas::regPago()   // resta hacer la accion
-{
-
-}
-/*void PagoTareas::mostrarTodos()
-{
-    PagoArchivos pagoArchi;
-    Pago pago;
-    int cantPagos= pagoArchi.getCantidad() ;
-    for(int x=0; x<cantPagos; x++)
-    {  pago=pagoArch.leer(x);
-        pago.Mostrar() ;
-
-    }
-}   */
 
 
 void PagoTareas::mostrarTodos()
