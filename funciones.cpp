@@ -1,5 +1,7 @@
 #include "funciones.h"
 
+cout<<"Angel crack"<<endl;
+
 void cargarCadena(char *pal,int tam)
 {
 
