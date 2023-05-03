@@ -37,8 +37,7 @@ int main()
                 cout<<"\t4 - DATOS DE CLIENTES"<<endl;
                 cout<<"\t5 - DATOS DE EMPLEADOS"<<endl;
                 cout<<"\t6 - VER FORMAS DE PAGO"<<endl;
-                cout<<"\t7 - VER FECHAS DE INSCRIPCIONES"<<endl;
-                cout<<"\t8 - VER CANTIDAD DE INSCRIPTOS POR AÑO"<<endl;
+                cout<<"\t7 - VER INSCRIPCIONES"<<endl;
                 cout<<"\t0 - SALIR"<<endl;
                 cout<<"--------------------------------------------------"<<endl;
                 cout<<"OPCION: "; cin>>op;
