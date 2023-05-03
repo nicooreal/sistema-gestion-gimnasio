@@ -1,0 +1,89 @@
+# depslib dependency file v1.0
+1683048218 source:c:\mis cosas\mega\alexis\programacion\utn\laboratorio 2\parciales\parcial 2 grupal\parcial 2 grupal\main.cpp
+	<iostream>
+	<locale.h>
+	<stdlib.h>
+	"Persona.h"
+
+1682987859 source:c:\mis cosas\mega\alexis\programacion\utn\laboratorio 2\parciales\parcial 2 grupal\parcial 2 grupal\funciones.cpp
+	"funciones.h"
+
+1682987851 c:\mis cosas\mega\alexis\programacion\utn\laboratorio 2\parciales\parcial 2 grupal\parcial 2 grupal\funciones.h
+	<iostream>
+	<string.h>
+
+1683044270 source:c:\mis cosas\mega\alexis\programacion\utn\laboratorio 2\parciales\parcial 2 grupal\parcial 2 grupal\persona.cpp
+	"Persona.h"
+	"funciones.h"
+
+1683047685 c:\mis cosas\mega\alexis\programacion\utn\laboratorio 2\parciales\parcial 2 grupal\parcial 2 grupal\persona.h
+	<string.h>
+	<cstdio>
+	<iostream>
+	"Fecha.h"
+	"Direccion.h"
+
+1682989425 source:c:\mis cosas\mega\alexis\programacion\utn\laboratorio 2\parciales\parcial 2 grupal\parcial 2 grupal\fecha.cpp
+	"Fecha.h"
+
+1683047685 c:\mis cosas\mega\alexis\programacion\utn\laboratorio 2\parciales\parcial 2 grupal\parcial 2 grupal\fecha.h
+	<iostream>
+
+1683044250 source:c:\mis cosas\mega\alexis\programacion\utn\laboratorio 2\parciales\parcial 2 grupal\parcial 2 grupal\direccion.cpp
+	"Direccion.h"
+	"funciones.h"
+
+1683044250 c:\mis cosas\mega\alexis\programacion\utn\laboratorio 2\parciales\parcial 2 grupal\parcial 2 grupal\direccion.h
+	<iostream>
+	<string.h>
+
+1683048218 source:c:\mis cosas\mega\alexis\programacion\utn\laboratorio 2\parciales\parcial 2 grupal\parcial 2 grupal\gimnasio.cpp
+	"Gimnasio.h"
+
+1683048218 c:\mis cosas\mega\alexis\programacion\utn\laboratorio 2\parciales\parcial 2 grupal\parcial 2 grupal\gimnasio.h
+	<iostream>
+
+1683044250 source:c:\users\nico\downloads\parcial 2 grupal\direccion.cpp
+	"Direccion.h"
+	"funciones.h"
+
+1683044250 c:\users\nico\downloads\parcial 2 grupal\direccion.h
+	<iostream>
+	<string.h>
+
+1682987851 c:\users\nico\downloads\parcial 2 grupal\funciones.h
+	<iostream>
+	<string.h>
+
+1682989425 source:c:\users\nico\downloads\parcial 2 grupal\fecha.cpp
+	"Fecha.h"
+
+1683047685 c:\users\nico\downloads\parcial 2 grupal\fecha.h
+	<iostream>
+
+1682987859 source:c:\users\nico\downloads\parcial 2 grupal\funciones.cpp
+	"funciones.h"
+
+1683048218 source:c:\users\nico\downloads\parcial 2 grupal\gimnasio.cpp
+	"Gimnasio.h"
+
+1683048218 c:\users\nico\downloads\parcial 2 grupal\gimnasio.h
+	<iostream>
+
+1683049867 source:c:\users\nico\downloads\parcial 2 grupal\main.cpp
+	<iostream>
+	<locale.h>
+	<stdlib.h>
+	"Persona.h"
+
+1683047685 c:\users\nico\downloads\parcial 2 grupal\persona.h
+	<string.h>
+	<cstdio>
+	<iostream>
+	"Fecha.h"
+	"Direccion.h"
+
+1683044270 source:c:\users\nico\downloads\parcial 2 grupal\persona.cpp
+	"Persona.h"
+	"funciones.h"
+
