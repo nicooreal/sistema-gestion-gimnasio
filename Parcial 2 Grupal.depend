@@ -87,3 +87,41 @@
 	"Persona.h"
 	"funciones.h"
 
+1683151931 source:c:\users\alexi\github\sistema-gestion-gimnasio\direccion.cpp
+	"Direccion.h"
+	"funciones.h"
+
+1683151931 c:\users\alexi\github\sistema-gestion-gimnasio\direccion.h
+	<iostream>
+	<string.h>
+
+1683157392 c:\users\alexi\github\sistema-gestion-gimnasio\funciones.h
+	<iostream>
+	<string.h>
+
+1683151931 source:c:\users\alexi\github\sistema-gestion-gimnasio\fecha.cpp
+	"Fecha.h"
+
+1683151931 c:\users\alexi\github\sistema-gestion-gimnasio\fecha.h
+	<iostream>
+
+1683151931 source:c:\users\alexi\github\sistema-gestion-gimnasio\gimnasio.cpp
+	"Gimnasio.h"
+
+1683151931 c:\users\alexi\github\sistema-gestion-gimnasio\gimnasio.h
+	<iostream>
+
+1683151931 source:c:\users\alexi\github\sistema-gestion-gimnasio\persona.cpp
+	"Persona.h"
+	"funciones.h"
+
+1683151931 c:\users\alexi\github\sistema-gestion-gimnasio\persona.h
+	<string.h>
+	<cstdio>
+	<iostream>
+	"Fecha.h"
+	"Direccion.h"
+
+1683157420 source:c:\users\alexi\github\sistema-gestion-gimnasio\funciones.cpp
+	"funciones.h"
+
