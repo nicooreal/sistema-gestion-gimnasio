@@ -11,7 +11,7 @@ int main()
 
     int opcion;
     char salir;
-    cout<<"Hola soy Alexis"<<endl;
+
     while(true)
     {
         system("cls");
