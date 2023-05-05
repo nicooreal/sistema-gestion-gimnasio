@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "Persona.h"
 #include "funciones.h"
+#include "Cliente.h"
 
 using namespace std;
 
@@ -12,6 +13,8 @@ int main()
 
     int opcion;
     char salir;
+
+
 
     while(true)
     {

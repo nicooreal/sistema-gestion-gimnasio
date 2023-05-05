@@ -3,9 +3,9 @@
 
 #include "Persona.h"
 
-class Cliente : Persona
+class Cliente : public Persona
 {
-    private:
+private:
 int _numeroDeSocio;
 Fecha _fechaDelAlta;
 Fecha _fechaLimiteParaPagarAbono;
