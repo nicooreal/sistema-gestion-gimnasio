@@ -1,7 +1,6 @@
 #include "funciones.h"
-#include "Persona.h"
-#include "Empleado.h"
-using namespace std;
+
+
 
 void cargarCadena(char *pal,int tam)
 {
@@ -42,36 +41,23 @@ void verMenuGimnasio()
         cout<<"--------------------------------------------------"<<endl;
         cout<<"OPCION: "; cin>>op;
         system("cls");
-
-        Persona per;
-        Empleado emp;
     switch(op)
     {
-
         case 1:
-            // Lo dejo aca para que vean que funciona pero despues escribiremos el archivo y  lo leeremos en el punto 5
-            cout <<"Cargue la informacion del nuevo empleado " <<endl;
-            per.cargar() ;
-            cout << endl <<endl ;
-            emp.cargar() ;
-            cout << "Se encontraron los siguientes empleados : "<<endl;
-             per.mostrar();
-             emp.mostrar();
-            break;
 
+            break;
         case 2:
 
-           break;
+            break;
         case 3:
 
-           break;
+            break;
         case 4:
 
-           break;
-       case 5:
+            break;
+        case 5:
 
-
-          break;
+            break;
         case 6:
 
             break;
@@ -89,12 +75,3 @@ void verMenuGimnasio()
 
     }while(op!=0);
 }
-/*int calcularAntiguedad(){
-   int antiguedad;
-    Empleado antig;
-    Fecha fechaAct;
-    antiguedad= aca deberia ir antig.xxxx - fechaAct.xxxx de esta forma llamandos metodos que devuevan enteros y que haga una resta entre si
-
-
-return antiguedad;
-} */
