@@ -190,3 +190,65 @@
 1683325957 c:\users\alexi\github\sistema-gestion-gimnasio\cliente.h
 	"Persona.h"
 
+1683170469 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\direccion.cpp
+	"Direccion.h"
+	"funciones.h"
+
+1683170469 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\direccion.h
+	<iostream>
+	<string.h>
+
+1683351586 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\funciones.h
+	<iostream>
+	<string.h>
+
+1683170469 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\fecha.cpp
+	"Fecha.h"
+
+1683170469 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\fecha.h
+	<iostream>
+
+1683353340 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\funciones.cpp
+	"funciones.h"
+	"Persona.h"
+	"Empleado.h"
+
+1683170469 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\gimnasio.cpp
+	"Gimnasio.h"
+
+1683170469 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\gimnasio.h
+	<iostream>
+
+1683339574 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\main.cpp
+	<iostream>
+	<locale.h>
+	<stdlib.h>
+	"Persona.h"
+	"funciones.h"
+	"Cliente.h"
+
+1683170469 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\persona.h
+	<string.h>
+	<cstdio>
+	<iostream>
+	"Fecha.h"
+	"Direccion.h"
+
+1683346653 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\cliente.h
+	"Persona.h"
+
+1683170469 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\persona.cpp
+	"Persona.h"
+	"funciones.h"
+
+1683339574 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\cliente.cpp
+	"Cliente.h"
+
+1683353943 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleado.cpp
+	<iostream>
+	<cstdlib>
+	"Empleado.h"
+
+1683353484 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleado.h
+	"Persona.h"
+
