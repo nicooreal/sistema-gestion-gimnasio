@@ -11,6 +11,7 @@ Fecha _fechaDelAlta;
 Fecha _fechaLimiteParaPagarAbono;
 float _abonoMensual;
 bool _gimnasio;
+
 //bool boxeo;
 //bool yoga;
 

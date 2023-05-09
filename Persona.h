@@ -25,8 +25,8 @@ public:
     Persona();
     Persona(char *nombre,char *apellido,int dni,int cuil,int edad,char *genero,Fecha nacimiento,Direccion direccion);
 
-    void cargar();
-    void mostrar();
+    void cargarPersona();
+    void mostrarPersona();
 
     void setNombre(char *nombre);
     void setApellido(char *apellido);

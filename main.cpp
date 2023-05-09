@@ -4,7 +4,7 @@
 #include "Persona.h"
 #include "funciones.h"
 #include "Cliente.h"
-
+#include "Empleado.h"
 using namespace std;
 
 int main()
@@ -14,8 +14,7 @@ int main()
     int opcion;
     char salir;
 
-
-
+    system("pause");
     while(true)
     {
         system("cls");

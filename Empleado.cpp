@@ -41,7 +41,8 @@ using namespace std;
         string Empleado::getEspecializacion() {
         return _especializacion;
         }
-         void Empleado::cargar(){
+         void Empleado::cargarEmpleado(){
+          cargarPersona();
           cout <<"Numero de Legajo: "<<endl;
           cin >> _numeroLegajo;
           cout <<"Sueldo: "<<endl;
@@ -51,7 +52,8 @@ using namespace std;
           cout <<"Especializacion: "<<endl;
           cin >> _especializacion;
          }
-         void Empleado::mostrar(){
+         void Empleado::mostrarEmpleado(){
+         mostrarPersona();
           cout <<"El Legajo es "<<_numeroLegajo<<", ";
           cout <<"Con un sueldo de $ "<<_sueldo<<", ";
           cout <<"Ingreso el dia "    ;

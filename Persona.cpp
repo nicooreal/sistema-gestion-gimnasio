@@ -25,7 +25,7 @@ Persona::Persona(char *nombre,char *apellido,int dni,int cuil,int edad,char *gen
     _direccion=direccion;
 }
 
-void Persona::cargar()
+void Persona::cargarPersona()
 {
     cout<<"Nombre: "; cargarCadena(_nombre,29);
     cout<<"Apellido: "; cargarCadena(_apellido,29);
@@ -37,7 +37,7 @@ void Persona::cargar()
     cout<<"Direccion: "<<endl; _direccion.cargar();
 }
 
-void Persona::mostrar()
+void Persona::mostrarPersona()
 {
     cout<<"Nombre: "<<_nombre<<endl;
     cout<<"Apellido: "<<_apellido<<endl;

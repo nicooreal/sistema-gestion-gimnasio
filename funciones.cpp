@@ -52,12 +52,12 @@ void verMenuGimnasio()
         case 1:
             // Lo dejo aca para que vean que funciona pero despues escribiremos el archivo y  lo leeremos en el punto 5
             cout <<"Cargue la informacion del nuevo empleado " <<endl;
-            per.cargar() ;
+            per.cargarPersona() ;
             cout << endl <<endl ;
-            emp.cargar() ;
+            emp.cargarPersona() ;
             cout << "Se encontraron los siguientes empleados : "<<endl;
-             per.mostrar();
-             emp.mostrar();
+             per.mostrarPersona();
+             emp.mostrarPersona();
             break;
 
         case 2:

@@ -52,7 +52,7 @@ void Cliente::AltaCliente(){
 
 int opcion;
 
-Persona::cargar(); // metodo de persona.h
+Persona::cargarPersona(); // metodo de persona.h
 cout <<"CUANTOS DIAS VA A LA SEMANA VA A ENTRENAR?" << endl;
 cout <<"3 - $1000  , 5 - $1200 , PASE LIBRE $1400" << endl;
 cin >> opcion;

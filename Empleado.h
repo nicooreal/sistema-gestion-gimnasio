@@ -26,8 +26,8 @@ class Empleado: public Persona
 
         void setEspecializacion(string especializacion);
         string getEspecializacion() ;
-         void cargar();
-         void mostrar();
+         void cargarEmpleado();
+         void mostrarEmpleado();
 
 };
 
