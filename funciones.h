@@ -6,7 +6,6 @@
 using namespace std;
 
 void cargarCadena(char *pal,int tam);
-void verMenuGimnasio();
 //int calcularAntiguedad() ;
 
 #endif // FUNCIONES_H_INCLUDED

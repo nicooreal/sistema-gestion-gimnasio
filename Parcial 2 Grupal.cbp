@@ -50,7 +50,9 @@
 		<Unit filename="Persona.h" />
 		<Unit filename="funciones.cpp" />
 		<Unit filename="funciones.h" />
+		<Unit filename="include/menuGim.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/menuGim.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

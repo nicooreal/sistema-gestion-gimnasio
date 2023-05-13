@@ -133,7 +133,7 @@
 	<iostream>
 	<string.h>
 
-1683414782 c:\users\nico\documents\github\sistema-gestion-gimnasio\funciones.h
+1683997298 c:\users\nico\documents\github\sistema-gestion-gimnasio\funciones.h
 	<iostream>
 	<string.h>
 
@@ -143,7 +143,7 @@
 1683081379 c:\users\nico\documents\github\sistema-gestion-gimnasio\fecha.h
 	<iostream>
 
-1683605227 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\funciones.cpp
+1683997244 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\funciones.cpp
 	"funciones.h"
 	"Persona.h"
 	"Empleado.h"
@@ -154,7 +154,7 @@
 1683081379 c:\users\nico\documents\github\sistema-gestion-gimnasio\gimnasio.h
 	<iostream>
 
-1683605263 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\main.cpp
+1683996775 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\main.cpp
 	<iostream>
 	<locale.h>
 	<stdlib.h>
@@ -162,6 +162,7 @@
 	"funciones.h"
 	"Cliente.h"
 	"Empleado.h"
+	"menuGim.h"
 
 1683605197 c:\users\nico\documents\github\sistema-gestion-gimnasio\persona.h
 	<string.h>
@@ -263,4 +264,18 @@
 	<iostream>
 	<cstdlib>
 	"Empleado.h"
+
+1683997092 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\src\menugim.cpp
+	"menuGim.h"
+	<iostream>
+	<locale.h>
+	<stdlib.h>
+	"Persona.h"
+	"funciones.h"
+	"Cliente.h"
+	"Empleado.h"
+
+1683997059 c:\users\nico\documents\github\sistema-gestion-gimnasio\include\menugim.h
+
+1683254773 c:\users\nico\documents\github\sistema-gestion-gimnasio\include\cliente.h
 
