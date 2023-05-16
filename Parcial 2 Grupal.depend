@@ -264,7 +264,7 @@
 1684275385 c:\users\nico\documents\github\sistema-gestion-gimnasio\empleado.h
 	"Persona.h"
 
-1683605495 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleado.cpp
+1684275385 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleado.cpp
 	<iostream>
 	<cstdlib>
 	"Empleado.h"
