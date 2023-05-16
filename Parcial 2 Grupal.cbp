@@ -44,8 +44,6 @@
 		<Unit filename="Empleado.h" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
-		<Unit filename="Gimnasio.cpp" />
-		<Unit filename="Gimnasio.h" />
 		<Unit filename="Persona.cpp" />
 		<Unit filename="Persona.h" />
 		<Unit filename="funciones.cpp" />
