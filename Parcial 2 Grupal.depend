@@ -293,3 +293,15 @@
 	<cstdlib>
 	"Empleado.h"
 
+1684203566 source:c:\users\alexi\github\sistema-gestion-gimnasio\src\menugim.cpp
+	"menuGim.h"
+	<iostream>
+	<locale.h>
+	<stdlib.h>
+	"Persona.h"
+	"funciones.h"
+	"Cliente.h"
+	"Empleado.h"
+
+1683325288 c:\users\alexi\github\sistema-gestion-gimnasio\include\cliente.h
+

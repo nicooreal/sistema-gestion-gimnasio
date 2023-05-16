@@ -111,6 +111,9 @@ void menuGim::subMenu1(){
         case 6:
 
             break;
+        case 0:
+            cout<<"Saliendo..."<<endl;
+            break;
         default:
             cout<<"Opción no valida"<<endl;
             break;
