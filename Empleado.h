@@ -9,11 +9,11 @@ class Empleado: public Persona
      int   _sueldo;
      Fecha _fechaIngreso;
      //int  _antiguedad=calcularAntiguedad()
-     string  _especializacion;
+     char  _especializacion[30];
 
     public:
         Empleado();
-        Empleado(int numeroLegajo,int sueldo,Fecha fechaIngreso,char especializacion)  ;
+        Empleado(int numeroLegajo,int sueldo,Fecha fechaIngreso,const char* especializacion)  ;
 
         void setNumeroLegajo(int numeroLegajo) ;
         int getnumLegajo() ;
@@ -24,8 +24,8 @@ class Empleado: public Persona
         void setFechaIngreso(Fecha fechaIngreso) ;
         Fecha getFechaIngreso();
 
-        void setEspecializacion(string especializacion);
-        string getEspecializacion() ;
+        void setEspecializacion(const char* especializacion);
+       const char* getEspecializacion() ;
          void cargarEmpleado();
          void mostrarEmpleado();
 

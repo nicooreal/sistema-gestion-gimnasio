@@ -6,14 +6,14 @@ using namespace std;
        Empleado::Empleado(){
         _numeroLegajo=0000;
         _sueldo=120000;
-        _especializacion="Tareas Basicas";
+        strcpy(_especializacion,"Tareas Basicas");
 
         }
-        Empleado::Empleado(int numeroLegajo,int sueldo,Fecha fechaIngreso,char especializacion){
+        Empleado::Empleado(int numeroLegajo,int sueldo,Fecha fechaIngreso,const char *especializacion){
         _numeroLegajo=numeroLegajo;
         _sueldo=sueldo;
         _fechaIngreso=fechaIngreso;
-        _especializacion=especializacion;
+        strcpy(_especializacion, especializacion);
         }
 
         void Empleado::setNumeroLegajo(int numeroLegajo) {
@@ -35,10 +35,10 @@ using namespace std;
         Fecha Empleado::getFechaIngreso(){
         return _fechaIngreso;}
 
-        void Empleado::setEspecializacion(string especializacion){
-         _especializacion=especializacion;
+        void Empleado::setEspecializacion(const char *especializacion){
+       strcpy(_especializacion, especializacion);
         }
-        string Empleado::getEspecializacion() {
+        const char* Empleado::getEspecializacion() {
         return _especializacion;
         }
          void Empleado::cargarEmpleado(){
