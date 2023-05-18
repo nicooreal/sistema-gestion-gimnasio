@@ -15,6 +15,7 @@
 					<Add option="-g" />
 					<Add directory="include" />
 					<Add directory="../sistema-gestion-gimnasio" />
+					<Add directory="./" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -26,6 +27,7 @@
 					<Add option="-O2" />
 					<Add directory="include" />
 					<Add directory="../sistema-gestion-gimnasio" />
+					<Add directory="./" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -38,21 +40,27 @@
 		</Compiler>
 		<Unit filename="Cliente.cpp" />
 		<Unit filename="Cliente.h" />
+		<Unit filename="ClienteMenu.cpp" />
+		<Unit filename="ClienteMenu.h" />
 		<Unit filename="Direccion.cpp" />
 		<Unit filename="Direccion.h" />
 		<Unit filename="Empleado.cpp" />
 		<Unit filename="Empleado.h" />
+		<Unit filename="EmpleadoMenu.cpp" />
+		<Unit filename="EmpleadoMenu.h" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
 		<Unit filename="Persona.cpp" />
 		<Unit filename="Persona.h" />
+		<Unit filename="Programa.cpp" />
+		<Unit filename="Programa.h" />
+		<Unit filename="ProveedorMenu.cpp" />
+		<Unit filename="ProveedorMenu.h" />
 		<Unit filename="funciones.cpp" />
 		<Unit filename="funciones.h" />
 		<Unit filename="include/EmpleadoArchivo.h" />
-		<Unit filename="include/menuGim.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/EmpleadoArchivo.cpp" />
-		<Unit filename="src/menuGim.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

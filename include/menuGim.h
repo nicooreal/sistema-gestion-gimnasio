@@ -9,7 +9,7 @@ class menuGim
     public:
 void  mostrarMenuPrincipal();
 void  subMenu1();
-void cargarInformacionGimnasio();
+
 };
 
 #endif // MENUGIM_H

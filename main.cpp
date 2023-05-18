@@ -1,18 +1,19 @@
 #include <iostream>
 #include <locale.h>
 #include <stdlib.h>
-#include "Persona.h"
 #include "funciones.h"
 #include "Cliente.h"
 #include "Empleado.h"
-#include "menuGim.h"
+
+
 using namespace std;
+#include "Programa.h"
 
 int main()
 {
 
-menuGim menu;
-menu.mostrarMenuPrincipal();
+Programa programa;
+programa.ejecutar();
 
 
 
