@@ -12,6 +12,7 @@ void EmpleadoMenu::mostrar()
         cout<<"2 - EDITAR "<<endl;
         cout<<"3 - LISTAR TODOS"<<endl;
         cout<<"4 - LISTAR POR ID"<<endl; /// Y MAS OPCIONES
+        cout<<"5 - LIMPIAR ARCHIVO"<<endl;
         cout<<"0 - SALIR"<<endl;
         cout<<"----------------------------------"<<endl;
         cout<<"OPCION: "; cin>>opcion;
@@ -20,7 +21,7 @@ void EmpleadoMenu::mostrar()
         switch(opcion)
         {
         case 1:
-
+            _empleadoTareas.cargar();
             break;
         case 2:
 

@@ -1,7 +1,21 @@
 #include "EmpleadoArchivo.h"
 
+
+
+
+EmpleadoArchivo::EmpleadoArchivo()
+{
+    strcpy(_nombreArchivo,"empleados.dat");
+}
+
+EmpleadoArchivo::EmpleadoArchivo(char *nombreArchivo)
+{
+    strcpy(_nombreArchivo,nombreArchivo);
+}
+
+
 bool EmpleadoArchivo::guardar(Empleado empleado) {
-    FILE* p = fopen("empleado.dat", "ab");
+    FILE* p = fopen("empleados.dat", "ab");
     if (p == NULL) {
         return false;
     }
@@ -13,7 +27,7 @@ bool EmpleadoArchivo::guardar(Empleado empleado) {
 Empleado EmpleadoArchivo::leer(int nroRegistro) {
     Empleado empleado;
     FILE* p;
-    p = fopen("empleado.dat", "rb");
+    p = fopen("empleados.dat", "rb");
     if (p == NULL) {
         return empleado;
     }

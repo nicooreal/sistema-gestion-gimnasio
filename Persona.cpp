@@ -6,19 +6,17 @@ Persona::Persona()
     strcpy(_nombre,"sinNombre");
     strcpy(_apellido,"sinApellido");
     _dni=0;
-    _cuil=0;
     _edad=0;
     strcpy(_genero,"sinGenero");
     _fechaNacimiento.ponerPrimerDiaDelAnio();
     _direccion.ponerCeroDireccion();
 }
 
-Persona::Persona(char *nombre,char *apellido,int dni,int cuil,int edad,char *genero,Fecha fechaNacimiento,Direccion direccion)
+Persona::Persona(char *nombre,char *apellido,int dni,int edad,char *genero,Fecha fechaNacimiento,Direccion direccion)
 {
     strcpy(_nombre,nombre);
     strcpy(_apellido,apellido);
     _dni=dni;
-    _cuil=cuil;
     _edad=edad;
     strcpy(_genero,genero);
     _fechaNacimiento=fechaNacimiento;
@@ -30,7 +28,6 @@ void Persona::cargarPersona()
     cout<<"Nombre: "; cargarCadena(_nombre,29);
     cout<<"Apellido: "; cargarCadena(_apellido,29);
     cout<<"DNI: "; cin>>_dni;
-    cout<<"CUIL: "; cin>>_cuil;
     cout<<"Edad: "; cin>>_edad;
     cout<<"Genero: "; cargarCadena(_genero,29);
     cout<<"Fecha nacimiento: "<<endl; _fechaNacimiento.cargar();
@@ -42,7 +39,6 @@ void Persona::mostrarPersona()
     cout<<"Nombre: "<<_nombre<<endl;
     cout<<"Apellido: "<<_apellido<<endl;
     cout<<"DNI: "<<_dni<<endl;
-    cout<<"CUIL: "<<_cuil<<endl;
     cout<<"Edad: "<<_edad<<endl;
     cout<<"Genero: "<<_genero<<endl;
     cout<<"Fecha nacimiento: "<<endl;
@@ -66,11 +62,6 @@ void Persona::setApellido(char *apellido)
 void Persona::setDni(int dni)
 {
     _dni=dni;
-}
-
-void Persona::setCuil(int cuil)
-{
-    _cuil=cuil;
 }
 
 void Persona::setEdad(int edad)
@@ -106,11 +97,6 @@ const char *Persona::getApellido()
 int Persona::getDni()
 {
     return _dni;
-}
-
-int Persona::getCuil()
-{
-    return _cuil;
 }
 
 int Persona::getEdad()

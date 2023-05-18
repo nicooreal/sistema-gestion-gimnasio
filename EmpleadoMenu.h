@@ -3,11 +3,12 @@
 #include <iostream>
 
 using namespace std;
+#include "EmpleadoTareas.h"
 
 class EmpleadoMenu
 {
     private:
-
+        EmpleadoTareas _empleadoTareas;
 
     public:
         void mostrar();

@@ -14,7 +14,6 @@ protected:
     char _nombre[30];
     char _apellido[30];
     int _dni;
-    int _cuil;
     int _edad;
     char _genero[30];
     Fecha _fechaNacimiento;/// COMPOSICION
@@ -23,7 +22,7 @@ protected:
 
 public:
     Persona();
-    Persona(char *nombre,char *apellido,int dni,int cuil,int edad,char *genero,Fecha nacimiento,Direccion direccion);
+    Persona(char *nombre,char *apellido,int dni,int edad,char *genero,Fecha nacimiento,Direccion direccion);
 
     void cargarPersona();
     void mostrarPersona();
@@ -31,7 +30,6 @@ public:
     void setNombre(char *nombre);
     void setApellido(char *apellido);
     void setDni(int dni);
-    void setCuil(int cuil);
     void setEdad(int edad);
     void setSexo(char *genero);
     void setFechaNacimiento(Fecha fechaNacimiento);
@@ -40,7 +38,6 @@ public:
     const char *getNombre();
     const char *getApellido();
     int getDni();
-    int getCuil();
     int getEdad();
     const char *getGenero();
     Fecha getFechaNacimiento();
