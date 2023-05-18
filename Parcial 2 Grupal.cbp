@@ -46,8 +46,12 @@
 		<Unit filename="Direccion.h" />
 		<Unit filename="Empleado.cpp" />
 		<Unit filename="Empleado.h" />
+		<Unit filename="EmpleadoArchivo.cpp" />
+		<Unit filename="EmpleadoArchivo.h" />
 		<Unit filename="EmpleadoMenu.cpp" />
 		<Unit filename="EmpleadoMenu.h" />
+		<Unit filename="EmpleadoTareas.cpp" />
+		<Unit filename="EmpleadoTareas.h" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
 		<Unit filename="Persona.cpp" />
@@ -58,9 +62,7 @@
 		<Unit filename="ProveedorMenu.h" />
 		<Unit filename="funciones.cpp" />
 		<Unit filename="funciones.h" />
-		<Unit filename="include/EmpleadoArchivo.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/EmpleadoArchivo.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
