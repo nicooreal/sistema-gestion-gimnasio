@@ -331,3 +331,9 @@
 1684377359 c:\users\alexi\github\sistema-gestion-gimnasio\proveedormenu.h
 	<iostream>
 
+1684377359 source:c:\users\alexi\github\sistema-gestion-gimnasio\programa.cpp
+	"Programa.h"
+
+1684377359 source:c:\users\alexi\github\sistema-gestion-gimnasio\proveedormenu.cpp
+	"ProveedorMenu.h"
+
