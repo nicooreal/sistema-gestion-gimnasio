@@ -1,63 +1,108 @@
+
 #include "Cliente.h"
 
-int Cliente::getNumeroDeSocio(){
+int Cliente::getNumeroDeSocio()
+{
 
-return _numeroDeSocio;
+    return _numeroDeSocio;
 }
 
-void Cliente::setNumeroDeSocio(int nSocio){
+void Cliente::setNumeroDeSocio(int nSocio)
+{
 
-_numeroDeSocio = nSocio;
-
-}
-
-void Cliente::setFechaDelAlta(Fecha f){
-
-_fechaDelAlta = f;
+    _numeroDeSocio = nSocio;
 
 }
 
-Fecha Cliente::getFechaDelAlta(){
+void Cliente::setFechaDelAlta(Fecha f)
+{
 
-return _fechaDelAlta;
+    _fechaDelAlta = f;
+
+}
+
+Fecha Cliente::getFechaDelAlta()
+{
+
+    return _fechaDelAlta;
 
 }
 
 
-float Cliente::getAbonoMensual(){
+float Cliente::getAbonoMensual()
+{
 
-return _abonoMensual;
+    return _abonoMensual;
 }
 
 
 
-void Cliente::setAbonoMensual(float abonoM){
+void Cliente::setAbonoMensual(float abonoM)
+{
 
-_abonoMensual = abonoM;
+    _abonoMensual = abonoM;
 }
 
-void Cliente::setGimnasio(bool gimnasio){
+void Cliente::setNombreDeporte(int nombreDeporte)
+{
 
-_gimnasio = gimnasio;
-
+    if(nombreDeporte>=1&&nombreDeporte<=2)
+    {
+        _nombreDeporte=nombreDeporte;
+    }
+    else
+    {
+        _nombreDeporte=0;
+    }
 
 }
 
-bool Cliente::getGimnasio(){
-return _gimnasio;
+const char *Cliente::getNombreDeporte()
+{
+    if(_nombreDeporte==1)
+    {
+        return "Boxeo";
+    }
+    else if(_nombreDeporte==2)
+    {
+        return "Yoga";
+    }
+    else
+    {
+        return "Desconocido";
+    }
+
 }
 
 
-void Cliente::AltaCliente(){
+void Cliente::cargarCliente()
+{
+    Persona::cargarPersona(); // metodo de persona.h
+    cout<<"NUMERO DE SOCIO"<<endl;
+    cin>>_numeroDeSocio;
+    cout<<"Fecha de alta"<<endl;
+    _fechaDelAlta.cargar();
+    cout<<"Fecha limite para pagar bono"<<endl;
+    _fechaLimiteParaPagarAbono.cargar();
+    cout <<"CUANTOS DIAS VA A LA SEMANA VA A ENTRENAR?" << endl;
+    cout <<"3 Dias - $1000  , 5 Dias - $1200 , PASE LIBRE $1400" << endl;
+    cin >> _abonoMensual;
+    cout<<"NOMBRE DEL DEPORTE (1 - BOXEO, 2 - YOGA)"<<endl;
+    cin>>_nombreDeporte;
+    setNombreDeporte(_nombreDeporte);
 
-int opcion;
+}
 
-Persona::cargarPersona(); // metodo de persona.h
-cout <<"CUANTOS DIAS VA A LA SEMANA VA A ENTRENAR?" << endl;
-cout <<"3 - $1000  , 5 - $1200 , PASE LIBRE $1400" << endl;
-cin >> opcion;
-
-
+void Cliente::mostrarCliente()
+{
+    Persona::mostrarPersona();
+    cout<<"Numero de socio "<<_numeroDeSocio<<endl;
+    cout<<"Fecha de alta: "<<endl;
+    _fechaDelAlta.mostrar();
+    cout<<"Fecha limite para pagar bono"<<endl;
+    _fechaLimiteParaPagarAbono.mostrar();
+    cout<<"Abono mensual: "<<_abonoMensual<<endl;
+    cout<<"Nombre del deporte: "<<getNombreDeporte();
 }
 
 

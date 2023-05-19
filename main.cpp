@@ -11,9 +11,10 @@ using namespace std;
 
 int main()
 {
+    Programa programa;
+    programa.ejecutar();
 
-Programa programa;
-programa.ejecutar();
+
 
 
 

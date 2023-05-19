@@ -183,7 +183,7 @@
 1683605138 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
 	"Persona.h"
 
-1684376998 source:c:\users\alexi\github\sistema-gestion-gimnasio\main.cpp
+1684463871 source:c:\users\alexi\github\sistema-gestion-gimnasio\main.cpp
 	<iostream>
 	<locale.h>
 	<stdlib.h>
@@ -192,11 +192,13 @@
 	"Empleado.h"
 	"Programa.h"
 
-1684200858 source:c:\users\alexi\github\sistema-gestion-gimnasio\cliente.cpp
+1684463807 source:c:\users\alexi\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 
-1684200858 c:\users\alexi\github\sistema-gestion-gimnasio\cliente.h
+1684463751 c:\users\alexi\github\sistema-gestion-gimnasio\cliente.h
+	<iostream>
 	"Persona.h"
+	"string.h"
 
 1683170469 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\direccion.cpp
 	"Direccion.h"
@@ -310,7 +312,7 @@
 1684285040 c:\users\alexi\github\sistema-gestion-gimnasio\include\empleadoarchivo.h
 	"Empleado.h"
 
-1684460000 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadomenu.cpp
+1684461482 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadomenu.cpp
 	"EmpleadoMenu.h"
 
 1684379137 c:\users\alexi\github\sistema-gestion-gimnasio\empleadomenu.h
@@ -347,7 +349,7 @@
 	<string.h>
 	"Empleado.h"
 
-1684460236 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
+1684461482 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
 	"EmpleadoTareas.h"
 
 1684461482 c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.h
