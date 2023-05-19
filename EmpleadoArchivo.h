@@ -17,6 +17,8 @@ public:
 
     bool guardar(Empleado empl);
     Empleado leer(int nroRegistro);
+    void buscarPorAnio(int anio);
+    int cantidadEmpleados();
 
 };
 

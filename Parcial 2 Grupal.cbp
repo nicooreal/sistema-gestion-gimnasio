@@ -54,6 +54,10 @@
 		<Unit filename="EmpleadoTareas.h" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
+		<Unit filename="GimnasioMenu.cpp" />
+		<Unit filename="GimnasioMenu.h" />
+		<Unit filename="GimnasioTareas.cpp" />
+		<Unit filename="GimnasioTareas.h" />
 		<Unit filename="Persona.cpp" />
 		<Unit filename="Persona.h" />
 		<Unit filename="Programa.cpp" />

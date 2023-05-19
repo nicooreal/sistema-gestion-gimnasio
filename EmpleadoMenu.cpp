@@ -13,6 +13,7 @@ void EmpleadoMenu::mostrar()
         cout<<"3 - LISTAR TODOS"<<endl;
         cout<<"4 - LISTAR POR ID"<<endl; /// Y MAS OPCIONES
         cout<<"5 - LIMPIAR ARCHIVO"<<endl;
+        cout<<"6 - LISTAR EMPLEADOS QUE INGRESARON EN 2023"<<endl;
         cout<<"0 - SALIR"<<endl;
         cout<<"----------------------------------"<<endl;
         cout<<"OPCION: "; cin>>opcion;
@@ -23,14 +24,8 @@ void EmpleadoMenu::mostrar()
         case 1:
             _empleadoTareas.cargar();
             break;
-        case 2:
-
-            break;
-        case 3:
-
-            break;
-        case 4:
-
+        case 6:
+            _empleadoTareas.listarEmpleados2023();
             break;
         }
         if(opcion!=0)

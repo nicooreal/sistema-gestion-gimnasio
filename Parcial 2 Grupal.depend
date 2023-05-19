@@ -310,18 +310,19 @@
 1684285040 c:\users\alexi\github\sistema-gestion-gimnasio\include\empleadoarchivo.h
 	"Empleado.h"
 
-1684379137 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadomenu.cpp
+1684460000 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadomenu.cpp
 	"EmpleadoMenu.h"
 
 1684379137 c:\users\alexi\github\sistema-gestion-gimnasio\empleadomenu.h
 	<iostream>
 	"EmpleadoTareas.h"
 
-1684377359 c:\users\alexi\github\sistema-gestion-gimnasio\programa.h
+1684461245 c:\users\alexi\github\sistema-gestion-gimnasio\programa.h
 	<iostream>
 	"EmpleadoMenu.h"
 	"ClienteMenu.h"
 	"ProveedorMenu.h"
+	"GimnasioMenu.h"
 
 1684377228 c:\users\alexi\github\sistema-gestion-gimnasio\clientemenu.h
 	<iostream>
@@ -338,17 +339,31 @@
 1684377359 source:c:\users\alexi\github\sistema-gestion-gimnasio\proveedormenu.cpp
 	"ProveedorMenu.h"
 
-1684378566 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadoarchivo.cpp
+1684461128 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadoarchivo.cpp
 	"EmpleadoArchivo.h"
 
-1684378566 c:\users\alexi\github\sistema-gestion-gimnasio\empleadoarchivo.h
+1684461102 c:\users\alexi\github\sistema-gestion-gimnasio\empleadoarchivo.h
 	<iostream>
 	<string.h>
 	"Empleado.h"
 
-1684379071 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
+1684460236 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
 	"EmpleadoTareas.h"
 
-1684379071 c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.h
+1684460000 c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.h
 	"EmpleadoArchivo.h"
+
+1684461143 source:c:\users\alexi\github\sistema-gestion-gimnasio\gimnasiotareas.cpp
+	"GimnasioTareas.h"
+
+1684461102 c:\users\alexi\github\sistema-gestion-gimnasio\gimnasiotareas.h
+	<iostream>
+	"EmpleadoArchivo.h"
+
+1684461171 source:c:\users\alexi\github\sistema-gestion-gimnasio\gimnasiomenu.cpp
+	"GimnasioMenu.h"
+
+1684461121 c:\users\alexi\github\sistema-gestion-gimnasio\gimnasiomenu.h
+	<iostream>
+	"GimnasioTareas.h"
 

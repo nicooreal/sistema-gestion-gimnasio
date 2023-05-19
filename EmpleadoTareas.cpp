@@ -2,8 +2,18 @@
 
 void EmpleadoTareas::cargar()
 {
-    Empleado empleado;
-    empleado.cargarEmpleado();
+    Empleado reg;
+    reg.cargarEmpleado();
 
-    _archivo.guardar(empleado);
+    _archivo.guardar(reg);
+}
+
+void EmpleadoTareas::listarEmpleados2023()
+{
+    int anio;
+    cout<<"Ingrese el anio para listar empleados"<<endl;
+    cin>>anio;
+    cout<<endl;
+    _archivo.buscarPorAnio(anio);
+
 }
