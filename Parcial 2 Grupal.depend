@@ -333,7 +333,7 @@
 1684377359 c:\users\alexi\github\sistema-gestion-gimnasio\proveedormenu.h
 	<iostream>
 
-1684378566 source:c:\users\alexi\github\sistema-gestion-gimnasio\programa.cpp
+1684461245 source:c:\users\alexi\github\sistema-gestion-gimnasio\programa.cpp
 	"Programa.h"
 
 1684377359 source:c:\users\alexi\github\sistema-gestion-gimnasio\proveedormenu.cpp
@@ -350,7 +350,7 @@
 1684460236 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
 	"EmpleadoTareas.h"
 
-1684460000 c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.h
+1684461482 c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.h
 	"EmpleadoArchivo.h"
 
 1684461143 source:c:\users\alexi\github\sistema-gestion-gimnasio\gimnasiotareas.cpp

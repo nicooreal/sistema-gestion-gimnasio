@@ -8,7 +8,7 @@ void EmpleadoTareas::cargar()
     _archivo.guardar(reg);
 }
 
-void EmpleadoTareas::listarEmpleados2023()
+void EmpleadoTareas::listarEmpleadosPorAnio()
 {
     int anio;
     cout<<"Ingrese el anio para listar empleados"<<endl;

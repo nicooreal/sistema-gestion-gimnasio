@@ -10,7 +10,7 @@ private:
 
 public:
     void cargar();
-    void listarEmpleados2023();
+    void listarEmpleadosPorAnio();
 
 };
 
