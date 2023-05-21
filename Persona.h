@@ -4,7 +4,7 @@
 #include <cstdio>
 #include <iostream>
 #include "Fecha.h"
-#include "Direccion.h"
+
 
 using namespace std;
 
@@ -17,12 +17,12 @@ protected:
     int _edad;
     char _genero[30];
     Fecha _fechaNacimiento;/// COMPOSICION
-    Direccion _direccion;  /// COMPOSICION
+
 
 
 public:
     Persona();
-    Persona(char *nombre,char *apellido,int dni,int edad,char *genero,Fecha nacimiento,Direccion direccion);
+    Persona(char *nombre,char *apellido,int dni,int edad,char *genero,Fecha nacimiento);
 
     void cargarPersona();
     void mostrarPersona();
@@ -33,7 +33,7 @@ public:
     void setEdad(int edad);
     void setSexo(char *genero);
     void setFechaNacimiento(Fecha fechaNacimiento);
-    void setDireccion(Direccion direccion);
+
 
     const char *getNombre();
     const char *getApellido();
@@ -41,7 +41,7 @@ public:
     int getEdad();
     const char *getGenero();
     Fecha getFechaNacimiento();
-    Direccion getDireccion();
+
 
 
 

@@ -42,8 +42,6 @@
 		<Unit filename="Cliente.h" />
 		<Unit filename="ClienteMenu.cpp" />
 		<Unit filename="ClienteMenu.h" />
-		<Unit filename="Direccion.cpp" />
-		<Unit filename="Direccion.h" />
 		<Unit filename="Empleado.cpp" />
 		<Unit filename="Empleado.h" />
 		<Unit filename="EmpleadoArchivo.cpp" />

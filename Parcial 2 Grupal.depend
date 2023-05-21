@@ -111,16 +111,15 @@
 1683151931 c:\users\alexi\github\sistema-gestion-gimnasio\gimnasio.h
 	<iostream>
 
-1684379416 source:c:\users\alexi\github\sistema-gestion-gimnasio\persona.cpp
+1684711513 source:c:\users\alexi\github\sistema-gestion-gimnasio\persona.cpp
 	"Persona.h"
 	"funciones.h"
 
-1684379416 c:\users\alexi\github\sistema-gestion-gimnasio\persona.h
+1684711513 c:\users\alexi\github\sistema-gestion-gimnasio\persona.h
 	<string.h>
 	<cstdio>
 	<iostream>
 	"Fecha.h"
-	"Direccion.h"
 
 1684200858 source:c:\users\alexi\github\sistema-gestion-gimnasio\funciones.cpp
 	"funciones.h"
@@ -183,7 +182,7 @@
 1683605138 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
 	"Persona.h"
 
-1684703936 source:c:\users\alexi\github\sistema-gestion-gimnasio\main.cpp
+1684703949 source:c:\users\alexi\github\sistema-gestion-gimnasio\main.cpp
 	<iostream>
 	<locale.h>
 	<stdlib.h>
@@ -192,7 +191,7 @@
 	"Empleado.h"
 	"Programa.h"
 
-1684464237 source:c:\users\alexi\github\sistema-gestion-gimnasio\cliente.cpp
+1684708016 source:c:\users\alexi\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 
 1684463751 c:\users\alexi\github\sistema-gestion-gimnasio\cliente.h
@@ -284,12 +283,12 @@
 
 1683254773 c:\users\nico\documents\github\sistema-gestion-gimnasio\include\cliente.h
 
-1684285040 c:\users\alexi\github\sistema-gestion-gimnasio\empleado.h
+1684707210 c:\users\alexi\github\sistema-gestion-gimnasio\empleado.h
 	"Persona.h"
 
 1684202729 c:\users\alexi\github\sistema-gestion-gimnasio\include\menugim.h
 
-1684285040 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleado.cpp
+1684707212 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleado.cpp
 	<iostream>
 	<cstdlib>
 	"Empleado.h"

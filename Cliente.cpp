@@ -46,7 +46,7 @@ void Cliente::setAbonoMensual(float abonoM)
 void Cliente::setNombreDeporte(int nombreDeporte)
 {
 
-    if(nombreDeporte>=1&&nombreDeporte<=2)
+    if(nombreDeporte>=1&&nombreDeporte<=3)
     {
         _nombreDeporte=nombreDeporte;
     }
@@ -90,7 +90,7 @@ void Cliente::cargarCliente()
     cout <<"CUANTOS DIAS VA A LA SEMANA VA A ENTRENAR?" << endl;
     cout <<"3 Dias - $1000  , 5 Dias - $1200 , PASE LIBRE $1400" << endl;
     cin >> _abonoMensual;
-    cout<<"NOMBRE DEL DEPORTE (1 - BOXEO, 2 - YOGA)"<<endl;
+    cout<<"NOMBRE DEL DEPORTE (1 - BOXEO, 2 - YOGA, 3 - BOXEO Y YOGA)"<<endl;
     cin>>_nombreDeporte;
     setNombreDeporte(_nombreDeporte);
 

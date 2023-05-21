@@ -9,10 +9,10 @@ Persona::Persona()
     _edad=0;
     strcpy(_genero,"sinGenero");
     _fechaNacimiento.ponerPrimerDiaDelAnio();
-    _direccion.ponerCeroDireccion();
+
 }
 
-Persona::Persona(char *nombre,char *apellido,int dni,int edad,char *genero,Fecha fechaNacimiento,Direccion direccion)
+Persona::Persona(char *nombre,char *apellido,int dni,int edad,char *genero,Fecha fechaNacimiento)
 {
     strcpy(_nombre,nombre);
     strcpy(_apellido,apellido);
@@ -20,7 +20,6 @@ Persona::Persona(char *nombre,char *apellido,int dni,int edad,char *genero,Fecha
     _edad=edad;
     strcpy(_genero,genero);
     _fechaNacimiento=fechaNacimiento;
-    _direccion=direccion;
 }
 
 void Persona::cargarPersona()
@@ -31,7 +30,6 @@ void Persona::cargarPersona()
     cout<<"Edad: "; cin>>_edad;
     cout<<"Genero: "; cargarCadena(_genero,29);
     cout<<"Fecha nacimiento: "<<endl; _fechaNacimiento.cargar();
-    cout<<"Direccion: "<<endl; _direccion.cargar();
 }
 
 void Persona::mostrarPersona()
@@ -43,8 +41,6 @@ void Persona::mostrarPersona()
     cout<<"Genero: "<<_genero<<endl;
     cout<<"Fecha nacimiento: "<<endl;
     _fechaNacimiento.mostrar();
-    cout<<"Direccion: "<<endl;
-    _direccion.mostrar();
 }
 
 
@@ -79,11 +75,6 @@ void Persona::setFechaNacimiento(Fecha fechaNacimiento)
     _fechaNacimiento=fechaNacimiento;
 }
 
-void Persona::setDireccion(Direccion direccion)
-{
-    _direccion=direccion;
-}
-
 const char *Persona::getNombre()
 {
     return _nombre;
@@ -114,7 +105,3 @@ Fecha Persona::getFechaNacimiento()
     return _fechaNacimiento;
 }
 
-Direccion Persona::getDireccion()
-{
-    return _direccion;
-}
