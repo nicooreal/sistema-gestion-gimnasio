@@ -183,7 +183,7 @@
 1683605138 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
 	"Persona.h"
 
-1684463871 source:c:\users\alexi\github\sistema-gestion-gimnasio\main.cpp
+1684703936 source:c:\users\alexi\github\sistema-gestion-gimnasio\main.cpp
 	<iostream>
 	<locale.h>
 	<stdlib.h>
@@ -192,7 +192,7 @@
 	"Empleado.h"
 	"Programa.h"
 
-1684463807 source:c:\users\alexi\github\sistema-gestion-gimnasio\cliente.cpp
+1684464237 source:c:\users\alexi\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 
 1684463751 c:\users\alexi\github\sistema-gestion-gimnasio\cliente.h
