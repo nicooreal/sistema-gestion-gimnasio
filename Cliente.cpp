@@ -67,7 +67,10 @@ const char *Cliente::getNombreDeporte()
     {
         return "Yoga";
     }
-    else
+    else if(_nombreDeporte==3)
+    {
+        return "Boxeo y yoga";
+    }else
     {
         return "Desconocido";
     }
