@@ -1,7 +1,8 @@
 #include "ClienteMenu.h"
-
+#include "ClienteTareas.h"
 void ClienteMenu::mostrar()
 {
+    ClienteTareas clienteTareas;
     int opcion;
     do
     {
@@ -20,7 +21,7 @@ void ClienteMenu::mostrar()
         switch(opcion)
         {
         case 1:
-
+clienteTareas.cargar();
             break;
         case 2:
 

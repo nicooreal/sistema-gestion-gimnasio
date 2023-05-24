@@ -5,6 +5,7 @@ void EmpleadoTareas::cargar()
     Empleado reg;
     reg.cargarEmpleado();
 
+
     _archivo.guardar(reg);
 }
 
