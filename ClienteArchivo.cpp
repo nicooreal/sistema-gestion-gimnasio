@@ -1,5 +1,5 @@
 #include "ClienteArchivo.h"
-#include "cliente.h"
+#include "Cliente.h"
 #include <iostream>
 #include <cstring>
 
@@ -36,7 +36,6 @@ bool ClienteArchivo::editar(Cliente cliente, int nroRegistro) {
     return ok;
 }
 
-/*
 Cliente ClienteArchivo::leer(int nroRegistro) {
     Cliente cliente;
     FILE* p;
@@ -50,6 +49,7 @@ Cliente ClienteArchivo::leer(int nroRegistro) {
     return cliente;
 
 }
+
 int ClienteArchivo::buscarRegistroCliente(char nombre[30])     {
 
     int cant = getCantidad();
@@ -63,5 +63,5 @@ int ClienteArchivo::buscarRegistroCliente(char nombre[30])     {
     return -1;
     }
 
-*/
+
 

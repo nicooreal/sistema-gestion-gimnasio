@@ -40,8 +40,12 @@
 		</Compiler>
 		<Unit filename="Cliente.cpp" />
 		<Unit filename="Cliente.h" />
+		<Unit filename="ClienteArchivo.cpp" />
+		<Unit filename="ClienteArchivo.h" />
 		<Unit filename="ClienteMenu.cpp" />
 		<Unit filename="ClienteMenu.h" />
+		<Unit filename="ClienteTareas.cpp" />
+		<Unit filename="ClienteTareas.h" />
 		<Unit filename="Empleado.cpp" />
 		<Unit filename="Empleado.h" />
 		<Unit filename="EmpleadoArchivo.cpp" />
@@ -64,11 +68,7 @@
 		<Unit filename="ProveedorMenu.h" />
 		<Unit filename="funciones.cpp" />
 		<Unit filename="funciones.h" />
-		<Unit filename="include/ClienteArchivo.h" />
-		<Unit filename="include/ClienteTareas.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/ClienteArchivo.cpp" />
-		<Unit filename="src/ClienteTareas.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

@@ -426,9 +426,9 @@
 1684411803 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\proveedormenu.cpp
 	"ProveedorMenu.h"
 
-1684958527 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\src\clientearchivo.cpp
+1684966032 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\src\clientearchivo.cpp
 	"ClienteArchivo.h"
-	"cliente.h"
+	"Cliente.h"
 	<iostream>
 	<cstring>
 
@@ -441,5 +441,22 @@
 1684960501 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\src\clientetareas.cpp
 	"ClienteTareas.h"
 	"cliente.h"
+	"ClienteArchivo.h"
+
+1684959907 c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.h
+	"ClienteArchivo.h"
+
+1684958504 c:\users\nico\documents\github\sistema-gestion-gimnasio\clientearchivo.h
+	"cliente.h"
+
+1684970848 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientearchivo.cpp
+	"ClienteArchivo.h"
+	"Cliente.h"
+	<iostream>
+	<cstring>
+
+1684966180 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.cpp
+	"ClienteTareas.h"
+	"Cliente.h"
 	"ClienteArchivo.h"
 
