@@ -155,32 +155,32 @@
 1683081379 c:\users\nico\documents\github\sistema-gestion-gimnasio\gimnasio.h
 	<iostream>
 
-1683998130 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\main.cpp
+1684705489 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\main.cpp
 	<iostream>
 	<locale.h>
 	<stdlib.h>
-	"Persona.h"
 	"funciones.h"
 	"Cliente.h"
 	"Empleado.h"
-	"menuGim.h"
+	"Programa.h"
 
-1683605197 c:\users\nico\documents\github\sistema-gestion-gimnasio\persona.h
+1684758073 c:\users\nico\documents\github\sistema-gestion-gimnasio\persona.h
 	<string.h>
 	<cstdio>
 	<iostream>
 	"Fecha.h"
-	"Direccion.h"
 
-1683605240 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\persona.cpp
+1684758073 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\persona.cpp
 	"Persona.h"
 	"funciones.h"
 
-1684275099 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
+1684758073 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 
-1683605138 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
+1684705489 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
+	<iostream>
 	"Persona.h"
+	"string.h"
 
 1684703949 source:c:\users\alexi\github\sistema-gestion-gimnasio\main.cpp
 	<iostream>
@@ -261,10 +261,10 @@
 1683353484 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleado.h
 	"Persona.h"
 
-1684275385 c:\users\nico\documents\github\sistema-gestion-gimnasio\empleado.h
+1684708050 c:\users\nico\documents\github\sistema-gestion-gimnasio\empleado.h
 	"Persona.h"
 
-1684275385 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleado.cpp
+1684708050 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleado.cpp
 	<iostream>
 	<cstdlib>
 	"Empleado.h"
@@ -367,4 +367,70 @@
 1684461121 c:\users\alexi\github\sistema-gestion-gimnasio\gimnasiomenu.h
 	<iostream>
 	"GimnasioTareas.h"
+
+1684411803 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientemenu.cpp
+	"ClienteMenu.h"
+
+1684411803 c:\users\nico\documents\github\sistema-gestion-gimnasio\clientemenu.h
+	<iostream>
+
+1684705489 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadoarchivo.cpp
+	"EmpleadoArchivo.h"
+
+1684705489 c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadoarchivo.h
+	<iostream>
+	<string.h>
+	"Empleado.h"
+
+1684705489 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadomenu.cpp
+	"EmpleadoMenu.h"
+
+1684411803 c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadomenu.h
+	<iostream>
+	"EmpleadoTareas.h"
+
+1684705489 c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadotareas.h
+	"EmpleadoArchivo.h"
+
+1684705489 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadotareas.cpp
+	"EmpleadoTareas.h"
+
+1684705489 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\gimnasiomenu.cpp
+	"GimnasioMenu.h"
+
+1684705489 c:\users\nico\documents\github\sistema-gestion-gimnasio\gimnasiomenu.h
+	<iostream>
+	"GimnasioTareas.h"
+
+1684705489 c:\users\nico\documents\github\sistema-gestion-gimnasio\gimnasiotareas.h
+	<iostream>
+	"EmpleadoArchivo.h"
+
+1684705489 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\gimnasiotareas.cpp
+	"GimnasioTareas.h"
+
+1684705489 c:\users\nico\documents\github\sistema-gestion-gimnasio\programa.h
+	<iostream>
+	"EmpleadoMenu.h"
+	"ClienteMenu.h"
+	"ProveedorMenu.h"
+	"GimnasioMenu.h"
+
+1684411803 c:\users\nico\documents\github\sistema-gestion-gimnasio\proveedormenu.h
+	<iostream>
+
+1684705489 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\programa.cpp
+	"Programa.h"
+
+1684411803 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\proveedormenu.cpp
+	"ProveedorMenu.h"
+
+1684958155 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\src\clientearchivo.cpp
+	"ClienteArchivo.h"
+	"cliente.h"
+	<iostream>
+	<cstring>
+
+1684956102 c:\users\nico\documents\github\sistema-gestion-gimnasio\include\clientearchivo.h
+	"cliente.h"
 
