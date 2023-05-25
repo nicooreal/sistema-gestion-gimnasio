@@ -19,7 +19,7 @@ public:
     Empleado leer(int nroRegistro);
     void buscarPorAnio(int anio);
     int cantidadEmpleados();
-    bool buscarRegistro(int& dni, int& nroRegistro)  ;
+    int buscarRegistro();
     bool editar(Empleado empleado, int nroRegistro);
 
 };

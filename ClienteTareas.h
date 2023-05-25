@@ -8,10 +8,10 @@ class ClienteTareas
 
    ClienteArchivo _archivoCliente;
 
-
     public:
 void cargar();
-
+void listarClientesBox();
+// void clienteBoxeo();
 
 
 };

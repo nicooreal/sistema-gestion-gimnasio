@@ -10,7 +10,7 @@ Empleado::Empleado()
     strcpy(_especializacion,"Tareas Basicas");
 
 }
-Empleado::Empleado(int numeroLegajo,int sueldo,Fecha fechaIngreso,const char *especializacion)
+Empleado::Empleado(int numeroLegajo,float sueldo,Fecha fechaIngreso,const char *especializacion)
 {
     _numeroLegajo=numeroLegajo;
     _sueldo=sueldo;
@@ -27,11 +27,11 @@ int Empleado::getnumLegajo()
     return _numeroLegajo;
 }
 
-void Empleado::setSueldo(int sueldo)
+void Empleado::setSueldo(float sueldo)
 {
     _sueldo=sueldo;
 }
-int Empleado::getSueldo()
+float Empleado::getSueldo()
 {
     return _sueldo;
 }

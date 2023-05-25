@@ -82,27 +82,35 @@ int EmpleadoArchivo::cantidadEmpleados()
     int cant=ftell(p);
     return cant/sizeof(Empleado);/// PARA SABER LA CANTIDAD DE EMPLEADOS
 }
-bool EmpleadoArchivo::buscarRegistro(int& dni, int& nroRegistro) {
+int EmpleadoArchivo::buscarRegistro()
+{
+    int numeroRegistro,dni;
+    cout <<"Ingrese DNI del empleado que desea editar"<<endl;
+    cout <<"DNI: ";
+    cin >> dni;
     FILE* p = fopen(_nombreArchivo, "rb");
-    if (p == NULL) {
+    if (p == NULL)
+    {
         cout << "No se pudo abrir el archivo." <<endl;
-        return false;
+        return -1;
     }
 
     Empleado empleado;
-    nroRegistro = 0;
-    bool encontrado = false;
+    numeroRegistro=0;
+    while (fread(&empleado, sizeof(Empleado), 1,p) != 0)
+    {
+        if (empleado.getDni ()==dni)
+        {
 
-    while (fread(&empleado, sizeof(Empleado), 1,p) != 0 && encontrado==false) {
-        if (empleado._datosPersona.getDni()==dni) {
-            encontrado = true;
+            return numeroRegistro;
         }
-        nroRegistro++;
+            numeroRegistro++;
 
     }
 
     fclose(p);
-    return encontrado;
+    cout <<"No existe el numero de DNI" <<endl;
+    return -2;
 }
 bool EmpleadoArchivo::editar(Empleado empleado, int nroRegistro) {
 
@@ -112,7 +120,7 @@ bool EmpleadoArchivo::editar(Empleado empleado, int nroRegistro) {
         return 0;
     }
 
-    fseek(p, nroRegistro * sizeof(Empleado), SEEK_SET);
+    fseek(p, nroRegistro * sizeof(Empleado),0);
     bool ok = fwrite(&empleado, sizeof(Empleado), 1, p);
 
     fclose(p);

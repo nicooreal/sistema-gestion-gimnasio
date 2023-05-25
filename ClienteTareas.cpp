@@ -10,8 +10,16 @@ void ClienteTareas::cargar(){
     _archivoCliente.guardar(cliente);
 
 
+}
+/*void listarClientesBox(){
 
-
+     cout <<"Los clientes que realizan :"<< endl;
 
 }
+  */
+
+
+
+
+
 

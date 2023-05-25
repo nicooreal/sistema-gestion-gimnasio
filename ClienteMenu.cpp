@@ -12,7 +12,8 @@ void ClienteMenu::mostrar()
         cout<<"1 - CARGAR "<<endl;
         cout<<"2 - EDITAR "<<endl;
         cout<<"3 - LISTAR TODOS"<<endl;
-        cout<<"4 - LISTAR POR ID"<<endl; /// Y MAS OPCIONES
+        cout<<"4 - LISTAR POR ID"<<endl;/// Y MAS OPCIONES
+        cout<<"5 - LISTAR CLIENTES QUE PRACTICAN BOXEO"<<endl;
         cout<<"0 - SALIR"<<endl;
         cout<<"----------------------------------"<<endl;
         cout<<"OPCION: "; cin>>opcion;

@@ -6,20 +6,20 @@ class Empleado: public Persona
 {
 private:
     int   _numeroLegajo;
-    int   _sueldo;
+    float   _sueldo;
     Fecha _fechaIngreso;
     //int  _antiguedad=calcularAntiguedad()
     char  _especializacion[30];
 
 public:
     Empleado();
-    Empleado(int numeroLegajo,int sueldo,Fecha fechaIngreso,const char* especializacion)  ;
+    Empleado(int numeroLegajo,float sueldo,Fecha fechaIngreso,const char* especializacion)  ;
 
     void setNumeroLegajo(int numeroLegajo) ;
     int getnumLegajo() ;
 
-    void setSueldo(int sueldo);
-    int getSueldo();
+    void setSueldo(float sueldo);
+    float getSueldo();
 
     void setFechaIngreso(Fecha fechaIngreso) ;
     Fecha getFechaIngreso();
@@ -28,7 +28,7 @@ public:
     const char* getEspecializacion() ;
     void cargarEmpleado();
     void mostrarEmpleado();
-    Persona _datosPersona; //para acceder a los get/set
+    Persona datosPersona; //para acceder a los get/set
 
 };
 

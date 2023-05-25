@@ -30,7 +30,7 @@ bool ClienteArchivo::editar(Cliente cliente, int nroRegistro) {
     if (p == NULL) {
         return false;
     }
-    fseek(p, nroRegistro * sizeof(Cliente), SEEK_SET);
+    fseek(p, nroRegistro * sizeof(Cliente), 0);
     bool ok = fwrite(&cliente, sizeof(Cliente), 1, p);
     fclose(p);
     return ok;

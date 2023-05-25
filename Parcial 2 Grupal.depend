@@ -228,7 +228,7 @@
 1683170469 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\gimnasio.h
 	<iostream>
 
-1684701271 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\main.cpp
+1685049787 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\main.cpp
 	<iostream>
 	<locale.h>
 	<stdlib.h>
@@ -248,19 +248,19 @@
 	"Persona.h"
 	"string.h"
 
-1685021839 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\persona.cpp
+1685049767 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\persona.cpp
 	"Persona.h"
 	"funciones.h"
 
 1685021839 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 
-1684708276 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleado.cpp
+1685055741 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleado.cpp
 	<iostream>
 	<cstdlib>
 	"Empleado.h"
 
-1685040634 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleado.h
+1685055741 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleado.h
 	"Persona.h"
 
 1684708050 c:\users\nico\documents\github\sistema-gestion-gimnasio\empleado.h
@@ -473,7 +473,7 @@
 	<iostream>
 	"EmpleadoArchivo.h"
 
-1685040059 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleadoarchivo.h
+1685054494 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleadoarchivo.h
 	<iostream>
 	<string.h>
 	"Empleado.h"
@@ -516,24 +516,24 @@
 1685021839 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientearchivo.h
 	"cliente.h"
 
-1685021839 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientemenu.cpp
+1685057248 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientemenu.cpp
 	"ClienteMenu.h"
 	"ClienteTareas.h"
 
-1685021839 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientetareas.h
+1685057248 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientetareas.h
 	"ClienteArchivo.h"
 
-1685021839 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientetareas.cpp
+1685057261 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientetareas.cpp
 	"ClienteTareas.h"
 	"Cliente.h"
 	"ClienteArchivo.h"
 
-1685040048 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleadomenu.cpp
+1685041140 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleadomenu.cpp
 	"EmpleadoMenu.h"
 
-1685040219 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleadotareas.cpp
+1685054733 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleadotareas.cpp
 	"EmpleadoTareas.h"
 
-1685040658 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleadoarchivo.cpp
+1685055383 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleadoarchivo.cpp
 	"EmpleadoArchivo.h"
 

@@ -24,7 +24,8 @@ Persona::Persona(char *nombre,char *apellido,int dni,int edad,char *genero,Fecha
 
 void Persona::cargarPersona()
 {
-    cout<<"Nombre: "; cargarCadena(_nombre,29);
+    cout<<"Nombre: ";
+    cargarCadena(_nombre,29);
     cout<<"Apellido: "; cargarCadena(_apellido,29);
     cout<<"DNI: "; cin>>_dni;
     cout<<"Edad: "; cin>>_edad;
