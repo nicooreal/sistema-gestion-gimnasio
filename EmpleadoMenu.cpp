@@ -24,6 +24,10 @@ void EmpleadoMenu::mostrar()
         case 1:
             _empleadoTareas.cargar();
             break;
+        case 2:
+            _empleadoTareas.modificar();
+            break;
+
         case 6:
             _empleadoTareas.listarEmpleadosPorAnio();
             break;

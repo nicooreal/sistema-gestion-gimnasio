@@ -11,6 +11,7 @@ private:
 public:
     void cargar();
     void listarEmpleadosPorAnio();
+    void modificar() ;
 
 };
 

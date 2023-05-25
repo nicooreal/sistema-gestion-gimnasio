@@ -28,6 +28,7 @@ public:
     const char* getEspecializacion() ;
     void cargarEmpleado();
     void mostrarEmpleado();
+    Persona _datosPersona; //para acceder a los get/set
 
 };
 
