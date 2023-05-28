@@ -19,19 +19,24 @@ void EmpleadoTareas::listarEmpleadosPorAnio()
 
 }
 
-void EmpleadoTareas::modificar() {
+void EmpleadoTareas::modificar()
+{
 
 
-     int numeroRegistro = _archivo.buscarRegistro();
-    if (numeroRegistro>=0) {
+    int numeroRegistro = _archivo.buscarRegistro();
+    if (numeroRegistro>=0)
+    {
         cout << "Modifique al empleado"<<endl;
         Empleado empleadoModificado ;
         empleadoModificado.cargarEmpleado();
 
         bool exito = _archivo.editar(empleadoModificado, numeroRegistro);
-        if (exito) {
+        if (exito)
+        {
             cout << "Registro modificado exitosamente." << endl;
-        } else {
+        }
+        else
+        {
             cout << "No se pudo modificar el registro." << endl;
         }
     }

@@ -507,23 +507,23 @@
 1684701271 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\proveedormenu.cpp
 	"ProveedorMenu.h"
 
-1685021839 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientearchivo.cpp
+1685284655 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientearchivo.cpp
 	"ClienteArchivo.h"
 	"Cliente.h"
 	<iostream>
 	<cstring>
 
-1685021839 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientearchivo.h
+1685284614 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientearchivo.h
 	"cliente.h"
 
 1685057248 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientemenu.cpp
 	"ClienteMenu.h"
 	"ClienteTareas.h"
 
-1685057248 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientetareas.h
+1685284544 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientetareas.h
 	"ClienteArchivo.h"
 
-1685057261 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientetareas.cpp
+1685283884 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\clientetareas.cpp
 	"ClienteTareas.h"
 	"Cliente.h"
 	"ClienteArchivo.h"
@@ -531,7 +531,7 @@
 1685041140 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleadomenu.cpp
 	"EmpleadoMenu.h"
 
-1685054733 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleadotareas.cpp
+1685284693 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleadotareas.cpp
 	"EmpleadoTareas.h"
 
 1685055383 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleadoarchivo.cpp

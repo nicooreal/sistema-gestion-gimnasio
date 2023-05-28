@@ -16,16 +16,17 @@ void ClienteMenu::mostrar()
         cout<<"5 - LISTAR CLIENTES QUE PRACTICAN BOXEO"<<endl;
         cout<<"0 - SALIR"<<endl;
         cout<<"----------------------------------"<<endl;
-        cout<<"OPCION: "; cin>>opcion;
+        cout<<"OPCION: ";
+        cin>>opcion;
         system("cls");
 
         switch(opcion)
         {
         case 1:
-clienteTareas.cargar();
+            clienteTareas.cargar();
             break;
         case 2:
-
+            clienteTareas.modificar();
             break;
         case 3:
 
@@ -39,5 +40,6 @@ clienteTareas.cargar();
             system("pause");
         }
 
-    }while(opcion!=0);
+    }
+    while(opcion!=0);
 }

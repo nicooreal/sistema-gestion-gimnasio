@@ -11,6 +11,7 @@ class ClienteTareas
     public:
 void cargar();
 void listarClientesBox();
+void modificar() ;
 // void clienteBoxeo();
 
 
