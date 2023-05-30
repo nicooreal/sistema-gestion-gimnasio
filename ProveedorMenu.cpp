@@ -1,11 +1,16 @@
 #include "ProveedorMenu.h"
+#include"marco_menu.h"
+#include "rlutil.h"
+
 
 void ProveedorMenu::mostrar()
 {
+    marco_menu marco;
     int opcion;
     do
     {
-        system("cls");
+        marco.mostrar_proveedores();
+       /* system("cls");
         cout<<"----------------------------------"<<endl;
         cout<<"\tMENU PROVEEDORES"<<endl;
         cout<<"1 - CARGAR "<<endl;
@@ -13,7 +18,8 @@ void ProveedorMenu::mostrar()
         cout<<"3 - LISTAR TODOS"<<endl;
         cout<<"4 - LISTAR POR ID"<<endl; /// Y MAS OPCIONES
         cout<<"0 - SALIR"<<endl;
-        cout<<"----------------------------------"<<endl;
+        cout<<"----------------------------------"<<endl;*/
+        rlutil::locate(10,23);
         cout<<"OPCION: "; cin>>opcion;
         system("cls");
 

@@ -537,3 +537,112 @@
 1685055383 source:c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleadoarchivo.cpp
 	"EmpleadoArchivo.h"
 
+1685398752 source:c:\users\usuario\documents\github\sistema-gestion-gimnasio\fecha.cpp
+	"Fecha.h"
+
+1685398752 c:\users\usuario\documents\github\sistema-gestion-gimnasio\fecha.h
+	<iostream>
+
+1685398752 source:c:\users\usuario\documents\github\sistema-gestion-gimnasio\funciones.cpp
+	"funciones.h"
+	"Persona.h"
+	"Empleado.h"
+
+1685398752 c:\users\usuario\documents\github\sistema-gestion-gimnasio\funciones.h
+	<iostream>
+	<string.h>
+
+1685398752 c:\users\usuario\documents\github\sistema-gestion-gimnasio\persona.h
+	<string.h>
+	<cstdio>
+	<iostream>
+	"Fecha.h"
+
+1685398752 c:\users\usuario\documents\github\sistema-gestion-gimnasio\empleado.h
+	"Persona.h"
+
+1685398752 source:c:\users\usuario\documents\github\sistema-gestion-gimnasio\main.cpp
+	<iostream>
+	<locale.h>
+	<stdlib.h>
+	"funciones.h"
+	"Cliente.h"
+	"Empleado.h"
+	"Programa.h"
+
+1685398752 c:\users\usuario\documents\github\sistema-gestion-gimnasio\cliente.h
+	<iostream>
+	"Persona.h"
+	"string.h"
+
+1685398752 c:\users\usuario\documents\github\sistema-gestion-gimnasio\programa.h
+	<iostream>
+	"EmpleadoMenu.h"
+	"ClienteMenu.h"
+	"ProveedorMenu.h"
+	"GimnasioMenu.h"
+
+1685398752 c:\users\usuario\documents\github\sistema-gestion-gimnasio\empleadomenu.h
+	<iostream>
+	"EmpleadoTareas.h"
+
+1685398752 c:\users\usuario\documents\github\sistema-gestion-gimnasio\empleadotareas.h
+	"EmpleadoArchivo.h"
+
+1685398752 c:\users\usuario\documents\github\sistema-gestion-gimnasio\empleadoarchivo.h
+	<iostream>
+	<string.h>
+	"Empleado.h"
+
+1685398752 c:\users\usuario\documents\github\sistema-gestion-gimnasio\clientemenu.h
+	<iostream>
+
+1685398752 c:\users\usuario\documents\github\sistema-gestion-gimnasio\proveedormenu.h
+	<iostream>
+
+1685398752 c:\users\usuario\documents\github\sistema-gestion-gimnasio\gimnasiomenu.h
+	<iostream>
+	"GimnasioTareas.h"
+
+1685398752 c:\users\usuario\documents\github\sistema-gestion-gimnasio\gimnasiotareas.h
+	<iostream>
+	"EmpleadoArchivo.h"
+
+1685398752 source:c:\users\usuario\documents\github\sistema-gestion-gimnasio\persona.cpp
+	"Persona.h"
+	"funciones.h"
+
+1685398752 source:c:\users\usuario\documents\github\sistema-gestion-gimnasio\cliente.cpp
+	"Cliente.h"
+
+1685398752 source:c:\users\usuario\documents\github\sistema-gestion-gimnasio\clientearchivo.cpp
+	"ClienteArchivo.h"
+	"Cliente.h"
+	<iostream>
+	<cstring>
+
+1685398752 c:\users\usuario\documents\github\sistema-gestion-gimnasio\clientearchivo.h
+	"cliente.h"
+
+1685398752 source:c:\users\usuario\documents\github\sistema-gestion-gimnasio\clientetareas.cpp
+	"ClienteTareas.h"
+	"Cliente.h"
+	"ClienteArchivo.h"
+
+1685398752 c:\users\usuario\documents\github\sistema-gestion-gimnasio\clientetareas.h
+	"ClienteArchivo.h"
+
+1685398752 source:c:\users\usuario\documents\github\sistema-gestion-gimnasio\empleado.cpp
+	<iostream>
+	<cstdlib>
+	"Empleado.h"
+
+1685398752 source:c:\users\usuario\documents\github\sistema-gestion-gimnasio\empleadoarchivo.cpp
+	"EmpleadoArchivo.h"
+
+1685398752 source:c:\users\usuario\documents\github\sistema-gestion-gimnasio\empleadotareas.cpp
+	"EmpleadoTareas.h"
+
+1685398752 source:c:\users\usuario\documents\github\sistema-gestion-gimnasio\gimnasiotareas.cpp
+	"GimnasioTareas.h"
+

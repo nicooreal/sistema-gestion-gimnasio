@@ -1,13 +1,19 @@
 #include "ClienteMenu.h"
 #include "ClienteTareas.h"
+#include"marco_menu.h"
+#include "rlutil.h"
+
+
 void ClienteMenu::mostrar()
 {
     ClienteTareas clienteTareas;
+    marco_menu marco;
     int opcion;
     do
     {
         system("cls");
-        cout<<"----------------------------------"<<endl;
+        marco.mostrar_cliente();
+       /* cout<<"----------------------------------"<<endl;
         cout<<"\tMENU CLIENTES"<<endl;
         cout<<"1 - CARGAR "<<endl;
         cout<<"2 - EDITAR "<<endl;
@@ -16,6 +22,8 @@ void ClienteMenu::mostrar()
         cout<<"5 - LISTAR CLIENTES QUE PRACTICAN BOXEO"<<endl;
         cout<<"0 - SALIR"<<endl;
         cout<<"----------------------------------"<<endl;
+        cout<<"OPCION: ";*/
+        rlutil::locate(10,22);
         cout<<"OPCION: ";
         cin>>opcion;
         system("cls");
@@ -35,10 +43,10 @@ void ClienteMenu::mostrar()
 
             break;
         }
-        if(opcion!=0)
-        {
-            system("pause");
-        }
+      //  if(opcion!=0)
+     //   {
+      //      system("pause");
+      //  }
 
     }
     while(opcion!=0);

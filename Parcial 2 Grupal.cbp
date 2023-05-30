@@ -69,6 +69,8 @@
 		<Unit filename="funciones.cpp" />
 		<Unit filename="funciones.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="marco_menu.cpp" />
+		<Unit filename="marco_menu.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
