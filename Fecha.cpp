@@ -1,14 +1,28 @@
 #include "Fecha.h"
+#include <ctime>
 
 
-void Fecha::ponerPrimerDiaDelAnio()
-{
-    _dia=1;
-    _mes=1;
-    _anio=2023;
+
+
+Fecha::Fecha() {
+    time_t rawtime;
+    struct tm timeinfo;
+
+    time(&rawtime);
+    timeinfo = *(localtime(&rawtime));
+
+    _dia = timeinfo.tm_mday;
+    _mes = timeinfo.tm_mon + 1;
+    _anio = timeinfo.tm_year + 1900;
+
 }
 
-Fecha::Fecha()
+void Fecha::fechaDeHoy()
+{
+Fecha(); // constructor con fecha de hoy
+}
+
+/*Fecha::Fecha()
 {
     ponerPrimerDiaDelAnio();
 }
@@ -19,12 +33,17 @@ Fecha::Fecha(int dia,int mes,int anio)
     _mes=mes;
     _anio=anio;
 }
+*/
 
 void Fecha::cargar()
 {
+
     cout<<"Dia: "; cin>>_dia;
     cout<<"Mes: "; cin>>_mes;
     cout<<"Anio: "; cin>>_anio;
+
+
+
 }
 
 void Fecha::mostrar()
@@ -61,3 +80,8 @@ int Fecha::getAnio()
 {
     return _anio;
 }
+
+
+
+
+

@@ -17,7 +17,7 @@ public:
 
     void cargar();
     void mostrar();
-    void ponerPrimerDiaDelAnio();
+    void fechaDeHoy();
 
     void setDia(int dia);
     void setMes(int mes);
