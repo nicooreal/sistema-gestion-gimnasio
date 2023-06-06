@@ -14,7 +14,7 @@ protected:
     char _nombre[30];
     char _apellido[30];
     int _dni;
-    int _edad;
+    int _edad; // tendriamos que sacar poder calcularla con la fecha de nacimiento
     char _genero[30];
     Fecha _fechaNacimiento;/// COMPOSICION
 

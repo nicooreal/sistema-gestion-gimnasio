@@ -138,10 +138,11 @@
 	<iostream>
 	<string.h>
 
-1683081379 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\fecha.cpp
+1686061972 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\fecha.cpp
 	"Fecha.h"
+	<ctime>
 
-1683081379 c:\users\nico\documents\github\sistema-gestion-gimnasio\fecha.h
+1686061972 c:\users\nico\documents\github\sistema-gestion-gimnasio\fecha.h
 	<iostream>
 
 1683997244 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\funciones.cpp
@@ -155,7 +156,7 @@
 1683081379 c:\users\nico\documents\github\sistema-gestion-gimnasio\gimnasio.h
 	<iostream>
 
-1684705489 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\main.cpp
+1685166897 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\main.cpp
 	<iostream>
 	<locale.h>
 	<stdlib.h>
@@ -170,14 +171,15 @@
 	<iostream>
 	"Fecha.h"
 
-1684758073 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\persona.cpp
+1686062109 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\persona.cpp
 	"Persona.h"
 	"funciones.h"
 
-1684758073 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
+1686066439 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
+	"ClienteArchivo.h"
 
-1684960374 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
+1686066321 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
 	<iostream>
 	"Persona.h"
 	"string.h"
@@ -263,10 +265,10 @@
 1685055741 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleado.h
 	"Persona.h"
 
-1684708050 c:\users\nico\documents\github\sistema-gestion-gimnasio\empleado.h
+1685166897 c:\users\nico\documents\github\sistema-gestion-gimnasio\empleado.h
 	"Persona.h"
 
-1684708050 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleado.cpp
+1685166897 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleado.cpp
 	<iostream>
 	<cstdlib>
 	"Empleado.h"
@@ -370,36 +372,42 @@
 	<iostream>
 	"GimnasioTareas.h"
 
-1684960479 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientemenu.cpp
+1686060054 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientemenu.cpp
 	"ClienteMenu.h"
 	"ClienteTareas.h"
+	"marco_menu.h"
+	"rlutil.h"
 
 1684411803 c:\users\nico\documents\github\sistema-gestion-gimnasio\clientemenu.h
 	<iostream>
 
-1684705489 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadoarchivo.cpp
+1685166897 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadoarchivo.cpp
 	"EmpleadoArchivo.h"
 
-1684705489 c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadoarchivo.h
+1685166897 c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadoarchivo.h
 	<iostream>
 	<string.h>
 	"Empleado.h"
 
-1684705489 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadomenu.cpp
+1685417996 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadomenu.cpp
 	"EmpleadoMenu.h"
+	"marco_menu.h"
+	"rlutil.h"
 
 1684411803 c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadomenu.h
 	<iostream>
 	"EmpleadoTareas.h"
 
-1684705489 c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadotareas.h
+1685166897 c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadotareas.h
 	"EmpleadoArchivo.h"
 
-1684959907 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadotareas.cpp
+1685417996 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadotareas.cpp
 	"EmpleadoTareas.h"
 
-1684705489 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\gimnasiomenu.cpp
+1685417996 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\gimnasiomenu.cpp
 	"GimnasioMenu.h"
+	"marco_menu.h"
+	"rlutil.h"
 
 1684705489 c:\users\nico\documents\github\sistema-gestion-gimnasio\gimnasiomenu.h
 	<iostream>
@@ -422,11 +430,15 @@
 1684411803 c:\users\nico\documents\github\sistema-gestion-gimnasio\proveedormenu.h
 	<iostream>
 
-1684705489 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\programa.cpp
+1686059349 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\programa.cpp
 	"Programa.h"
+	"marco_menu.h"
+	"rlutil.h"
 
-1684411803 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\proveedormenu.cpp
+1685417996 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\proveedormenu.cpp
 	"ProveedorMenu.h"
+	"marco_menu.h"
+	"rlutil.h"
 
 1684966032 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\src\clientearchivo.cpp
 	"ClienteArchivo.h"
@@ -445,19 +457,19 @@
 	"cliente.h"
 	"ClienteArchivo.h"
 
-1684959907 c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.h
+1686058570 c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.h
 	"ClienteArchivo.h"
 
-1684958504 c:\users\nico\documents\github\sistema-gestion-gimnasio\clientearchivo.h
+1685417996 c:\users\nico\documents\github\sistema-gestion-gimnasio\clientearchivo.h
 	"cliente.h"
 
-1684970848 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientearchivo.cpp
+1685417996 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientearchivo.cpp
 	"ClienteArchivo.h"
 	"Cliente.h"
 	<iostream>
 	<cstring>
 
-1684966180 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.cpp
+1686062526 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.cpp
 	"ClienteTareas.h"
 	"Cliente.h"
 	"ClienteArchivo.h"
@@ -645,4 +657,26 @@
 
 1685398752 source:c:\users\usuario\documents\github\sistema-gestion-gimnasio\gimnasiotareas.cpp
 	"GimnasioTareas.h"
+
+1685417996 c:\users\nico\documents\github\sistema-gestion-gimnasio\marco_menu.h
+
+1685417996 c:\users\nico\documents\github\sistema-gestion-gimnasio\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1685417996 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\marco_menu.cpp
+	<iostream>
+	<cstdio>
+	"marco_menu.h"
+	"rlutil.h"
 

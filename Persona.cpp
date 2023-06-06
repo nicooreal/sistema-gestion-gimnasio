@@ -8,7 +8,7 @@ Persona::Persona()
     _dni=0;
     _edad=0;
     strcpy(_genero,"sinGenero");
-    _fechaNacimiento.ponerPrimerDiaDelAnio();
+    _fechaNacimiento.fechaDeHoy();
 
 }
 
@@ -29,7 +29,7 @@ void Persona::cargarPersona()
     cout<<"Apellido: "; cargarCadena(_apellido,29);
     cout<<"DNI: "; cin>>_dni;
     cout<<"Edad: "; cin>>_edad;
-    cout<<"Genero: "; cargarCadena(_genero,29);
+    cout<<"Genero(M o F): "; cargarCadena(_genero,29);
     cout<<"Fecha nacimiento: "<<endl; _fechaNacimiento.cargar();
 }
 
