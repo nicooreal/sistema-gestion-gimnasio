@@ -2,7 +2,8 @@
 #include "Cliente.h"
 #include "ClienteArchivo.h"
 
-void ClienteTareas::cargar(){
+void ClienteTareas::cargar()
+{
 
     Cliente cliente;
     cliente.cargarCliente();
@@ -41,7 +42,48 @@ void ClienteTareas::modificar()
   */
 
 
+void ClienteTareas::mostrarPorDni()
+{
+    int documento;
+    cout <<"ingrese documento: " << endl;
+    cin >> documento;
+    int cantidadDeClientes = _archivoCliente.getCantidad();
+
+
+    for (int i = 0; i < cantidadDeClientes; i++ )
+    {
+        Cliente cliente = _archivoCliente.leer(i);
+
+        if ( documento == cliente.getDni() )
+        {
+
+            cliente.mostrarCliente();
+
+
+        }
+
+
+    }
 
 
 
+}
+
+void ClienteTareas::mostrarTodos()
+{
+    int cantidadDeClientes = _archivoCliente.getCantidad();
+    for (int i = 0; i < cantidadDeClientes; i++ )
+    {
+        Cliente cliente = _archivoCliente.leer(i);
+
+        cliente.mostrarCliente();
+        cout << endl;
+cout <<"--------------------------------------"<< endl;
+
+    }
+
+
+
+
+}
 

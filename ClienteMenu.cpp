@@ -20,6 +20,7 @@ void ClienteMenu::mostrar()
         cout<<"3 - LISTAR TODOS"<<endl;
         cout<<"4 - LISTAR POR ID"<<endl;/// Y MAS OPCIONES
         cout<<"5 - LISTAR CLIENTES QUE PRACTICAN BOXEO"<<endl;
+        cout<<"6 - BUSCAR "<<endl;
         cout<<"0 - SALIR"<<endl;
         cout<<"----------------------------------"<<endl;
         cout<<"OPCION: ";*/
@@ -37,11 +38,13 @@ void ClienteMenu::mostrar()
             clienteTareas.modificar();
             break;
         case 3:
-
+clienteTareas.mostrarTodos();
+ system("pause");
             break;
-        case 4:
-
-            break;
+        case 6:
+clienteTareas.mostrarPorDni();
+ system("pause");
+ break;
         }
       //  if(opcion!=0)
      //   {

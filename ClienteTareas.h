@@ -12,6 +12,8 @@ class ClienteTareas
 void cargar();
 void listarClientesBox();
 void modificar() ;
+void mostrarPorDni();
+void mostrarTodos();
 // void clienteBoxeo();
 
 
