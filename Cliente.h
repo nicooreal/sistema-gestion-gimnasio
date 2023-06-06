@@ -15,7 +15,7 @@ private:
     Fecha _fechaLimiteParaPagarAbono;
     float _abonoMensual;
     int _nombreDeporte;
-
+    bool _pesas;
 //bool boxeo;
 //bool yoga;
 
@@ -37,6 +37,10 @@ public:
     void cargarCliente();
     void mostrarCliente();
 
+    void setPesas(bool pesas);
+    bool getPesas();
+
+    void hacePesas();
 //string getNombreActividad();
 //void setNombreDeActividad(string nombreAct);
 };
