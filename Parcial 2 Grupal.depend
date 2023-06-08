@@ -175,7 +175,7 @@
 	"Persona.h"
 	"funciones.h"
 
-1686197559 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
+1686198376 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 	"ClienteArchivo.h"
 
@@ -372,7 +372,7 @@
 	<iostream>
 	"GimnasioTareas.h"
 
-1686060054 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientemenu.cpp
+1686248674 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientemenu.cpp
 	"ClienteMenu.h"
 	"ClienteTareas.h"
 	"marco_menu.h"
@@ -389,7 +389,7 @@
 	<string.h>
 	"Empleado.h"
 
-1685417996 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadomenu.cpp
+1686248699 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadomenu.cpp
 	"EmpleadoMenu.h"
 	"marco_menu.h"
 	"rlutil.h"
@@ -404,7 +404,7 @@
 1685417996 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadotareas.cpp
 	"EmpleadoTareas.h"
 
-1685417996 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\gimnasiomenu.cpp
+1686248735 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\gimnasiomenu.cpp
 	"GimnasioMenu.h"
 	"marco_menu.h"
 	"rlutil.h"
@@ -430,12 +430,12 @@
 1684411803 c:\users\nico\documents\github\sistema-gestion-gimnasio\proveedormenu.h
 	<iostream>
 
-1686059349 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\programa.cpp
+1686248718 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\programa.cpp
 	"Programa.h"
 	"marco_menu.h"
 	"rlutil.h"
 
-1685417996 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\proveedormenu.cpp
+1686248758 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\proveedormenu.cpp
 	"ProveedorMenu.h"
 	"marco_menu.h"
 	"rlutil.h"
@@ -658,7 +658,7 @@
 1685398752 source:c:\users\usuario\documents\github\sistema-gestion-gimnasio\gimnasiotareas.cpp
 	"GimnasioTareas.h"
 
-1685417996 c:\users\nico\documents\github\sistema-gestion-gimnasio\marco_menu.h
+1686248663 c:\users\nico\documents\github\sistema-gestion-gimnasio\marco_menu.h
 
 1685417996 c:\users\nico\documents\github\sistema-gestion-gimnasio\rlutil.h
 	<iostream>
@@ -674,8 +674,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1685417996 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\marco_menu.cpp
-	<iostream>
+1686248663 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\marco_menu.cpp
 	<cstdio>
 	"marco_menu.h"
 	"rlutil.h"

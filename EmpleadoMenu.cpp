@@ -4,12 +4,12 @@
 
 void EmpleadoMenu::mostrar()
 {
-    marco_menu marco;
+  //  marco_menu marco;
     int opcion;
     do
     {
-        marco.mostrar_empleado();
-       /* system("cls");
+    //    marco.mostrar_empleado();
+        system("cls");
         cout<<"----------------------------------"<<endl;
         cout<<"\tMENU EMPLEADOS"<<endl;
         cout<<"1 - CARGAR "<<endl;
@@ -19,8 +19,8 @@ void EmpleadoMenu::mostrar()
         cout<<"5 - LIMPIAR ARCHIVO"<<endl;
         cout<<"6 - LISTAR EMPLEADOS QUE INGRESARON EN X ANIO"<<endl;
         cout<<"0 - SALIR"<<endl;
-        cout<<"----------------------------------"<<endl;*/
-         rlutil::locate(10,23);
+        cout<<"----------------------------------"<<endl;
+       //  rlutil::locate(10,23);
         cout<<"OPCION: "; cin>>opcion;
         system("cls");
 

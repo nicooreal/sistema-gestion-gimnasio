@@ -4,20 +4,20 @@
 
 void GimnasioMenu::mostrar()
 {
-    marco_menu marco;
+   // marco_menu marco;
     int opcion;
     do
     {
-        marco.mostrar_gimnasio();
-       /* system("cls");
+     //   marco.mostrar_gimnasio();
+        system("cls");
         cout<<"----------------------------------"<<endl;
         cout<<"\tMENU GIMNASIO"<<endl;
         cout<<"1 - CANTIDAD EMPLEADOS "<<endl;
         cout<<"2 - CANTIDAD CLIENTES "<<endl;
         cout<<"3 - GUARDAR CLIENTES QUE PRACTICAN BOXEO"<<endl; /// LO GUARDARIAMOS EN UN ARCHIVO .DAT
         cout<<"0 - SALIR"<<endl;
-        cout<<"----------------------------------"<<endl;*/
-        rlutil::locate(10,18);
+        cout<<"----------------------------------"<<endl;
+        //rlutil::locate(10,18);
         cout<<"OPCION: ";
         cin>>opcion;
         system("cls");

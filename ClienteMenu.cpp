@@ -7,13 +7,13 @@
 void ClienteMenu::mostrar()
 {
     ClienteTareas clienteTareas;
-    marco_menu marco;
+   // marco_menu marco;
     int opcion;
     do
     {
         system("cls");
-        marco.mostrar_cliente();
-       /* cout<<"----------------------------------"<<endl;
+      // marco.mostrar_cliente();
+        cout<<"----------------------------------"<<endl;
         cout<<"\tMENU CLIENTES"<<endl;
         cout<<"1 - CARGAR "<<endl;
         cout<<"2 - EDITAR "<<endl;
@@ -23,7 +23,7 @@ void ClienteMenu::mostrar()
         cout<<"6 - BUSCAR "<<endl;
         cout<<"0 - SALIR"<<endl;
         cout<<"----------------------------------"<<endl;
-        cout<<"OPCION: ";*/
+        cout<<"OPCION: ";
         rlutil::locate(10,22);
         cout<<"OPCION: ";
         cin>>opcion;

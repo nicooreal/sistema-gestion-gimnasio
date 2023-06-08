@@ -5,11 +5,11 @@
 void Programa::ejecutar()
 {
     int opcion;
-    marco_menu marco;
+   // marco_menu marco;
     do
     {
-        marco.mostrar_menu();
-        /*system("cls");
+        //marco.mostrar_menu();
+        system("cls");
         cout<<"--------------------------"<<endl;
         cout<<"\tMENU PRINCIPAL"<<endl;
         cout<<"1 - EMPLEADOS"<<endl;
@@ -17,7 +17,7 @@ void Programa::ejecutar()
         cout<<"3 - PROVEEDORES"<<endl;
         cout<<"4 - GIMNASIO"<<endl; /// PODIAMOS INCLUIR CLASES COMO BACKUP Y RESTAURAR BACKUP PARA CADA UNA(Recomiendo ver la ultima clase de labo)
         cout<<"0 - SALIR"<<endl;
-        cout<<"--------------------------"<<endl;*/
+        cout<<"--------------------------"<<endl;
         rlutil::locate(10,18);
         cout<<"OPCION: ";
         cin>>opcion;
