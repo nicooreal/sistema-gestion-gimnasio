@@ -165,7 +165,7 @@
 	"Empleado.h"
 	"Programa.h"
 
-1684758073 c:\users\nico\documents\github\sistema-gestion-gimnasio\persona.h
+1686066641 c:\users\nico\documents\github\sistema-gestion-gimnasio\persona.h
 	<string.h>
 	<cstdio>
 	<iostream>
@@ -175,11 +175,11 @@
 	"Persona.h"
 	"funciones.h"
 
-1686066439 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
+1686197559 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 	"ClienteArchivo.h"
 
-1686066321 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
+1686198228 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
 	<iostream>
 	"Persona.h"
 	"string.h"
@@ -457,7 +457,7 @@
 	"cliente.h"
 	"ClienteArchivo.h"
 
-1686058570 c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.h
+1686197024 c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.h
 	"ClienteArchivo.h"
 
 1685417996 c:\users\nico\documents\github\sistema-gestion-gimnasio\clientearchivo.h
@@ -469,7 +469,7 @@
 	<iostream>
 	<cstring>
 
-1686062526 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.cpp
+1686197125 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.cpp
 	"ClienteTareas.h"
 	"Cliente.h"
 	"ClienteArchivo.h"

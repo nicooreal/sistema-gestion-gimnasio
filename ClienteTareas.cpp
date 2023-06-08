@@ -34,12 +34,26 @@ void ClienteTareas::modificar()
         }
     }
 }
-/*void listarClientesBox(){
+void ClienteTareas::listarClientesBox(){
+ClienteArchivo clienteArch;
+int cantidadDeClientes = clienteArch.getCantidad();
 
-     cout <<"Los clientes que realizan :"<< endl;
+     for (int i = 0; i < cantidadDeClientes; i++){
+       Cliente cliente =  clienteArch.leer(i);
+
+
+        if ( strcmp( cliente.getNombreDeporte(), "boxeo") == 0 ){
+
+cliente.mostrarCliente();
+cout <<"----------------------------"<< endl;
+
+        }
+
+
+     }
 
 }
-  */
+
 
 
 void ClienteTareas::mostrarPorDni()
@@ -86,4 +100,8 @@ cout <<"--------------------------------------"<< endl;
 
 
 }
+
+
+
+
 
