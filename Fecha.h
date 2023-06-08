@@ -27,7 +27,7 @@ public:
     int getMes();
     int getAnio();
 
-
+    int calcularAniosDeVida();
 
 
 };

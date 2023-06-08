@@ -42,6 +42,7 @@ public:
     const char *getGenero();
     Fecha getFechaNacimiento();
 
+    void calcularEdad();
 
 
 

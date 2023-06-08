@@ -28,9 +28,9 @@ void Persona::cargarPersona()
     cargarCadena(_nombre,29);
     cout<<"Apellido: "; cargarCadena(_apellido,29);
     cout<<"DNI: "; cin>>_dni;
-    cout<<"Edad: "; cin>>_edad;
-    cout<<"Genero(M o F): "; cargarCadena(_genero,29);
     cout<<"Fecha nacimiento: "<<endl; _fechaNacimiento.cargar();
+    calcularEdad();
+    cout<<"Genero(M o F): "; cargarCadena(_genero,29);
 }
 
 void Persona::mostrarPersona()
@@ -44,7 +44,14 @@ void Persona::mostrarPersona()
     _fechaNacimiento.mostrar();
 }
 
+void Persona::calcularEdad(){
+Fecha fecha;
+// el contructor por defecto pone la fecha de hoy, por eso con get anio sale 2023
 
+_edad = fecha.getAnio() - _fechaNacimiento.getAnio();
+
+
+}
 
 void Persona::setNombre(char *nombre)
 {
