@@ -17,6 +17,7 @@ private:
     int _nombreDeporte;
     bool _pesas;
     int _controlDeIngresosPesas;
+    bool _estado;
 //bool boxeo;
 //bool yoga;
 
@@ -44,6 +45,8 @@ public:
     void setControl(int control);
     int getControl();
 
+    void setEstado(bool estado);
+    bool getEstado();
 
     void hacePesas();
     void establecerPlanMensual(int opcion);

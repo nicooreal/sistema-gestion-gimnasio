@@ -14,7 +14,7 @@ void listarClientesBox();
 void modificar() ;
 void mostrarPorDni();
 void mostrarTodos();
-
+void darBajaCliente();
 // void clienteBoxeo();
 
 

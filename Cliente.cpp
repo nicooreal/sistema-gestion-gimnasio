@@ -137,6 +137,16 @@ const char *Cliente::getNombreDeporte() // esto creo q esta mal, tendria q setea
 }
 
 
+void Cliente::setEstado(bool estado){
+_estado = estado;
+
+}
+
+bool Cliente::getEstado(){
+return _estado;
+}
+
+
 void Cliente::cargarCliente()
 {
     ClienteArchivo clienteArch;
@@ -153,16 +163,17 @@ void Cliente::cargarCliente()
     cout <<"OPCION 3 - 5 DPASE LIBRE $1400" << endl;
     cin >>opcionMensual;
     establecerPlanMensual(opcionMensual);
-    cout <<"SERVICIO DE PESAS:(ingrese 1-SI o 2-NO ):" << endl;
+    cout <<"SERVICIO DE PESAS:(ingrese 1-SI o 0-NO ):" << endl;
     cin >> _pesas;
     cout<<"NOMBRE DE LA ACTIVIDAD EXTRA (1 - BOXEO $1000, 2 - YOGA $1000, 3 - BOXEO Y YOGA $2500 4 - NINGUNA )"<<endl;
     cin>>_nombreDeporte;
     setNombreDeporte(_nombreDeporte);
-
+_estado = true;
 }
 
 void Cliente::mostrarCliente()
 {
+  if (_estado == true) {
     Persona::mostrarPersona();
     cout<<"Numero de socio "<<_numeroDeSocio<<endl;
     cout<<"Fecha de alta: "<<endl;
@@ -172,7 +183,9 @@ void Cliente::mostrarCliente()
     cout<<"Abono mensual: "<<_abonoMensual<<endl;
     cout<<"Fecha limite para pagar abono"<<endl;
     _fechaLimiteParaPagarAbono.mostrar();
+  }
 }
+
 
 
 void Cliente::establecerPlanMensual(int opc){

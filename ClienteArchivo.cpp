@@ -50,6 +50,7 @@ Cliente ClienteArchivo::leer(int nroRegistro) {
 }
 
 int ClienteArchivo::buscarRegistroCliente(char nombre[30])     {
+cout <<1;
 
     int cant = getCantidad();
     int x;
@@ -59,6 +60,7 @@ int ClienteArchivo::buscarRegistroCliente(char nombre[30])     {
             return x;
         }
     }
+    cout <<"no se encontro el registro" << endl;
     return -1;
     }
 
@@ -90,6 +92,7 @@ int ClienteArchivo::buscarRegistro()
 
     fclose(p);
     cout <<"No existe el numero de DNI" <<endl;
+    system("pause");
     return -2;
 }
 bool ClienteArchivo::editar(Cliente cliente, int nroRegistro) {

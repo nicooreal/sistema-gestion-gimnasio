@@ -19,6 +19,9 @@ void ClienteTareas::modificar()
     int numeroRegistro = _archivoCliente.buscarRegistro();
     if (numeroRegistro>=0)
     {
+        cout <<"el cliente que usted quiere modificar es: " << endl;
+        _archivoCliente.leer(numeroRegistro).mostrarCliente();
+        cout << endl;
         cout << "Modifique al cliente"<<endl;
         Cliente clienteModificado ;
         clienteModificado.cargarCliente();
@@ -102,6 +105,38 @@ cout <<"--------------------------------------"<< endl;
 }
 
 
+void ClienteTareas::darBajaCliente(){
+ int op;
+ int numeroRegistro = _archivoCliente.buscarRegistro();
+    if (numeroRegistro>=0)
+    {
+        cout <<"el cliente que usted quiere dar de baja es: " << endl;
+        _archivoCliente.leer(numeroRegistro).mostrarCliente();
+       system("pause");
+        cout <<"¿desea dar la baja?" <<endl;
+       cout <<"1 - SI o 2 - NO" << endl;
+        cin >> op;
+        if (op == 1) {
+        Cliente clienteEnBaja ;
+        clienteEnBaja.setEstado(false);
 
+        bool exito = _archivoCliente.editar(clienteEnBaja, numeroRegistro);
+        if (exito)
+        {
+            cout << "Registro dado de baja exitosamente." << endl;
+             system("pause");
+        }
+        else
+        {
+            cout << "No se pudo modificar el registro." << endl;
+        }
+
+
+    } else {    }
+
+
+    }
+
+}
 
 
