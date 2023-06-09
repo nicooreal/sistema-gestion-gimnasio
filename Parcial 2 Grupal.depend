@@ -175,11 +175,11 @@
 	"Persona.h"
 	"funciones.h"
 
-1686346433 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
+1686351796 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 	"ClienteArchivo.h"
 
-1686346244 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
+1686351432 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
 	<iostream>
 	"Persona.h"
 	"string.h"
@@ -404,7 +404,7 @@
 1685417996 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadotareas.cpp
 	"EmpleadoTareas.h"
 
-1686248735 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\gimnasiomenu.cpp
+1686352490 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\gimnasiomenu.cpp
 	"GimnasioMenu.h"
 	"marco_menu.h"
 	"rlutil.h"

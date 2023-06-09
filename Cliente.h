@@ -7,6 +7,16 @@ using namespace std;
 #include "Persona.h"
 #include "string.h"
 
+
+
+
+
+
+
+//clase boxeo, yoga y pago(vector dinamico, para calcular los anios minimos y maximos de los pagos)
+
+
+
 class Cliente : public Persona
 {
 private:
