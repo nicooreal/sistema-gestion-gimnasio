@@ -50,6 +50,7 @@ public:
 
     void hacePesas();
     void establecerPlanMensual(int opcion);
+    void calcularUnMesDeEntreno();
 //string getNombreActividad();
 //void setNombreDeActividad(string nombreAct);
 };

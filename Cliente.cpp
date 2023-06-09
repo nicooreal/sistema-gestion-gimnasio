@@ -147,6 +147,37 @@ return _estado;
 }
 
 
+void Cliente::calcularUnMesDeEntreno(){
+
+    Fecha fecha;
+    int dia, mes,anio;
+
+
+if (fecha.getMes() == 12) {
+    mes = 1;
+    anio = fecha.getAnio() + 1;
+    dia = fecha.getDia();
+}
+
+// falta ver lo del mes de Febrero y si es biciesto
+
+
+if (fecha.getDia() == 31) {dia = 30;} else {dia = fecha.getDia();}
+mes = fecha.getMes() + 1;
+anio = fecha.getAnio();
+
+
+
+
+
+    _fechaLimiteParaPagarAbono.setDia(dia);
+    _fechaLimiteParaPagarAbono.setMes(mes);
+    _fechaLimiteParaPagarAbono.setAnio(anio);
+
+        }
+
+
+
 void Cliente::cargarCliente()
 {
     ClienteArchivo clienteArch;
@@ -155,8 +186,9 @@ void Cliente::cargarCliente()
     Persona::cargarPersona(); // metodo de persona.h
     _numeroDeSocio = cantidadDeSocios + 1;
     _fechaDelAlta.fechaDeHoy();
-    cout<<"Fecha limite para pagar bono"<<endl;
-    _fechaLimiteParaPagarAbono.cargar(); // estaria bueno poder armar esta funcion para que se calcule y no haya que hacerlo manual
+    calcularUnMesDeEntreno();
+    //cout<<"Fecha limite para pagar bono"<<endl;
+    //_fechaLimiteParaPagarAbono.cargar(); // estaria bueno poder armar esta funcion para que se calcule y no haya que hacerlo manual
     cout <<"INGRESE LA OPCION(numero) PARA EL MONTO MENSUAL A PAGAR: " << endl;
     cout <<"OPCION 1 - 3 Dias - $1000" << endl;
     cout <<"OPCION 2 - 4 Dias - $1200" << endl;

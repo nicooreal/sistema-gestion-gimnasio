@@ -138,11 +138,11 @@
 	<iostream>
 	<string.h>
 
-1686252892 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\fecha.cpp
+1686346244 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\fecha.cpp
 	"Fecha.h"
 	<ctime>
 
-1686252383 c:\users\nico\documents\github\sistema-gestion-gimnasio\fecha.h
+1686346244 c:\users\nico\documents\github\sistema-gestion-gimnasio\fecha.h
 	<iostream>
 
 1683997244 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\funciones.cpp
@@ -175,11 +175,11 @@
 	"Persona.h"
 	"funciones.h"
 
-1686255880 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
+1686346433 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 	"ClienteArchivo.h"
 
-1686254569 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
+1686346244 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
 	<iostream>
 	"Persona.h"
 	"string.h"
