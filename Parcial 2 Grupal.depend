@@ -179,8 +179,10 @@
 	"Cliente.h"
 	"ClienteArchivo.h"
 
-1686351432 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
+1686533009 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
 	<iostream>
+	"Boxeo.h"
+	"Yoga.h"
 	"Persona.h"
 	"string.h"
 
@@ -678,4 +680,16 @@
 	<cstdio>
 	"marco_menu.h"
 	"rlutil.h"
+
+1686531260 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\boxeo.cpp
+	"Boxeo.h"
+
+1686530993 c:\users\nico\documents\github\sistema-gestion-gimnasio\boxeo.h
+	"Fecha.h"
+
+1686531545 c:\users\nico\documents\github\sistema-gestion-gimnasio\yoga.h
+	"Fecha.h"
+
+1686531531 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\yoga.cpp
+	"Yoga.h"
 
