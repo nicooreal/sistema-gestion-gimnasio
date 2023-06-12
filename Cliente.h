@@ -4,6 +4,8 @@
 #include <iostream>
 
 using namespace std;
+#include "Boxeo.h"
+#include "Yoga.h"
 #include "Persona.h"
 #include "string.h"
 
@@ -24,7 +26,9 @@ private:
     Fecha _fechaDelAlta;
     Fecha _fechaLimiteParaPagarAbono;
     float _abonoMensual;
-    int _nombreDeporte;
+    Boxeo _boxeo;
+    Yoga _yoga;
+    int _nombreDeporte; // no se usa mas, ponemos clase boxeo y yoga
     bool _pesas;
     int _controlDeIngresosPesas;
     bool _estado;
@@ -57,6 +61,9 @@ public:
 
     void setEstado(bool estado);
     bool getEstado();
+
+    Boxeo getBoxeo();
+    void setBoxeo(Boxeo boxeo);
 
     void hacePesas();
     void establecerPlanMensual(int opcion);

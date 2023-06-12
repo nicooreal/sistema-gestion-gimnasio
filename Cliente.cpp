@@ -44,6 +44,23 @@ void Cliente::setAbonoMensual(float abonoM)
     _abonoMensual = abonoM;
 }
 
+
+void Cliente::setBoxeo(Boxeo boxe)
+{
+
+    _boxeo = boxe;
+
+}
+
+
+Boxeo Cliente::getBoxeo()
+{
+
+    return _boxeo;
+
+}
+
+/*
 void Cliente::setNombreDeporte(int nombreDeporte)
 {
 
@@ -57,7 +74,7 @@ void Cliente::setNombreDeporte(int nombreDeporte)
     }
 
 }
-
+*/
 
 void Cliente::setPesas(bool pesas)
 {
@@ -78,7 +95,7 @@ bool Cliente::getPesas()
         cout<< "No realiza el servicio de pesas"<< endl;
     }
 
-return _pesas;
+    return _pesas;
 }
 
 
@@ -98,15 +115,17 @@ void Cliente::hacePesas()
 
 }
 
-void Cliente::setControl(int control){
+void Cliente::setControl(int control)
+{
 
-_controlDeIngresosPesas = control;
+    _controlDeIngresosPesas = control;
 
 }
 
-int Cliente::getControl(){
+int Cliente::getControl()
+{
 
-return _controlDeIngresosPesas;
+    return _controlDeIngresosPesas;
 
 }
 
@@ -137,34 +156,45 @@ const char *Cliente::getNombreDeporte() // esto creo q esta mal, tendria q setea
 }
 
 
-void Cliente::setEstado(bool estado){
-_estado = estado;
+void Cliente::setEstado(bool estado)
+{
+    _estado = estado;
 
 }
 
-bool Cliente::getEstado(){
-return _estado;
+bool Cliente::getEstado()
+{
+    return _estado;
 }
 
 
-void Cliente::calcularUnMesDeEntreno(){
+void Cliente::calcularUnMesDeEntreno()
+{
 
     Fecha fecha;
     int dia, mes,anio;
 
 
-if (fecha.getMes() == 12) {
-    mes = 1;
-    anio = fecha.getAnio() + 1;
-    dia = fecha.getDia();
-}
+    if (fecha.getMes() == 12)
+    {
+        mes = 1;
+        anio = fecha.getAnio() + 1;
+        dia = fecha.getDia();
+    }
 
 // falta ver lo del mes de Febrero y si es biciesto
 
 
-if (fecha.getDia() == 31) {dia = 30;} else {dia = fecha.getDia();}
-mes = fecha.getMes() + 1;
-anio = fecha.getAnio();
+    if (fecha.getDia() == 31)
+    {
+        dia = 30;
+    }
+    else
+    {
+        dia = fecha.getDia();
+    }
+    mes = fecha.getMes() + 1;
+    anio = fecha.getAnio();
 
 
 
@@ -174,7 +204,7 @@ anio = fecha.getAnio();
     _fechaLimiteParaPagarAbono.setMes(mes);
     _fechaLimiteParaPagarAbono.setAnio(anio);
 
-        }
+}
 
 
 
@@ -183,12 +213,11 @@ void Cliente::cargarCliente()
     ClienteArchivo clienteArch;
     int cantidadDeSocios = clienteArch.getCantidad();
     int opcionMensual;
+    int opcionExtra;
     Persona::cargarPersona(); // metodo de persona.h
     _numeroDeSocio = cantidadDeSocios + 1;
     _fechaDelAlta.fechaDeHoy();
     calcularUnMesDeEntreno();
-    //cout<<"Fecha limite para pagar bono"<<endl;
-    //_fechaLimiteParaPagarAbono.cargar(); // estaria bueno poder armar esta funcion para que se calcule y no haya que hacerlo manual
     cout <<"INGRESE LA OPCION(numero) PARA EL MONTO MENSUAL A PAGAR: " << endl;
     cout <<"OPCION 1 - 3 Dias - $1000" << endl;
     cout <<"OPCION 2 - 4 Dias - $1200" << endl;
@@ -198,33 +227,71 @@ void Cliente::cargarCliente()
     cout <<"SERVICIO DE PESAS:(ingrese 1-SI o 0-NO ):" << endl;
     cin >> _pesas;
     cout<<"NOMBRE DE LA ACTIVIDAD EXTRA (1 - BOXEO $1000, 2 - YOGA $1000, 3 - BOXEO Y YOGA $2500 4 - NINGUNA )"<<endl;
-    cin>>_nombreDeporte;
-    setNombreDeporte(_nombreDeporte);
-_estado = true;
+    cin >> opcionExtra;
+    if (opcionExtra == 1)
+    {
+        _boxeo.setActivo(true);
+       _yoga.setActivo(false);
+    }
+    if (opcionExtra == 2)
+    {
+        _yoga.setActivo(true);
+       _boxeo.setActivo(false);
+    }
+    if  (opcionExtra== 3)
+    {
+        _boxeo.setActivo(true);
+        _yoga.setActivo(true);
+    }
+    if (opcionExtra == 4)
+    {
+        _boxeo.setActivo(false);
+        _yoga.setActivo(false);
+    }
+
+
+
+
+    _estado = true;
 }
 
 void Cliente::mostrarCliente()
 {
-  if (_estado == true) {
-    Persona::mostrarPersona();
-    cout<<"Numero de socio "<<_numeroDeSocio<<endl;
-    cout<<"Fecha de alta: "<<endl;
-    _fechaDelAlta.mostrar();
-    cout <<"Servicio de pesas: " << endl;  hacePesas();
-    cout<<"Actividad extra: "<<getNombreDeporte() << endl;
-    cout<<"Abono mensual: "<<_abonoMensual<<endl;
-    cout<<"Fecha limite para pagar abono"<<endl;
-    _fechaLimiteParaPagarAbono.mostrar();
-  }
+    if (_estado == true)
+    {
+        Persona::mostrarPersona();
+        cout<<"Numero de socio "<<_numeroDeSocio<<endl;
+        cout<<"Fecha de alta: "<<endl;
+        _fechaDelAlta.mostrar();
+        cout <<"Servicio de pesas: " << endl;
+        hacePesas();
+        //cout<<"Actividad extra: "<<getNombreDeporte() << endl;                hay q cambiarlo por lo de las clases nuevas boxeo y yoga
+        cout<<"Abono mensual: "<<_abonoMensual<<endl;
+        cout<<"Fecha limite para pagar abono"<<endl;
+        _fechaLimiteParaPagarAbono.mostrar();
+    }
 }
 
 
 
-void Cliente::establecerPlanMensual(int opc){
+void Cliente::establecerPlanMensual(int opc)
+{
 
-if (opc == 1) {_abonoMensual = 1000; _controlDeIngresosPesas = 12; } // 12 xq viene 3 veces a la semana durante un mes
-if (opc == 2) {_abonoMensual = 1200; _controlDeIngresosPesas = 16; }
-if (opc == 3) {_abonoMensual = 1400; _controlDeIngresosPesas = 31; }
+    if (opc == 1)
+    {
+        _abonoMensual = 1000;    // 12 xq viene 3 veces a la semana durante un mes
+        _controlDeIngresosPesas = 12;
+    }
+    if (opc == 2)
+    {
+        _abonoMensual = 1200;
+        _controlDeIngresosPesas = 16;
+    }
+    if (opc == 3)
+    {
+        _abonoMensual = 1400;
+        _controlDeIngresosPesas = 31;
+    }
 
 
 }
