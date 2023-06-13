@@ -45,7 +45,7 @@ int cantidadDeClientes = clienteArch.getCantidad();
        Cliente cliente =  clienteArch.leer(i);
 
 
-        if ( strcmp( cliente.getNombreDeporte(), "boxeo") == 0 ){
+        if ( strcmp( "", "boxeo") == 0 ){ // este metodo hay que rehacerlo
 
 cliente.mostrarCliente();
 cout <<"----------------------------"<< endl;

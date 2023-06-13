@@ -28,7 +28,6 @@ private:
     float _abonoMensual;
     Boxeo _boxeo;
     Yoga _yoga;
-    int _nombreDeporte; // no se usa mas, ponemos clase boxeo y yoga
     bool _pesas;
     int _controlDeIngresosPesas;
     bool _estado;
@@ -48,7 +47,6 @@ public:
     void setAbonoMensual(float abonoM);
 
     void setNombreDeporte(int nombreDeporte);
-    const char *getNombreDeporte();
 
     void cargarCliente();
     void mostrarCliente();
@@ -67,6 +65,7 @@ public:
 
     void hacePesas();
     void establecerPlanMensual(int opcion);
+    void establecerOpcionExtra(int opcion);
     void calcularUnMesDeEntreno();
 //string getNombreActividad();
 //void setNombreDeActividad(string nombreAct);

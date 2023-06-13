@@ -1,6 +1,7 @@
 
 #include "Cliente.h"
 #include "ClienteArchivo.h"
+#include "Boxeo.h"
 
 int Cliente::getNumeroDeSocio()
 {
@@ -106,11 +107,11 @@ void Cliente::hacePesas()
     if ( _pesas == true)
     {
 
-        cout <<"Realiza el servicio de pesas" << endl;
+        cout <<"SI" << endl;
     }
     else
     {
-        cout<< "No realiza el servicio de pesas"<< endl;
+        cout<< "NO"<< endl;
     }
 
 }
@@ -130,30 +131,6 @@ int Cliente::getControl()
 }
 
 
-
-const char *Cliente::getNombreDeporte() // esto creo q esta mal, tendria q setearse al momento de cargarse, no cuando use el get.
-{
-    if(_nombreDeporte==1)
-    {
-        _abonoMensual += 1500;
-        return "boxeo";
-    }
-    else if(_nombreDeporte==2)
-    {
-        _abonoMensual+= 1500;
-        return "yoga";
-    }
-    else if(_nombreDeporte==3)
-    {
-        _abonoMensual+= 2000;
-        return "boxeo y yoga";
-    }
-    else
-    {
-        return "SIN ACTIVIDAD EXTRA";
-    }
-
-}
 
 
 void Cliente::setEstado(bool estado)
@@ -212,36 +189,68 @@ void Cliente::cargarCliente()
 {
     ClienteArchivo clienteArch;
     int cantidadDeSocios = clienteArch.getCantidad();
-    int opcionMensual;
+    int opcionMensual = 0;
     int opcionExtra;
     Persona::cargarPersona(); // metodo de persona.h
     _numeroDeSocio = cantidadDeSocios + 1;
     _fechaDelAlta.fechaDeHoy();
+    cout <<"SERVICIO DE PESAS:(ingrese 1-SI o 0-NO ):" << endl;
+    cin >> _pesas;
+    if ( _pesas == true )
+    {
+
     calcularUnMesDeEntreno();
     cout <<"INGRESE LA OPCION(numero) PARA EL MONTO MENSUAL A PAGAR: " << endl;
     cout <<"OPCION 1 - 3 Dias - $1000" << endl;
     cout <<"OPCION 2 - 4 Dias - $1200" << endl;
-    cout <<"OPCION 3 - 5 DPASE LIBRE $1400" << endl;
+    cout <<"OPCION 3 - 5 PASE LIBRE $1400" << endl;
     cin >>opcionMensual;
+    }
     establecerPlanMensual(opcionMensual);
-    cout <<"SERVICIO DE PESAS:(ingrese 1-SI o 0-NO ):" << endl;
-    cin >> _pesas;
-    cout<<"NOMBRE DE LA ACTIVIDAD EXTRA (1 - BOXEO $1000, 2 - YOGA $1000, 3 - BOXEO Y YOGA $2500 4 - NINGUNA )"<<endl;
+    cout<<"NOMBRE DE LA ACTIVIDAD EXTRA (1 - BOXEO $1000, 2 - YOGA $1000, 3 - BOXEO Y YOGA $1500 4 - NINGUNA )"<<endl;
     cin >> opcionExtra;
+
+establecerOpcionExtra(opcionExtra);
+
+
+
+    _estado = true;
+}
+
+void Cliente::establecerOpcionExtra(int opcionExtra){
+Fecha fecha;
+
     if (opcionExtra == 1)
     {
         _boxeo.setActivo(true);
-       _yoga.setActivo(false);
+        _boxeo.setFechaAlta(fecha);
+        _boxeo.setFechaLimitePago( fecha.calcularUnMesDeEntreno(fecha) );
+        _boxeo.setCuotaMensual(1000);
+
+        _yoga.setActivo(false);
+
     }
     if (opcionExtra == 2)
     {
         _yoga.setActivo(true);
+        _yoga.setFechaLimitePago(fecha.calcularUnMesDeEntreno(fecha) );
+        _yoga.setFechaAlta(fecha);
+        _yoga.setCuotaMensual(1000);
+
        _boxeo.setActivo(false);
     }
     if  (opcionExtra== 3)
     {
-        _boxeo.setActivo(true);
         _yoga.setActivo(true);
+        _yoga.setFechaLimitePago(fecha.calcularUnMesDeEntreno(fecha) );
+        _yoga.setFechaAlta(fecha);
+        _yoga.setCuotaMensual(750);
+
+        _boxeo.setActivo(true);
+        _boxeo.setFechaAlta(fecha);
+        _boxeo.setFechaLimitePago( fecha.calcularUnMesDeEntreno(fecha) );
+        _boxeo.setCuotaMensual(750);
+
     }
     if (opcionExtra == 4)
     {
@@ -249,11 +258,10 @@ void Cliente::cargarCliente()
         _yoga.setActivo(false);
     }
 
-
-
-
-    _estado = true;
 }
+
+
+
 
 void Cliente::mostrarCliente()
 {
@@ -261,17 +269,38 @@ void Cliente::mostrarCliente()
     {
         Persona::mostrarPersona();
         cout<<"Numero de socio "<<_numeroDeSocio<<endl;
-        cout<<"Fecha de alta: "<<endl;
+        cout<<"Fecha de alta: ";
         _fechaDelAlta.mostrar();
-        cout <<"Servicio de pesas: " << endl;
+        cout <<"Servicio de pesas: ";
         hacePesas();
-        //cout<<"Actividad extra: "<<getNombreDeporte() << endl;                hay q cambiarlo por lo de las clases nuevas boxeo y yoga
+       if ( _pesas == true ) {
         cout<<"Abono mensual: "<<_abonoMensual<<endl;
-        cout<<"Fecha limite para pagar abono"<<endl;
+        cout<<"Fecha limite para pagar abono: ";
         _fechaLimiteParaPagarAbono.mostrar();
+       }
+        cout << endl;
+
+        cout <<"ACTIVIDADES EXTRA: " << endl;
+         if (_boxeo.getActivo() == true  ) {
+           cout <<"BOXEO"<<endl;
+             cout << "fecha del alta: " ; _boxeo.getFechaAlta().mostrar();
+             cout << "cuota mensual: " << _boxeo.getCuotaMensual() << endl;
+             cout << "fecha limite para pagar: "; _boxeo.getFechaLimitePago().mostrar();
+         cout <<"------------------------------------"<< endl;
+         }
+               if (_yoga.getActivo() == true ) {
+             cout <<"YOGA" << endl;
+             cout << "fecha del alta: " ; _yoga.getFechaAlta().mostrar();
+             cout << "cuota mensual: " << _yoga.getCuotaMensual() << endl;
+             cout << "fecha limite para pagar: " ; _yoga.getFechaLimitePago().mostrar();
+
+
+
     }
 }
 
+
+}
 
 
 void Cliente::establecerPlanMensual(int opc)
@@ -294,6 +323,11 @@ void Cliente::establecerPlanMensual(int opc)
     }
 
 
+    if (opc == 0)
+    {
+        _abonoMensual = 0;
+        _controlDeIngresosPesas = 0;
+    }
 }
 
 /*string Cliente::getNombreActividad(){
