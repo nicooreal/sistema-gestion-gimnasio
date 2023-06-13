@@ -21,7 +21,7 @@ void setFechaAlta(Fecha fecha);
 Fecha getFechaLimitePago();
 void setFechaLimitePago(Fecha fecha);
 
-bool getCuotaMensual();
+float getCuotaMensual();
 void setCuotaMensual(float cuota);
 
 };

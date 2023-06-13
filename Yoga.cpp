@@ -42,7 +42,7 @@ _fechaLimitePago = fecha;
 
 }
 
-bool Yoga::getCuotaMensual(){
+float Yoga::getCuotaMensual(){
 
 return _cuotaMensual;
 

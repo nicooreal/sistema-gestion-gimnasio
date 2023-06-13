@@ -5,7 +5,7 @@ Boxeo::Boxeo(){
 Fecha fecha;
 _fechaAlta = fecha;
 _fechaLimitePago = fecha; // falta funcion para calcular;
-_cuotaMensual =  3000;
+_cuotaMensual =  0;
 
 }
 
@@ -43,7 +43,7 @@ _fechaLimitePago = fecha;
 
 }
 
-bool Boxeo::getCuotaMensual(){
+float Boxeo::getCuotaMensual(){
 
 return _cuotaMensual;
 

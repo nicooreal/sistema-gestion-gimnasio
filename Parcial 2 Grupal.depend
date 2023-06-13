@@ -138,11 +138,11 @@
 	<iostream>
 	<string.h>
 
-1686346244 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\fecha.cpp
+1686672369 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\fecha.cpp
 	"Fecha.h"
 	<ctime>
 
-1686346244 c:\users\nico\documents\github\sistema-gestion-gimnasio\fecha.h
+1686672369 c:\users\nico\documents\github\sistema-gestion-gimnasio\fecha.h
 	<iostream>
 
 1683997244 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\funciones.cpp
@@ -175,11 +175,12 @@
 	"Persona.h"
 	"funciones.h"
 
-1686351796 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
+1686677718 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 	"ClienteArchivo.h"
+	"Boxeo.h"
 
-1686533009 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
+1686668939 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
 	<iostream>
 	"Boxeo.h"
 	"Yoga.h"
@@ -471,7 +472,7 @@
 	<iostream>
 	<cstring>
 
-1686255641 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.cpp
+1686668939 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.cpp
 	"ClienteTareas.h"
 	"Cliente.h"
 	"ClienteArchivo.h"
@@ -681,15 +682,15 @@
 	"marco_menu.h"
 	"rlutil.h"
 
-1686531260 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\boxeo.cpp
+1686677555 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\boxeo.cpp
 	"Boxeo.h"
 
-1686530993 c:\users\nico\documents\github\sistema-gestion-gimnasio\boxeo.h
+1686677548 c:\users\nico\documents\github\sistema-gestion-gimnasio\boxeo.h
 	"Fecha.h"
 
-1686531545 c:\users\nico\documents\github\sistema-gestion-gimnasio\yoga.h
+1686677719 c:\users\nico\documents\github\sistema-gestion-gimnasio\yoga.h
 	"Fecha.h"
 
-1686531531 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\yoga.cpp
+1686677724 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\yoga.cpp
 	"Yoga.h"
 
