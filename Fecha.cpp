@@ -86,6 +86,44 @@ int Fecha::getAnio()
     return _anio;
 }
 
+Fecha Fecha::calcularUnMesDeEntreno(Fecha fech)
+{
+
+    int dia, mes,anio;
+
+
+    if (fech.getMes() == 12)
+    {
+        mes = 1;
+        anio = fech.getAnio() + 1;
+        dia = fech.getDia();
+    }
+
+// falta ver lo del mes de Febrero y si es biciesto
+
+
+    if (fech.getDia() == 31)
+    {
+        dia = 30;
+    }
+    else
+    {
+        dia = fech.getDia();
+    }
+    mes = fech.getMes() + 1;
+    anio = fech.getAnio();
+
+
+
+
+
+    fech.setDia(dia);
+    fech.setMes(mes);
+    fech.setAnio(anio);
+
+return fech;
+}
+
 
 
 
