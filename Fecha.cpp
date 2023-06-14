@@ -48,7 +48,6 @@ void Fecha::cargar()
     cout<<"Anio: "; cin>>_anio;
 
 
-
 }
 
 void Fecha::mostrar()

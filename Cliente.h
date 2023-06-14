@@ -43,6 +43,9 @@ public:
     Fecha getFechaDelAlta();
     void setFechaDelAlta(Fecha f);
 
+    Fecha getFechaLimiteParaPagarAbono();
+    void setFechaLimite(Fecha f);
+
     float getAbonoMensual();
     void setAbonoMensual(float abonoM);
 

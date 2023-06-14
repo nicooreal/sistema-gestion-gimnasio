@@ -100,7 +100,7 @@ bool ClienteArchivo::editar(Cliente cliente, int nroRegistro) {
     FILE* p = fopen(_nombreArchivo,"rb+");
     if (p== NULL) {
         cout << "No se pudo abrir el archivo." <<endl;
-        return 0;
+        return false;
     }
 
     fseek(p, nroRegistro * sizeof(Cliente),0);

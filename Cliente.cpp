@@ -144,6 +144,16 @@ bool Cliente::getEstado()
     return _estado;
 }
 
+Fecha Cliente::getFechaLimiteParaPagarAbono()
+{
+    return _fechaLimiteParaPagarAbono;
+}
+
+void Cliente::setFechaLimite(Fecha f)
+{
+    _fechaLimiteParaPagarAbono=f;
+}
+
 
 void Cliente::calcularUnMesDeEntreno()
 {

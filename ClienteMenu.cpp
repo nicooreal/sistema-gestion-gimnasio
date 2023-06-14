@@ -7,12 +7,12 @@
 void ClienteMenu::mostrar()
 {
     ClienteTareas clienteTareas;
-   // marco_menu marco;
+    // marco_menu marco;
     int opcion;
     do
     {
         system("cls");
-      // marco.mostrar_cliente();
+        // marco.mostrar_cliente();
         cout<<"----------------------------------"<<endl;
         cout<<"\tMENU CLIENTES"<<endl;
         cout<<"1 - CARGAR "<<endl;
@@ -39,21 +39,21 @@ void ClienteMenu::mostrar()
             clienteTareas.modificar();
             break;
         case 3:
-clienteTareas.mostrarTodos();
- system("pause");
+            clienteTareas.mostrarTodos();
+            system("pause");
             break;
         case 6:
-clienteTareas.mostrarPorDni();
- system("pause");
- break;
+            clienteTareas.mostrarPorDni();
+            system("pause");
+            break;
         case 7:
-clienteTareas.darBajaCliente();
+            clienteTareas.darBajaCliente();
             break;
         }
-      //  if(opcion!=0)
-     //   {
-      //      system("pause");
-      //  }
+        //  if(opcion!=0)
+        //   {
+        //      system("pause");
+        //  }
 
     }
     while(opcion!=0);

@@ -30,7 +30,7 @@ void Persona::cargarPersona()
     cout<<"DNI: "; cin>>_dni;
     cout<<"Fecha nacimiento: "<<endl; _fechaNacimiento.cargar();
     calcularEdad();
-    cout<<"Genero(M o F): "; cargarCadena(_genero,29);
+    cout<<"Genero: "; cargarCadena(_genero,29);
 }
 
 void Persona::mostrarPersona()
