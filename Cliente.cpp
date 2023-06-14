@@ -295,6 +295,7 @@ void Cliente::mostrarCliente()
         hacePesas();
        if ( _pesas == true ) {
         cout<<"Abono mensual: "<<_abonoMensual<<endl;
+        cout <<"Control de ingresos para pesas: " << _controlDeIngresosPesas << endl;
         cout<<"Fecha limite para pagar abono: ";
         _fechaLimiteParaPagarAbono.mostrar();
        }
