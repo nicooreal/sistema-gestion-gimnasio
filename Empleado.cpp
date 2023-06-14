@@ -6,16 +6,15 @@ using namespace std;
 Empleado::Empleado()
 {
     _id=0;
-    _numeroLegajo=0000;
     _sueldo=120000;
     _fechaIngreso.fechaDeHoy();
     strcpy(_especializacion,"Tareas Basicas");
 
 }
-Empleado::Empleado(int id,int numeroLegajo,float sueldo,Fecha fechaIngreso,const char *especializacion)
+Empleado::Empleado(int id,float sueldo,Fecha fechaIngreso,const char *especializacion)
 {
     _id=id;
-    _numeroLegajo=numeroLegajo;
+
     _sueldo=sueldo;
     _fechaIngreso=fechaIngreso;
     strcpy(_especializacion, especializacion);
@@ -31,14 +30,6 @@ int Empleado::getId()
     return _id;
 }
 
-void Empleado::setNumeroLegajo(int numeroLegajo)
-{
-    _numeroLegajo=numeroLegajo;
-}
-int Empleado::getnumLegajo()
-{
-    return _numeroLegajo;
-}
 
 void Empleado::setSueldo(float sueldo)
 {
@@ -69,8 +60,6 @@ const char* Empleado::getEspecializacion()
 void Empleado::cargarEmpleado()
 {
     cargarPersona();
-    cout <<"Numero de Legajo: "<<endl;
-    cin >> _numeroLegajo;
     cout <<"Sueldo: "<<endl;
     cin >> _sueldo;
     cout <<"Fecha De Ingreso: "<<endl;
@@ -81,7 +70,6 @@ void Empleado::cargarEmpleado()
 void Empleado::mostrarEmpleado()
 {
     mostrarPersona();
-    cout <<"El Legajo es "<<_numeroLegajo<<endl;
     cout <<"Con un sueldo de $ "<<_sueldo<<endl;
     cout <<"Ingreso el dia "    ;
     _fechaIngreso.mostrar();
