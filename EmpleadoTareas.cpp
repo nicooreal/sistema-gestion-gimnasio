@@ -47,11 +47,14 @@ void EmpleadoTareas::listarPorId()
 
 void EmpleadoTareas::modificar()
 {
-
+Empleado empleado;
 
     int numeroRegistro = _archivo.buscarRegistro();
     if (numeroRegistro>=0)
     {
+
+
+
         cout << "Modifique al empleado"<<endl;
         Empleado empleadoModificado ;
         empleadoModificado.cargarEmpleado();

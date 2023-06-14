@@ -316,5 +316,37 @@ GimnasioMenu gimMenu;
 }
 
 
+void ClienteTareas::mostrarClientesConFechaPorVencer(){
+
+Fecha fechaHoy;
+int cantidadRegistros =_archivoCliente.getCantidad();
+
+for (int i = 0; i < cantidadRegistros; i++){
+Cliente cliente =_archivoCliente.leer(i);
+
+if ( cliente.getFechaLimiteParaPagarAbono().getMes() == fechaHoy.getMes())
+{
+
+if ( cliente.getFechaLimiteParaPagarAbono().getDia() - fechaHoy.getDia() <= 7 ) {
+
+    cliente.mostrarCliente();
+
+}
+
+}
+
+if ( cliente.getFechaLimiteParaPagarAbono().getMes() > fechaHoy.getMes()) {
+
+    // incompleto, mejor habria q hacer un metodo para contar los dias del anio
 
 
+}
+
+
+
+
+}
+
+
+
+}
