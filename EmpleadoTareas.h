@@ -7,11 +7,14 @@ class EmpleadoTareas
 {
 private:
     EmpleadoArchivo _archivo;
+    int generarID();
 
 public:
     void cargar();
+    void listarRegistros();
     void listarEmpleadosPorAnio();
-    void modificar() ;
+    void modificar();
+    void borrarRegistros();
 
 };
 

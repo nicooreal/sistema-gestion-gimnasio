@@ -3,10 +3,27 @@
 void EmpleadoTareas::cargar()
 {
     Empleado reg;
+    int id=generarID();
+    cout<<"ID Empleado #"<<id<<endl;
+    reg.setId(id);
+    cout<<endl;
     reg.cargarEmpleado();
 
 
     _archivo.guardar(reg);
+}
+
+void EmpleadoTareas::listarRegistros()
+{
+    int cant=_archivo.cantidadEmpleados();
+    for(int i=0;i<cant;i++)
+    {
+
+        Empleado em=_archivo.leer(i);
+        cout<<"ID Empleado #"<<em.getId()<<endl;
+        em.mostrarEmpleado();
+        cout<<"---------------------------------------"<<endl;
+    }
 }
 
 void EmpleadoTareas::listarEmpleadosPorAnio()
@@ -40,4 +57,14 @@ void EmpleadoTareas::modificar()
             cout << "No se pudo modificar el registro." << endl;
         }
     }
+}
+
+void EmpleadoTareas::borrarRegistros()
+{
+    _archivo.vaciar();
+}
+
+int EmpleadoTareas::generarID()
+{
+    return _archivo.cantidadEmpleados()+1;
 }

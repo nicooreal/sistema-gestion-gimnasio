@@ -16,7 +16,7 @@ void EmpleadoMenu::mostrar()
         cout<<"2 - EDITAR "<<endl;
         cout<<"3 - LISTAR TODOS"<<endl;
         cout<<"4 - LISTAR POR ID"<<endl; /// Y MAS OPCIONES
-        cout<<"5 - LIMPIAR ARCHIVO"<<endl;
+        cout<<"5 - ELIMINAR TODOS LOS REGISTROS"<<endl;
         cout<<"6 - LISTAR EMPLEADOS QUE INGRESARON EN X ANIO"<<endl;
         cout<<"0 - SALIR"<<endl;
         cout<<"----------------------------------"<<endl;
@@ -31,6 +31,12 @@ void EmpleadoMenu::mostrar()
             break;
         case 2:
             _empleadoTareas.modificar();
+            break;
+        case 3:
+            _empleadoTareas.listarRegistros();
+            break;
+        case 5:
+            _empleadoTareas.borrarRegistros();
             break;
 
         case 6:

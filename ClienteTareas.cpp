@@ -5,7 +5,10 @@
 void ClienteTareas::cargar()
 {
 
+    int id=generarID();
     Cliente cliente;
+    cout<<"ID Cliente #"<<id<<endl;
+    cliente.setId(id);
     cliente.cargarCliente();
 
     _archivoCliente.guardar(cliente);
@@ -18,7 +21,10 @@ void ClienteTareas::modificar()
     if (numeroRegistro>=0)
     {
         cout <<"el cliente que usted quiere modificar es: " << endl;
-        _archivoCliente.leer(numeroRegistro).mostrarCliente();
+
+        Cliente cliente=_archivoCliente.leer(numeroRegistro);
+        cout<<"ID Cliente #"<<cliente.getId()<<endl;
+        cliente.mostrarCliente();
         cout << endl;
         cout << "Modifique al cliente"<<endl;
         Cliente clienteModificado;
@@ -49,7 +55,7 @@ void ClienteTareas::listarClientesBox()
 
         if ( strcmp( "", "boxeo") == 0 )  // este metodo hay que rehacerlo
         {
-
+            cout<<"ID Cliente #"<<cliente.getId()<<endl; /// AÑADI EL ID
             cliente.mostrarCliente();
             cout <<"----------------------------"<< endl;
 
@@ -76,7 +82,7 @@ void ClienteTareas::mostrarPorDni()
 
         if ( documento == cliente.getDni() )
         {
-
+            cout<<"ID Cliente #"<<cliente.getId()<<endl;
             cliente.mostrarCliente();
 
 
@@ -95,10 +101,14 @@ void ClienteTareas::mostrarTodos()
     for (int i = 0; i < cantidadDeClientes; i++ )
     {
         Cliente cliente = _archivoCliente.leer(i);
+        if(cliente.getEstado())/// HICE ESTA COMPARACION PARA VERIFICAR QUE HAYAN CLIENTES
+        {
+            cout<<"ID Cliente #"<<cliente.getId()<<endl;
+            cliente.mostrarCliente();
+            cout << endl;
+            cout <<"--------------------------------------"<< endl;
+        }
 
-        cliente.mostrarCliente();
-        cout << endl;
-        cout <<"--------------------------------------"<< endl;
 
     }
 
@@ -115,7 +125,9 @@ void ClienteTareas::darBajaCliente()
     if (numeroRegistro>=0)
     {
         cout <<"el cliente que usted quiere dar de baja es: " << endl;
-        _archivoCliente.leer(numeroRegistro).mostrarCliente();
+        Cliente em=_archivoCliente.leer(numeroRegistro);
+        cout<<"ID Cliente #"<<em.getId()<<endl;;
+        em.mostrarCliente();
         system("pause");
         cout <<"¿desea dar la baja?" <<endl;
         cout <<"1 - SI o 2 - NO" << endl;
@@ -129,7 +141,7 @@ void ClienteTareas::darBajaCliente()
             if (exito)
             {
                 cout << "Registro dado de baja exitosamente." << endl;
-                system("pause");
+
             }
             else
             {
@@ -177,7 +189,8 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             cout<<"OPCION: ";
             cin>>opcion;
             system("cls");
-        }while(opcion<0||opcion>11);
+        }
+        while(opcion<0||opcion>11);
 
 
 
@@ -247,6 +260,16 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
     }
     while(opcion!=0);
 
+}
+
+void ClienteTareas::limpiarArchivoClientes()
+{
+    _archivoCliente.vaciar();
+}
+
+int ClienteTareas::generarID()
+{
+    return _archivoCliente.getCantidad()+1;
 }
 
 

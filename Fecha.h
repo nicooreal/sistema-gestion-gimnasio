@@ -27,6 +27,7 @@ public:
     int getMes();
     int getAnio();
 
+
     int calcularAniosDeVida();
     Fecha calcularUnMesDeEntreno(Fecha fec);
 

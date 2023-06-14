@@ -21,7 +21,8 @@ void ClienteMenu::mostrar()
         cout<<"4 - LISTAR POR NUMERO DE SOCIO"<<endl;/// Y MAS OPCIONES
         cout<<"5 - LISTAR CLIENTES QUE PRACTICAN BOXEO"<<endl;
         cout<<"6 - BUSCAR "<<endl;
-        cout <<"7 - DAR DE BAJA UN CLIENTE" << endl;
+        cout<<"7 - DAR DE BAJA UN CLIENTE"<<endl;
+        cout<<"8 - ELIMINAR TODOS LOS REGISTROS"<<endl;
         cout<<"0 - SALIR"<<endl;
         cout<<"----------------------------------"<<endl;
         cout<<"OPCION: ";
@@ -40,20 +41,24 @@ void ClienteMenu::mostrar()
             break;
         case 3:
             clienteTareas.mostrarTodos();
-            system("pause");
+
             break;
         case 6:
             clienteTareas.mostrarPorDni();
-            system("pause");
+
             break;
         case 7:
             clienteTareas.darBajaCliente();
             break;
+        case 8:
+            clienteTareas.limpiarArchivoClientes();
+
+            break;
         }
-        //  if(opcion!=0)
-        //   {
-        //      system("pause");
-        //  }
+        if(opcion!=0)
+        {
+            system("pause");
+        }
 
     }
     while(opcion!=0);

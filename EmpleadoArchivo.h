@@ -21,6 +21,7 @@ public:
     int cantidadEmpleados();
     int buscarRegistro();
     bool editar(Empleado empleado, int nroRegistro);
+    void vaciar();
 
 };
 

@@ -126,3 +126,13 @@ bool EmpleadoArchivo::editar(Empleado empleado, int nroRegistro) {
     fclose(p);
     return ok;
 }
+
+void EmpleadoArchivo::vaciar()
+{
+    FILE *p=fopen(_nombreArchivo,"wb");
+    if(p==NULL)
+    {
+        return;
+    }
+    fclose(p);
+}

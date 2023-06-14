@@ -5,6 +5,7 @@ using namespace std;
 class Empleado: public Persona
 {
 private:
+    int _id;
     int   _numeroLegajo;
     float   _sueldo;
     Fecha _fechaIngreso;
@@ -13,7 +14,10 @@ private:
 
 public:
     Empleado();
-    Empleado(int numeroLegajo,float sueldo,Fecha fechaIngreso,const char* especializacion)  ;
+    Empleado(int id,int numeroLegajo,float sueldo,Fecha fechaIngreso,const char* especializacion)  ;
+
+    void setId(int id);
+    int getId();
 
     void setNumeroLegajo(int numeroLegajo) ;
     int getnumLegajo() ;

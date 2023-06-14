@@ -9,6 +9,7 @@ class ClienteTareas
 
    ClienteArchivo _archivoCliente;
    void elegirQueModificar(Cliente &clienteModificado);
+   int generarID();
 
     public:
 void cargar();
@@ -17,6 +18,7 @@ void modificar() ;
 void mostrarPorDni();
 void mostrarTodos();
 void darBajaCliente();
+void limpiarArchivoClientes();
 // void clienteBoxeo();
 
 

@@ -17,6 +17,7 @@ public:
     Cliente leer(int nroRegistro);
     int buscarRegistroCliente(char nombre[30]);
     int buscarRegistro();      // busc registros por dni
+    void vaciar();
 
 
 

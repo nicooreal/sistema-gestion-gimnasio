@@ -22,6 +22,7 @@ using namespace std;
 class Cliente : public Persona
 {
 private:
+    int _id;
     int _numeroDeSocio;
     Fecha _fechaDelAlta;
     Fecha _fechaLimiteParaPagarAbono;
@@ -37,6 +38,10 @@ private:
 //string _actividad;
 
 public:
+
+    void setId(int id);
+    int getId();
+
     int getNumeroDeSocio();
     void setNumeroDeSocio(int nSocio);
 
