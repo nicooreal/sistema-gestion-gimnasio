@@ -19,6 +19,7 @@ void mostrarPorDni();
 void mostrarTodos();
 void darBajaCliente();
 void limpiarArchivoClientes();
+void registrarIngresos();
 // void clienteBoxeo();
 
 

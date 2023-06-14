@@ -116,14 +116,14 @@ void Cliente::hacePesas()
 
 }
 
-void Cliente::setControl(int control)
+void Cliente::setControlIngresos(int control)
 {
 
     _controlDeIngresosPesas = control;
 
 }
 
-int Cliente::getControl()
+int Cliente::getControlIngresos()
 {
 
     return _controlDeIngresosPesas;

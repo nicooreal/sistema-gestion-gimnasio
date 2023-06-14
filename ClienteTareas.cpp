@@ -1,6 +1,7 @@
 #include "ClienteTareas.h"
 #include "Cliente.h"
 #include "ClienteArchivo.h"
+#include "GimnasioMenu.h"
 
 void ClienteTareas::cargar()
 {
@@ -271,5 +272,49 @@ int ClienteTareas::generarID()
 {
     return _archivoCliente.getCantidad()+1;
 }
+
+
+void ClienteTareas::registrarIngresos(){
+int documento;
+GimnasioMenu gimMenu;
+
+
+    cout <<"NUMERO DE DOCUMENTO: " << endl;
+
+
+    cin >> documento;
+    int cantidadDeClientes = _archivoCliente.getCantidad();
+
+
+    for (int i = 0; i < cantidadDeClientes; i++ )
+    {
+        Cliente cliente = _archivoCliente.leer(i);
+        int numeroRegistro = i;
+
+        if ( documento == cliente.getDni() )
+        {
+
+
+
+            cout <<"nombre: " << cliente.getNombre() <<endl;
+            cout <<"apellido: " <<cliente.getApellido() <<endl;
+            cout<<"ingresos restantes: "<< cliente.getControlIngresos() - 1 << endl;
+            cout <<"fecha de vencimento: "; cliente.getFechaLimiteParaPagarAbono().mostrar();
+
+            cliente.setControlIngresos( cliente.getControlIngresos() - 1);
+           _archivoCliente.editar(cliente,numeroRegistro);
+          break;
+        }
+
+    }
+
+
+
+
+
+
+}
+
+
 
 

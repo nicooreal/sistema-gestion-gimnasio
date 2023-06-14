@@ -62,8 +62,8 @@ public:
     void setPesas(bool pesas);
     bool getPesas();
 
-    void setControl(int control);
-    int getControl();
+    void setControlIngresos(int control);
+    int getControlIngresos();
 
     void setEstado(bool estado);
     bool getEstado();
