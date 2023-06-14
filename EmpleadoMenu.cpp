@@ -35,6 +35,9 @@ void EmpleadoMenu::mostrar()
         case 3:
             _empleadoTareas.listarRegistros();
             break;
+        case 4:
+            _empleadoTareas.listarPorId();
+            break;
         case 5:
             _empleadoTareas.borrarRegistros();
             break;

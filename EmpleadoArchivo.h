@@ -22,6 +22,10 @@ public:
     int buscarRegistro();
     bool editar(Empleado empleado, int nroRegistro);
     void vaciar();
+    void buscarPorID(int id);
+
+
+
 
 };
 

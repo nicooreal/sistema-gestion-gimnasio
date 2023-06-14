@@ -49,23 +49,51 @@ void EmpleadoArchivo::buscarPorAnio(int anio)
         return;
     }
 
-    bool verificar2023=false;
+    bool verificar=false;
 
     while(fread(&empleado,sizeof(Empleado),1,p)!=0)
     {
         if(anio==empleado.getFechaIngreso().getAnio())
         {
+            cout<<"ID Empleado #"<<empleado.getId()<<endl;
             empleado.mostrarEmpleado();
-            verificar2023=true;
+            verificar=true;
             cout<<endl;
         }
     }
-    if(!verificar2023)
+    if(!verificar)
     {
-        cout<<"NO EXISTEN EMPLEADOS QUE HAYAN INGRESADO EN EL 2023"<<endl;
+        cout<<"NO EXISTEN EMPLEADOS QUE HAYAN INGRESADO EN EL ANIO"<<anio<<endl;
     }
     fclose(p);
 
+
+}
+
+void EmpleadoArchivo::buscarPorID(int id)
+{
+    Empleado em;
+    FILE *p=fopen(_nombreArchivo,"rb");
+    if(p==NULL)
+    {
+        return;
+    }
+    bool verificar=false;
+
+    while(fread(&em,sizeof(Empleado),1,p)!=0)
+    {
+        if(em.getId()==id)
+        {
+            cout<<"ID Empleado #"<<em.getId()<<endl;
+            em.mostrarEmpleado();
+            verificar=true;
+        }
+    }
+
+    if(!verificar)
+    {
+        cout<<"NO EXISTEN EMPLEADOS CON EL ID "<<id<<endl;
+    }
 
 }
 

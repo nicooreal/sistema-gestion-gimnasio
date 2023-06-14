@@ -36,6 +36,15 @@ void EmpleadoTareas::listarEmpleadosPorAnio()
 
 }
 
+void EmpleadoTareas::listarPorId()
+{
+    int id;
+    cout<<"Ingrese el id"<<endl;
+    cin>>id;
+    _archivo.buscarPorID(id);
+
+}
+
 void EmpleadoTareas::modificar()
 {
 

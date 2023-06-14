@@ -15,6 +15,7 @@ public:
     void listarEmpleadosPorAnio();
     void modificar();
     void borrarRegistros();
+    void listarPorId();
 
 };
 
