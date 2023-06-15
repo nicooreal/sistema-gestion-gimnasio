@@ -40,7 +40,6 @@ Cliente ClienteArchivo::leer(int nroRegistro) {
     FILE* p;
     p = fopen(_nombreArchivo, "rb");
     if (p == NULL) {
-        cliente.setId(-1);
         return cliente;
     }
     fseek(p, nroRegistro * sizeof(Cliente),0);

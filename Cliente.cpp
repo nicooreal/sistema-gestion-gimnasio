@@ -154,15 +154,7 @@ void Cliente::setFechaLimite(Fecha f)
     _fechaLimiteParaPagarAbono=f;
 }
 
-void Cliente::setId(int id)
-{
-    _id=id;
-}
 
-int Cliente::getId()
-{
-    return _id;
-}
 
 
 void Cliente::calcularUnMesDeEntreno()

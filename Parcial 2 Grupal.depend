@@ -197,12 +197,12 @@
 	"Empleado.h"
 	"Programa.h"
 
-1686708027 source:c:\users\alexi\github\sistema-gestion-gimnasio\cliente.cpp
+1686791438 source:c:\users\alexi\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 	"ClienteArchivo.h"
 	"Boxeo.h"
 
-1686708009 c:\users\alexi\github\sistema-gestion-gimnasio\cliente.h
+1686791438 c:\users\alexi\github\sistema-gestion-gimnasio\cliente.h
 	<iostream>
 	"Boxeo.h"
 	"Yoga.h"
@@ -295,12 +295,12 @@
 
 1683254773 c:\users\nico\documents\github\sistema-gestion-gimnasio\include\cliente.h
 
-1686707175 c:\users\alexi\github\sistema-gestion-gimnasio\empleado.h
+1686791296 c:\users\alexi\github\sistema-gestion-gimnasio\empleado.h
 	"Persona.h"
 
 1684202729 c:\users\alexi\github\sistema-gestion-gimnasio\include\menugim.h
 
-1686707816 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleado.cpp
+1686791296 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleado.cpp
 	<iostream>
 	<cstdlib>
 	"Empleado.h"
@@ -361,7 +361,7 @@
 	"marco_menu.h"
 	"rlutil.h"
 
-1686706868 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadoarchivo.cpp
+1686710199 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadoarchivo.cpp
 	"EmpleadoArchivo.h"
 
 1686710061 c:\users\alexi\github\sistema-gestion-gimnasio\empleadoarchivo.h
@@ -369,7 +369,7 @@
 	<string.h>
 	"Empleado.h"
 
-1686710061 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
+1686791296 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
 	"EmpleadoTareas.h"
 
 1686709708 c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.h
@@ -752,15 +752,16 @@
 1686699031 source:c:\users\alexi\github\sistema-gestion-gimnasio\boxeo.cpp
 	"Boxeo.h"
 
-1686708182 c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.h
+1686791296 c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.h
 	"ClienteArchivo.h"
 	"funciones.h"
 
 1686699031 source:c:\users\alexi\github\sistema-gestion-gimnasio\yoga.cpp
 	"Yoga.h"
 
-1686709292 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.cpp
+1686791438 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.cpp
 	"ClienteTareas.h"
 	"Cliente.h"
 	"ClienteArchivo.h"
+	"GimnasioMenu.h"
 
