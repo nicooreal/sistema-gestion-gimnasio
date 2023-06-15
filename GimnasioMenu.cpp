@@ -2,11 +2,13 @@
 #include"marco_menu.h"
 #include "rlutil.h"
 #include "ClienteTareas.h"
+#include "PagoTareas.h"
 void GimnasioMenu::mostrar()
 {
    // marco_menu marco;
     int opcion;
     ClienteTareas clienteTareas;
+    PagoTareas pagoTareas;
     do
     {
      //   marco.mostrar_gimnasio();
@@ -27,7 +29,7 @@ void GimnasioMenu::mostrar()
         switch(opcion)
         {
         case 1:
-
+            pagoTareas.regPago();
             break;
 
         case 2:
@@ -35,6 +37,11 @@ clienteTareas.mostrarClientesConFechaPorVencer(); //metodo incompleto
             break;
 
         case 3:
+            pagoTareas.recaudacionAnual();
+
+            break;
+
+        case 4:
 clienteTareas.registrarIngresos();
 system("pause");
             break;
