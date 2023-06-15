@@ -48,6 +48,10 @@
 		<Unit filename="ClienteMenu.h" />
 		<Unit filename="ClienteTareas.cpp" />
 		<Unit filename="ClienteTareas.h" />
+		<Unit filename="ConfiguracionesMenu.cpp" />
+		<Unit filename="ConfiguracionesMenu.h" />
+		<Unit filename="CopiaDeSeguridadTareas.cpp" />
+		<Unit filename="CopiaDeSeguridadTareas.h" />
 		<Unit filename="Empleado.cpp" />
 		<Unit filename="Empleado.h" />
 		<Unit filename="EmpleadoArchivo.cpp" />

@@ -7,6 +7,7 @@ using namespace std;
 #include "ClienteMenu.h"
 #include "ProveedorMenu.h"
 #include "GimnasioMenu.h"
+#include "ConfiguracionesMenu.h"
 
 class Programa
 {
@@ -15,6 +16,7 @@ class Programa
         ClienteMenu _clienteMenu;
         ProveedorMenu _proveedorMenu;
         GimnasioMenu _gimnasioMenu;
+        ConfiguracionesMenu _configuracionMenu;
 
     public:
 

@@ -8,7 +8,7 @@ EmpleadoArchivo::EmpleadoArchivo()
     strcpy(_nombreArchivo,"empleados.dat");
 }
 
-EmpleadoArchivo::EmpleadoArchivo(char *nombreArchivo)
+EmpleadoArchivo::EmpleadoArchivo(const char *nombreArchivo)
 {
     strcpy(_nombreArchivo,nombreArchivo);
 }
@@ -36,6 +36,33 @@ Empleado EmpleadoArchivo::leer(int nroRegistro) {
     fclose(p);
     return empleado;
 
+}
+
+void EmpleadoArchivo::leerVector(Empleado *vec,int cantidadRegistros)
+{
+    FILE *p = fopen(_nombreArchivo, "rb");
+    if (p == NULL)
+    {
+        return;
+    }
+
+    fread(&vec[0], sizeof(Empleado), cantidadRegistros, p);
+    fclose(p);
+
+}
+
+bool EmpleadoArchivo::guardarVector(Empleado *vec,int cantidadRegistros)
+{
+
+    FILE *p = fopen(_nombreArchivo, "ab");
+    if (p == NULL)
+    {
+        return false;
+    }
+
+    int cantidadRegistrosEscritos=fwrite(&vec[0], sizeof(Empleado), cantidadRegistros, p);
+    fclose(p);
+    return cantidadRegistrosEscritos==cantidadRegistros;
 }
 
 void EmpleadoArchivo::buscarPorAnio(int anio)

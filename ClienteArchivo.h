@@ -10,7 +10,7 @@ private:
 
 public:
      ClienteArchivo();/// CONSTRUCTOR PARA PONER POR DEFECTO clientes.dat
-    ClienteArchivo(char *nombreArchivo);/// CONSTRUCTOR PARA ELEGIR ALGUN OTRO NOMBRE QUE NO SEA clientes.dat
+    ClienteArchivo(const char *nombreArchivo);/// CONSTRUCTOR PARA ELEGIR ALGUN OTRO NOMBRE QUE NO SEA clientes.dat
     int getCantidad();
     bool guardar(Cliente cliente);
     bool editar(Cliente cliente, int nroRegistro);
@@ -18,6 +18,8 @@ public:
     int buscarRegistroCliente(char nombre[30]);
     int buscarRegistro();      // busc registros por dni
     void vaciar();
+    void leerVector(Cliente *vec,int cantidadRegistros);
+    bool guardarVector(Cliente *vec,int cantidadRegistros);
 
 
 

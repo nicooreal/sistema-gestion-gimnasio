@@ -16,6 +16,7 @@ void Programa::ejecutar()
         cout<<"2 - CLIENTES"<<endl;
         cout<<"3 - PROVEEDORES"<<endl;
         cout<<"4 - GIMNASIO"<<endl; /// PODIAMOS INCLUIR CLASES COMO BACKUP Y RESTAURAR BACKUP PARA CADA UNA(Recomiendo ver la ultima clase de labo)
+        cout<<"5 - BACKUPS"<<endl;
         cout<<"0 - SALIR"<<endl;
         cout<<"--------------------------"<<endl;
         rlutil::locate(10,18);
@@ -36,6 +37,9 @@ void Programa::ejecutar()
             break;
         case 4:
             _gimnasioMenu.mostrar();
+            break;
+        case 5:
+            _configuracionMenu.mostrar();
             break;
 
         }

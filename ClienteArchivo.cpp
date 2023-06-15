@@ -8,7 +8,7 @@ ClienteArchivo::ClienteArchivo()
     strcpy(_nombreArchivo,"clientes.dat");
 }
 
-ClienteArchivo::ClienteArchivo(char *nombreArchivo)
+ClienteArchivo::ClienteArchivo(const char *nombreArchivo)
 {
     strcpy(_nombreArchivo,nombreArchivo);
 }
@@ -23,6 +23,33 @@ int ClienteArchivo::getCantidad()
     int cant = ftell(p) / sizeof(Cliente);
     fclose(p);
     return cant;
+}
+
+void ClienteArchivo::leerVector(Cliente *vec,int cantidadRegistros)
+{
+    FILE *p = fopen(_nombreArchivo, "rb");
+    if (p == NULL)
+    {
+        return;
+    }
+
+    fread(&vec[0], sizeof(Cliente), cantidadRegistros, p);
+    fclose(p);
+
+}
+
+bool ClienteArchivo::guardarVector(Cliente *vec,int cantidadRegistros)
+{
+
+    FILE *p = fopen(_nombreArchivo, "ab");
+    if (p == NULL)
+    {
+        return false;
+    }
+
+    int cantidadRegistrosEscritos=fwrite(&vec[0], sizeof(Cliente), cantidadRegistros, p);
+    fclose(p);
+    return cantidadRegistrosEscritos==cantidadRegistros;
 }
 
 bool ClienteArchivo::guardar(Cliente cliente) {
