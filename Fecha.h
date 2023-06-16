@@ -30,7 +30,7 @@ public:
 
     int calcularAniosDeVida();
     Fecha calcularUnMesDeEntreno(Fecha fec);
-
+    Fecha FechaInicial();
 };
 
 

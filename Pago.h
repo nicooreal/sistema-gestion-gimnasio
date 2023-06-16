@@ -1,16 +1,18 @@
 #ifndef PAGO_H
 #define PAGO_H
 #include "Cliente.h"
-
+#include "Fecha.h"
 class Pago
 {
     private:
-     Cliente pagoCliente;
+   int  _vAniosMeses[50][12];
 
     public:
-
      Pago();
-     void cargar();
+     int setRecaudacionAnual();
+     int getvAniosMeses() ;
+     void gsetvAniosMeses(int vAnMe[][12]) ;
+     void Mostrar();
 };
 
 #endif // PAGO_H

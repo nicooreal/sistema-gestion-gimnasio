@@ -9,8 +9,8 @@ class PagoTareas
     public:
         PagoTareas();
         void regPago();
-        int recaudacionAnual();
-        void Mostrar( int Vanual[]);
+        void recaudacionAnual();
+        void mostrarTodos();
 };
 
 #endif // PAGOTAREAS_H

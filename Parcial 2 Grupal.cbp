@@ -68,6 +68,8 @@
 		<Unit filename="GimnasioTareas.h" />
 		<Unit filename="Pago.cpp" />
 		<Unit filename="Pago.h" />
+		<Unit filename="PagoArchivos.cpp" />
+		<Unit filename="PagoArchivos.h" />
 		<Unit filename="PagoTareas.cpp" />
 		<Unit filename="PagoTareas.h" />
 		<Unit filename="Persona.cpp" />

@@ -123,6 +123,16 @@ Fecha Fecha::calcularUnMesDeEntreno(Fecha fech)
 return fech;
 }
 
+Fecha Fecha::FechaInicial(){
+    Fecha fechaIni;
+    fechaIni.setDia(1);
+    fechaIni.setMes(9);
+    fechaIni.setAnio(2022);
+
+    return fechaIni;
+}
+
+
 
 
 

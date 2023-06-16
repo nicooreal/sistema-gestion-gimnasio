@@ -5,10 +5,24 @@ using namespace std;
 #include "Cliente.h"
 Pago::Pago()
 {
-
+ //vAniosMeses[50][12]{};
 }
+ int Pago::getvAniosMeses() {
+ return _vAniosMeses[50][12]; // revisar
+ }
+ int Pago::setRecaudacionAnual(int vAnMe[][]){
+    _vAniosMeses[][12]= vAnMe[][12];
 
-void Pago::cargar() {
+ }
 
-}
-
+ void Pago::Mostrar(){
+     int  vAniosMeses[50][12] ;
+     int i;
+     for(i=0; i<50; i++)
+        {
+            for (int j=0; j<12; j++)
+            {
+                cout << vAniosMeses[i][j] <<endl;
+            }
+        }
+ }
