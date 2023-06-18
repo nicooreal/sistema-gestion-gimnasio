@@ -173,18 +173,17 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             cout<<"3 - MODIFICAR DNI"<<endl;
             cout<<"4 - MODIFICAR GENERO"<<endl;
             cout<<"5 - MODIFICAR FECHA NACIMIENTO"<<endl;
-            cout<<"6 - MODIFICAR NUMERO DE SOCIO"<<endl;
-            cout<<"7 - MODIFICAR FECHA DE ALTA"<<endl;
-            cout<<"8 - MODIFICAR FECHA LIMITE PARA PAGAR ABONO"<<endl;
-            cout<<"9 - MODIFICAR ABONO MENSUAL"<<endl;
-            cout<<"10 - MODIFICAR TODO EL REGISTRO"<<endl;
+            cout<<"6 - MODIFICAR FECHA DE ALTA"<<endl;
+            cout<<"7 - MODIFICAR FECHA LIMITE PARA PAGAR ABONO"<<endl;
+            cout<<"8 - MODIFICAR ABONO MENSUAL"<<endl;
+            cout<<"9 - MODIFICAR TODO EL REGISTRO"<<endl;
             cout<<"-------------------------------------"<<endl;
             cout<<"0 - SALIR"<<endl;
             cout<<"OPCION: ";
             cin>>opcion;
             system("cls");
         }
-        while(opcion<0||opcion>10);
+        while(opcion<0||opcion>9);
 
 
 
@@ -221,26 +220,21 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             clienteModificado.setFechaNacimiento(fechaNacimiento);
             break;
         case 6:
-            cout<<"Ingrese el nuevo numero de socio "<<endl;
-            cin>>numeroSocio;
-            clienteModificado.setNumeroDeSocio(numeroSocio);
-            break;
-        case 7:
             cout<<"Ingrese la nueva fecha de alta"<<endl;
             fechaAlta.cargar();
             clienteModificado.setFechaDelAlta(fechaAlta);
             break;
-        case 8:
+        case 7:
             cout<<"Ingrese la nueva fecha limite "<<endl;
             fechaLimiteParaPagarAbono.cargar();
             clienteModificado.setFechaLimite(fechaLimiteParaPagarAbono);
             break;
-        case 9:
+        case 8:
             cout<<"Ingrese el nuevo abono mensual"<<endl;
             cin>>abono;
             clienteModificado.setAbonoMensual(abono);
             break;
-        case 10:
+        case 9:
             cout<<"Ingrese el nuevo registro de Cliente"<<endl;
             clienteModificado.cargarCliente();
             break;
