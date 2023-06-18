@@ -22,9 +22,11 @@ public:
     int buscarRegistro();
     bool editar(Empleado empleado, int nroRegistro);
     void vaciar();
-    void buscarPorID(int id);
+    bool buscarPorID(int id);
     void leerVector(Empleado *vec,int cantidadRegistros);
     bool guardarVector(Empleado *vec,int cantidadRegistros);
+    void bajaLogica(int id);
+    int buscarRegistroPorId(int id);
 
 
 

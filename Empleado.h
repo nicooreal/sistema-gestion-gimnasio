@@ -8,11 +8,15 @@ private:
     int _id;
     float   _sueldo;
     Fecha _fechaIngreso;
-    char  _especializacion[30];
+    int _especializacion;
+    bool _estado;
 
 public:
     Empleado();
-    Empleado(int id,float sueldo,Fecha fechaIngreso,const char* especializacion)  ;
+    Empleado(int id,float sueldo,Fecha fechaIngreso,int especializacion,bool estado);
+
+    void setEstado(bool estado);
+    bool getEstado();
 
     void setId(int id);
     int getId();
@@ -23,11 +27,12 @@ public:
     void setFechaIngreso(Fecha fechaIngreso) ;
     Fecha getFechaIngreso();
 
-    void setEspecializacion(const char* especializacion);
-    const char* getEspecializacion() ;
+    void setEspecializacion(int especializacion);
+    char *getEspecializacion();
+
     void cargarEmpleado();
     void mostrarEmpleado();
-    Persona datosPersona; //para acceder a los get/set
+
 
 };
 

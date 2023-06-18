@@ -97,13 +97,13 @@ void EmpleadoArchivo::buscarPorAnio(int anio)
 
 }
 
-void EmpleadoArchivo::buscarPorID(int id)
+bool EmpleadoArchivo::buscarPorID(int id)
 {
     Empleado em;
     FILE *p=fopen(_nombreArchivo,"rb");
     if(p==NULL)
     {
-        return;
+        return false;
     }
     bool verificar=false;
 
@@ -117,9 +117,57 @@ void EmpleadoArchivo::buscarPorID(int id)
         }
     }
 
-    if(!verificar)
+    return verificar;
+
+}
+
+int EmpleadoArchivo::buscarRegistroPorId(int id)
+{
+    FILE *p=fopen(_nombreArchivo,"rb");
+    if(p==NULL)
     {
-        cout<<"NO EXISTEN EMPLEADOS CON EL ID "<<id<<endl;
+        return -1;
+    }
+    int pos=0;
+    for(int i=0;i<cantidadEmpleados();i++)
+    {
+        Empleado em=leer(i);
+        if(id==em.getId())
+        {
+            return pos;
+        }
+        pos++;
+    }
+    return -2;
+}
+
+
+void EmpleadoArchivo::bajaLogica(int id)
+{
+    FILE *p=fopen(_nombreArchivo,"rb+");
+    if(p==NULL)
+    {
+        return;
+    }
+
+    int nroRegistro=buscarRegistroPorId(id);
+    if(nroRegistro>=0)
+    {
+        cout<<"Va a eliminar el registro de empleado"<<endl;
+        Empleado em=leer(nroRegistro);
+        em.mostrarEmpleado();
+        cout<<endl;
+        em.setEstado(false);
+        fseek(p,sizeof(Empleado)*nroRegistro,0);
+        fwrite(&em,sizeof(Empleado),1,p);
+        fclose(p);
+
+    }else if(nroRegistro==-2)
+    {
+        cout<<"No existe ese ID"<<endl;
+    }else
+    {
+        cout<<"No se pudo abrir el archivo"<<endl;
     }
 
 }

@@ -27,6 +27,21 @@ public:
     int getMes();
     int getAnio();
 
+    bool operator>(Fecha fecha)
+    {
+        if(_anio>fecha.getAnio())
+        {
+            return true;
+        }else if(_anio==fecha.getAnio()&&_mes>fecha.getMes())
+        {
+            return true;
+        }else if(_anio==fecha.getAnio()&&_mes==fecha.getMes()&&_dia>fecha.getDia())
+        {
+            return true;
+        }
+        return false;
+    }
+
 
     int calcularAniosDeVida();
     Fecha calcularUnMesDeEntreno(Fecha fec);
