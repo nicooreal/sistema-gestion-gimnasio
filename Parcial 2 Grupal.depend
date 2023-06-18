@@ -112,7 +112,7 @@
 1683151931 c:\users\alexi\github\sistema-gestion-gimnasio\gimnasio.h
 	<iostream>
 
-1687130365 source:c:\users\alexi\github\sistema-gestion-gimnasio\persona.cpp
+1687131860 source:c:\users\alexi\github\sistema-gestion-gimnasio\persona.cpp
 	"Persona.h"
 	"funciones.h"
 
@@ -782,7 +782,7 @@
 1686699031 source:c:\users\alexi\github\sistema-gestion-gimnasio\yoga.cpp
 	"Yoga.h"
 
-1687130365 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.cpp
+1687131442 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.cpp
 	"ClienteTareas.h"
 	"Cliente.h"
 	"ClienteArchivo.h"

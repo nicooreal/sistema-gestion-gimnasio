@@ -25,12 +25,12 @@ void ClienteTareas::modificar()
         cliente.mostrarCliente();
         cout << endl;
         cout << "Modifique al cliente"<<endl;
-        Cliente clienteModificado;
-
-        elegirQueModificar(clienteModificado);
 
 
-        bool exito = _archivoCliente.editar(clienteModificado, numeroRegistro);
+        elegirQueModificar(cliente);
+
+
+        bool exito = _archivoCliente.editar(cliente, numeroRegistro);
         if (exito)
         {
             cout << "Registro modificado exitosamente." << endl;
@@ -171,21 +171,20 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             cout<<"1 - MODIFICAR NOMBRE"<<endl;
             cout<<"2 - MODIFICAR APELLIDO"<<endl;
             cout<<"3 - MODIFICAR DNI"<<endl;
-            cout<<"4 - MODIFICAR EDAD"<<endl;
-            cout<<"5 - MODIFICAR GENERO"<<endl;
-            cout<<"6 - MODIFICAR FECHA NACIMIENTO"<<endl;
-            cout<<"7 - MODIFICAR NUMERO DE SOCIO"<<endl;
-            cout<<"8 - MODIFICAR FECHA DE ALTA"<<endl;
-            cout<<"9 - MODIFICAR FECHA LIMITE PARA PAGAR ABONO"<<endl;
-            cout<<"10 - MODIFICAR ABONO MENSUAL"<<endl;
-            cout<<"11 - MODIFICAR TODO EL REGISTRO"<<endl;
+            cout<<"4 - MODIFICAR GENERO"<<endl;
+            cout<<"5 - MODIFICAR FECHA NACIMIENTO"<<endl;
+            cout<<"6 - MODIFICAR NUMERO DE SOCIO"<<endl;
+            cout<<"7 - MODIFICAR FECHA DE ALTA"<<endl;
+            cout<<"8 - MODIFICAR FECHA LIMITE PARA PAGAR ABONO"<<endl;
+            cout<<"9 - MODIFICAR ABONO MENSUAL"<<endl;
+            cout<<"10 - MODIFICAR TODO EL REGISTRO"<<endl;
             cout<<"-------------------------------------"<<endl;
             cout<<"0 - SALIR"<<endl;
             cout<<"OPCION: ";
             cin>>opcion;
             system("cls");
         }
-        while(opcion<0||opcion>11);
+        while(opcion<0||opcion>10);
 
 
 
@@ -207,11 +206,6 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             clienteModificado.setDni(dni);
             break;
         case 4:
-            cout<<"Ingrese la nueva edad "<<endl;
-            cin>>edad;
-            clienteModificado.setEdad(edad);
-            break;
-        case 5:
             do
             {
                 cout<<"Ingrese el nuevo genero(M - MASCULINO, F - FEMENINO) "<<endl;
@@ -221,32 +215,32 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
 
             clienteModificado.setSexo(genero);
             break;
-        case 6:
+        case 5:
             cout<<"Ingrese la nueva fecha de nacimiento "<<endl;
             fechaNacimiento.cargar();
             clienteModificado.setFechaNacimiento(fechaNacimiento);
             break;
-        case 7:
+        case 6:
             cout<<"Ingrese el nuevo numero de socio "<<endl;
             cin>>numeroSocio;
             clienteModificado.setNumeroDeSocio(numeroSocio);
             break;
-        case 8:
+        case 7:
             cout<<"Ingrese la nueva fecha de alta"<<endl;
             fechaAlta.cargar();
             clienteModificado.setFechaDelAlta(fechaAlta);
             break;
-        case 9:
+        case 8:
             cout<<"Ingrese la nueva fecha limite "<<endl;
             fechaLimiteParaPagarAbono.cargar();
             clienteModificado.setFechaLimite(fechaLimiteParaPagarAbono);
             break;
-        case 10:
+        case 9:
             cout<<"Ingrese el nuevo abono mensual"<<endl;
             cin>>abono;
             clienteModificado.setAbonoMensual(abono);
             break;
-        case 11:
+        case 10:
             cout<<"Ingrese el nuevo registro de Cliente"<<endl;
             clienteModificado.cargarCliente();
             break;

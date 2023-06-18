@@ -26,15 +26,20 @@ void Persona::cargarPersona()
 {
     cout<<"Nombre: ";
     cargarCadena(_nombre,29);
-    cout<<"Apellido: "; cargarCadena(_apellido,29);
-    cout<<"DNI: "; cin>>_dni;
-    cout<<"Fecha nacimiento: "<<endl; _fechaNacimiento.cargar();
+    cout<<"Apellido: ";
+    cargarCadena(_apellido,29);
+    cout<<"DNI: ";
+    cin>>_dni;
+    cout<<"Fecha nacimiento: "<<endl;
+    _fechaNacimiento.cargar();
     calcularEdad();
     do
     {
-        cout<<"Genero(M - MASCULINO, F - FEMENINO): "; cin>>_genero;
+        cout<<"Genero(M - MASCULINO, F - FEMENINO): ";
+        cin>>_genero;
 
-    }while(_genero!='F'&&_genero!='f'&&_genero!='m'&&_genero!='M');
+    }
+    while(_genero!='F'&&_genero!='f'&&_genero!='m'&&_genero!='M');
 }
 
 void Persona::mostrarPersona()
@@ -48,12 +53,16 @@ void Persona::mostrarPersona()
     _fechaNacimiento.mostrar();
 }
 
-void Persona::calcularEdad(){
-Fecha fecha;
+void Persona::calcularEdad()
+{
+    Fecha fecha;
 // el contructor por defecto pone la fecha de hoy, por eso con get anio sale 2023
 
-_edad = fecha.getAnio() - _fechaNacimiento.getAnio();
-
+    _edad = fecha.getAnio() - _fechaNacimiento.getAnio();
+    if(fecha.getMes()<_fechaNacimiento.getMes()||fecha.getMes()==_fechaNacimiento.getMes()&&fecha.getDia()<_fechaNacimiento.getDia())
+    {
+        _edad--;
+    }
 
 }
 
