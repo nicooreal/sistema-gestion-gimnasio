@@ -21,6 +21,7 @@ public:
     void listarRegistros();
     void listarEmpleadosPorAnio();
     void listarOrdenadosPorNombre();
+    void listarOrdenadosPorApellido();
     void listarPorEdad();
     void listarPorSueldo();
     void listarEmpleadosDadosDeBaja();

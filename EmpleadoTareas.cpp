@@ -13,10 +13,11 @@ void EmpleadoTareas::listados()
             cout<<"--------------------------------------------"<<endl;
             cout<<"1 - TODOS LOS REGISTROS"<<endl;
             cout<<"2 - POR NOMBRE"<<endl;
-            cout<<"3 - POR ANIO"<<endl;
-            cout<<"4 - POR EDAD"<<endl;
-            cout<<"5 - POR SUELDO "<<endl;
-            cout<<"6 - DADOS DE BAJA"<<endl;
+            cout<<"3 - POR APELLIDO"<<endl;
+            cout<<"4 - POR ANIO"<<endl;
+            cout<<"5 - POR EDAD"<<endl;
+            cout<<"6 - POR SUELDO "<<endl;
+            cout<<"7 - DADOS DE BAJA"<<endl;
             cout<<"0 - SALIR"<<endl;
             cout<<"--------------------------------------------"<<endl;
             cout<<"OPCION: ";
@@ -24,7 +25,7 @@ void EmpleadoTareas::listados()
             system("cls");
 
         }
-        while(opcion<0||opcion>6);
+        while(opcion<0||opcion>7);
         switch(opcion)
         {
         case 1:
@@ -34,15 +35,18 @@ void EmpleadoTareas::listados()
             listarOrdenadosPorNombre();
             break;
         case 3:
-            listarEmpleadosPorAnio();
+            listarOrdenadosPorApellido();
             break;
         case 4:
-            listarPorEdad();
+            listarEmpleadosPorAnio();
             break;
         case 5:
-            listarPorSueldo();
+            listarPorEdad();
             break;
         case 6:
+            listarPorSueldo();
+            break;
+        case 7:
             listarEmpleadosDadosDeBaja();
             break;
         }
@@ -134,6 +138,86 @@ void EmpleadoTareas::listarOrdenadosPorNombre()
             for(int x=i+1; x<cantidad; x++)
             {
                 if(strcmp(vEmpleados[x].getNombre(),vEmpleados[menor].getNombre())<0)
+                {
+                    menor=x;
+                }
+            }
+            if(menor!=i)
+            {
+                aux=vEmpleados[i];
+                vEmpleados[i]=vEmpleados[menor];
+                vEmpleados[menor]=aux;
+            }
+        }
+
+
+    }
+
+    for(int i=0; i<cantidad; i++)
+    {
+        cout<<"ID Empleados #"<<vEmpleados[i].getId()<<endl;
+        vEmpleados[i].mostrarEmpleado();
+        cout<<endl;
+    }
+
+    delete []vEmpleados;
+}
+
+void EmpleadoTareas::listarOrdenadosPorApellido()
+{
+    int orden;
+    do
+    {
+        cout<<"Ingrese el orden(1 - Ordenados de mayor a menor, 2 - Ordenados de menor a mayor)"<<endl;
+        cin>>orden;
+    }
+    while(orden<1||orden>2);
+    EmpleadoArchivo archivo("empleados.dat");
+
+    int cantidad=archivo.cantidadEmpleados();
+    Empleado *vEmpleados=new Empleado[cantidad];
+    Empleado aux;
+    if(vEmpleados==NULL)
+    {
+        cout<<"Error al intentar cargar el vector dinamico"<<endl;
+        return;
+    }
+    archivo.leerVector(vEmpleados,cantidad);
+
+    if(orden==1)
+    {
+        int mayor=0;
+
+        for(int i=0; i<cantidad-1; i++)
+        {
+            mayor=i;
+            for(int x=i+1; x<cantidad; x++)
+            {
+                if(strcmp(vEmpleados[x].getApellido(),vEmpleados[mayor].getApellido())>0)
+                {
+                    mayor=x;
+                }
+            }
+            if(mayor!=i)
+            {
+                aux=vEmpleados[i];
+                vEmpleados[i]=vEmpleados[mayor];
+                vEmpleados[mayor]=aux;
+            }
+        }
+
+
+    }
+    else
+    {
+        int menor=0;
+
+        for(int i=0; i<cantidad-1; i++)
+        {
+            menor=i;
+            for(int x=i+1; x<cantidad; x++)
+            {
+                if(strcmp(vEmpleados[x].getApellido(),vEmpleados[menor].getApellido())<0)
                 {
                     menor=x;
                 }

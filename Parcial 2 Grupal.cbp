@@ -74,8 +74,6 @@
 		<Unit filename="Persona.h" />
 		<Unit filename="Programa.cpp" />
 		<Unit filename="Programa.h" />
-		<Unit filename="ProveedorMenu.cpp" />
-		<Unit filename="ProveedorMenu.h" />
 		<Unit filename="Yoga.cpp" />
 		<Unit filename="Yoga.h" />
 		<Unit filename="funciones.cpp" />
