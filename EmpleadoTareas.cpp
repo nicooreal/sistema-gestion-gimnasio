@@ -1,4 +1,5 @@
 #include "EmpleadoTareas.h"
+#include "funciones.h"
 
 void EmpleadoTareas::listados()
 {
@@ -305,7 +306,7 @@ void EmpleadoTareas::listarPorSueldo()
         }
     }
 
-    for(int i=0;i<cantidad;i++)
+    for(int i=0; i<cantidad; i++)
     {
         cout<<"ID Empleado #"<<vEmpleados[i].getId()<<endl;
         vEmpleados[i].mostrarEmpleado();
@@ -323,7 +324,7 @@ void EmpleadoTareas::listarEmpleadosDadosDeBaja()
     int cantidad=archivo.cantidadEmpleados();
     Empleado em;
 
-    for(int i=0;i<cantidad;i++)
+    for(int i=0; i<cantidad; i++)
     {
         em=archivo.leer(i);
         if(em.getEstado()==false)
@@ -346,7 +347,51 @@ void EmpleadoTareas::darDeBajaEmpleado()
 
 void EmpleadoTareas::consultas()
 {
+    int opcion;
+    do
+    {
+        do
+        {
+            system("cls");
+            cout<<"\tCONSULTAS"<<endl;
+            cout<<"---------------------------------"<<endl;
+            cout<<"1 - BUSCAR POR ID"<<endl;
+            cout<<"2 - BUSCAR POR DNI"<<endl;
+            cout<<"3 - BUSCAR POR NOMBRE"<<endl;
+            cout<<"4 - BUSCAR POR APELLIDO"<<endl;
+            cout<<"5 - BUSCAR POR EDAD"<<endl;
+            cout<<"0 - SALIR"<<endl;
+            cout<<"---------------------------------"<<endl;
+            cout<<"OPCION: ";
+            cin>>opcion;
+            system("cls");
+        }
+        while(opcion<0||opcion>5);
+        switch(opcion)
+        {
+        case 1:
+            consultaPorId();
+            break;
+        case 2:
+            consultaPorDni();
+            break;
+        case 3:
+            consultaPorNombre();
+            break;
+        case 4:
+            consultaPorApellido();
+            break;
+        case 5:
+            consultaPorEdad();
+            break;
+        }
+        if(opcion!=0)
+        {
+            system("pause");
+        }
 
+    }
+    while(opcion!=0);
 }
 
 void EmpleadoTareas::consultaPorId()
@@ -354,8 +399,71 @@ void EmpleadoTareas::consultaPorId()
     int id;
     cout<<"Ingrese el id"<<endl;
     cin>>id;
-    _archivo.buscarPorID(id);
+    if(_archivo.buscarPorID(id)>0)
+    {
+        cout<<"ID Encontrado!"<<endl<<endl;
+    }else
+    {
+        cout<<"No existe ese ID o no se pudo abrir el archivo"<<endl;
+    }
 
+}
+
+void EmpleadoTareas::consultaPorDni()
+{
+    int dni;
+    cout<<"Ingrese el DNI"<<endl;
+    cin>>dni;
+    if(_archivo.buscarPorDni(dni)>0)
+    {
+        cout<<"DNI Encontrado!"<<endl<<endl;
+    }else
+    {
+        cout<<"No existe ese DNI O no se pudo abrir el archivo"<<endl;
+    }
+}
+
+void EmpleadoTareas::consultaPorNombre()
+{
+    char nombre[30];
+    cout<<"Ingrese el nombre"<<endl;
+    cargarCadena(nombre,29);
+    if(_archivo.buscarPorNombre(nombre)>0)
+    {
+        cout<<"NOMBRE Encontrado!"<<endl<<endl;
+    }else
+    {
+        cout<<"No existe ese nombre o no se pudo abrir el archivo"<<endl;
+    }
+
+}
+
+void EmpleadoTareas::consultaPorApellido()
+{
+    char apellido[30];
+    cout<<"Ingrese el apellido"<<endl;
+    cargarCadena(apellido,29);
+    if(_archivo.buscarPorApellido(apellido)>0)
+    {
+        cout<<"APELLIDO Encontrado!"<<endl<<endl;
+    }else
+    {
+        cout<<"No existe ese apellido o no se pudo abrir el archivo"<<endl;
+    }
+}
+
+void EmpleadoTareas::consultaPorEdad()
+{
+    int edad;
+    cout<<"Ingrese la edad"<<endl;
+    cin>>edad;
+    if(_archivo.buscarPorEdad(edad)>0)
+    {
+        cout<<"EDAD Encontrada!"<<endl<<endl;
+    }else
+    {
+        cout<<"No existe esa edad o no se pudo abrir el archivo"<<endl;
+    }
 }
 
 

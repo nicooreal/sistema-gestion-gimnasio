@@ -28,6 +28,10 @@ public:
 
     void consultas();
     void consultaPorId();
+    void consultaPorDni();
+    void consultaPorNombre();
+    void consultaPorApellido();
+    void consultaPorEdad();
 
 
 };

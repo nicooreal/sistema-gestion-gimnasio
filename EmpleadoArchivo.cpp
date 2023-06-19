@@ -97,15 +97,15 @@ void EmpleadoArchivo::buscarPorAnio(int anio)
 
 }
 
-bool EmpleadoArchivo::buscarPorID(int id)
+int EmpleadoArchivo::buscarPorID(int id)
 {
     Empleado em;
     FILE *p=fopen(_nombreArchivo,"rb");
     if(p==NULL)
     {
-        return false;
+        return -1;
     }
-    bool verificar=false;
+
 
     while(fread(&em,sizeof(Empleado),1,p)!=0)
     {
@@ -113,12 +113,98 @@ bool EmpleadoArchivo::buscarPorID(int id)
         {
             cout<<"ID Empleado #"<<em.getId()<<endl;
             em.mostrarEmpleado();
-            verificar=true;
+            cout<<endl;
+            fclose(p);
+            return 1;
         }
     }
+    fclose(p);
+    return 0;
 
-    return verificar;
+}
 
+int EmpleadoArchivo::calcularEdad(Fecha fechaNacimiento)
+{
+    Fecha fecha;
+// el contructor por defecto pone la fecha de hoy, por eso con get anio sale 2023
+
+    int edad = fecha.getAnio() - fechaNacimiento.getAnio();
+    if(fecha.getMes()<fechaNacimiento.getMes()||fecha.getMes()==fechaNacimiento.getMes()&&fecha.getDia()<fechaNacimiento.getDia())
+    {
+        edad--;
+    }
+    return edad;
+}
+
+
+
+int EmpleadoArchivo::buscarPorEdad(int edad)
+{
+    FILE *p=fopen(_nombreArchivo,"rb");
+    if(p==NULL)
+    {
+        return -1;
+    }
+
+    for(int i=0;i<cantidadEmpleados();i++)
+    {
+        Empleado em=leer(i);
+
+        if(edad==calcularEdad(em.getFechaNacimiento()))
+        {
+            cout<<"ID Empleado #"<<em.getId()<<endl;
+            em.mostrarEmpleado();
+            fclose(p);
+            return 1;
+        }
+    }
+    fclose(p);
+    return 0;
+}
+
+int EmpleadoArchivo::buscarPorNombre(char *nombre)
+{
+    FILE *p=fopen(_nombreArchivo,"rb");
+    if(p==NULL)
+    {
+        return -1;
+    }
+
+    for(int i=0;i<cantidadEmpleados();i++)
+    {
+        Empleado em=leer(i);
+        if(strcmp(nombre,em.getNombre())==0)
+        {
+            cout<<"ID Empleado #"<<em.getId()<<endl;
+            em.mostrarEmpleado();
+            fclose(p);
+            return 1;
+        }
+    }
+    fclose(p);
+    return 0;
+}
+
+int EmpleadoArchivo::buscarPorApellido(char *apellido)
+{
+    FILE *p=fopen(_nombreArchivo,"rb");
+    if(p==NULL)
+    {
+        return -1;
+    }
+    for(int i=0;i<cantidadEmpleados();i++)
+    {
+        Empleado em=leer(i);
+        if(strcmp(apellido,em.getApellido())==0)
+        {
+            cout<<"ID Empleado #"<<em.getId()<<endl;
+            em.mostrarEmpleado();
+            fclose(p);
+            return 1;
+        }
+    }
+    fclose(p);
+    return 0;
 }
 
 int EmpleadoArchivo::buscarRegistroPorId(int id)
@@ -134,10 +220,12 @@ int EmpleadoArchivo::buscarRegistroPorId(int id)
         Empleado em=leer(i);
         if(id==em.getId())
         {
+            fclose(p);
             return pos;
         }
         pos++;
     }
+    fclose(p);
     return -2;
 }
 
@@ -183,8 +271,34 @@ int EmpleadoArchivo::cantidadEmpleados()
 
     fseek(p,0,2);
     int cant=ftell(p);
+    fclose(p);
     return cant/sizeof(Empleado);/// PARA SABER LA CANTIDAD DE EMPLEADOS
 }
+
+int EmpleadoArchivo::buscarPorDni(int dni)
+{
+    FILE *p=fopen(_nombreArchivo,"rb");
+    if(p==NULL)
+    {
+        return -1;
+    }
+
+    for(int i=0;i<cantidadEmpleados();i++)
+    {
+        Empleado em=leer(i);
+        if(dni==em.getDni())
+        {
+            cout<<"ID Empleado #"<<em.getId()<<endl;
+            em.mostrarEmpleado();
+            cout<<endl;
+            fclose(p);
+            return 1;
+        }
+    }
+    fclose(p);
+    return 0;
+}
+
 int EmpleadoArchivo::buscarRegistro()
 {
     int numeroRegistro,dni;
@@ -204,7 +318,7 @@ int EmpleadoArchivo::buscarRegistro()
     {
         if (empleado.getDni ()==dni)
         {
-
+            fclose(p);
             return numeroRegistro;
         }
             numeroRegistro++;

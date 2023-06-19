@@ -367,18 +367,19 @@
 	"marco_menu.h"
 	"rlutil.h"
 
-1687128802 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadoarchivo.cpp
+1687139445 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadoarchivo.cpp
 	"EmpleadoArchivo.h"
 
-1687128404 c:\users\alexi\github\sistema-gestion-gimnasio\empleadoarchivo.h
+1687139473 c:\users\alexi\github\sistema-gestion-gimnasio\empleadoarchivo.h
 	<iostream>
 	<string.h>
 	"Empleado.h"
 
-1687129205 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
+1687139517 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
 	"EmpleadoTareas.h"
+	"funciones.h"
 
-1687127875 c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.h
+1687139282 c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.h
 	"EmpleadoArchivo.h"
 
 1684461143 source:c:\users\alexi\github\sistema-gestion-gimnasio\gimnasiotareas.cpp
@@ -782,7 +783,7 @@
 1686699031 source:c:\users\alexi\github\sistema-gestion-gimnasio\yoga.cpp
 	"Yoga.h"
 
-1687131442 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.cpp
+1687132260 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.cpp
 	"ClienteTareas.h"
 	"Cliente.h"
 	"ClienteArchivo.h"
