@@ -232,6 +232,7 @@ int EmpleadoArchivo::buscarRegistroPorId(int id)
 
 void EmpleadoArchivo::bajaLogica(int id)
 {
+int opcion = 0;
     FILE *p=fopen(_nombreArchivo,"rb+");
     if(p==NULL)
     {
@@ -241,14 +242,20 @@ void EmpleadoArchivo::bajaLogica(int id)
     int nroRegistro=buscarRegistroPorId(id);
     if(nroRegistro>=0)
     {
-        cout<<"Va a eliminar el registro de empleado"<<endl;
+        cout<<"Va a eliminar el registro de empleado, esta seguro? (1- SI o 0 - NO)"<<endl;
         Empleado em=leer(nroRegistro);
         em.mostrarEmpleado();
         cout<<endl;
+        cin >> opcion;
+        if ( opcion = 1)  {
+
         em.setEstado(false);
         fseek(p,sizeof(Empleado)*nroRegistro,0);
         fwrite(&em,sizeof(Empleado),1,p);
         fclose(p);
+        }
+
+        else if (opcion = 0) {  }
 
     }else if(nroRegistro==-2)
     {

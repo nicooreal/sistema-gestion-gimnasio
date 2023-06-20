@@ -429,6 +429,46 @@ void EmpleadoTareas::darDeBajaEmpleado()
     archivo.bajaLogica(id);
 }
 
+void EmpleadoTareas::reactivarEmpleado()
+{
+    int op;
+    int numeroRegistro = _archivo.buscarRegistro();
+    if (numeroRegistro>=0)
+    {
+        cout <<"el empleado que usted quiere reactivar es: " << endl;
+        Empleado empleado= _archivo.leer(numeroRegistro);
+        empleado.mostrarEmpleado();
+        system("pause");
+        cout <<"¿desea reactivar?" <<endl;
+        cout <<"1 - SI o 2 - NO" << endl;
+        cin >> op;
+        if (op == 1)
+        {
+
+            empleado.setEstado(true);
+
+            bool exito = _archivo.editar(empleado, numeroRegistro);
+            if (exito)
+            {
+                cout << "Registro activado exitosamente." << endl;
+
+            }
+            else
+            {
+                cout << "No se pudo modificar el registro." << endl;
+            }
+
+
+        }
+
+
+
+    }
+
+
+}
+
+
 void EmpleadoTareas::consultas()
 {
     int opcion;
@@ -564,7 +604,107 @@ void EmpleadoTareas::cargar()
     _archivo.guardar(reg);
 }
 
+void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
+{
+    int opcion, especializacion;
+    char nombre[30],apellido[30];
+    char genero;
+    int dni;
 
+    Fecha fechaNacimiento,fechaIngreso;
+    float sueldo;
+
+    do
+    {
+        do
+        {
+            system("cls");
+            cout<<"\tMODIFICAR EMPLEADO"<<endl;
+            cout<<"-------------------------------------"<<endl;
+            cout<<"1 - MODIFICAR NOMBRE"<<endl;
+            cout<<"2 - MODIFICAR APELLIDO"<<endl;
+            cout<<"3 - MODIFICAR DNI"<<endl;
+            cout<<"4 - MODIFICAR GENERO"<<endl;
+            cout<<"5 - MODIFICAR FECHA NACIMIENTO"<<endl;
+            cout<<"6 - MODIFICAR FECHA DE ALTA"<<endl;
+            cout<<"7 - MODIFICAR SUELDO"<<endl;
+            cout<<"8 - MODIFICAR ESPECIALIZACION"<< endl;
+            cout<<"9 - MODIFICAR TODO EL REGISTRO"<< endl;
+            cout<<"-------------------------------------"<<endl;
+            cout<<"0 - SALIR"<<endl;
+            cout<<"OPCION: ";
+            cin>>opcion;
+            system("cls");
+        }
+        while(opcion<0||opcion>9);
+
+
+
+        switch(opcion)
+        {
+        case 1:
+            cout<<"Ingrese el nuevo nombre"<<endl;
+            cargarCadena(nombre,29);
+            empleadoModificado.setNombre(nombre);
+            break;
+        case 2:
+            cout<<"Ingrese el nuevo apellido"<<endl;
+            cargarCadena(apellido,29);
+            empleadoModificado.setApellido(apellido);
+            break;
+        case 3:
+            cout<<"Ingrese el nuevo DNI "<<endl;
+            cin>>dni;
+            empleadoModificado.setDni(dni);
+            break;
+        case 4:
+            do
+            {
+                cout<<"Ingrese el nuevo genero(M - MASCULINO, F - FEMENINO) "<<endl;
+                cin>>genero;
+            }
+            while(genero!='F'&&genero!='f'&&genero!='m'&&genero!='M');
+
+            empleadoModificado.setSexo(genero);
+            break;
+        case 5:
+            cout<<"Ingrese la nueva fecha de nacimiento "<<endl;
+            fechaNacimiento.cargar();
+            empleadoModificado.setFechaNacimiento(fechaNacimiento);
+            break;
+        case 6:
+            cout<<"Ingrese la nueva fecha de alta"<<endl;
+            fechaIngreso.cargar();
+            empleadoModificado.setFechaIngreso(fechaIngreso);
+            break;
+        case 7:
+            cout<<"Ingrese el nuevo sueldo"<<endl;
+            cin>>sueldo;
+            empleadoModificado.setSueldo(sueldo);
+            break;
+
+        case 8:
+            cout<<"Ingrese la nueva especializacion"<< endl;
+            cout <<"Especializacion(1 - Profesor, 2 - Administrativo, 3 - Limpieza): "<<endl;
+            cin >> especializacion;
+            empleadoModificado.setEspecializacion(especializacion);
+       break;
+
+        case 9:
+        cout <<"modificar todo el registro" << endl;
+        empleadoModificado.cargarEmpleado();
+
+        }
+        if(opcion!=0)
+        {
+            system("pause");
+        }
+
+
+    }
+    while(opcion!=0);
+
+}
 
 
 
@@ -578,8 +718,15 @@ void EmpleadoTareas::modificar()
     if (numeroRegistro>=0)
     {
         cout << "Modifique al empleado"<<endl;
-        Empleado empleadoModificado ;
-        empleadoModificado.cargarEmpleado();
+ Empleado empleadoModificado= _archivo.leer(numeroRegistro) ;
+
+        cout << endl;
+        cout << "Usted va a modificar a:"<<endl;
+        empleadoModificado.mostrarEmpleado();
+         system("pause");
+
+        elegirQueModificar(empleadoModificado);
+
 
         bool exito = _archivo.editar(empleadoModificado, numeroRegistro);
         if (exito)

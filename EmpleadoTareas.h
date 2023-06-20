@@ -15,7 +15,8 @@ public:
     void modificar();
     void borrarRegistros();
     void darDeBajaEmpleado();
-
+    void elegirQueModificar(Empleado &empleadoModificado);
+    void reactivarEmpleado();
 
     void listados();
     void listarRegistros();
