@@ -157,7 +157,7 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
     int opcion;
     char nombre[30],apellido[30];
     char genero;
-    int dni,edad,numeroSocio;
+    int dni;
 
     Fecha fechaNacimiento,fechaAlta,fechaLimiteParaPagarAbono;
     float abono;
@@ -219,6 +219,7 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             cout<<"Ingrese la nueva fecha de nacimiento "<<endl;
             fechaNacimiento.cargar();
             clienteModificado.setFechaNacimiento(fechaNacimiento);
+            clienteModificado.calcularEdad();
             break;
         case 6:
             cout<<"Ingrese la nueva fecha de alta"<<endl;
@@ -311,7 +312,7 @@ void ClienteTareas::mostrarClientesConFechaPorVencer()
 
     Fecha fechaHoy;
     int cantidadRegistros =_archivoCliente.getCantidad();
-    int meses[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int diasPorMes[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     for (int i = 0; i < cantidadRegistros; i++)
     {
@@ -332,6 +333,21 @@ void ClienteTareas::mostrarClientesConFechaPorVencer()
         if ( cliente.getFechaLimiteParaPagarAbono().getMes() != fechaHoy.getMes())
         {
 
+
+         int diasParaTerminarELmes = diasPorMes[ fechaHoy.getMes()- 1 ] - fechaHoy.getDia();
+
+
+          if ( diasParaTerminarELmes + cliente.getFechaLimiteParaPagarAbono().getDia() <= 7 )
+
+          {
+
+
+          cliente.mostrarCliente();
+
+
+          }
+
+
             // incompleto, mejor habria q hacer un metodo para contar los dias del anio
 
 
@@ -345,3 +361,115 @@ void ClienteTareas::mostrarClientesConFechaPorVencer()
 
 
 }
+
+
+
+void ClienteTareas::listados()
+{
+    int opcion;
+    do
+    {
+        do
+        {
+            system("cls");
+            cout<<"\tLISTADOS"<<endl;
+            cout<<"--------------------------------------------"<<endl;
+            cout<<"1 - TODOS LOS REGISTROS"<<endl;
+            cout<<"2 - POR NOMBRE"<<endl;
+            cout<<"3 - POR APELLIDO"<<endl;
+            cout<<"4 - POR ANIO"<<endl;
+            cout<<"5 - POR EDAD"<<endl;
+            cout<<"6 - POR SUELDO "<<endl;
+            cout<<"7 - LOS QUE HACEN BOXEO" << endl;
+            cout<<"8 - LOS QUE HACEN YOGA" << endl;
+            cout<<"9 - DADOS DE BAJA"<<endl;
+            cout<<"0 - SALIR"<<endl;
+            cout<<"--------------------------------------------"<<endl;
+            cout<<"OPCION: ";
+            cin>>opcion;
+            system("cls");
+
+        }
+        while(opcion<0||opcion>9);
+        switch(opcion)
+        {
+        case 1:
+mostrarTodos();
+            break;
+        case 2:
+
+            break;
+        case 3:
+
+            break;
+        case 4:
+
+            break;
+        case 5:
+
+            break;
+        case 6:
+
+            break;
+        case 7:
+
+            break;
+        }
+
+        if(opcion!=0)
+        {
+            system("pause");
+        }
+
+    }
+    while(opcion!=0);
+}
+
+
+void ClienteTareas::consultas()
+{
+    int opcion;
+    do
+    {
+        do
+        {
+            system("cls");
+            cout<<"\tCONSULTAS"<<endl;
+            cout<<"---------------------------------"<<endl;
+            cout<<"1 - BUSCAR POR ID"<<endl;
+            cout<<"2 - BUSCAR POR DNI"<<endl;
+            cout<<"3 - BUSCAR POR NOMBRE"<<endl;
+            cout<<"4 - BUSCAR POR APELLIDO"<<endl;
+            cout<<"5 - BUSCAR POR EDAD"<<endl;
+            cout<<"0 - SALIR"<<endl;
+            cout<<"---------------------------------"<<endl;
+            cout<<"OPCION: ";
+            cin>>opcion;
+            system("cls");
+        }
+        while(opcion<0||opcion>5);
+        switch(opcion)
+        {
+        case 1:
+            break;
+        case 2:
+            mostrarPorDni();
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        case 5:
+            break;
+        }
+        if(opcion!=0)
+        {
+            system("pause");
+        }
+
+    }
+    while(opcion!=0);
+}
+
+
+

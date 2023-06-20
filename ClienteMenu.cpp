@@ -38,11 +38,11 @@ void ClienteMenu::mostrar()
             clienteTareas.modificar();
             break;
         case 3:
-            clienteTareas.mostrarTodos();
+            clienteTareas.listados();
 
             break;
         case 4:
-            clienteTareas.mostrarPorDni();
+            clienteTareas.consultas();
 
             break;
         case 5:

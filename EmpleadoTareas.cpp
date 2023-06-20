@@ -670,6 +670,7 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
         case 5:
             cout<<"Ingrese la nueva fecha de nacimiento "<<endl;
             fechaNacimiento.cargar();
+            empleadoModificado.calcularEdad();
             empleadoModificado.setFechaNacimiento(fechaNacimiento);
             break;
         case 6:
@@ -688,7 +689,7 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
             cout <<"Especializacion(1 - Profesor, 2 - Administrativo, 3 - Limpieza): "<<endl;
             cin >> especializacion;
             empleadoModificado.setEspecializacion(especializacion);
-       break;
+            break;
 
         case 9:
         cout <<"modificar todo el registro" << endl;

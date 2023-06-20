@@ -21,6 +21,8 @@ void darBajaCliente();
 void limpiarArchivoClientes();
 void registrarIngresos();
 void mostrarClientesConFechaPorVencer();
+void listados();
+void consultas();
 // void clienteBoxeo();
 
 
