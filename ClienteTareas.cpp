@@ -311,6 +311,7 @@ void ClienteTareas::mostrarClientesConFechaPorVencer()
 
     Fecha fechaHoy;
     int cantidadRegistros =_archivoCliente.getCantidad();
+    int meses[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     for (int i = 0; i < cantidadRegistros; i++)
     {
@@ -328,7 +329,7 @@ void ClienteTareas::mostrarClientesConFechaPorVencer()
 
         }
 
-        if ( cliente.getFechaLimiteParaPagarAbono().getMes() > fechaHoy.getMes())
+        if ( cliente.getFechaLimiteParaPagarAbono().getMes() != fechaHoy.getMes())
         {
 
             // incompleto, mejor habria q hacer un metodo para contar los dias del anio
