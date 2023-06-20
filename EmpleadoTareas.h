@@ -8,14 +8,32 @@ class EmpleadoTareas
 private:
     EmpleadoArchivo _archivo;
     int generarID();
+    int calcularEdad(Fecha fechaNacimiento);
 
 public:
     void cargar();
-    void listarRegistros();
-    void listarEmpleadosPorAnio();
     void modificar();
     void borrarRegistros();
-    void listarPorId();
+    void darDeBajaEmpleado();
+
+
+    void listados();
+    void listarRegistros();
+    void listarEmpleadosPorAnio();
+    void listarOrdenadosPorNombre();
+    void listarOrdenadosPorApellido();
+    void listarPorEdad();
+    void listarPorSueldo();
+    void listarEmpleadosDadosDeBaja();
+
+
+    void consultas();
+    void consultaPorId();
+    void consultaPorDni();
+    void consultaPorNombre();
+    void consultaPorApellido();
+    void consultaPorEdad();
+
 
 };
 

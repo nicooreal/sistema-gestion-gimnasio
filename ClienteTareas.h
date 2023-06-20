@@ -8,8 +8,8 @@ class ClienteTareas
    private:
 
    ClienteArchivo _archivoCliente;
-   void elegirQueModificar(Cliente &clienteModificado);
    int generarID();
+   void elegirQueModificar(Cliente &clienteModificado);
 
     public:
 void cargar();

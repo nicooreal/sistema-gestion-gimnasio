@@ -40,6 +40,8 @@ Fecha::Fecha(int dia,int mes,int anio)
 
 
 
+
+
 void Fecha::cargar()
 {
 

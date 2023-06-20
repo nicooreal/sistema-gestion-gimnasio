@@ -25,12 +25,12 @@ void ClienteTareas::modificar()
         cliente.mostrarCliente();
         cout << endl;
         cout << "Modifique al cliente"<<endl;
-        Cliente clienteModificado;
-
-        elegirQueModificar(clienteModificado);
 
 
-        bool exito = _archivoCliente.editar(clienteModificado, numeroRegistro);
+        elegirQueModificar(cliente);
+
+
+        bool exito = _archivoCliente.editar(cliente, numeroRegistro);
         if (exito)
         {
             cout << "Registro modificado exitosamente." << endl;
@@ -154,7 +154,8 @@ void ClienteTareas::darBajaCliente()
 void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
 {
     int opcion;
-    char nombre[30],apellido[30],genero[30];
+    char nombre[30],apellido[30];
+    char genero;
     int dni,edad,numeroSocio;
 
     Fecha fechaNacimiento,fechaAlta,fechaLimiteParaPagarAbono;
@@ -170,21 +171,19 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             cout<<"1 - MODIFICAR NOMBRE"<<endl;
             cout<<"2 - MODIFICAR APELLIDO"<<endl;
             cout<<"3 - MODIFICAR DNI"<<endl;
-            cout<<"4 - MODIFICAR EDAD"<<endl;
-            cout<<"5 - MODIFICAR GENERO"<<endl;
-            cout<<"6 - MODIFICAR FECHA NACIMIENTO"<<endl;
-            cout<<"7 - MODIFICAR NUMERO DE SOCIO"<<endl;
-            cout<<"8 - MODIFICAR FECHA DE ALTA"<<endl;
-            cout<<"9 - MODIFICAR FECHA LIMITE PARA PAGAR ABONO"<<endl;
-            cout<<"10 - MODIFICAR ABONO MENSUAL"<<endl;
-            cout<<"11 - MODIFICAR TODO EL REGISTRO"<<endl;
+            cout<<"4 - MODIFICAR GENERO"<<endl;
+            cout<<"5 - MODIFICAR FECHA NACIMIENTO"<<endl;
+            cout<<"6 - MODIFICAR FECHA DE ALTA"<<endl;
+            cout<<"7 - MODIFICAR FECHA LIMITE PARA PAGAR ABONO"<<endl;
+            cout<<"8 - MODIFICAR ABONO MENSUAL"<<endl;
+            cout<<"9 - MODIFICAR TODO EL REGISTRO"<<endl;
             cout<<"-------------------------------------"<<endl;
             cout<<"0 - SALIR"<<endl;
             cout<<"OPCION: ";
             cin>>opcion;
             system("cls");
         }
-        while(opcion<0||opcion>11);
+        while(opcion<0||opcion>9);
 
 
 
@@ -206,41 +205,36 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             clienteModificado.setDni(dni);
             break;
         case 4:
-            cout<<"Ingrese la nueva edad "<<endl;
-            cin>>edad;
-            clienteModificado.setEdad(edad);
-            break;
-        case 5:
-            cout<<"Ingrese el nuevo genero "<<endl;
-            cargarCadena(genero,29);
+            do
+            {
+                cout<<"Ingrese el nuevo genero(M - MASCULINO, F - FEMENINO) "<<endl;
+                cin>>genero;
+            }
+            while(genero!='F'&&genero!='f'&&genero!='m'&&genero!='M');
+
             clienteModificado.setSexo(genero);
             break;
-        case 6:
+        case 5:
             cout<<"Ingrese la nueva fecha de nacimiento "<<endl;
             fechaNacimiento.cargar();
             clienteModificado.setFechaNacimiento(fechaNacimiento);
             break;
-        case 7:
-            cout<<"Ingrese el nuevo numero de socio "<<endl;
-            cin>>numeroSocio;
-            clienteModificado.setNumeroDeSocio(numeroSocio);
-            break;
-        case 8:
+        case 6:
             cout<<"Ingrese la nueva fecha de alta"<<endl;
             fechaAlta.cargar();
             clienteModificado.setFechaDelAlta(fechaAlta);
             break;
-        case 9:
+        case 7:
             cout<<"Ingrese la nueva fecha limite "<<endl;
             fechaLimiteParaPagarAbono.cargar();
             clienteModificado.setFechaLimite(fechaLimiteParaPagarAbono);
             break;
-        case 10:
+        case 8:
             cout<<"Ingrese el nuevo abono mensual"<<endl;
             cin>>abono;
             clienteModificado.setAbonoMensual(abono);
             break;
-        case 11:
+        case 9:
             cout<<"Ingrese el nuevo registro de Cliente"<<endl;
             clienteModificado.cargarCliente();
             break;
@@ -267,9 +261,10 @@ int ClienteTareas::generarID()
 }
 
 
-void ClienteTareas::registrarIngresos(){
-int documento;
-GimnasioMenu gimMenu;
+void ClienteTareas::registrarIngresos()
+{
+    int documento;
+    GimnasioMenu gimMenu;
 
 
     cout <<"NUMERO DE DOCUMENTO: " << endl;
@@ -292,11 +287,12 @@ GimnasioMenu gimMenu;
             cout <<"nombre: " << cliente.getNombre() <<endl;
             cout <<"apellido: " <<cliente.getApellido() <<endl;
             cout<<"ingresos restantes: "<< cliente.getControlIngresos() - 1 << endl;
-            cout <<"fecha de vencimento: "; cliente.getFechaLimiteParaPagarAbono().mostrar();
+            cout <<"fecha de vencimento: ";
+            cliente.getFechaLimiteParaPagarAbono().mostrar();
 
             cliente.setControlIngresos( cliente.getControlIngresos() - 1);
-           _archivoCliente.editar(cliente,numeroRegistro);
-          break;
+            _archivoCliente.editar(cliente,numeroRegistro);
+            break;
         }
 
     }
@@ -309,36 +305,40 @@ GimnasioMenu gimMenu;
 }
 
 
-void ClienteTareas::mostrarClientesConFechaPorVencer(){
-
-Fecha fechaHoy;
-int cantidadRegistros =_archivoCliente.getCantidad();
-
-for (int i = 0; i < cantidadRegistros; i++){
-Cliente cliente =_archivoCliente.leer(i);
-
-if ( cliente.getFechaLimiteParaPagarAbono().getMes() == fechaHoy.getMes())
+void ClienteTareas::mostrarClientesConFechaPorVencer()
 {
 
-if ( cliente.getFechaLimiteParaPagarAbono().getDia() - fechaHoy.getDia() <= 7 ) {
+    Fecha fechaHoy;
+    int cantidadRegistros =_archivoCliente.getCantidad();
 
-    cliente.mostrarCliente();
+    for (int i = 0; i < cantidadRegistros; i++)
+    {
+        Cliente cliente =_archivoCliente.leer(i);
 
-}
+        if ( cliente.getFechaLimiteParaPagarAbono().getMes() == fechaHoy.getMes())
+        {
 
-}
+            if ( cliente.getFechaLimiteParaPagarAbono().getDia() - fechaHoy.getDia() <= 7 )
+            {
 
-if ( cliente.getFechaLimiteParaPagarAbono().getMes() > fechaHoy.getMes()) {
+                cliente.mostrarCliente();
 
-    // incompleto, mejor habria q hacer un metodo para contar los dias del anio
+            }
+
+        }
+
+        if ( cliente.getFechaLimiteParaPagarAbono().getMes() > fechaHoy.getMes())
+        {
+
+            // incompleto, mejor habria q hacer un metodo para contar los dias del anio
 
 
-}
+        }
 
 
 
 
-}
+    }
 
 
 

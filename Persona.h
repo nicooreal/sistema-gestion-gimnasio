@@ -15,14 +15,14 @@ protected:
     char _apellido[30];
     int _dni;
     int _edad; // tendriamos que sacar poder calcularla con la fecha de nacimiento
-    char _genero[30];
+    char _genero;
     Fecha _fechaNacimiento;/// COMPOSICION
 
 
 
 public:
     Persona();
-    Persona(char *nombre,char *apellido,int dni,int edad,char *genero,Fecha nacimiento);
+    Persona(char *nombre,char *apellido,int dni,int edad,char genero,Fecha nacimiento);
 
     void cargarPersona();
     void mostrarPersona();
@@ -31,7 +31,7 @@ public:
     void setApellido(char *apellido);
     void setDni(int dni);
     void setEdad(int edad);
-    void setSexo(char *genero);
+    void setSexo(char genero);
     void setFechaNacimiento(Fecha fechaNacimiento);
 
 
@@ -39,7 +39,7 @@ public:
     const char *getApellido();
     int getDni();
     int getEdad();
-    const char *getGenero();
+    char getGenero();
     Fecha getFechaNacimiento();
 
     void calcularEdad();

@@ -97,15 +97,15 @@ void EmpleadoArchivo::buscarPorAnio(int anio)
 
 }
 
-void EmpleadoArchivo::buscarPorID(int id)
+int EmpleadoArchivo::buscarPorID(int id)
 {
     Empleado em;
     FILE *p=fopen(_nombreArchivo,"rb");
     if(p==NULL)
     {
-        return;
+        return -1;
     }
-    bool verificar=false;
+
 
     while(fread(&em,sizeof(Empleado),1,p)!=0)
     {
@@ -113,13 +113,149 @@ void EmpleadoArchivo::buscarPorID(int id)
         {
             cout<<"ID Empleado #"<<em.getId()<<endl;
             em.mostrarEmpleado();
-            verificar=true;
+            cout<<endl;
+            fclose(p);
+            return 1;
         }
     }
+    fclose(p);
+    return 0;
 
-    if(!verificar)
+}
+
+int EmpleadoArchivo::calcularEdad(Fecha fechaNacimiento)
+{
+    Fecha fecha;
+// el contructor por defecto pone la fecha de hoy, por eso con get anio sale 2023
+
+    int edad = fecha.getAnio() - fechaNacimiento.getAnio();
+    if(fecha.getMes()<fechaNacimiento.getMes()||fecha.getMes()==fechaNacimiento.getMes()&&fecha.getDia()<fechaNacimiento.getDia())
     {
-        cout<<"NO EXISTEN EMPLEADOS CON EL ID "<<id<<endl;
+        edad--;
+    }
+    return edad;
+}
+
+
+
+int EmpleadoArchivo::buscarPorEdad(int edad)
+{
+    FILE *p=fopen(_nombreArchivo,"rb");
+    if(p==NULL)
+    {
+        return -1;
+    }
+
+    for(int i=0;i<cantidadEmpleados();i++)
+    {
+        Empleado em=leer(i);
+
+        if(edad==calcularEdad(em.getFechaNacimiento()))
+        {
+            cout<<"ID Empleado #"<<em.getId()<<endl;
+            em.mostrarEmpleado();
+            fclose(p);
+            return 1;
+        }
+    }
+    fclose(p);
+    return 0;
+}
+
+int EmpleadoArchivo::buscarPorNombre(char *nombre)
+{
+    FILE *p=fopen(_nombreArchivo,"rb");
+    if(p==NULL)
+    {
+        return -1;
+    }
+
+    for(int i=0;i<cantidadEmpleados();i++)
+    {
+        Empleado em=leer(i);
+        if(strcmp(nombre,em.getNombre())==0)
+        {
+            cout<<"ID Empleado #"<<em.getId()<<endl;
+            em.mostrarEmpleado();
+            fclose(p);
+            return 1;
+        }
+    }
+    fclose(p);
+    return 0;
+}
+
+int EmpleadoArchivo::buscarPorApellido(char *apellido)
+{
+    FILE *p=fopen(_nombreArchivo,"rb");
+    if(p==NULL)
+    {
+        return -1;
+    }
+    for(int i=0;i<cantidadEmpleados();i++)
+    {
+        Empleado em=leer(i);
+        if(strcmp(apellido,em.getApellido())==0)
+        {
+            cout<<"ID Empleado #"<<em.getId()<<endl;
+            em.mostrarEmpleado();
+            fclose(p);
+            return 1;
+        }
+    }
+    fclose(p);
+    return 0;
+}
+
+int EmpleadoArchivo::buscarRegistroPorId(int id)
+{
+    FILE *p=fopen(_nombreArchivo,"rb");
+    if(p==NULL)
+    {
+        return -1;
+    }
+    int pos=0;
+    for(int i=0;i<cantidadEmpleados();i++)
+    {
+        Empleado em=leer(i);
+        if(id==em.getId())
+        {
+            fclose(p);
+            return pos;
+        }
+        pos++;
+    }
+    fclose(p);
+    return -2;
+}
+
+
+void EmpleadoArchivo::bajaLogica(int id)
+{
+    FILE *p=fopen(_nombreArchivo,"rb+");
+    if(p==NULL)
+    {
+        return;
+    }
+
+    int nroRegistro=buscarRegistroPorId(id);
+    if(nroRegistro>=0)
+    {
+        cout<<"Va a eliminar el registro de empleado"<<endl;
+        Empleado em=leer(nroRegistro);
+        em.mostrarEmpleado();
+        cout<<endl;
+        em.setEstado(false);
+        fseek(p,sizeof(Empleado)*nroRegistro,0);
+        fwrite(&em,sizeof(Empleado),1,p);
+        fclose(p);
+
+    }else if(nroRegistro==-2)
+    {
+        cout<<"No existe ese ID"<<endl;
+    }else
+    {
+        cout<<"No se pudo abrir el archivo"<<endl;
     }
 
 }
@@ -135,8 +271,34 @@ int EmpleadoArchivo::cantidadEmpleados()
 
     fseek(p,0,2);
     int cant=ftell(p);
+    fclose(p);
     return cant/sizeof(Empleado);/// PARA SABER LA CANTIDAD DE EMPLEADOS
 }
+
+int EmpleadoArchivo::buscarPorDni(int dni)
+{
+    FILE *p=fopen(_nombreArchivo,"rb");
+    if(p==NULL)
+    {
+        return -1;
+    }
+
+    for(int i=0;i<cantidadEmpleados();i++)
+    {
+        Empleado em=leer(i);
+        if(dni==em.getDni())
+        {
+            cout<<"ID Empleado #"<<em.getId()<<endl;
+            em.mostrarEmpleado();
+            cout<<endl;
+            fclose(p);
+            return 1;
+        }
+    }
+    fclose(p);
+    return 0;
+}
+
 int EmpleadoArchivo::buscarRegistro()
 {
     int numeroRegistro,dni;
@@ -156,7 +318,7 @@ int EmpleadoArchivo::buscarRegistro()
     {
         if (empleado.getDni ()==dni)
         {
-
+            fclose(p);
             return numeroRegistro;
         }
             numeroRegistro++;

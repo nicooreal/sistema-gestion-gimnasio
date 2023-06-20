@@ -7,18 +7,18 @@ Persona::Persona()
     strcpy(_apellido,"sinApellido");
     _dni=0;
     _edad=0;
-    strcpy(_genero,"sinGenero");
+    _genero='0';
     _fechaNacimiento.fechaDeHoy();
 
 }
 
-Persona::Persona(char *nombre,char *apellido,int dni,int edad,char *genero,Fecha fechaNacimiento)
+Persona::Persona(char *nombre,char *apellido,int dni,int edad,char genero,Fecha fechaNacimiento)
 {
     strcpy(_nombre,nombre);
     strcpy(_apellido,apellido);
     _dni=dni;
     _edad=edad;
-    strcpy(_genero,genero);
+    _genero=genero;
     _fechaNacimiento=fechaNacimiento;
 }
 
@@ -26,11 +26,20 @@ void Persona::cargarPersona()
 {
     cout<<"Nombre: ";
     cargarCadena(_nombre,29);
-    cout<<"Apellido: "; cargarCadena(_apellido,29);
-    cout<<"DNI: "; cin>>_dni;
-    cout<<"Fecha nacimiento: "<<endl; _fechaNacimiento.cargar();
+    cout<<"Apellido: ";
+    cargarCadena(_apellido,29);
+    cout<<"DNI: ";
+    cin>>_dni;
+    cout<<"Fecha nacimiento: "<<endl;
+    _fechaNacimiento.cargar();
     calcularEdad();
-    cout<<"Genero: "; cargarCadena(_genero,29);
+    do
+    {
+        cout<<"Genero(M - MASCULINO, F - FEMENINO): ";
+        cin>>_genero;
+
+    }
+    while(_genero!='F'&&_genero!='f'&&_genero!='m'&&_genero!='M');
 }
 
 void Persona::mostrarPersona()
@@ -44,12 +53,16 @@ void Persona::mostrarPersona()
     _fechaNacimiento.mostrar();
 }
 
-void Persona::calcularEdad(){
-Fecha fecha;
+void Persona::calcularEdad()
+{
+    Fecha fecha;
 // el contructor por defecto pone la fecha de hoy, por eso con get anio sale 2023
 
-_edad = fecha.getAnio() - _fechaNacimiento.getAnio();
-
+    _edad = fecha.getAnio() - _fechaNacimiento.getAnio();
+    if(fecha.getMes()<_fechaNacimiento.getMes()||fecha.getMes()==_fechaNacimiento.getMes()&&fecha.getDia()<_fechaNacimiento.getDia())
+    {
+        _edad--;
+    }
 
 }
 
@@ -73,9 +86,9 @@ void Persona::setEdad(int edad)
     _edad=edad;
 }
 
-void Persona::setSexo(char *genero)
+void Persona::setSexo(char genero)
 {
-    strcpy(_genero,genero);
+    _genero=genero;
 }
 
 void Persona::setFechaNacimiento(Fecha fechaNacimiento)
@@ -103,7 +116,7 @@ int Persona::getEdad()
     return _edad;
 }
 
-const char *Persona::getGenero()
+char Persona::getGenero()
 {
     return _genero;
 }

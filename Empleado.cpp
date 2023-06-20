@@ -8,16 +8,27 @@ Empleado::Empleado()
     _id=0;
     _sueldo=120000;
     _fechaIngreso.fechaDeHoy();
-    strcpy(_especializacion,"Tareas Basicas");
+    _especializacion=0;
+    _estado=false;
 
 }
-Empleado::Empleado(int id,float sueldo,Fecha fechaIngreso,const char *especializacion)
+Empleado::Empleado(int id,float sueldo,Fecha fechaIngreso,int especializacion,bool estado)
 {
     _id=id;
-
     _sueldo=sueldo;
     _fechaIngreso=fechaIngreso;
-    strcpy(_especializacion, especializacion);
+    _especializacion=especializacion;
+    _estado=estado;
+}
+
+void Empleado::setEstado(bool estado)
+{
+    _estado=estado;
+}
+
+bool Empleado::getEstado()
+{
+    return _estado;
 }
 
 void Empleado::setId(int id)
@@ -49,13 +60,14 @@ Fecha Empleado::getFechaIngreso()
     return _fechaIngreso;
 }
 
-void Empleado::setEspecializacion(const char *especializacion)
+void Empleado::setEspecializacion(int especializacion)
 {
-    strcpy(_especializacion, especializacion);
+    _especializacion=especializacion;
 }
-const char* Empleado::getEspecializacion()
+char *Empleado::getEspecializacion()
 {
-    return _especializacion;
+    char especializaciones[3][15]={"Profesor","Administrativo","Limpieza"};
+    return especializaciones[_especializacion-1];
 }
 void Empleado::cargarEmpleado()
 {
@@ -64,16 +76,27 @@ void Empleado::cargarEmpleado()
     cin >> _sueldo;
     cout <<"Fecha De Ingreso: "<<endl;
     _fechaIngreso.cargar();
-    cout <<"Especializacion: "<<endl;
-    cin >> _especializacion;
+    do
+    {
+        cout <<"Especializacion(1 - Profesor, 2 - Administrativo, 3 - Limpieza): "<<endl;
+        cin >> _especializacion;
+    }
+    while(_especializacion<1||_especializacion>3);
+    _estado=true;
+
 }
 void Empleado::mostrarEmpleado()
 {
+    char especializaciones[3][15]={"Profesor","Administrativo","Limpieza"};
     mostrarPersona();
     cout <<"Con un sueldo de $ "<<_sueldo<<endl;
     cout <<"Ingreso el dia "    ;
     _fechaIngreso.mostrar();
-    cout <<"se especializa en " <<_especializacion<<endl;
+    cout <<"se especializa en " <<especializaciones[_especializacion-1]<<endl;
+    if(!_estado)
+    {
+        cout<<"Este empleado esta dado de baja!"<<endl;
+    }
 
 
 }
