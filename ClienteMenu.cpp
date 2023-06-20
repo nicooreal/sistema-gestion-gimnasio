@@ -17,12 +17,10 @@ void ClienteMenu::mostrar()
         cout<<"\tMENU CLIENTES"<<endl;
         cout<<"1 - CARGAR "<<endl;
         cout<<"2 - EDITAR "<<endl;
-        cout<<"3 - LISTAR TODOS"<<endl;
-        cout<<"4 - LISTAR POR NUMERO DE SOCIO"<<endl;/// Y MAS OPCIONES
-        cout<<"5 - LISTAR CLIENTES QUE PRACTICAN BOXEO"<<endl;
-        cout<<"6 - BUSCAR "<<endl;
-        cout<<"7 - DAR DE BAJA UN CLIENTE"<<endl;
-        cout<<"8 - ELIMINAR TODOS LOS REGISTROS"<<endl;
+        cout<<"3 - LISTADOS"<<endl;/// Y MAS OPCIONES
+        cout<<"4 - CONSULTAS "<<endl;
+        cout<<"5 - DAR DE BAJA UN CLIENTE"<<endl;
+        cout<<"6 - ELIMINAR TODOS LOS REGISTROS"<<endl;
         cout<<"0 - SALIR"<<endl;
         cout<<"----------------------------------"<<endl;
         cout<<"OPCION: ";
@@ -43,14 +41,14 @@ void ClienteMenu::mostrar()
             clienteTareas.mostrarTodos();
 
             break;
-        case 6:
+        case 4:
             clienteTareas.mostrarPorDni();
 
             break;
-        case 7:
+        case 5:
             clienteTareas.darBajaCliente();
             break;
-        case 8:
+        case 6:
             clienteTareas.limpiarArchivoClientes();
 
             break;

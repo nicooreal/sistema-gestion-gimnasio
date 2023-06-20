@@ -23,6 +23,7 @@ void ClienteTareas::modificar()
 
         Cliente cliente=_archivoCliente.leer(numeroRegistro);
         cliente.mostrarCliente();
+        system("pause");
         cout << endl;
         cout << "Modifique al cliente"<<endl;
 
@@ -267,7 +268,7 @@ void ClienteTareas::registrarIngresos()
     GimnasioMenu gimMenu;
 
 
-    cout <<"NUMERO DE DOCUMENTO: " << endl;
+    cout <<"NUMERO DE DOCUMENTO: " << endl; // ES PARA PODER VER CUANTOS INGRESOS LE QUEDA A CADA CLIENTE QUE VIENE
 
 
     cin >> documento;

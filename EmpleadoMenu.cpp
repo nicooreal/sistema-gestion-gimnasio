@@ -16,10 +16,11 @@ void EmpleadoMenu::mostrar()
         cout<<"\tMENU EMPLEADOS"<<endl;
         cout<<"1 - CARGAR "<<endl;
         cout<<"2 - EDITAR "<<endl;
-        cout<<"3 - ELIMINAR TODOS LOS REGISTROS"<<endl;
-        cout<<"4 - LISTADOS"<<endl;
-        cout<<"5 - CONSULTAS"<<endl; /// Y MAS OPCIONES
-        cout<<"6 - DAR DE BAJA EMPLEADO"<<endl;
+        cout<<"3 - LISTADOS"<<endl;
+        cout<<"4 - CONSULTAS"<<endl; /// Y MAS OPCIONES
+        cout<<"5 - DAR DE BAJA EMPLEADO"<<endl;
+        cout<<"6 - REACTIVAR EMPLEADO" << endl;
+        cout<<"7 - ELIMINAR TODOS LOS REGISTROS"<<endl;
         cout<<"0 - SALIR"<<endl;
         cout<<"----------------------------------"<<endl;
 
@@ -33,18 +34,25 @@ void EmpleadoMenu::mostrar()
             break;
         case 2:
             _empleadoTareas.modificar();
+
             break;
         case 3:
-            _empleadoTareas.borrarRegistros();
+            _empleadoTareas.listados();
+
             break;
         case 4:
-            _empleadoTareas.listados();
-            break;
-        case 5:
             _empleadoTareas.consultas();
             break;
-        case 6:
+        case 5:
             _empleadoTareas.darDeBajaEmpleado();
+            break;
+
+        case 6:
+            _empleadoTareas.reactivarEmpleado();
+            break;
+
+                case 7:
+            _empleadoTareas.borrarRegistros();
             break;
         }
         if(opcion!=0)
