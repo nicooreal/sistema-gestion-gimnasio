@@ -10,11 +10,14 @@ Pago::Pago()
  int Pago::getvAniosMeses() {
  return _vAniosMeses[50][12]; // revisar
  }
- int Pago::setRecaudacionAnual(int vAnMe[][]){
+
+/*
+ int Pago::setRecaudacionAnual(int vAnMe[][12]){
     _vAniosMeses[][12]= vAnMe[][12];
 
  }
 
+*/
  void Pago::Mostrar(){
      int  vAniosMeses[50][12] ;
      int i;

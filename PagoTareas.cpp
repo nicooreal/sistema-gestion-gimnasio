@@ -16,7 +16,7 @@ void PagoTareas::recaudacionAnual() {
    Pago pago;
    int anios,meses;
    anios = 2023- fecha.FechaInicial().getAnio() ;
-   int vAniosMeses[anios][12]{};
+  // int vAniosMeses[anios][12]{};
 
    ClienteArchivo clienteArch;
     int cantidadDeClientes = clienteArch.getCantidad();
@@ -27,7 +27,7 @@ void PagoTareas::recaudacionAnual() {
 
  if (cliente.getFechaDelAlta()> fecha.FechaInicial() && cliente.getFechaDelAlta().getAnio()<= 2023 && cliente.getEstado() )
         {
-            pago=vAniosMeses[cliente.getFechaDelAlta().getAnio()-fecha.FechaInicial().getAnio()][cliente.getFechaDelAlta().getMes()-1] += cliente.getAbonoMensual() ;
+       //     pago=vAniosMeses[cliente.getFechaDelAlta().getAnio()-fecha.FechaInicial().getAnio()][cliente.getFechaDelAlta().getMes()-1] += cliente.getAbonoMensual() ;
 
             pagoArchi.guardar(pago)  ;
         }
