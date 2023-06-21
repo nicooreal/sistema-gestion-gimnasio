@@ -67,10 +67,14 @@ void EmpleadoTareas::listarRegistros()
     {
 
         Empleado em=_archivo.leer(i);
-        cout<<"ID Empleado #"<<em.getId()<<endl;
+      /* if (em.getEstado() == true)*/ {
         em.mostrarEmpleado();
         cout<<"---------------------------------------"<<endl;
+
+                                   }
+
     }
+
 }
 
 void EmpleadoTareas::listarEmpleadosPorAnio()

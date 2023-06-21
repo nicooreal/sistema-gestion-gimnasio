@@ -87,16 +87,16 @@ void Empleado::cargarEmpleado()
 }
 void Empleado::mostrarEmpleado()
 {
+   if ( _estado == true ){
+
     char especializaciones[3][15]={"Profesor","Administrativo","Limpieza"};
+    cout <<"ID DE EMPLEADO #" << _id << endl;
     mostrarPersona();
     cout <<"Con un sueldo de $ "<<_sueldo<<endl;
     cout <<"Ingreso el dia "    ;
     _fechaIngreso.mostrar();
     cout <<"se especializa en " <<especializaciones[_especializacion-1]<<endl;
-    if(!_estado)
-    {
-        cout<<"Este empleado esta dado de baja!"<<endl;
-    }
 
-
+cout <<"-----------------------------------------"<< endl;
+   }
 }
