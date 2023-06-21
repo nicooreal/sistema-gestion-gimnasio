@@ -31,7 +31,7 @@ private:
     Yoga _yoga;
     bool _pesas;
     int _controlDeIngresosPesas;
-    bool _estado;
+
 //bool boxeo;
 //bool yoga;
 
@@ -64,8 +64,7 @@ public:
     void setControlIngresos(int control);
     int getControlIngresos();
 
-    void setEstado(bool estado);
-    bool getEstado();
+
 
     Boxeo getBoxeo();
     void setBoxeo(Boxeo boxeo);

@@ -133,16 +133,7 @@ int Cliente::getControlIngresos()
 
 
 
-void Cliente::setEstado(bool estado)
-{
-    _estado = estado;
 
-}
-
-bool Cliente::getEstado()
-{
-    return _estado;
-}
 
 Fecha Cliente::getFechaLimiteParaPagarAbono()
 {

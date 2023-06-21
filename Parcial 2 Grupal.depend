@@ -112,11 +112,11 @@
 1683151931 c:\users\alexi\github\sistema-gestion-gimnasio\gimnasio.h
 	<iostream>
 
-1687131860 source:c:\users\alexi\github\sistema-gestion-gimnasio\persona.cpp
+1687386234 source:c:\users\alexi\github\sistema-gestion-gimnasio\persona.cpp
 	"Persona.h"
 	"funciones.h"
 
-1687129817 c:\users\alexi\github\sistema-gestion-gimnasio\persona.h
+1687386234 c:\users\alexi\github\sistema-gestion-gimnasio\persona.h
 	<string.h>
 	<cstdio>
 	<iostream>
@@ -197,12 +197,12 @@
 	"Empleado.h"
 	"Programa.h"
 
-1687129817 source:c:\users\alexi\github\sistema-gestion-gimnasio\cliente.cpp
+1687386234 source:c:\users\alexi\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 	"ClienteArchivo.h"
 	"Boxeo.h"
 
-1686791438 c:\users\alexi\github\sistema-gestion-gimnasio\cliente.h
+1687386234 c:\users\alexi\github\sistema-gestion-gimnasio\cliente.h
 	<iostream>
 	"Boxeo.h"
 	"Yoga.h"
@@ -300,7 +300,7 @@
 
 1683254773 c:\users\nico\documents\github\sistema-gestion-gimnasio\include\cliente.h
 
-1687129159 c:\users\alexi\github\sistema-gestion-gimnasio\empleado.h
+1687386271 c:\users\alexi\github\sistema-gestion-gimnasio\empleado.h
 	"Persona.h"
 
 1684202729 c:\users\alexi\github\sistema-gestion-gimnasio\include\menugim.h
@@ -374,7 +374,7 @@
 	<string.h>
 	"Empleado.h"
 
-1687305589 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
+1687386076 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
 	"EmpleadoTareas.h"
 	"funciones.h"
 
@@ -779,14 +779,14 @@
 1686699031 source:c:\users\alexi\github\sistema-gestion-gimnasio\boxeo.cpp
 	"Boxeo.h"
 
-1687305589 c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.h
+1687386076 c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.h
 	"ClienteArchivo.h"
 	"funciones.h"
 
 1686699031 source:c:\users\alexi\github\sistema-gestion-gimnasio\yoga.cpp
 	"Yoga.h"
 
-1687305589 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.cpp
+1687386076 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.cpp
 	"ClienteTareas.h"
 	"Cliente.h"
 	"ClienteArchivo.h"

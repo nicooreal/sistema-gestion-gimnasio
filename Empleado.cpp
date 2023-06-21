@@ -9,27 +9,19 @@ Empleado::Empleado()
     _sueldo=120000;
     _fechaIngreso.fechaDeHoy();
     _especializacion=0;
-    _estado=false;
+
 
 }
-Empleado::Empleado(int id,float sueldo,Fecha fechaIngreso,int especializacion,bool estado)
+Empleado::Empleado(int id,float sueldo,Fecha fechaIngreso,int especializacion)
 {
     _id=id;
     _sueldo=sueldo;
     _fechaIngreso=fechaIngreso;
     _especializacion=especializacion;
-    _estado=estado;
+
 }
 
-void Empleado::setEstado(bool estado)
-{
-    _estado=estado;
-}
 
-bool Empleado::getEstado()
-{
-    return _estado;
-}
 
 void Empleado::setId(int id)
 {

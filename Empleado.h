@@ -9,14 +9,13 @@ private:
     float   _sueldo;
     Fecha _fechaIngreso;
     int _especializacion;
-    bool _estado;
+
 
 public:
     Empleado();
-    Empleado(int id,float sueldo,Fecha fechaIngreso,int especializacion,bool estado);
+    Empleado(int id,float sueldo,Fecha fechaIngreso,int especializacion);
 
-    void setEstado(bool estado);
-    bool getEstado();
+
 
     void setId(int id);
     int getId();

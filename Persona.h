@@ -17,15 +17,19 @@ protected:
     int _edad; // tendriamos que sacar poder calcularla con la fecha de nacimiento
     char _genero;
     Fecha _fechaNacimiento;/// COMPOSICION
+    bool _estado;
 
 
 
 public:
     Persona();
-    Persona(char *nombre,char *apellido,int dni,int edad,char genero,Fecha nacimiento);
+    Persona(char *nombre,char *apellido,int dni,int edad,char genero,Fecha nacimiento,bool estado);
 
     void cargarPersona();
     void mostrarPersona();
+
+    void setEstado(bool estado);
+    bool getEstado();
 
     void setNombre(char *nombre);
     void setApellido(char *apellido);

@@ -9,10 +9,11 @@ Persona::Persona()
     _edad=0;
     _genero='0';
     _fechaNacimiento.fechaDeHoy();
+    _estado=false;
 
 }
 
-Persona::Persona(char *nombre,char *apellido,int dni,int edad,char genero,Fecha fechaNacimiento)
+Persona::Persona(char *nombre,char *apellido,int dni,int edad,char genero,Fecha fechaNacimiento,bool estado)
 {
     strcpy(_nombre,nombre);
     strcpy(_apellido,apellido);
@@ -20,6 +21,17 @@ Persona::Persona(char *nombre,char *apellido,int dni,int edad,char genero,Fecha 
     _edad=edad;
     _genero=genero;
     _fechaNacimiento=fechaNacimiento;
+    _estado=estado;
+}
+
+void Persona::setEstado(bool estado)
+{
+    _estado=estado;
+}
+
+bool Persona::getEstado()
+{
+    return _estado;
 }
 
 void Persona::cargarPersona()
@@ -40,6 +52,7 @@ void Persona::cargarPersona()
 
     }
     while(_genero!='F'&&_genero!='f'&&_genero!='m'&&_genero!='M');
+    _estado=true;
 }
 
 void Persona::mostrarPersona()
