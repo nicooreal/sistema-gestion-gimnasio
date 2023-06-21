@@ -61,21 +61,21 @@ Boxeo Cliente::getBoxeo()
 
 }
 
-/*
-void Cliente::setNombreDeporte(int nombreDeporte)
+void Cliente::setYoga(Yoga yoga)
 {
 
-    if(nombreDeporte>=1&&nombreDeporte<=3)
-    {
-        _nombreDeporte=nombreDeporte;
-    }
-    else
-    {
-        _nombreDeporte=0;
-    }
+    _yoga = yoga;
 
 }
-*/
+
+
+Yoga Cliente::getYoga()
+{
+
+    return _yoga;
+
+}
+
 
 void Cliente::setPesas(bool pesas)
 {
@@ -304,7 +304,7 @@ void Cliente::mostrarCliente()
             cout << "cuota mensual: " << _boxeo.getCuotaMensual() << endl;
             cout << "fecha limite para pagar: ";
             _boxeo.getFechaLimitePago().mostrar();
-            cout <<"------------------------------------"<< endl;
+            cout <<"++++++++++++++++++++++++++++++++++++"<< endl;
         }
         if (_yoga.getActivo() == true )
         {

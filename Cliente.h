@@ -70,6 +70,9 @@ public:
     Boxeo getBoxeo();
     void setBoxeo(Boxeo boxeo);
 
+    Yoga getYoga();
+    void setYoga(Yoga yoga);
+
     void hacePesas();
     void establecerPlanMensual(int opcion);
     void establecerOpcionExtra(int opcion);

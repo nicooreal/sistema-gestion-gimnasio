@@ -23,7 +23,10 @@ void registrarIngresos();
 void mostrarClientesConFechaPorVencer();
 void listados();
 void consultas();
-// void clienteBoxeo();
+void listarClientesBoxeo();
+void listarClientesYoga();
+void listarClientesDadosDeBaja();
+
 
 
 };

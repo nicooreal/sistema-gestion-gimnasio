@@ -42,27 +42,6 @@ void ClienteTareas::modificar()
         }
     }
 }
-void ClienteTareas::listarClientesBox()
-{
-    ClienteArchivo clienteArch;
-    int cantidadDeClientes = clienteArch.getCantidad();
-
-    for (int i = 0; i < cantidadDeClientes; i++)
-    {
-        Cliente cliente =  clienteArch.leer(i);
-
-
-        if ( strcmp( "", "boxeo") == 0 )  // este metodo hay que rehacerlo
-        {
-            cliente.mostrarCliente();
-            cout <<"----------------------------"<< endl;
-
-        }
-
-
-    }
-
-}
 
 
 
@@ -379,10 +358,9 @@ void ClienteTareas::listados()
             cout<<"3 - POR APELLIDO"<<endl;
             cout<<"4 - POR ANIO"<<endl;
             cout<<"5 - POR EDAD"<<endl;
-            cout<<"6 - POR SUELDO "<<endl;
-            cout<<"7 - LOS QUE HACEN BOXEO" << endl;
-            cout<<"8 - LOS QUE HACEN YOGA" << endl;
-            cout<<"9 - DADOS DE BAJA"<<endl;
+            cout<<"6 - LOS QUE HACEN BOXEO" << endl;
+            cout<<"7 - LOS QUE HACEN YOGA" << endl;
+            cout<<"8 - DADOS DE BAJA"<<endl;
             cout<<"0 - SALIR"<<endl;
             cout<<"--------------------------------------------"<<endl;
             cout<<"OPCION: ";
@@ -394,7 +372,7 @@ void ClienteTareas::listados()
         switch(opcion)
         {
         case 1:
-mostrarTodos();
+            mostrarTodos();
             break;
         case 2:
 
@@ -409,12 +387,19 @@ mostrarTodos();
 
             break;
         case 6:
+            listarClientesBoxeo();
 
             break;
         case 7:
+            listarClientesYoga();
 
             break;
+        case 8:
+
+          break;
+
         }
+
 
         if(opcion!=0)
         {
@@ -469,6 +454,64 @@ void ClienteTareas::consultas()
 
     }
     while(opcion!=0);
+}
+
+void ClienteTareas::listarClientesBoxeo(){
+
+    int cantidadDeClientes = _archivoCliente.getCantidad();
+    for (int i = 0; i < cantidadDeClientes; i++ )
+    {
+        Cliente cliente = _archivoCliente.leer(i);
+        if(cliente.getBoxeo().getActivo() == true )
+        {
+            cliente.mostrarCliente();
+            cout << endl;
+            cout <<"--------------------------------------"<< endl;
+        }
+
+
+
+}
+}
+void ClienteTareas::listarClientesYoga(){
+
+    int cantidadDeClientes = _archivoCliente.getCantidad();
+    for (int i = 0; i < cantidadDeClientes; i++ )
+    {
+        Cliente cliente = _archivoCliente.leer(i);
+        if(cliente.getYoga().getActivo() == true )
+        {
+            cliente.mostrarCliente();
+            cout << endl;
+            cout <<"--------------------------------------"<< endl;
+        }
+
+
+
+}
+}
+void ClienteTareas::listarClientesDadosDeBaja(){
+
+
+      int cantidadDeClientes = _archivoCliente.getCantidad();
+    for (int i = 0; i < cantidadDeClientes; i++ )
+    {
+        Cliente cliente = _archivoCliente.leer(i);
+        if(cliente.getEstado() == false  )
+        {
+          cliente.setEstado(true);
+          cliente.mostrarCliente();
+          cliente.setEstado(false);
+            cout << endl;
+            cout <<"--------------------------------------"<< endl;
+        }
+
+
+
+}
+
+
+
 }
 
 
