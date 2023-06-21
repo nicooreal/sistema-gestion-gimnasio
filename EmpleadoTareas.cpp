@@ -159,7 +159,6 @@ void EmpleadoTareas::listarOrdenadosPorNombre()
 
     for(int i=0; i<cantidad; i++)
     {
-        cout<<"ID Empleados #"<<vEmpleados[i].getId()<<endl;
         vEmpleados[i].mostrarEmpleado();
         cout<<endl;
     }
@@ -239,7 +238,6 @@ void EmpleadoTareas::listarOrdenadosPorApellido()
 
     for(int i=0; i<cantidad; i++)
     {
-        cout<<"ID Empleados #"<<vEmpleados[i].getId()<<endl;
         vEmpleados[i].mostrarEmpleado();
         cout<<endl;
     }
@@ -323,7 +321,6 @@ void EmpleadoTareas::listarPorEdad()
 
     for(int i=0; i<cantidad; i++)
     {
-        cout<<"ID Empleado #"<<vEmpleados[i].getId()<<endl;
         vEmpleados[i].mostrarEmpleado();
         cout<<endl;
     }
@@ -396,7 +393,6 @@ void EmpleadoTareas::listarPorSueldo()
 
     for(int i=0; i<cantidad; i++)
     {
-        cout<<"ID Empleado #"<<vEmpleados[i].getId()<<endl;
         vEmpleados[i].mostrarEmpleado();
         cout<<endl;
     }
@@ -415,10 +411,8 @@ void EmpleadoTareas::listarEmpleadosDadosDeBaja()
     for(int i=0; i<cantidad; i++)
     {
         em=archivo.leer(i);
-        if(em.getEstado()==false)
-        {
-            em.mostrarEmpleado();
-        }
+        em.mostrarEmpleadosDadosDeBaja();
+        cout<<endl;
     }
 
 

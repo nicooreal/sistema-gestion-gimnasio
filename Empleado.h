@@ -32,6 +32,8 @@ public:
     void cargarEmpleado();
     void mostrarEmpleado();
 
+    void mostrarEmpleadosDadosDeBaja();
+
 
 };
 
