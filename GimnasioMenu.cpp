@@ -37,12 +37,13 @@ clienteTareas.mostrarClientesConFechaPorVencer(); //metodo incompleto
             break;
 
         case 3:
-            pagoTareas.recaudacionAnual();
+            pagoTareas.cargarPago();
 
             break;
 
         case 4:
-clienteTareas.registrarIngresos();
+            pagoTareas.recaudacionAnual ();
+//clienteTareas.registrarIngresos();
 system("pause");
             break;
 

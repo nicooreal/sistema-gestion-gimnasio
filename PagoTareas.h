@@ -11,6 +11,7 @@ class PagoTareas
         void regPago();
         void recaudacionAnual();
         void mostrarTodos();
+        void cargarPago();
 };
 
 #endif // PAGOTAREAS_H

@@ -24,7 +24,7 @@ Fecha _fechaDePago;
      int setRecaudacionAnual();
      int getvAniosMeses() ;
      void gsetvAniosMeses(int vAnMe[][12]) ;
-     void Mostrar();
+     void  MostrarRecaudacionAnual(float vRecaudacionAnual[12]);
 
      int getDni();
      float getPago();
@@ -33,7 +33,6 @@ Fecha _fechaDePago;
      void setDni(int dni );
      void setPago(float pago);
      void setFechaPago(Fecha fechaPAgo);
-
 
 /*
 

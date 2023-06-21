@@ -10,69 +10,59 @@ PagoTareas::PagoTareas()
     //ctor
 }
 
-void PagoTareas::recaudacionAnual() {
-   Fecha fecha;
-   PagoArchivos pagoArchi;
-   Pago pago;
-   int anios,meses;
-   anios = 2023- fecha.FechaInicial().getAnio() ;
-  // int vAniosMeses[anios][12]{};
+ void PagoTareas::cargarPago()
+{
+Pago pago;
+int dni;
+Fecha fechaHoy;
 
-   ClienteArchivo clienteArch;
-    int cantidadDeClientes = clienteArch.getCantidad();
+ClienteArchivo clienteArch;
+PagoArchivos pagoArch;
+int cantidadClientes = clienteArch.getCantidad();
 
-    for (int i = 0; i < cantidadDeClientes; i++)
+
+for (int i = 0; i < cantidadClientes; i++ ){
+Cliente cliente = clienteArch.leer(i);
+cout << "ingrese la fecha de pago"<<endl;
+fechaHoy.cargar();
+
+    pago.setDni(cliente.getDni());
+    pago.setFechaPago( fechaHoy );
+    pago.setPago(cliente.getAbonoMensual()) ;  // generar un metodo con el abono total(boxeo,joya,etc),este metodo es solo pesas
+    pagoArch.guardar(pago);
+}
+}
+void PagoTareas::recaudacionAnual()
+{
+
+    PagoArchivos pagoArchi;
+    Pago pago;
+    int CantArch=pagoArchi.getCantidad();
+    float VrecaudacionAnual[12]{};
+    for(int x=0; x<CantArch; x++)
     {
-        Cliente cliente =  clienteArch.leer(i);
+        pago=pagoArchi.leer(x);
+        VrecaudacionAnual[pago.getFecha().getMes()-1] += pago.getPago();
 
- if (cliente.getFechaDelAlta()> fecha.FechaInicial() && cliente.getFechaDelAlta().getAnio()<= 2023 && cliente.getEstado() )
-        {
-       //     pago=vAniosMeses[cliente.getFechaDelAlta().getAnio()-fecha.FechaInicial().getAnio()][cliente.getFechaDelAlta().getMes()-1] += cliente.getAbonoMensual() ;
-
-            pagoArchi.guardar(pago)  ;
-        }
     }
+    pago.MostrarRecaudacionAnual(VrecaudacionAnual) ;
 }
 
 void PagoTareas::regPago() { // resta hacer la accion
 
 }
-void PagoTareas::mostrarTodos()
+/*void PagoTareas::mostrarTodos()
 {
-    PagoArchivos pagoArch;
+    PagoArchivos pagoArchi;
     Pago pago;
-    int cantPagos= pagoArch.getCantidad() ;
+    int cantPagos= pagoArchi.getCantidad() ;
     for(int x=0; x<cantPagos; x++)
     {  pago=pagoArch.leer(x);
         pago.Mostrar() ;
 
     }
-}
+}   */
 
-
-void cargarPago()
-{
-Pago pago;
-int dni;
-Fecha fechaHoy;
-ClienteArchivo clienteArch;
-int cantidadClientes = clienteArch.getCantidad();
-
-cout<<"ingrese el dni del cliente"<< endl;
-cin>>dni;
-
-for (int i = 0; i < cantidadClientes; i++ ){
-Cliente cliente = clienteArch.leer(i);
-
-if ( cliente.getDni() == dni ) {
-
-    pago.setDni(dni);
-    pago.setFechaPago( fechaHoy );
-
-}
-
-
-}
 
 
 

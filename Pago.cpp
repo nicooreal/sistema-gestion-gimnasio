@@ -11,25 +11,14 @@ Pago::Pago()
 
  }
 
-/*
- int Pago::setRecaudacionAnual(int vAnMe[][12]){
-    _vAniosMeses[][12]= vAnMe[][12];
+void  Pago::MostrarRecaudacionAnual(float vRecaudacionAnual[12]){
+    for(int i=0;i<12;i++) {
+     cout <<"Mes "<< i+1 << endl;
+     cout << "Recaudacion: "<< vRecaudacionAnual[i]<<endl;
 
- }
+    }
 
-*/
- void Pago::Mostrar(){
-     int  vAniosMeses[50][12] ;
-     int i;
-     for(i=0; i<50; i++)
-        {
-            for (int j=0; j<12; j++)
-            {
-                cout << vAniosMeses[i][j] <<endl;
-            }
-        }
- }
-
+}
 
      int Pago::getDni(){
      return _dni;
