@@ -166,22 +166,22 @@
 	"Empleado.h"
 	"Programa.h"
 
-1687267873 c:\users\nico\documents\github\sistema-gestion-gimnasio\persona.h
+1687305552 c:\users\nico\documents\github\sistema-gestion-gimnasio\persona.h
 	<string.h>
 	<cstdio>
 	<iostream>
 	"Fecha.h"
 
-1687267873 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\persona.cpp
+1687305552 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\persona.cpp
 	"Persona.h"
 	"funciones.h"
 
-1687267873 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
+1687305529 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 	"ClienteArchivo.h"
 	"Boxeo.h"
 
-1687017867 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
+1687305552 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
 	<iostream>
 	"Boxeo.h"
 	"Yoga.h"
@@ -278,10 +278,10 @@
 1686797408 c:\users\iaram\onedrive\documentos\info aramburu\labo ii\sistema-gestion-gimnasio\empleado.h
 	"Persona.h"
 
-1687272948 c:\users\nico\documents\github\sistema-gestion-gimnasio\empleado.h
+1687305552 c:\users\nico\documents\github\sistema-gestion-gimnasio\empleado.h
 	"Persona.h"
 
-1687267873 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleado.cpp
+1687305552 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleado.cpp
 	<iostream>
 	<cstdlib>
 	"Empleado.h"
@@ -428,7 +428,7 @@
 1687277543 c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadotareas.h
 	"EmpleadoArchivo.h"
 
-1687299623 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadotareas.cpp
+1687305552 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\empleadotareas.cpp
 	"EmpleadoTareas.h"
 	"funciones.h"
 
@@ -500,7 +500,7 @@
 	<iostream>
 	<cstring>
 
-1687301249 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.cpp
+1687305552 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.cpp
 	"ClienteTareas.h"
 	"Cliente.h"
 	"ClienteArchivo.h"
@@ -913,11 +913,11 @@
 	<string.h>
 	"Pago.h"
 
-1687300712 c:\users\nico\documents\github\sistema-gestion-gimnasio\pago.h
+1687306815 c:\users\nico\documents\github\sistema-gestion-gimnasio\pago.h
 	"Cliente.h"
 	"Fecha.h"
 
-1687268476 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\pago.cpp
+1687306816 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\pago.cpp
 	<iostream>
 	<cstdlib>
 	"Pago.h"

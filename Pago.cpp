@@ -8,7 +8,7 @@ Pago::Pago()
  //vAniosMeses[50][12]{};
 }
  int Pago::getvAniosMeses() {
- return _vAniosMeses[50][12]; // revisar
+
  }
 
 /*
@@ -29,3 +29,32 @@ Pago::Pago()
             }
         }
  }
+
+
+     int Pago::getDni(){
+     return _dni;
+
+     }
+
+     float Pago::getPago(){
+     return _pago;
+     }
+
+     Fecha Pago::getFecha(){
+     return _fechaDePago;
+     }
+
+     void Pago::setDni(int dni ){
+     _dni = dni;
+
+     }
+     void Pago::setPago(float pago){
+     _pago = pago;
+
+
+     }
+     void Pago::setFechaPago(Fecha fechaPago){
+     _fechaDePago = fechaPago;
+
+
+     }

@@ -48,3 +48,35 @@ void PagoTareas::mostrarTodos()
 
     }
 }
+
+
+void cargarPago()
+{
+Pago pago;
+int dni;
+Fecha fechaHoy;
+ClienteArchivo clienteArch;
+int cantidadClientes = clienteArch.getCantidad();
+
+cout<<"ingrese el dni del cliente"<< endl;
+cin>>dni;
+
+for (int i = 0; i < cantidadClientes; i++ ){
+Cliente cliente = clienteArch.leer(i);
+
+if ( cliente.getDni() == dni ) {
+
+    pago.setDni(dni);
+    pago.setFechaPago( fechaHoy );
+
+}
+
+
+}
+
+
+
+
+
+
+

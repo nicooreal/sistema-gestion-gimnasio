@@ -5,19 +5,19 @@
 class Pago
 {
     private:
-   int  _vAniosMeses[50][12];
-/*
-dni de cliente
-numero socio
-float pago
-actividad que pago
-fecha de pago
+
+
+
+int _dni;
+float _pago;
+//actividad que pago
+Fecha _fechaDePago;
 
 
 
 
 
-*/
+
 
     public:
      Pago();
@@ -26,19 +26,17 @@ fecha de pago
      void gsetvAniosMeses(int vAnMe[][12]) ;
      void Mostrar();
 
+     int getDni();
+     float getPago();
+     Fecha getFecha();
+
+     void setDni(int dni );
+     void setPago(float pago);
+     void setFechaPago(Fecha fechaPAgo);
+
+
 /*
-void cargarPago()
-{
 
-cout<<"ingrese el dni del cliente"<< endl;
-cin>>dni;
-setNumeroSocio()
-setFechapago()
-mostrar cliente.
-cout<<"elija la actividad a pagar"<< endl;
-cin>> actividad;
-
-guardarPago;
 
 
 
