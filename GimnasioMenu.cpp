@@ -5,13 +5,13 @@
 #include "PagoTareas.h"
 void GimnasioMenu::mostrar()
 {
-   // marco_menu marco;
+    // marco_menu marco;
     int opcion;
     ClienteTareas clienteTareas;
-    PagoTareas pagoTareas;
+
     do
     {
-     //   marco.mostrar_gimnasio();
+        //   marco.mostrar_gimnasio();
         system("cls");
         cout<<"----------------------------------"<<endl;
         cout<<"\tMENU GIMNASIO"<<endl;
@@ -29,30 +29,30 @@ void GimnasioMenu::mostrar()
         switch(opcion)
         {
         case 1:
-            pagoTareas.regPago();
+            _pagoTareas.cargarPago();
             break;
 
         case 2:
-clienteTareas.mostrarClientesConFechaPorVencer(); //metodo incompleto
+            clienteTareas.mostrarClientesConFechaPorVencer(); //metodo incompleto
             break;
 
         case 3:
-            pagoTareas.cargarPago();
 
+            _pagoTareas.recaudacionAnual();
             break;
 
         case 4:
-            pagoTareas.recaudacionAnual ();
+
 //clienteTareas.registrarIngresos();
-system("pause");
+
             break;
 
 
         }
-       // if(opcion!=0)
-      //  {
-      //      system("pause");
-      //  }
+        if(opcion!=0)
+        {
+            system("pause");
+        }
 
     }
     while(opcion!=0);
