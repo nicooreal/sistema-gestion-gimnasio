@@ -20,7 +20,8 @@ void ClienteMenu::mostrar()
         cout<<"3 - LISTADOS"<<endl;/// Y MAS OPCIONES
         cout<<"4 - CONSULTAS "<<endl;
         cout<<"5 - DAR DE BAJA UN CLIENTE"<<endl;
-        cout<<"6 - ELIMINAR TODOS LOS REGISTROS"<<endl;
+        cout<<"6 - REACTIVAR UN CLIENTE"<<endl;
+        cout<<"7 - ELIMINAR TODOS LOS REGISTROS"<<endl;
         cout<<"0 - SALIR"<<endl;
         cout<<"----------------------------------"<<endl;
         cout<<"OPCION: ";
@@ -49,6 +50,11 @@ void ClienteMenu::mostrar()
             clienteTareas.darBajaCliente();
             break;
         case 6:
+            clienteTareas.reactivarCliente();
+            break;
+
+
+        case 7:
             clienteTareas.limpiarArchivoClientes();
 
             break;

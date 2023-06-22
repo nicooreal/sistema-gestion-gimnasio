@@ -28,7 +28,8 @@ void listarClientesYoga();
 void listarClientesDadosDeBaja();
 float acumularAbonos(int dni);
 void actualizarFechaPago(int dni);
-
+void listarTodosLosClientesDadosDeBaja();
+void reactivarCliente();
 };
 
 #endif // CLIENTETAREAS_H

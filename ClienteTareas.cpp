@@ -100,15 +100,15 @@ void ClienteTareas::darBajaCliente()
     if (numeroRegistro>=0)
     {
         cout <<"el cliente que usted quiere dar de baja es: " << endl;
-        Cliente em=_archivoCliente.leer(numeroRegistro);
-        em.mostrarCliente();
+        Cliente cliente=_archivoCliente.leer(numeroRegistro);
+        cliente.mostrarCliente();
         system("pause");
         cout <<"¿desea dar la baja?" <<endl;
         cout <<"1 - SI o 2 - NO" << endl;
         cin >> op;
         if (op == 1)
         {
-            Cliente clienteEnBaja ;
+            Cliente clienteEnBaja = cliente;
             clienteEnBaja.setEstado(false);
 
             bool exito = _archivoCliente.editar(clienteEnBaja, numeroRegistro);
@@ -395,7 +395,7 @@ void ClienteTareas::listados()
 
             break;
         case 8:
-
+         listarTodosLosClientesDadosDeBaja();
           break;
 
         }
@@ -583,5 +583,51 @@ YogaNuevo.setFechaLimitePago(fechaHoy);
 
 }
 
+void ClienteTareas::listarTodosLosClientesDadosDeBaja(){
+
+int cantidadDeClientes = _archivoCliente.getCantidad();
+    for (int i = 0; i < cantidadDeClientes; i++ )
+    {
+        Cliente cliente = _archivoCliente.leer(i);
+
+cliente.mostrarClienteDadoDeBaja();
+cout <<"----------------------------------------------" << endl;
+}
+}
 
 
+
+void ClienteTareas::reactivarCliente(){
+int dni,op = 2;
+cout <<"INGRESE EL DOCUMENTO DEL CLIENTE QUE QUIERE REACTICVAR"<< endl;
+cin >> dni;
+int cantidadDeClientes = _archivoCliente.getCantidad();
+    for (int i = 0; i < cantidadDeClientes; i++ )
+    {
+        Cliente cliente = _archivoCliente.leer(i);
+
+
+        if ( cliente.getDni() == dni && cliente.getEstado() == false ){
+
+
+        cout <<"USTED VA A REACTIVAR A:"<< endl;
+        cliente.mostrarClienteDadoDeBaja();
+        cout <<endl;
+        cout <<"ESTA SEGURO?"<< endl;
+        cout <<"1 - SI o 0 - NO" << endl;
+        cin >> op;
+        if (op == 1) {
+
+          cliente.setEstado(true);
+          _archivoCliente.editar(cliente,i);
+
+        cout << endl;
+        cout <<"REGISTRO ACTIVADO"<< endl;
+        }
+
+        }
+
+
+
+}
+}

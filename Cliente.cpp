@@ -343,15 +343,49 @@ void Cliente::establecerPlanMensual(int opc)
     }
 }
 
-/*string Cliente::getNombreActividad(){
-return _actividad;
+void Cliente::mostrarClienteDadoDeBaja(){
+
+ if (_estado == false)
+    {
+        mostrarPersona();
+        cout<<"Numero de socio "<<_numeroDeSocio<<endl;
+        cout<<"Fecha de alta: ";
+        _fechaDelAlta.mostrar();
+        cout <<"Servicio de pesas: ";
+        hacePesas();
+        if ( _pesas == true )
+        {
+            cout<<"Abono mensual: "<<_abonoMensual<<endl;
+            cout <<"Control de ingresos para pesas: " << _controlDeIngresosPesas << endl;
+            cout<<"Fecha limite para pagar abono: ";
+            _fechaLimiteParaPagarAbono.mostrar();
+        }
+        cout << endl;
+
+        cout <<"ACTIVIDADES EXTRA: " << endl;
+        if (_boxeo.getActivo() == true  )
+        {
+            cout <<"BOXEO"<<endl;
+            cout << "fecha del alta: " ;
+            _boxeo.getFechaAlta().mostrar();
+            cout << "cuota mensual: " << _boxeo.getCuotaMensual() << endl;
+            cout << "fecha limite para pagar: ";
+            _boxeo.getFechaLimitePago().mostrar();
+            cout <<"++++++++++++++++++++++++++++++++++++"<< endl;
+        }
+        if (_yoga.getActivo() == true )
+        {
+            cout <<"YOGA" << endl;
+            cout << "fecha del alta: " ;
+            _yoga.getFechaAlta().mostrar();
+            cout << "cuota mensual: " << _yoga.getCuotaMensual() << endl;
+            cout << "fecha limite para pagar: " ;
+            _yoga.getFechaLimitePago().mostrar();
+
+
+
+        }
+    }
+
 
 }
-
-
-void Cliente::setNombreDeActividad(string nombreAct){
-
-_actividad = nombreAct;
-
-}
-*/

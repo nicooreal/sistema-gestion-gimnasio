@@ -76,6 +76,7 @@ public:
     void establecerPlanMensual(int opcion);
     void establecerOpcionExtra(int opcion);
     void calcularUnMesDeEntreno();
+    void mostrarClienteDadoDeBaja();
 //string getNombreActividad();
 //void setNombreDeActividad(string nombreAct);
 };

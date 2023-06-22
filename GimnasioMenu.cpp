@@ -14,11 +14,12 @@ void GimnasioMenu::mostrar()
         //   marco.mostrar_gimnasio();
         system("cls");
         cout<<"----------------------------------"<<endl;
-        cout<<"\tMENU GIMNASIO"<<endl;
-        cout<<"1  - REGISTRAR PAGO"<<endl;
-        cout <<"2 - MOSTRAR CLIENTES CON FECHA POR VENCER" << endl;
-        cout <<"3 - MOSTRAR RECAUDACION ANUAL" << endl;
-        cout <<"4 - REGISTRAR INGRESOS" << endl;
+        cout <<"\tMENU GIMNASIO"<<endl;
+        cout <<"1 - REGISTRAR PAGO"<<endl;
+        cout <<"2 - MOSTRAR LOS PAGOS"<< endl;
+        cout <<"3 - MOSTRAR CLIENTES CON FECHA POR VENCER" << endl;
+        cout <<"4 - MOSTRAR RECAUDACION ANUAL" << endl;
+        cout <<"5 - REGISTRAR INGRESOS" << endl;
         cout<<"0 - SALIR"<<endl;
         cout<<"----------------------------------"<<endl;
         //rlutil::locate(10,18);
@@ -33,17 +34,25 @@ void GimnasioMenu::mostrar()
             break;
 
         case 2:
-            clienteTareas.mostrarClientesConFechaPorVencer(); //metodo incompleto
+            _pagoTareas.mostrarTodos();
             break;
 
         case 3:
+            clienteTareas.mostrarClientesConFechaPorVencer(); //metodo incompleto
 
-            _pagoTareas.recaudacionAnual();
             break;
 
-        case 4:
+                case 4:
 
-//clienteTareas.registrarIngresos();
+            _pagoTareas.recaudacionAnual();
+
+
+            break;
+
+
+        case 5:
+
+clienteTareas.registrarIngresos();
 
             break;
 
