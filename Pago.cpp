@@ -2,6 +2,7 @@
 # include<cstdlib>
 using namespace std;
 #include "Pago.h"
+#include "PagoArchivos.h"
 #include "Cliente.h"
 Pago::Pago()
 {
@@ -59,3 +60,5 @@ void  Pago::MostrarRecaudacionAnual(float vRecaudacionAnual[12]){
 
 
      }
+
+

@@ -53,6 +53,7 @@ if ( verificar == false ) {
 clienteTareas.actualizarFechaPago(dni);
 cout <<"REGISTRO GUARDADO EXITOSAMENTE"<< endl;
 cout <<"EL MONTO QUE SE GUARDO ES "<<clienteTareas.acumularAbonos(dni)<< endl;
+cout <<"DEL CLIENTE CON DNI: " << dni << endl;
 }
 
 
@@ -127,7 +128,28 @@ void PagoTareas::regPago() { // resta hacer la accion
 }   */
 
 
+void PagoTareas::mostrarTodos(){
+     PagoArchivos pagoArch;
 
+    int cantidadPagos = pagoArch.getCantidad();
+
+     for (int i = 0; i<cantidadPagos; i ++){
+
+       Pago pago = pagoArch.leer(i);
+
+        if (pago.getEstado() == true ) {
+        cout << "DNI CLIENTE: " <<pago.getDni()<< endl;
+        cout << "FECHA DEL PAGO: "<< pago.getFecha().getDia() <<"/"<< pago.getFecha().getMes()<<"/"<< pago.getFecha().getAnio()<< endl;
+        cout << "MONTO DEL PAGO: "<< pago.getPago() << endl;
+        cout <<"-------------------------"<< endl;
+        }
+
+     }
+
+
+
+
+     }
 
 
 

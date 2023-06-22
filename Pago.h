@@ -26,6 +26,8 @@ bool _estado;
      void gsetvAniosMeses(int vAnMe[][12]) ;
      void  MostrarRecaudacionAnual(float vRecaudacionAnual[12]);
 
+
+
      int getDni();
      float getPago();
      Fecha getFecha();

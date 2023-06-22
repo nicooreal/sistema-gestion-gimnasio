@@ -176,12 +176,12 @@
 	"Persona.h"
 	"funciones.h"
 
-1687390513 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
+1687403935 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 	"ClienteArchivo.h"
 	"Boxeo.h"
 
-1687387446 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
+1687403935 c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.h
 	<iostream>
 	"Boxeo.h"
 	"Yoga.h"
@@ -400,7 +400,7 @@
 	"GimnasioTareas.h"
 	"PagoTareas.h"
 
-1687301200 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientemenu.cpp
+1687404836 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientemenu.cpp
 	"ClienteMenu.h"
 	"ClienteTareas.h"
 	"marco_menu.h"
@@ -433,7 +433,7 @@
 	"EmpleadoTareas.h"
 	"funciones.h"
 
-1687365275 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\gimnasiomenu.cpp
+1687402710 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\gimnasiomenu.cpp
 	"GimnasioMenu.h"
 	"marco_menu.h"
 	"rlutil.h"
@@ -489,7 +489,7 @@
 	"cliente.h"
 	"ClienteArchivo.h"
 
-1687392644 c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.h
+1687404926 c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.h
 	"ClienteArchivo.h"
 	"funciones.h"
 
@@ -502,7 +502,7 @@
 	<iostream>
 	<cstring>
 
-1687394155 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.cpp
+1687404019 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.cpp
 	"ClienteTareas.h"
 	"Cliente.h"
 	"ClienteArchivo.h"
@@ -922,17 +922,18 @@
 	<string.h>
 	"Pago.h"
 
-1687390760 c:\users\nico\documents\github\sistema-gestion-gimnasio\pago.h
+1687402626 c:\users\nico\documents\github\sistema-gestion-gimnasio\pago.h
 	"Cliente.h"
 	"Fecha.h"
 
-1687390765 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\pago.cpp
+1687402606 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\pago.cpp
 	<iostream>
 	<cstdlib>
 	"Pago.h"
+	"PagoArchivos.h"
 	"Cliente.h"
 
-1687393470 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\pagotareas.cpp
+1687403237 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\pagotareas.cpp
 	<iostream>
 	<cstdlib>
 	"PagoTareas.h"
