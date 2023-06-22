@@ -30,6 +30,8 @@ float acumularAbonos(int dni);
 void actualizarFechaPago(int dni);
 void listarTodosLosClientesDadosDeBaja();
 void reactivarCliente();
+void listarPorNombre();
+void listarClientesPorAnioIngreso();
 };
 
 #endif // CLIENTETAREAS_H

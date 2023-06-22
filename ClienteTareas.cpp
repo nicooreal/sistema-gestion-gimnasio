@@ -387,13 +387,13 @@ void ClienteTareas::listados()
             mostrarTodos();
             break;
         case 2:
-
+            listarPorNombre();
             break;
         case 3:
 
             break;
         case 4:
-
+            listarClientesPorAnioIngreso();
             break;
         case 5:
 
@@ -656,3 +656,110 @@ void ClienteTareas::reactivarCliente()
 
     }
 }
+
+
+void ClienteTareas::listarPorNombre(){
+
+int orden;
+    do
+    {
+        cout<<"Ingrese el orden(1 - Ordenados de mayor a menor, 2 - Ordenados de menor a mayor)"<<endl;
+        cin>>orden;
+    }
+    while(orden<1||orden>2);
+    ClienteArchivo archivo("clientes.dat");
+
+    int cantidad=archivo.getCantidad();
+    Cliente *vCliente=new Cliente[cantidad];
+    Cliente aux;
+    if(vCliente==NULL)
+    {
+        cout<<"Error al intentar cargar el vector dinamico"<<endl;
+        return;
+    }
+    archivo.leerVector(vCliente,cantidad);
+
+    if(orden==1)
+    {
+        int mayor=0;
+
+        for(int i=0; i<cantidad-1; i++)
+        {
+            mayor=i;
+            for(int x=i+1; x<cantidad; x++)
+            {
+                if(strcmp(vCliente[x].getNombre(),vCliente[mayor].getNombre())>0)
+                {
+                    mayor=x;
+                }
+            }
+            if(mayor!=i)
+            {
+                aux=vCliente[i];
+                vCliente[i]=vCliente[mayor];
+                vCliente[mayor]=aux;
+            }
+        }
+
+
+    }
+    else
+    {
+        int menor=0;
+
+        for(int i=0; i<cantidad-1; i++)
+        {
+            menor=i;
+            for(int x=i+1; x<cantidad; x++)
+            {
+                if(strcmp(vCliente[x].getNombre(),vCliente[menor].getNombre())<0)
+                {
+                    menor=x;
+                }
+            }
+            if(menor!=i)
+            {
+                aux=vCliente[i];
+                vCliente[i]=vCliente[menor];
+                vCliente[menor]=aux;
+            }
+        }
+
+
+    }
+
+    for(int i=0; i<cantidad; i++)
+    {
+        vCliente[i].mostrarCliente();
+        cout<<endl;
+    }
+
+    delete []vCliente;
+}
+
+
+
+void ClienteTareas::listarClientesPorAnioIngreso()
+{
+    int anio;
+    cout<<"INGRESE EL ANIO DE INGRESO PARA LISTAR LOS CLIENTES"<<endl;
+    cin>>anio;
+    cout<<endl;
+
+    for (int i = 0; i < _archivoCliente.getCantidad(); i++ ){
+
+      if ( anio == _archivoCliente.leer(i).getFechaDelAlta().getAnio() ) {
+
+        _archivoCliente.leer(i).mostrarCliente();
+        cout <<"-------------------------------------"<< endl;
+
+      }
+
+    }
+}
+
+
+
+
+
+

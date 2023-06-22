@@ -176,7 +176,7 @@
 	"Persona.h"
 	"funciones.h"
 
-1687446725 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
+1687459209 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 	"ClienteArchivo.h"
 	"Boxeo.h"
@@ -489,7 +489,7 @@
 	"cliente.h"
 	"ClienteArchivo.h"
 
-1687404926 c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.h
+1687460754 c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.h
 	"ClienteArchivo.h"
 	"funciones.h"
 
@@ -934,7 +934,7 @@
 	"PagoArchivos.h"
 	"Cliente.h"
 
-1687450968 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\pagotareas.cpp
+1687451221 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\pagotareas.cpp
 	<iostream>
 	<cstdlib>
 	"PagoTareas.h"

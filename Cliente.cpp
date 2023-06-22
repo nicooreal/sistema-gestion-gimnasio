@@ -206,15 +206,15 @@ void Cliente::cargarCliente()
     {
 
         calcularUnMesDeEntreno();
+    }
+    establecerPlanMensual(opcionMensual);
+    cout<<"NOMBRE DE LA ACTIVIDAD EXTRA (1 - BOXEO $1000, 2 - YOGA $1000, 3 - BOXEO Y YOGA $1500 4 - NINGUNA )"<<endl;
+    cin >> opcionExtra;
         cout <<"INGRESE LA OPCION(numero) PARA EL MONTO MENSUAL A PAGAR: " << endl;
         cout <<"OPCION 1 - 3 Dias - $1000" << endl;
         cout <<"OPCION 2 - 4 Dias - $1200" << endl;
         cout <<"OPCION 3 - 5 PASE LIBRE $1400" << endl;
         cin >>opcionMensual;
-    }
-    establecerPlanMensual(opcionMensual);
-    cout<<"NOMBRE DE LA ACTIVIDAD EXTRA (1 - BOXEO $1000, 2 - YOGA $1000, 3 - BOXEO Y YOGA $1500 4 - NINGUNA )"<<endl;
-    cin >> opcionExtra;
 
     establecerOpcionExtra(opcionExtra);
 
