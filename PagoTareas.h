@@ -11,7 +11,7 @@ class PagoTareas
         void regPago();
         void recaudacionAnual();
         void mostrarTodos();
-        void cargarPago();
+        void cargarPago(bool primerPago,int dni);
         int calcularcantidadAniosDeRegistro();
 };
 
