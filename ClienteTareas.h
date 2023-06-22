@@ -26,8 +26,8 @@ void consultas();
 void listarClientesBoxeo();
 void listarClientesYoga();
 void listarClientesDadosDeBaja();
-
-
+float acumularAbonos(int dni);
+void actualizarFechaPago(int dni);
 
 };
 

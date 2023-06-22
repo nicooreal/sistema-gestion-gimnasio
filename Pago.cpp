@@ -33,6 +33,12 @@ void  Pago::MostrarRecaudacionAnual(float vRecaudacionAnual[12]){
      return _fechaDePago;
      }
 
+
+     bool Pago::getEstado(){
+     return _estado;
+
+     }
+
      void Pago::setDni(int dni ){
      _dni = dni;
 
@@ -44,6 +50,12 @@ void  Pago::MostrarRecaudacionAnual(float vRecaudacionAnual[12]){
      }
      void Pago::setFechaPago(Fecha fechaPago){
      _fechaDePago = fechaPago;
+
+
+     }
+
+     void Pago::setEstado(bool estado ){
+     _estado = estado;
 
 
      }

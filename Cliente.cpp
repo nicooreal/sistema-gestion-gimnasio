@@ -232,7 +232,7 @@ void Cliente::establecerOpcionExtra(int opcionExtra)
         _boxeo.setCuotaMensual(1000);
 
         _yoga.setActivo(false);
-
+        _yoga.setCuotaMensual(0);
     }
     if (opcionExtra == 2)
     {
@@ -242,6 +242,7 @@ void Cliente::establecerOpcionExtra(int opcionExtra)
         _yoga.setCuotaMensual(1000);
 
         _boxeo.setActivo(false);
+        _boxeo.setCuotaMensual(0);
     }
     if  (opcionExtra== 3)
     {

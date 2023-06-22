@@ -12,7 +12,7 @@ int _dni;
 float _pago;
 //actividad que pago
 Fecha _fechaDePago;
-
+bool _estado;
 
 
 
@@ -29,10 +29,13 @@ Fecha _fechaDePago;
      int getDni();
      float getPago();
      Fecha getFecha();
+     bool getEstado();
 
      void setDni(int dni );
      void setPago(float pago);
      void setFechaPago(Fecha fechaPAgo);
+     void setEstado(bool estado);
+
 
 /*
 

@@ -5,6 +5,7 @@ using namespace std;
 #include "Pago.h"
 #include "PagoArchivos.h"
 #include "ClienteArchivo.h"
+#include "ClienteTareas.h"
 PagoTareas::PagoTareas()
 {
     //ctor
@@ -15,23 +16,49 @@ PagoTareas::PagoTareas()
 Pago pago;
 int dni;
 Fecha fechaHoy;
-
+ClienteTareas clienteTareas;
 ClienteArchivo clienteArch;
 PagoArchivos pagoArch;
 int cantidadClientes = clienteArch.getCantidad();
+bool verificar = false;
+cout <<"ingrese el dni del cliente a pagar "<< endl;
+cin >> dni;
 
 
 for (int i = 0; i < cantidadClientes; i++ ){
 Cliente cliente = clienteArch.leer(i);
-cout << "ingrese la fecha de pago"<<endl;
-fechaHoy.cargar();
 
-    pago.setDni(cliente.getDni());
+if ( dni == cliente.getDni()  ) {
+
+
+
+    pago.setDni(dni);
     pago.setFechaPago( fechaHoy );
-    pago.setPago(cliente.getAbonoMensual()) ;  // generar un metodo con el abono total(boxeo,joya,etc),este metodo es solo pesas
+    pago.setPago( clienteTareas.acumularAbonos(dni)  ) ;  // generar un metodo con el abono total(boxeo,joya,etc),este metodo es solo pesas
+    pago.setEstado(true);
     pagoArch.guardar(pago);
+//
+
+  verificar = true;
+                                }
 }
+
+
+if ( verificar == false ) {
+
+    cout <<"EL CLIENTE NO EXISTE"<< endl;
+
+} else {
+
+clienteTareas.actualizarFechaPago(dni);
+cout <<"REGISTRO GUARDADO EXITOSAMENTE"<< endl;
+cout <<"EL MONTO QUE SE GUARDO ES "<<clienteTareas.acumularAbonos(dni)<< endl;
 }
+
+
+
+}
+
 void PagoTareas::recaudacionAnual()
 {
 

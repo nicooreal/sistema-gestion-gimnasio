@@ -515,4 +515,73 @@ void ClienteTareas::listarClientesDadosDeBaja(){
 }
 
 
+float ClienteTareas::acumularAbonos(int dni){
+
+float montoAcumulado = 0;
+int cantidadClientes =_archivoCliente.getCantidad();
+
+
+for (int i = 0; i < cantidadClientes ;i++ ){
+   Cliente cliente = _archivoCliente.leer(i);
+
+   if ( dni == cliente.getDni()){
+
+        montoAcumulado   =  cliente.getYoga().getCuotaMensual() + cliente.getBoxeo().getCuotaMensual()  + cliente.getAbonoMensual();
+
+
+
+
+   }
+
+
+
+
+}
+
+
+return montoAcumulado;
+
+
+}
+
+
+
+void ClienteTareas::actualizarFechaPago(int dni){
+
+int cantidadDeClientes =_archivoCliente.getCantidad();
+Fecha fechaHoy;
+fechaHoy.setMes(fechaHoy.getMes() + 1 );
+
+for (int i = 0; i < cantidadDeClientes;i++ ){
+Cliente cliente = _archivoCliente.leer(i);
+
+Boxeo boxeoNuevo = cliente.getBoxeo();
+boxeoNuevo.setFechaLimitePago(fechaHoy);
+
+Yoga YogaNuevo = cliente.getYoga();
+YogaNuevo.setFechaLimitePago(fechaHoy);
+
+
+   if ( cliente.getDni()  == dni ){
+
+
+    cliente.setFechaLimite(fechaHoy);
+    cliente.setBoxeo( boxeoNuevo)  ;
+    cliente.setYoga(YogaNuevo);
+
+
+
+
+
+   _archivoCliente.editar(cliente,i);
+
+   }
+
+
+}
+
+
+}
+
+
 
