@@ -12,6 +12,7 @@ class PagoTareas
         void recaudacionAnual();
         void mostrarTodos();
         void cargarPago();
+        int calcularcantidadAniosDeRegistro();
 };
 
 #endif // PAGOTAREAS_H

@@ -59,13 +59,49 @@ cout <<"EL MONTO QUE SE GUARDO ES "<<clienteTareas.acumularAbonos(dni)<< endl;
 
 }
 
+
+
+
+int PagoTareas::calcularcantidadAniosDeRegistro(){
+
+PagoArchivos pagoArchi;
+Pago pago = pagoArchi.leer(0);
+Fecha fechaHoy;
+
+int anioMinimo = pago.getFecha().getAnio();
+int anioMax = fechaHoy.getAnio();
+
+
+
+return anioMax - anioMinimo + 1;
+
+
+
+
+
+
+}
+
+
+
+
+
+
 void PagoTareas::recaudacionAnual()
 {
+
+
+
 
     PagoArchivos pagoArchi;
     Pago pago;
     int CantArch=pagoArchi.getCantidad();
     float VrecaudacionAnual[12]{};
+
+
+
+
+
     for(int x=0; x<CantArch; x++)
     {
         pago=pagoArchi.leer(x);

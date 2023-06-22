@@ -502,7 +502,7 @@
 	<iostream>
 	<cstring>
 
-1687393414 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.cpp
+1687394155 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.cpp
 	"ClienteTareas.h"
 	"Cliente.h"
 	"ClienteArchivo.h"
@@ -912,7 +912,7 @@
 1687017867 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\copiadeseguridadtareas.cpp
 	"CopiaDeSeguridadTareas.h"
 
-1687365275 c:\users\nico\documents\github\sistema-gestion-gimnasio\pagotareas.h
+1687395878 c:\users\nico\documents\github\sistema-gestion-gimnasio\pagotareas.h
 
 1687267873 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\pagoarchivos.cpp
 	"PagoArchivos.h"

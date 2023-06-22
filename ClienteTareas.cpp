@@ -573,7 +573,7 @@ YogaNuevo.setFechaLimitePago(fechaHoy);
 
 
 
-   _archivoCliente.editar(cliente,i);
+   _archivoCliente.editar(cliente,cliente.getNumeroDeSocio());
 
    }
 
