@@ -30,7 +30,7 @@ void GimnasioMenu::mostrar()
         switch(opcion)
         {
         case 1:
-            _pagoTareas.cargarPago();
+            _pagoTareas.cargarPago(false,0);
             break;
 
         case 2:

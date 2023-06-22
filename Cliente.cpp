@@ -3,6 +3,8 @@
 #include "ClienteArchivo.h"
 #include "Boxeo.h"
 
+
+
 int Cliente::getNumeroDeSocio()
 {
 
@@ -190,6 +192,7 @@ void Cliente::calcularUnMesDeEntreno()
 
 void Cliente::cargarCliente()
 {
+
     ClienteArchivo clienteArch;
     int cantidadDeSocios = clienteArch.getCantidad();
     int opcionMensual = 0;
@@ -216,8 +219,8 @@ void Cliente::cargarCliente()
     establecerOpcionExtra(opcionExtra);
 
 
-
     _estado = true;
+
 }
 
 void Cliente::establecerOpcionExtra(int opcionExtra)
@@ -261,6 +264,8 @@ void Cliente::establecerOpcionExtra(int opcionExtra)
     {
         _boxeo.setActivo(false);
         _yoga.setActivo(false);
+        _boxeo.setCuotaMensual(0);
+        _yoga.setCuotaMensual(0);
     }
 
 }

@@ -2,16 +2,17 @@
 #include "Cliente.h"
 #include "ClienteArchivo.h"
 #include "GimnasioMenu.h"
-
+#include "PagoTareas.h"
 void ClienteTareas::cargar()
 {
 
-
+    PagoTareas pagoTareas;
     Cliente cliente;
     cliente.cargarCliente();
 
     _archivoCliente.guardar(cliente);
-
+    cout <<"-------------------------------"<< endl;
+    pagoTareas.cargarPago(true,cliente.getDni());
 
 }
 void ClienteTareas::modificar()
@@ -19,26 +20,37 @@ void ClienteTareas::modificar()
     int numeroRegistro = _archivoCliente.buscarRegistro();
     if (numeroRegistro>=0)
     {
-        cout <<"el cliente que usted quiere modificar es: " << endl;
 
         Cliente cliente=_archivoCliente.leer(numeroRegistro);
-        cliente.mostrarCliente();
-        system("pause");
-        cout << endl;
-        cout << "Modifique al cliente"<<endl;
 
-
-        elegirQueModificar(cliente);
-
-
-        bool exito = _archivoCliente.editar(cliente, numeroRegistro);
-        if (exito)
+        if( cliente.getEstado() == true )
         {
-            cout << "Registro modificado exitosamente." << endl;
+
+            cout <<"el cliente que usted quiere modificar es: " << endl;
+            cliente.mostrarCliente();
+            system("pause");
+            cout << endl;
+            cout << "Modifique al cliente"<<endl;
+
+
+            elegirQueModificar(cliente);
+
+
+            bool exito = _archivoCliente.editar(cliente, numeroRegistro);
+            if (exito)
+            {
+                cout << "Registro modificado exitosamente." << endl;
+            }
+            else
+            {
+                cout << "No se pudo modificar el registro." << endl;
+            }
+
+
         }
         else
         {
-            cout << "No se pudo modificar el registro." << endl;
+            cout <<"no se encontro el registro" << endl;
         }
     }
 }
@@ -313,18 +325,18 @@ void ClienteTareas::mostrarClientesConFechaPorVencer()
         {
 
 
-         int diasParaTerminarELmes = diasPorMes[ fechaHoy.getMes()- 1 ] - fechaHoy.getDia();
+            int diasParaTerminarELmes = diasPorMes[ fechaHoy.getMes()- 1 ] - fechaHoy.getDia();
 
 
-          if ( diasParaTerminarELmes + cliente.getFechaLimiteParaPagarAbono().getDia() <= 7 )
+            if ( diasParaTerminarELmes + cliente.getFechaLimiteParaPagarAbono().getDia() <= 7 )
 
-          {
-
-
-          cliente.mostrarCliente();
+            {
 
 
-          }
+                cliente.mostrarCliente();
+
+
+            }
 
 
             // incompleto, mejor habria q hacer un metodo para contar los dias del anio
@@ -395,8 +407,8 @@ void ClienteTareas::listados()
 
             break;
         case 8:
-         listarTodosLosClientesDadosDeBaja();
-          break;
+            listarTodosLosClientesDadosDeBaja();
+            break;
 
         }
 
@@ -456,7 +468,8 @@ void ClienteTareas::consultas()
     while(opcion!=0);
 }
 
-void ClienteTareas::listarClientesBoxeo(){
+void ClienteTareas::listarClientesBoxeo()
+{
 
     int cantidadDeClientes = _archivoCliente.getCantidad();
     for (int i = 0; i < cantidadDeClientes; i++ )
@@ -471,9 +484,10 @@ void ClienteTareas::listarClientesBoxeo(){
 
 
 
+    }
 }
-}
-void ClienteTareas::listarClientesYoga(){
+void ClienteTareas::listarClientesYoga()
+{
 
     int cantidadDeClientes = _archivoCliente.getCantidad();
     for (int i = 0; i < cantidadDeClientes; i++ )
@@ -488,146 +502,157 @@ void ClienteTareas::listarClientesYoga(){
 
 
 
+    }
 }
-}
-void ClienteTareas::listarClientesDadosDeBaja(){
+void ClienteTareas::listarClientesDadosDeBaja()
+{
 
 
-      int cantidadDeClientes = _archivoCliente.getCantidad();
+    int cantidadDeClientes = _archivoCliente.getCantidad();
     for (int i = 0; i < cantidadDeClientes; i++ )
     {
         Cliente cliente = _archivoCliente.leer(i);
         if(cliente.getEstado() == false  )
         {
-          cliente.setEstado(true);
-          cliente.mostrarCliente();
-          cliente.setEstado(false);
+            cliente.setEstado(true);
+            cliente.mostrarCliente();
+            cliente.setEstado(false);
             cout << endl;
             cout <<"--------------------------------------"<< endl;
         }
 
 
 
-}
+    }
 
 
 
 }
 
 
-float ClienteTareas::acumularAbonos(int dni){
+float ClienteTareas::acumularAbonos(int dni)
+{
 
-float montoAcumulado = 0;
-int cantidadClientes =_archivoCliente.getCantidad();
-
-
-for (int i = 0; i < cantidadClientes ;i++ ){
-   Cliente cliente = _archivoCliente.leer(i);
-
-   if ( dni == cliente.getDni()){
-
-        montoAcumulado   =  cliente.getYoga().getCuotaMensual() + cliente.getBoxeo().getCuotaMensual()  + cliente.getAbonoMensual();
+    float montoAcumulado = 0;
+    int cantidadClientes =_archivoCliente.getCantidad();
 
 
+    for (int i = 0; i < cantidadClientes ; i++ )
+    {
+        Cliente cliente = _archivoCliente.leer(i);
 
+        if ( dni == cliente.getDni())
+        {
 
-   }
+            montoAcumulado   =  cliente.getYoga().getCuotaMensual() + cliente.getBoxeo().getCuotaMensual()  + cliente.getAbonoMensual();
 
 
 
 
-}
-
-
-return montoAcumulado;
-
-
-}
-
-
-
-void ClienteTareas::actualizarFechaPago(int dni){
-
-int cantidadDeClientes =_archivoCliente.getCantidad();
-Fecha fechaHoy;
-fechaHoy.setMes(fechaHoy.getMes() + 1 );
-
-for (int i = 0; i < cantidadDeClientes;i++ ){
-Cliente cliente = _archivoCliente.leer(i);
-
-Boxeo boxeoNuevo = cliente.getBoxeo();
-boxeoNuevo.setFechaLimitePago(fechaHoy);
-
-Yoga YogaNuevo = cliente.getYoga();
-YogaNuevo.setFechaLimitePago(fechaHoy);
-
-
-   if ( cliente.getDni()  == dni ){
-
-
-    cliente.setFechaLimite(fechaHoy);
-    cliente.setBoxeo( boxeoNuevo)  ;
-    cliente.setYoga(YogaNuevo);
+        }
 
 
 
 
+    }
 
-   _archivoCliente.editar(cliente,cliente.getNumeroDeSocio());
 
-   }
+    return montoAcumulado;
 
 
 }
 
 
-}
 
-void ClienteTareas::listarTodosLosClientesDadosDeBaja(){
+void ClienteTareas::actualizarFechaPago(int dni)
+{
 
-int cantidadDeClientes = _archivoCliente.getCantidad();
+    int cantidadDeClientes =_archivoCliente.getCantidad();
+    Fecha fechaHoy;
+    fechaHoy.setMes(fechaHoy.getMes() + 1 );
+
     for (int i = 0; i < cantidadDeClientes; i++ )
     {
         Cliente cliente = _archivoCliente.leer(i);
 
-cliente.mostrarClienteDadoDeBaja();
-cout <<"----------------------------------------------" << endl;
+        Boxeo boxeoNuevo = cliente.getBoxeo();
+        boxeoNuevo.setFechaLimitePago(fechaHoy);
+
+        Yoga YogaNuevo = cliente.getYoga();
+        YogaNuevo.setFechaLimitePago(fechaHoy);
+
+
+        if ( cliente.getDni()  == dni )
+        {
+
+
+            cliente.setFechaLimite(fechaHoy);
+            cliente.setBoxeo( boxeoNuevo)  ;
+            cliente.setYoga(YogaNuevo);
+
+
+
+
+
+            _archivoCliente.editar(cliente,i);
+
+        }
+
+
+    }
+
+
 }
-}
 
+void ClienteTareas::listarTodosLosClientesDadosDeBaja()
+{
 
-
-void ClienteTareas::reactivarCliente(){
-int dni,op = 2;
-cout <<"INGRESE EL DOCUMENTO DEL CLIENTE QUE QUIERE REACTICVAR"<< endl;
-cin >> dni;
-int cantidadDeClientes = _archivoCliente.getCantidad();
+    int cantidadDeClientes = _archivoCliente.getCantidad();
     for (int i = 0; i < cantidadDeClientes; i++ )
     {
         Cliente cliente = _archivoCliente.leer(i);
 
-
-        if ( cliente.getDni() == dni && cliente.getEstado() == false ){
-
-
-        cout <<"USTED VA A REACTIVAR A:"<< endl;
         cliente.mostrarClienteDadoDeBaja();
-        cout <<endl;
-        cout <<"ESTA SEGURO?"<< endl;
-        cout <<"1 - SI o 0 - NO" << endl;
-        cin >> op;
-        if (op == 1) {
-
-          cliente.setEstado(true);
-          _archivoCliente.editar(cliente,i);
-
-        cout << endl;
-        cout <<"REGISTRO ACTIVADO"<< endl;
-        }
-
-        }
-
-
-
+        cout <<"----------------------------------------------" << endl;
+    }
 }
+
+
+
+void ClienteTareas::reactivarCliente()
+{
+    int dni,op = 2;
+    cout <<"INGRESE EL DOCUMENTO DEL CLIENTE QUE QUIERE REACTICVAR"<< endl;
+    cin >> dni;
+    int cantidadDeClientes = _archivoCliente.getCantidad();
+    for (int i = 0; i < cantidadDeClientes; i++ )
+    {
+        Cliente cliente = _archivoCliente.leer(i);
+
+
+        if ( cliente.getDni() == dni && cliente.getEstado() == false )
+        {
+
+
+            cout <<"USTED VA A REACTIVAR A:"<< endl;
+            cliente.mostrarClienteDadoDeBaja();
+            cout <<endl;
+            cout <<"ESTA SEGURO?"<< endl;
+            cout <<"1 - SI o 0 - NO" << endl;
+            cin >> op;
+            if (op == 1)
+            {
+
+                cliente.setEstado(true);
+                _archivoCliente.editar(cliente,i);
+
+                cout << endl;
+                cout <<"REGISTRO ACTIVADO"<< endl;
+            }
+
+        }
+
+
+
+    }
 }
