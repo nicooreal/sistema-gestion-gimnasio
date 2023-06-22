@@ -40,6 +40,10 @@ void  Pago::MostrarRecaudacionAnual(float vRecaudacionAnual[12]){
 
      }
 
+     int Pago::getId(){
+     return _id;
+     }
+
      void Pago::setDni(int dni ){
      _dni = dni;
 
@@ -61,4 +65,8 @@ void  Pago::MostrarRecaudacionAnual(float vRecaudacionAnual[12]){
 
      }
 
+     void Pago::setId(int id){
+     _id = id;
 
+
+     }
