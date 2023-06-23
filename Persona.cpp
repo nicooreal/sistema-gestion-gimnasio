@@ -44,7 +44,7 @@ void Persona::cargarPersona()
     cin>>_dni;
     cout<<"Fecha nacimiento: "<<endl;
     _fechaNacimiento.cargar();
-
+    _edad=calcularEdad(_fechaNacimiento);
     do
     {
         cout<<"Genero(M - MASCULINO, F - FEMENINO): ";
@@ -126,5 +126,19 @@ char Persona::getGenero()
 Fecha Persona::getFechaNacimiento()
 {
     return _fechaNacimiento;
+}
+
+int Persona::calcularEdad(Fecha fechaNacimiento)
+{
+    Fecha hoy;
+    int edad;
+    edad=hoy.getAnio()-fechaNacimiento.getAnio(); /// OBTENGO EL AÑO ACTUAL
+
+    if(hoy.getMes()<fechaNacimiento.getMes()||hoy.getMes()==fechaNacimiento.getMes()&&hoy.getDia()<fechaNacimiento.getDia())
+    {
+        edad--;
+    }
+
+    return edad;
 }
 
