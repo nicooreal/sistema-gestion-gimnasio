@@ -10,6 +10,7 @@ class ClienteTareas
    ClienteArchivo _archivoCliente;
    int generarID();
    void elegirQueModificar(Cliente &clienteModificado);
+   int calcularEdad(Fecha fechaNacimiento);
 
     public:
 void cargar();

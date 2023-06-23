@@ -210,7 +210,7 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             cout<<"Ingrese la nueva fecha de nacimiento "<<endl;
             fechaNacimiento.cargar();
             clienteModificado.setFechaNacimiento(fechaNacimiento);
-            clienteModificado.calcularEdad();
+            clienteModificado.setEdad(calcularEdad(fechaNacimiento));
             break;
         case 6:
             cout<<"Ingrese la nueva fecha de alta"<<endl;
@@ -756,6 +756,20 @@ void ClienteTareas::listarClientesPorAnioIngreso()
       }
 
     }
+}
+
+int ClienteTareas::calcularEdad(Fecha fechaNacimiento)
+{
+    Fecha hoy;
+    int edad;
+    edad=hoy.getAnio()-fechaNacimiento.getAnio(); /// OBTENGO EL AÑO ACTUAL
+
+    if(hoy.getMes()<fechaNacimiento.getMes()||hoy.getMes()==fechaNacimiento.getMes()&&hoy.getDia()<fechaNacimiento.getDia())
+    {
+        edad--;
+    }
+
+    return edad;
 }
 
 

@@ -112,11 +112,11 @@
 1683151931 c:\users\alexi\github\sistema-gestion-gimnasio\gimnasio.h
 	<iostream>
 
-1687386234 source:c:\users\alexi\github\sistema-gestion-gimnasio\persona.cpp
+1687484976 source:c:\users\alexi\github\sistema-gestion-gimnasio\persona.cpp
 	"Persona.h"
 	"funciones.h"
 
-1687386234 c:\users\alexi\github\sistema-gestion-gimnasio\persona.h
+1687484837 c:\users\alexi\github\sistema-gestion-gimnasio\persona.h
 	<string.h>
 	<cstdio>
 	<iostream>
@@ -197,12 +197,12 @@
 	"Empleado.h"
 	"Programa.h"
 
-1687386234 source:c:\users\alexi\github\sistema-gestion-gimnasio\cliente.cpp
+1687481945 source:c:\users\alexi\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 	"ClienteArchivo.h"
 	"Boxeo.h"
 
-1687386234 c:\users\alexi\github\sistema-gestion-gimnasio\cliente.h
+1687481945 c:\users\alexi\github\sistema-gestion-gimnasio\cliente.h
 	<iostream>
 	"Boxeo.h"
 	"Yoga.h"
@@ -300,12 +300,12 @@
 
 1683254773 c:\users\nico\documents\github\sistema-gestion-gimnasio\include\cliente.h
 
-1687386498 c:\users\alexi\github\sistema-gestion-gimnasio\empleado.h
+1687485434 c:\users\alexi\github\sistema-gestion-gimnasio\empleado.h
 	"Persona.h"
 
 1684202729 c:\users\alexi\github\sistema-gestion-gimnasio\include\menugim.h
 
-1687386280 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleado.cpp
+1687485790 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleado.cpp
 	<iostream>
 	<cstdlib>
 	"Empleado.h"
@@ -347,7 +347,7 @@
 1684377228 c:\users\alexi\github\sistema-gestion-gimnasio\clientemenu.h
 	<iostream>
 
-1687305589 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientemenu.cpp
+1687481945 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientemenu.cpp
 	"ClienteMenu.h"
 	"ClienteTareas.h"
 	"marco_menu.h"
@@ -366,7 +366,7 @@
 	"marco_menu.h"
 	"rlutil.h"
 
-1687299659 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadoarchivo.cpp
+1687487394 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadoarchivo.cpp
 	"EmpleadoArchivo.h"
 
 1687139473 c:\users\alexi\github\sistema-gestion-gimnasio\empleadoarchivo.h
@@ -374,7 +374,7 @@
 	<string.h>
 	"Empleado.h"
 
-1687386581 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
+1687486983 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
 	"EmpleadoTareas.h"
 	"funciones.h"
 
@@ -388,7 +388,7 @@
 	<iostream>
 	"EmpleadoArchivo.h"
 
-1687311935 source:c:\users\alexi\github\sistema-gestion-gimnasio\gimnasiomenu.cpp
+1687481945 source:c:\users\alexi\github\sistema-gestion-gimnasio\gimnasiomenu.cpp
 	"GimnasioMenu.h"
 	"marco_menu.h"
 	"rlutil.h"
@@ -780,18 +780,19 @@
 1686699031 source:c:\users\alexi\github\sistema-gestion-gimnasio\boxeo.cpp
 	"Boxeo.h"
 
-1687386076 c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.h
+1687484917 c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.h
 	"ClienteArchivo.h"
 	"funciones.h"
 
 1686699031 source:c:\users\alexi\github\sistema-gestion-gimnasio\yoga.cpp
 	"Yoga.h"
 
-1687386076 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.cpp
+1687484917 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.cpp
 	"ClienteTareas.h"
 	"Cliente.h"
 	"ClienteArchivo.h"
 	"GimnasioMenu.h"
+	"PagoTareas.h"
 
 1686796788 source:c:\users\alexi\github\sistema-gestion-gimnasio\copiadeseguridadtareas.cpp
 	"CopiaDeSeguridadTareas.h"
@@ -880,25 +881,27 @@
 	<string.h>
 	"Pago.h"
 
-1687310926 c:\users\alexi\github\sistema-gestion-gimnasio\pagotareas.h
+1687481945 c:\users\alexi\github\sistema-gestion-gimnasio\pagotareas.h
 
-1687310926 source:c:\users\alexi\github\sistema-gestion-gimnasio\pago.cpp
+1687481945 source:c:\users\alexi\github\sistema-gestion-gimnasio\pago.cpp
 	<iostream>
 	<cstdlib>
 	"Pago.h"
+	"PagoArchivos.h"
 	"Cliente.h"
 
-1687310926 c:\users\alexi\github\sistema-gestion-gimnasio\pago.h
+1687481945 c:\users\alexi\github\sistema-gestion-gimnasio\pago.h
 	"Cliente.h"
 	"Fecha.h"
 
-1687310926 source:c:\users\alexi\github\sistema-gestion-gimnasio\pagotareas.cpp
+1687481945 source:c:\users\alexi\github\sistema-gestion-gimnasio\pagotareas.cpp
 	<iostream>
 	<cstdlib>
 	"PagoTareas.h"
 	"Pago.h"
 	"PagoArchivos.h"
 	"ClienteArchivo.h"
+	"ClienteTareas.h"
 
 1687017867 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\configuracionesmenu.cpp
 	"ConfiguracionesMenu.h"

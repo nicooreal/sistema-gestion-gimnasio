@@ -61,22 +61,7 @@ char *Empleado::getEspecializacion()
     char especializaciones[3][15]= {"Profesor","Administrativo","Limpieza"};
     return especializaciones[_especializacion-1];
 }
-void Empleado::cargarEmpleado()
-{
-    cargarPersona();
-    cout <<"Sueldo: "<<endl;
-    cin >> _sueldo;
-    cout <<"Fecha De Ingreso: "<<endl;
-    _fechaIngreso.cargar();
-    do
-    {
-        cout <<"Especializacion(1 - Profesor, 2 - Administrativo, 3 - Limpieza): "<<endl;
-        cin >> _especializacion;
-    }
-    while(_especializacion<1||_especializacion>3);
-    _estado=true;
 
-}
 void Empleado::mostrarEmpleado()
 {
     if ( _estado == true )
@@ -98,6 +83,7 @@ void Empleado::mostrarEmpleadosDadosDeBaja()
 {
     if(!_estado)
     {
+        cout<<"\tESTE EMPLEADO ESTA DADO DE BAJA"<<endl;
         char especializaciones[3][15]= {"Profesor","Administrativo","Limpieza"};
         cout<<"ID DE EMPLEADO #"<<_id<<endl;
         mostrarPersona();

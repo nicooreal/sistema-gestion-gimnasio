@@ -46,7 +46,7 @@ public:
     char getGenero();
     Fecha getFechaNacimiento();
 
-    void calcularEdad();
+
 
 
 
