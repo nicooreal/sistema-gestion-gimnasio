@@ -67,11 +67,12 @@ void EmpleadoTareas::listarRegistros()
     {
 
         Empleado em=_archivo.leer(i);
-      /* if (em.getEstado() == true)*/ {
-        em.mostrarEmpleado();
-        cout<<"---------------------------------------"<<endl;
+        /* if (em.getEstado() == true)*/
+        {
+            em.mostrarEmpleado();
+            cout<<"---------------------------------------"<<endl;
 
-                                   }
+        }
 
     }
 
@@ -80,7 +81,7 @@ void EmpleadoTareas::listarRegistros()
 void EmpleadoTareas::listarEmpleadosPorAnio()
 {
     int anio;
-    cout<<"Ingrese el anio para listar empleados"<<endl;
+    cout<<"Ingrese el anio de ingreso para listar empleados"<<endl;
     cin>>anio;
     cout<<endl;
     _archivo.buscarPorAnio(anio);
@@ -332,7 +333,7 @@ void EmpleadoTareas::listarPorSueldo()
     int orden;
     do
     {
-        cout<<"Ingrese el orden (1 - Ordenados de sueldo minimo a maximo, 2 - Ordenados de sueldo minimo a maximo)"<<endl;
+        cout<<"Ingrese el orden (1 - Ordenados de sueldo maximo a minimo, 2 - Ordenados de sueldo minimo a maximo)"<<endl;
         cin>>orden;
 
     }
@@ -342,6 +343,7 @@ void EmpleadoTareas::listarPorSueldo()
     int cantidad=archivo.cantidadEmpleados();
     Empleado aux;
     Empleado *vEmpleados=new Empleado[cantidad];
+    archivo.leerVector(vEmpleados,cantidad);
     if(vEmpleados==NULL)
     {
         cout<<"Error al cargar el vector de empleados"<<endl;
@@ -351,10 +353,10 @@ void EmpleadoTareas::listarPorSueldo()
     if(orden==1)
     {
         int mayor=0;
-        for(int i=0; i<cantidad; i++)
+        for(int i=0; i<cantidad-1; i++)
         {
             mayor=i;
-            for(int x=0; x<cantidad; x++)
+            for(int x=i+1; x<cantidad; x++)
             {
                 if(vEmpleados[x].getSueldo()>vEmpleados[mayor].getSueldo())
                 {
@@ -372,10 +374,10 @@ void EmpleadoTareas::listarPorSueldo()
     else
     {
         int menor=0;
-        for(int i=0; i<cantidad; i++)
+        for(int i=0; i<cantidad-1; i++)
         {
             menor=i;
-            for(int x=0; x<cantidad; x++)
+            for(int x=i+1; x<cantidad; x++)
             {
                 if(vEmpleados[x].getSueldo()<vEmpleados[menor].getSueldo())
                 {
@@ -524,9 +526,13 @@ void EmpleadoTareas::consultaPorId()
     if(_archivo.buscarPorID(id)>0)
     {
         cout<<"ID Encontrado!"<<endl<<endl;
+    }
+    else if(_archivo.buscarPorID(id)==-1)
+    {
+        cout<<"No se pudo abrir el archivo"<<endl;
     }else
     {
-        cout<<"No existe ese ID o no se pudo abrir el archivo"<<endl;
+        cout<<"No existe ese ID o esta dado de baja el registro"<<endl;
     }
 
 }
@@ -539,9 +545,13 @@ void EmpleadoTareas::consultaPorDni()
     if(_archivo.buscarPorDni(dni)>0)
     {
         cout<<"DNI Encontrado!"<<endl<<endl;
+    }
+    else if(_archivo.buscarPorDni(dni)==-1)
+    {
+        cout<<"No se pudo abrir el archivo"<<endl;
     }else
     {
-        cout<<"No existe ese DNI O no se pudo abrir el archivo"<<endl;
+        cout<<"No existe ese DNI o esta dado de baja el registro"<<endl;
     }
 }
 
@@ -553,9 +563,13 @@ void EmpleadoTareas::consultaPorNombre()
     if(_archivo.buscarPorNombre(nombre)>0)
     {
         cout<<"NOMBRE Encontrado!"<<endl<<endl;
+    }
+    else if(_archivo.buscarPorNombre(nombre)==-1)
+    {
+        cout<<"No se pudo abrir el archivo"<<endl;
     }else
     {
-        cout<<"No existe ese nombre o no se pudo abrir el archivo"<<endl;
+        cout<<"No existe ese nombre o esta dado de baja el registro"<<endl;
     }
 
 }
@@ -568,9 +582,13 @@ void EmpleadoTareas::consultaPorApellido()
     if(_archivo.buscarPorApellido(apellido)>0)
     {
         cout<<"APELLIDO Encontrado!"<<endl<<endl;
+    }
+    else if(_archivo.buscarPorApellido(apellido)==-1)
+    {
+        cout<<"No se pudo abrir el archivo"<<endl;
     }else
     {
-        cout<<"No existe ese apellido o no se pudo abrir el archivo"<<endl;
+        cout<<"No existe ese apellido o esta dado de baja el registro"<<endl;
     }
 }
 
@@ -582,9 +600,13 @@ void EmpleadoTareas::consultaPorEdad()
     if(_archivo.buscarPorEdad(edad)>0)
     {
         cout<<"EDAD Encontrada!"<<endl<<endl;
+    }
+    else if(_archivo.buscarPorEdad(edad))
+    {
+        cout<<"No se pudo abrir el archivo"<<endl;
     }else
     {
-        cout<<"No existe esa edad o no se pudo abrir el archivo"<<endl;
+        cout<<"No existe esa edad o esta dado de baja el registro"<<endl;
     }
 }
 
@@ -592,11 +614,60 @@ void EmpleadoTareas::consultaPorEdad()
 void EmpleadoTareas::cargar()
 {
     Empleado reg;
+    char nombre[30],apellido[30];
+    char genero;
+    float sueldo;
+    int dni;
+    int edad;
+    Fecha fechaNacimiento;
+    Fecha fechaIngreso;
+    int especializacion;
+    bool estado;
+
     int id=generarID();
-    cout<<"ID Empleado #"<<id<<endl;
+
+    cout<<"Nombre: ";
+    cargarCadena(nombre,29);
+    cout<<"Apellido: ";
+    cargarCadena(apellido,29);
+    cout<<"DNI: ";
+    cin>>dni;
+    cout<<"Fecha nacimiento: "<<endl;
+    fechaNacimiento.cargar();
+    edad=calcularEdad(fechaNacimiento);
+    do
+    {
+        cout<<"Genero(M - MASCULINO, F - FEMENINO): ";
+        cin>>genero;
+
+    }
+    while(genero!='F'&&genero!='f'&&genero!='m'&&genero!='M');
+
+
+    cout <<"Sueldo: "<<endl;
+    cin >> sueldo;
+    cout <<"Fecha De Ingreso: "<<endl;
+    fechaIngreso.cargar();
+    do
+    {
+        cout <<"Especializacion(1 - Profesor, 2 - Administrativo, 3 - Limpieza): "<<endl;
+        cin >> especializacion;
+    }
+    while(especializacion<1||especializacion>3);
+
+    estado=true;
+
     reg.setId(id);
-    cout<<endl;
-    reg.cargarEmpleado();
+    reg.setNombre(nombre);
+    reg.setApellido(apellido);
+    reg.setDni(dni);
+    reg.setFechaNacimiento(fechaNacimiento);
+    reg.setEdad(edad);
+    reg.setSexo(genero);
+    reg.setSueldo(sueldo);
+    reg.setFechaIngreso(fechaIngreso);
+    reg.setEspecializacion(especializacion);
+    reg.setEstado(estado);
 
 
     _archivo.guardar(reg);
@@ -668,7 +739,7 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
         case 5:
             cout<<"Ingrese la nueva fecha de nacimiento "<<endl;
             fechaNacimiento.cargar();
-            empleadoModificado.calcularEdad();
+            empleadoModificado.setEdad(calcularEdad(fechaNacimiento));
             empleadoModificado.setFechaNacimiento(fechaNacimiento);
             break;
         case 6:
@@ -690,8 +761,61 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
             break;
 
         case 9:
-        cout <<"modificar todo el registro" << endl;
-        empleadoModificado.cargarEmpleado();
+            cout <<"modificar todo el registro" << endl;
+            char nombre[30],apellido[30];
+            char genero;
+            float sueldo;
+            int dni;
+            int edad;
+            Fecha fechaNacimiento;
+            Fecha fechaIngreso;
+            int especializacion;
+
+
+            int id=generarID();
+
+            cout<<"Nombre: ";
+            cargarCadena(nombre,29);
+            cout<<"Apellido: ";
+            cargarCadena(apellido,29);
+            cout<<"DNI: ";
+            cin>>dni;
+            cout<<"Fecha nacimiento: "<<endl;
+            fechaNacimiento.cargar();
+            edad=calcularEdad(fechaNacimiento);
+            do
+            {
+                cout<<"Genero(M - MASCULINO, F - FEMENINO): ";
+                cin>>genero;
+
+            }
+            while(genero!='F'&&genero!='f'&&genero!='m'&&genero!='M');
+
+
+            cout <<"Sueldo: "<<endl;
+            cin >> sueldo;
+            cout <<"Fecha De Ingreso: "<<endl;
+            fechaIngreso.cargar();
+            do
+            {
+                cout <<"Especializacion(1 - Profesor, 2 - Administrativo, 3 - Limpieza): "<<endl;
+                cin >> especializacion;
+            }
+            while(especializacion<1||especializacion>3);
+
+
+
+            empleadoModificado.setId(id);
+            empleadoModificado.setNombre(nombre);
+            empleadoModificado.setApellido(apellido);
+            empleadoModificado.setDni(dni);
+            empleadoModificado.setFechaNacimiento(fechaNacimiento);
+            empleadoModificado.setEdad(edad);
+            empleadoModificado.setSexo(genero);
+            empleadoModificado.setSueldo(sueldo);
+            empleadoModificado.setFechaIngreso(fechaIngreso);
+            empleadoModificado.setEspecializacion(especializacion);
+
 
         }
         if(opcion!=0)
@@ -717,12 +841,12 @@ void EmpleadoTareas::modificar()
     if (numeroRegistro>=0)
     {
         cout << "Modifique al empleado"<<endl;
- Empleado empleadoModificado= _archivo.leer(numeroRegistro) ;
+        Empleado empleadoModificado= _archivo.leer(numeroRegistro) ;
 
         cout << endl;
         cout << "Usted va a modificar a:"<<endl;
         empleadoModificado.mostrarEmpleado();
-         system("pause");
+        system("pause");
 
         elegirQueModificar(empleadoModificado);
 

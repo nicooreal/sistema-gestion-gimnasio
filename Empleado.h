@@ -29,7 +29,7 @@ public:
     void setEspecializacion(int especializacion);
     char *getEspecializacion();
 
-    void cargarEmpleado();
+
     void mostrarEmpleado();
 
     void mostrarEmpleadosDadosDeBaja();

@@ -77,21 +77,26 @@ void EmpleadoArchivo::buscarPorAnio(int anio)
     }
 
     bool verificar=false;
+    bool noActivos=false;
 
     while(fread(&empleado,sizeof(Empleado),1,p)!=0)
     {
-        if(anio==empleado.getFechaIngreso().getAnio())
+        if(anio==empleado.getFechaIngreso().getAnio()&&empleado.getEstado())
         {
-            cout<<"ID Empleado #"<<empleado.getId()<<endl;
             empleado.mostrarEmpleado();
             verificar=true;
             cout<<endl;
         }
+
+
+
     }
     if(!verificar)
     {
-        cout<<"NO EXISTEN EMPLEADOS QUE HAYAN INGRESADO EN EL ANIO"<<anio<<endl;
+        cout<<"NO EXISTEN EMPLEADOS QUE HAYAN INGRESADO EN EL ANIO O ESTAN DADOS DE BAJA"<<anio<<endl;
     }
+
+
     fclose(p);
 
 
@@ -109,9 +114,8 @@ int EmpleadoArchivo::buscarPorID(int id)
 
     while(fread(&em,sizeof(Empleado),1,p)!=0)
     {
-        if(em.getId()==id)
+        if(em.getId()==id&&em.getEstado())
         {
-            cout<<"ID Empleado #"<<em.getId()<<endl;
             em.mostrarEmpleado();
             cout<<endl;
             fclose(p);
@@ -150,9 +154,8 @@ int EmpleadoArchivo::buscarPorEdad(int edad)
     {
         Empleado em=leer(i);
 
-        if(edad==calcularEdad(em.getFechaNacimiento()))
+        if(edad==calcularEdad(em.getFechaNacimiento())&&em.getEstado())
         {
-            cout<<"ID Empleado #"<<em.getId()<<endl;
             em.mostrarEmpleado();
             fclose(p);
             return 1;
@@ -173,9 +176,8 @@ int EmpleadoArchivo::buscarPorNombre(char *nombre)
     for(int i=0;i<cantidadEmpleados();i++)
     {
         Empleado em=leer(i);
-        if(strcmp(nombre,em.getNombre())==0)
+        if(strcmp(nombre,em.getNombre())==0&&em.getEstado())
         {
-            cout<<"ID Empleado #"<<em.getId()<<endl;
             em.mostrarEmpleado();
             fclose(p);
             return 1;
@@ -195,9 +197,8 @@ int EmpleadoArchivo::buscarPorApellido(char *apellido)
     for(int i=0;i<cantidadEmpleados();i++)
     {
         Empleado em=leer(i);
-        if(strcmp(apellido,em.getApellido())==0)
+        if(strcmp(apellido,em.getApellido())==0&&em.getEstado())
         {
-            cout<<"ID Empleado #"<<em.getId()<<endl;
             em.mostrarEmpleado();
             fclose(p);
             return 1;
@@ -293,9 +294,8 @@ int EmpleadoArchivo::buscarPorDni(int dni)
     for(int i=0;i<cantidadEmpleados();i++)
     {
         Empleado em=leer(i);
-        if(dni==em.getDni())
+        if(dni==em.getDni()&&em.getEstado())
         {
-            cout<<"ID Empleado #"<<em.getId()<<endl;
             em.mostrarEmpleado();
             cout<<endl;
             fclose(p);
