@@ -75,7 +75,7 @@ void Empleado::mostrarEmpleado()
         _fechaIngreso.mostrar();
         cout <<"se especializa en " <<especializaciones[_especializacion-1]<<endl;
 
-        cout <<"-----------------------------------------"<< endl;
+        cout<<"----------------------------------"<< endl;
     }
 }
 

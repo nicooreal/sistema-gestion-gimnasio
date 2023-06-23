@@ -70,7 +70,6 @@ void EmpleadoTareas::listarRegistros()
         /* if (em.getEstado() == true)*/
         {
             em.mostrarEmpleado();
-            cout<<"---------------------------------------"<<endl;
 
         }
 

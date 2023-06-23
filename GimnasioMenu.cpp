@@ -19,7 +19,8 @@ void GimnasioMenu::mostrar()
         cout <<"2 - MOSTRAR LOS PAGOS"<< endl;
         cout <<"3 - MOSTRAR CLIENTES CON FECHA POR VENCER" << endl;
         cout <<"4 - MOSTRAR RECAUDACION ANUAL" << endl;
-        cout <<"5 - REGISTRAR INGRESOS" << endl;
+        cout <<"5 - ELIMINAR PAGO ERRONEO" << endl;
+        cout <<"6 - REGISTRAR INGRESOS" << endl;
         cout<<"0 - SALIR"<<endl;
         cout<<"----------------------------------"<<endl;
         //rlutil::locate(10,18);
@@ -48,9 +49,13 @@ void GimnasioMenu::mostrar()
 
 
             break;
-
-
         case 5:
+
+            _pagoTareas.eliminarPago();
+
+            break;
+
+        case 6:
 
 clienteTareas.registrarIngresos();
 

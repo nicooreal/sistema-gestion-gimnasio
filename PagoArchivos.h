@@ -16,7 +16,7 @@ class PagoArchivos
     bool  guardar(Pago pago)  ;
     Pago leer(int nroRegistro);
      int getCantidad();
-
+      bool editar(Pago pago, int identificador);
 };
 
 #endif // PAGOARCHIVOS_H

@@ -52,3 +52,22 @@ Pago PagoArchivos::leer(int nroRegistro)
     return pago;
 
 }
+
+
+bool PagoArchivos::editar(Pago pago, int identificador) {
+
+    FILE* p = fopen(_nombreArchivo,"rb+");
+    if (p== NULL) {
+        cout << "No se pudo abrir el archivo." <<endl;
+        return false;
+    }
+
+    fseek(p, identificador * sizeof(Pago),0);
+    bool ok = fwrite(&pago, sizeof(Pago), 1, p);
+
+    fclose(p);
+    return ok;
+}
+
+
+

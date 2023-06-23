@@ -60,7 +60,10 @@ void PagoTareas::cargarPago(bool primerPago, int dni)
     else
     {
 
-       if (primerPago == false) {clienteTareas.actualizarFechaPago(dni);}
+        if (primerPago == false)
+        {
+            clienteTareas.actualizarFechaPago(dni);
+        }
         cout <<"PAGO GUARDADO EXITOSAMENTE"<< endl;
         cout <<"EL MONTO QUE SE GUARDO ES "<<clienteTareas.acumularAbonos(dni)<< endl;
         cout <<"DEL CLIENTE CON DNI: " << dni << endl;
@@ -153,11 +156,7 @@ void PagoTareas::mostrarTodos()
 
         if (pago.getEstado() == true )
         {
-            cout << "ID DE PAGO: #" << pago.getId() << endl;
-            cout << "DNI CLIENTE: " <<pago.getDni()<< endl;
-            cout << "FECHA DEL PAGO: "<< pago.getFecha().getDia() <<"/"<< pago.getFecha().getMes()<<"/"<< pago.getFecha().getAnio()<< endl;
-            cout << "MONTO DEL PAGO: "<< pago.getPago() << endl;
-            cout <<"-------------------------"<< endl;
+        pago.mostrarPago();
         }
 
     }
@@ -168,6 +167,56 @@ void PagoTareas::mostrarTodos()
 }
 
 
+void PagoTareas::eliminarPago()
+{
 
+    int seEncontroPago = false;
+    PagoArchivos pagoArch;
+    int id, op;
+    cout <<"INGRESE EL ID DEL PAGO QUE SE VA A ELIMINAR"<< endl;
+    cin >> id;
+    int cantidadDePagos = pagoArch.getCantidad();
+    for(int i = 0; i < cantidadDePagos; i++)
+    {
+
+        Pago pago = pagoArch.leer(i);
+
+        if ( pago.getId() == id && pago.getEstado() == true )
+        {
+
+           seEncontroPago == true;
+
+            cout <<"ESTA SEGURO QUE QUIERE ELIMINAR EL PAGO? NO SE PODRA RECUPERAR( 1 - SI o 0 - NO )"<< endl;
+           pago.mostrarPago();
+
+
+           cin >> op;
+            if (op == 1 )
+            {
+
+            pago.setEstado(false);
+
+            pagoArch.editar(pago,id);
+            cout <<"PAGO ELIMINADO"<< endl;
+
+            }
+            else if (op == 0 )
+            {
+
+                cout <<"NO SE ELIMINO EL PAGO"<< endl;
+
+            }
+
+
+        }
+
+
+    }
+
+cout<<"VOLVIENDO AL MENU ANTERIOR"<< endl;
+
+
+
+}
 
 

@@ -13,6 +13,8 @@ class PagoTareas
         void mostrarTodos();
         void cargarPago(bool primerPago,int dni);
         int calcularcantidadAniosDeRegistro();
+        void eliminarPago();
+
 };
 
 #endif // PAGOTAREAS_H
