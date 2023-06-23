@@ -20,10 +20,10 @@ public:
     void vaciar();
     void leerVector(Cliente *vec,int cantidadRegistros);
     bool guardarVector(Cliente *vec,int cantidadRegistros);
-
-
-
-
+    int buscarPorNombre(char * nombre);
+    int buscarPorApellido(char *apellido);
+    int buscarPorEdad(int edad);
+    int buscarPorNumeroDeSocio(int numSocio);
 };
 
 #endif // CLIENTEARCHIVO_H

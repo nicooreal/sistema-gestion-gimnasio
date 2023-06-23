@@ -292,7 +292,8 @@ void Cliente::mostrarCliente()
         }
         cout << endl;
 
-        cout <<"ACTIVIDADES EXTRA: " << endl;
+     if (_boxeo.getActivo() == true || _yoga.getActivo() == true )   cout <<"ACTIVIDADES EXTRA: " << endl;
+
         if (_boxeo.getActivo() == true  )
         {
             cout <<"BOXEO"<<endl;

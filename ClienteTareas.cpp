@@ -57,7 +57,7 @@ void ClienteTareas::modificar()
 
 
 
-void ClienteTareas::mostrarPorDni()
+void ClienteTareas::consultarPorDni()
 {
     int documento;
     cout <<"ingrese documento: " << endl;
@@ -390,13 +390,13 @@ void ClienteTareas::listados()
             listarPorNombre();
             break;
         case 3:
-
+            listarOrdenadosPorApellido();
             break;
         case 4:
             listarClientesPorAnioIngreso();
             break;
         case 5:
-
+  //metodo hecho pero no terminado
             break;
         case 6:
             listarClientesBoxeo();
@@ -433,7 +433,7 @@ void ClienteTareas::consultas()
             system("cls");
             cout<<"\tCONSULTAS"<<endl;
             cout<<"---------------------------------"<<endl;
-            cout<<"1 - BUSCAR POR ID"<<endl;
+            cout<<"1 - BUSCAR POR NUMERO DE SOCIO"<<endl;
             cout<<"2 - BUSCAR POR DNI"<<endl;
             cout<<"3 - BUSCAR POR NOMBRE"<<endl;
             cout<<"4 - BUSCAR POR APELLIDO"<<endl;
@@ -448,15 +448,19 @@ void ClienteTareas::consultas()
         switch(opcion)
         {
         case 1:
+            consultarPorNumeroSocio();
             break;
         case 2:
-            mostrarPorDni();
+            consultarPorDni();
             break;
         case 3:
+            consultaPorNombre();
             break;
         case 4:
+            consultaPorApellido();
             break;
         case 5:
+          // metodo hecho pero no terminado
             break;
         }
         if(opcion!=0)
@@ -759,7 +763,230 @@ void ClienteTareas::listarClientesPorAnioIngreso()
 }
 
 
+void ClienteTareas::listarOrdenadosPorApellido()
+{
+    int orden;
+    do
+    {
+        cout<<"Ingrese el orden(1 - Ordenados de mayor a menor, 2 - Ordenados de menor a mayor)"<<endl;
+        cin>>orden;
+    }
+    while(orden<1||orden>2);
+    ClienteArchivo archivo("clientes.dat");
+
+    int cantidad=archivo.getCantidad() ;
+    Cliente *vCliente=new Cliente[cantidad];
+    Cliente aux;
+    if(vCliente==NULL)
+    {
+        cout<<"Error al intentar cargar el vector dinamico"<<endl;
+        return;
+    }
+    archivo.leerVector(vCliente,cantidad);
+
+    if(orden==1)
+    {
+        int mayor=0;
+
+        for(int i=0; i<cantidad-1; i++)
+        {
+            mayor=i;
+            for(int x=i+1; x<cantidad; x++)
+            {
+                if(strcmp(vCliente[x].getApellido(),vCliente[mayor].getApellido())>0)
+                {
+                    mayor=x;
+                }
+            }
+            if(mayor!=i)
+            {
+                aux=vCliente[i];
+                vCliente[i]=vCliente[mayor];
+                vCliente[mayor]=aux;
+            }
+        }
 
 
+    }
+    else
+    {
+        int menor=0;
+
+        for(int i=0; i<cantidad-1; i++)
+        {
+            menor=i;
+            for(int x=i+1; x<cantidad; x++)
+            {
+                if(strcmp(vCliente[x].getApellido(),vCliente[menor].getApellido())<0)
+                {
+                    menor=x;
+                }
+            }
+            if(menor!=i)
+            {
+                aux=vCliente[i];
+                vCliente[i]=vCliente[menor];
+                vCliente[menor]=aux;
+            }
+        }
+
+
+    }
+
+    for(int i=0; i<cantidad; i++)
+    {
+        vCliente[i].mostrarCliente();
+        cout<<endl;
+    }
+
+    delete []vCliente;
+}
+
+/*
+void ClienteTareas::listarPorEdad()
+{
+    Fecha hoy;
+
+    int orden;
+    do
+    {
+        cout<<"Ingrese el orden (1 - Ordenados de mayor a menor, 2 - Ordenados de menor a mayor)"<<endl;
+        cin>>orden;
+
+    }
+    while(orden<1||orden>2);
+
+    ClienteArchivo archivo("clientes.dat");
+    int cantidad=archivo.getCantidad();
+    Cliente aux;
+    Cliente *vCliente=new Cliente[cantidad];
+    archivo.leerVector(vCliente,cantidad);
+
+    if(vCliente==NULL)
+    {
+        cout<<"Error al cargar el vector"<<endl;
+        return;
+    }
+
+    if(orden==1)
+    {
+        int mayor=0;
+        for(int i=0; i<cantidad-1; i++)
+        {
+            mayor=i;
+            for(int x=i+1; x<cantidad; x++)
+            {
+                if(calcularEdad(vCliente[x].getFechaNacimiento())>calcularEdad(vCliente[mayor].getFechaNacimiento()))
+                {
+                    mayor=x;
+                }
+            }
+            if(mayor!=i)
+            {
+                aux=vCliente[i];
+                vCliente[i]=vCliente[mayor];
+                vCliente[mayor]=aux;
+            }
+        }
+
+
+
+    }
+    else
+    {
+        int menor=0;
+        for(int i=0; i<cantidad-1; i++)
+        {
+            menor=i;
+            for(int x=i+1; x<cantidad; x++)
+            {
+                if(calcularEdad(vCliente[x].getFechaNacimiento())<calcularEdad(vCliente[menor].getFechaNacimiento()))
+                {
+                    menor=x;
+                }
+            }
+            if(menor!=i)
+            {
+                aux=vCliente[i];
+                vCliente[i]=vCliente[menor];
+                vCliente[menor]=aux;
+            }
+        }
+
+
+
+    }
+
+    for(int i=0; i<cantidad; i++)
+    {
+        vCliente[i].mostrarCLiente();
+        cout<<endl;
+    }
+    delete []vCliente;
+}
+*/
+
+
+void ClienteTareas::consultaPorNombre()
+{
+    char nombre[30];
+    cout<<"Ingrese el nombre"<<endl;
+    cargarCadena(nombre,29);
+    if(_archivoCliente.buscarPorNombre(nombre)>0)
+    {
+        cout<<"NOMBRE Encontrado!"<<endl<<endl;
+    }else
+    {
+        cout<<"No existe ese nombre o no se pudo abrir el archivo"<<endl;
+    }
+
+}
+
+
+void ClienteTareas::consultaPorApellido()
+{
+    char apellido[30];
+    cout<<"Ingrese el apellido"<<endl;
+    cargarCadena(apellido,29);
+    if(_archivoCliente.buscarPorApellido(apellido)>0)
+    {
+        cout<<"APELLIDO Encontrado!"<<endl<<endl;
+    }else
+    {
+        cout<<"No existe ese apellido o no se pudo abrir el archivo"<<endl;
+    }
+}
+
+
+void ClienteTareas::consultaPorEdad()
+{
+    int edad;
+    cout<<"Ingrese la edad"<<endl;
+    cin>>edad;
+    if(_archivoCliente.buscarPorEdad(edad)>0)
+    {
+        cout<<"EDAD ENCONTRADA!"<<endl<<endl;
+    }else
+    {
+        cout<<"NO EXISTE ESA EDAD O NO SE PUDO ABRIR EL ARCHIVO"<<endl;
+    }
+}
+
+
+void ClienteTareas::consultarPorNumeroSocio(){
+int NumSocio;
+cout <<"INGRESE EL NUMERO DE SOCIO:" << endl;
+cin >> NumSocio;
+if (_archivoCliente.buscarPorNumeroDeSocio(NumSocio) == NumSocio ){
+
+     cout<<"ID ENCONTRADO"<<endl;
+
+ } else
+    {
+        cout<<"NO EXISTE ESE SOCIO O NO SE PUDO ABRIR EL ARCHIVO"<<endl;
+    }
+
+
+}
 
 

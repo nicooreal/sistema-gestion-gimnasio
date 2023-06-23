@@ -15,7 +15,7 @@ class ClienteTareas
 void cargar();
 void listarClientesBox();
 void modificar() ;
-void mostrarPorDni();
+void consultarPorDni();
 void mostrarTodos();
 void darBajaCliente();
 void limpiarArchivoClientes();
@@ -32,6 +32,12 @@ void listarTodosLosClientesDadosDeBaja();
 void reactivarCliente();
 void listarPorNombre();
 void listarClientesPorAnioIngreso();
+void listarOrdenadosPorApellido();
+void consultaPorNombre();
+void consultaPorApellido();
+void consultaPorEdad();
+void consultarPorNumeroSocio();
+//void listarPorEdad();
 };
 
 #endif // CLIENTETAREAS_H

@@ -147,5 +147,100 @@ void ClienteArchivo::vaciar()
     fclose(p);
 }
 
+int ClienteArchivo::buscarPorNombre(char *nombre)
+{
+    FILE *p=fopen(_nombreArchivo,"rb");
+    if(p==NULL)
+    {
+        return -1;
+    }
+
+    for(int i=0;i< getCantidad() ;i++)
+    {
+        Cliente cliente=leer(i);
+        if(strcmp(nombre,cliente.getNombre())==0)
+        {
+
+            cliente.mostrarCliente();
+            cout <<"----------------------------"<< endl;
+            fclose(p);
+            return 1;
+        }
+    }
+    fclose(p);
+    return 0;
+}
+
+int ClienteArchivo::buscarPorNumeroDeSocio(int numSocio)
+{
+    FILE *p=fopen(_nombreArchivo,"rb");
+    if(p==NULL)
+    {
+        return -1;
+    }
+    for(int i=0;i< getCantidad() ;i++)
+    {
+        Cliente cliente=leer(i);
+        if( numSocio == cliente.getNumeroDeSocio() )
+        {
+
+             cliente.mostrarCliente();
+            fclose(p);
+            return numSocio;
+        }
+    }
+    fclose(p);
+    return 0;
+}
+
+int ClienteArchivo::buscarPorApellido(char *apellido)
+{
+    FILE *p=fopen(_nombreArchivo,"rb");
+    if(p==NULL)
+    {
+        return -1;
+    }
+    for(int i=0;i< getCantidad() ;i++)
+    {
+        Cliente cliente=leer(i);
+        if(strcmp(apellido,cliente.getApellido())==0)
+        {
+
+             cliente.mostrarCliente();
+            fclose(p);
+            return 1;
+        }
+    }
+    fclose(p);
+    return 0;
+}
+
+int ClienteArchivo::buscarPorEdad(int edad)
+{
 
 
+/*
+    FILE *p=fopen(_nombreArchivo,"rb");
+    if(p==NULL)
+    {
+        return -1;
+    }
+
+    for(int i=0;i<getCantidad() ;i++)
+    {
+        Cliente cliente=leer(i);
+
+        Fecha fechaNacimiento = cliente.getFechaNacimiento();
+
+        if(edad == cliente.calcularEdad( fechaNacimiento ) )
+        {
+
+            cliente.mostrarCliente();
+            fclose(p);
+            return 1;
+        }
+    }
+    fclose(p);
+*/
+    return 1;
+}
