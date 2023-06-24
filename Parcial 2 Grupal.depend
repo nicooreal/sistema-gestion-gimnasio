@@ -197,7 +197,7 @@
 	"Empleado.h"
 	"Programa.h"
 
-1687566350 source:c:\users\alexi\github\sistema-gestion-gimnasio\cliente.cpp
+1687570370 source:c:\users\alexi\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 	"ClienteArchivo.h"
 	"Boxeo.h"
@@ -741,7 +741,7 @@
 1686677724 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\yoga.cpp
 	"Yoga.h"
 
-1687566160 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientearchivo.cpp
+1687566567 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientearchivo.cpp
 	"ClienteArchivo.h"
 	"Cliente.h"
 	<iostream>
@@ -787,7 +787,7 @@
 1686699031 source:c:\users\alexi\github\sistema-gestion-gimnasio\yoga.cpp
 	"Yoga.h"
 
-1687566160 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.cpp
+1687566567 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.cpp
 	"ClienteTareas.h"
 	"Cliente.h"
 	"ClienteArchivo.h"
