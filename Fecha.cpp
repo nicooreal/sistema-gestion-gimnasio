@@ -47,35 +47,6 @@ void Fecha::agregarDia(){
    }
 }
 
-void Fecha::agregarDias(int cantidadDias){
-
-   if (cantidadDias > 0){
-      for(int i=0; i<cantidadDias; i++){
-         agregarDia();
-      }
-   }
-
-}
-/*Fecha::Fecha()
-{
-    ponerPrimerDiaDelAnio();
-}
-
-Fecha::Fecha(int dia,int mes,int anio)
-{
-    _dia=dia;
-    _mes=mes;
-    _anio=anio;
-}
-*/
-
-
-
-
-
-
-
-
 void Fecha::cargar()
 {
 
@@ -133,9 +104,10 @@ Fecha Fecha::calcularUnMesDeEntreno(Fecha fech)
         anio = fech.getAnio() + 1;
         dia = fech.getDia();
     }
+    if (fech.getMes()==2 && fech.getDia()==29) {
 
-// falta ver lo del mes de Febrero y si es biciesto
-
+        dia = 31;
+    }
 
     if (fech.getDia() == 31)
     {
@@ -152,6 +124,7 @@ Fecha Fecha::calcularUnMesDeEntreno(Fecha fech)
 
 
 
+
     fech.setDia(dia);
     fech.setMes(mes);
     fech.setAnio(anio);
@@ -159,14 +132,7 @@ Fecha Fecha::calcularUnMesDeEntreno(Fecha fech)
 return fech;
 }
 
-Fecha Fecha::FechaInicial(){
-    Fecha fechaIni;
-    fechaIni.setDia(1);
-    fechaIni.setMes(9);
-    fechaIni.setAnio(2022);
 
-    return fechaIni;
-}
 
 
 

@@ -299,8 +299,12 @@ void ClienteTareas::mostrarClientesConFechaPorVencer()
 
     Fecha fechaHoy;
     int cantidadRegistros =_archivoCliente.getCantidad();
+    if (fechaHoy.esBisiesto()==true){
+    int diasPorMes[12] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    }
     int diasPorMes[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     bool algunCliente=true;
+
     for (int i = 0; i < cantidadRegistros; i++)
     {
         Cliente cliente =_archivoCliente.leer(i);

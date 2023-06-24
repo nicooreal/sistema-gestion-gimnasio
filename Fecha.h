@@ -8,8 +8,6 @@ class Fecha
 {
 private:
     int _dia,_mes,_anio;
-    bool esBisiesto();
-    void agregarDia();
 
 
 
@@ -20,7 +18,8 @@ public:
     void cargar();
     void mostrar();
     void fechaDeHoy();
-    void agregarDias(int cantidadDias);
+    bool esBisiesto();
+    void agregarDia();
 
     void setDia(int dia);
     void setMes(int mes);
@@ -30,7 +29,7 @@ public:
     int getMes();
     int getAnio();
 
-    bool operator>(Fecha fecha)
+    bool operator>(Fecha fecha)     //preguntar....
     {
         if(_anio>fecha.getAnio())
         {
@@ -48,7 +47,7 @@ public:
 
     int calcularAniosDeVida();
     Fecha calcularUnMesDeEntreno(Fecha fec);
-    Fecha FechaInicial();
+
 };
 
 
