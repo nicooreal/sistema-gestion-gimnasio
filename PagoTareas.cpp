@@ -1,15 +1,5 @@
-# include<iostream>
-# include<cstdlib>
-using namespace std;
 #include "PagoTareas.h"
-#include "Pago.h"
-#include "PagoArchivos.h"
-#include "ClienteArchivo.h"
-#include "ClienteTareas.h"
-PagoTareas::PagoTareas()
-{
-    //ctor
-}
+
 
 void PagoTareas::cargarPago(bool primerPago, int dni)
 {
@@ -104,18 +94,10 @@ int PagoTareas::calcularcantidadAniosDeRegistro()
 
 void PagoTareas::recaudacionAnual()
 {
-
-
-
-
     PagoArchivos pagoArchi;
     Pago pago;
     int CantArch=pagoArchi.getCantidad();
     float VrecaudacionAnual[12] {};
-
-
-
-
 
     for(int x=0; x<CantArch; x++)
     {
@@ -123,7 +105,22 @@ void PagoTareas::recaudacionAnual()
         VrecaudacionAnual[pago.getFecha().getMes()-1] += pago.getPago();
 
     }
-    pago.MostrarRecaudacionAnual(VrecaudacionAnual) ;
+    mostrarRecaudacionAnual(VrecaudacionAnual) ;
+}
+
+void PagoTareas::mostrarRecaudacionAnual(float vRecaudacionAnual[12])
+{
+    for(int i=0; i<12; i++)
+    {
+        cout <<"Mes "<< i+1 << endl;
+        cout << "Recaudacion: "<< vRecaudacionAnual[i]<<endl;
+
+    }
+}
+
+void PagoTareas::eliminarTodosLosPagos()
+{
+    _archivoPagos.vaciar();
 }
 
 void PagoTareas::regPago()   // resta hacer la accion

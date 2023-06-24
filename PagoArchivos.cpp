@@ -69,5 +69,16 @@ bool PagoArchivos::editar(Pago pago, int identificador) {
     return ok;
 }
 
+void PagoArchivos::vaciar()
+{
+    FILE *p=fopen(_nombreArchivo,"wb");
+    if(p==NULL)
+    {
+        return;
+    }
+
+    fclose(p);
+}
+
 
 

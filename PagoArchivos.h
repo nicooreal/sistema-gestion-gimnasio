@@ -8,15 +8,17 @@ using namespace std;
 
 class PagoArchivos
 {
-    private:    char _nombreArchivo[30];
+private:
+    char _nombreArchivo[30];
 
-    public:
+public:
     PagoArchivos();/// CONSTRUCTOR PARA PONER POR DEFECTO pago.dat
     PagoArchivos(const char *nombreArchivo);/// CONSTRUCTOR PARA ELEGIR ALGUN OTRO NOMBRE QUE NO SEA pago.dat
     bool  guardar(Pago pago)  ;
     Pago leer(int nroRegistro);
-     int getCantidad();
-      bool editar(Pago pago, int identificador);
+    int getCantidad();
+    bool editar(Pago pago, int identificador);
+    void vaciar();
 };
 
 #endif // PAGOARCHIVOS_H

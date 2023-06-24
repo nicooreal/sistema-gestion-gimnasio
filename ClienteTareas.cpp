@@ -60,23 +60,19 @@ void ClienteTareas::modificar()
 void ClienteTareas::consultarPorDni()
 {
     int documento;
-    cout <<"ingrese documento: " << endl;
+    cout <<"INGRESE EL DNI: " << endl;
     cin >> documento;
-    int cantidadDeClientes = _archivoCliente.getCantidad();
 
-
-    for (int i = 0; i < cantidadDeClientes; i++ )
+    if(_archivoCliente.buscarPorDni(documento)>0)
     {
-        Cliente cliente = _archivoCliente.leer(i);
-
-        if ( documento == cliente.getDni() )
-        {
-            cliente.mostrarCliente();
-
-
-        }
-
-
+        cout<<"DNI ENCONTRADO!"<<endl<<endl;
+    }
+    else if(_archivoCliente.buscarPorDni(documento)==-1)
+    {
+        cout<<"NO SE PUDO ABRIR EL ARCHIVO"<<endl;
+    }else
+    {
+        cout<<"NO EXISTE UN CLIENTE CON ESE DNI O ESE CLIENTE ESTA DADO DE BAJA"<<endl;
     }
 
 
@@ -368,7 +364,7 @@ void ClienteTareas::listados()
             cout<<"1 - TODOS LOS REGISTROS"<<endl;
             cout<<"2 - POR NOMBRE"<<endl;
             cout<<"3 - POR APELLIDO"<<endl;
-            cout<<"4 - POR ANIO"<<endl;
+            cout<<"4 - POR ANIO DE INGRESO"<<endl;
             cout<<"5 - POR EDAD"<<endl;
             cout<<"6 - LOS QUE HACEN BOXEO" << endl;
             cout<<"7 - LOS QUE HACEN YOGA" << endl;
@@ -396,7 +392,8 @@ void ClienteTareas::listados()
             listarClientesPorAnioIngreso();
             break;
         case 5:
-  //metodo hecho pero no terminado
+            //metodo hecho pero no terminado
+
             break;
         case 6:
             listarClientesBoxeo();
@@ -460,7 +457,7 @@ void ClienteTareas::consultas()
             consultaPorApellido();
             break;
         case 5:
-          // metodo hecho pero no terminado
+            consultaPorEdad();
             break;
         }
         if(opcion!=0)
@@ -662,9 +659,10 @@ void ClienteTareas::reactivarCliente()
 }
 
 
-void ClienteTareas::listarPorNombre(){
+void ClienteTareas::listarPorNombre()
+{
 
-int orden;
+    int orden;
     do
     {
         cout<<"Ingrese el orden(1 - Ordenados de mayor a menor, 2 - Ordenados de menor a mayor)"<<endl;
@@ -750,14 +748,16 @@ void ClienteTareas::listarClientesPorAnioIngreso()
     cin>>anio;
     cout<<endl;
 
-    for (int i = 0; i < _archivoCliente.getCantidad(); i++ ){
+    for (int i = 0; i < _archivoCliente.getCantidad(); i++ )
+    {
 
-      if ( anio == _archivoCliente.leer(i).getFechaDelAlta().getAnio() ) {
+        if ( anio == _archivoCliente.leer(i).getFechaDelAlta().getAnio() )
+        {
 
-        _archivoCliente.leer(i).mostrarCliente();
-        cout <<"-------------------------------------"<< endl;
+            _archivoCliente.leer(i).mostrarCliente();
+            cout <<"-------------------------------------"<< endl;
 
-      }
+        }
 
     }
 }
@@ -944,14 +944,18 @@ void ClienteTareas::listarPorEdad()
 void ClienteTareas::consultaPorNombre()
 {
     char nombre[30];
-    cout<<"Ingrese el nombre"<<endl;
+    cout<<"INGRESE EL NOMBRE"<<endl;
     cargarCadena(nombre,29);
     if(_archivoCliente.buscarPorNombre(nombre)>0)
     {
-        cout<<"NOMBRE Encontrado!"<<endl<<endl;
+        cout<<"NOMBRE ENCONTRADO!"<<endl<<endl;
+    }
+    else if(_archivoCliente.buscarPorNombre(nombre)==-1)
+    {
+        cout<<"NO SE PUDO ABRIR EL ARCHIVO"<<endl;
     }else
     {
-        cout<<"No existe ese nombre o no se pudo abrir el archivo"<<endl;
+        cout<<"NO EXISTE UN CLIENTE CON ESE NOMBRE O ESE CLIENTE ESTA DADO DE BAJA"<<endl;
     }
 
 }
@@ -964,10 +968,14 @@ void ClienteTareas::consultaPorApellido()
     cargarCadena(apellido,29);
     if(_archivoCliente.buscarPorApellido(apellido)>0)
     {
-        cout<<"APELLIDO Encontrado!"<<endl<<endl;
+        cout<<"APELLIDO ENCONTRADO!"<<endl<<endl;
+    }
+    else if(_archivoCliente.buscarPorApellido(apellido)==-1)
+    {
+        cout<<"NO SE PUDO ABRIR EL ARCHIVO"<<endl;
     }else
     {
-        cout<<"No existe ese apellido o no se pudo abrir el archivo"<<endl;
+        cout<<"NO EXISTE UN CLIENTE CON ESE APELLIDO O ESE CLIENTE ESTA DADO DE BAJA"<<endl;
     }
 }
 
@@ -980,24 +988,35 @@ void ClienteTareas::consultaPorEdad()
     if(_archivoCliente.buscarPorEdad(edad)>0)
     {
         cout<<"EDAD ENCONTRADA!"<<endl<<endl;
-    }else
+    }
+    else if(_archivoCliente.buscarPorEdad(edad)==-1)
     {
-        cout<<"NO EXISTE ESA EDAD O NO SE PUDO ABRIR EL ARCHIVO"<<endl;
+        cout<<"NO SE PUDO ABRIR EL ARCHIVO"<<endl;
+    }
+    else
+    {
+        cout<<"ESE CLIENTE ESTA DADO DE BAJA O NO EXISTE UN CLIENTE CON ESA EDAD"<<endl;
     }
 }
 
 
-void ClienteTareas::consultarPorNumeroSocio(){
-int NumSocio;
-cout <<"INGRESE EL NUMERO DE SOCIO:" << endl;
-cin >> NumSocio;
-if (_archivoCliente.buscarPorNumeroDeSocio(NumSocio) == NumSocio ){
-
-     cout<<"ID ENCONTRADO"<<endl;
-
- } else
+void ClienteTareas::consultarPorNumeroSocio()
+{
+    int NumSocio;
+    cout <<"INGRESE EL NUMERO DE SOCIO:" << endl;
+    cin >> NumSocio;
+    if (_archivoCliente.buscarPorNumeroDeSocio(NumSocio) == NumSocio )
     {
-        cout<<"NO EXISTE ESE SOCIO O NO SE PUDO ABRIR EL ARCHIVO"<<endl;
+
+        cout<<"NUMERO DE SOCIO ENCONTRADO!"<<endl;
+
+    }
+    else if(_archivoCliente.buscarPorNumeroDeSocio(NumSocio) == -1)
+    {
+        cout<<"NO SE PUDO ABRIR EL ARCHIVO"<<endl;
+    }else
+    {
+        cout<<"NO EXISTE UN CLIENTE CON ESE NUMERO DE SOCIO O ESE CLIENTE ESTA DADO DE BAJA"<<endl;
     }
 
 

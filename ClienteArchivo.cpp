@@ -147,6 +147,30 @@ void ClienteArchivo::vaciar()
     fclose(p);
 }
 
+int ClienteArchivo::buscarPorDni(int dni)
+{
+    FILE *p=fopen(_nombreArchivo,"rb");
+    if(p==NULL)
+    {
+        return -1;
+    }
+
+    for(int i=0;i< getCantidad() ;i++)
+    {
+        Cliente cliente=leer(i);
+        if(dni==cliente.getDni()&&cliente.getEstado())
+        {
+
+            cliente.mostrarCliente();
+            cout <<"----------------------------"<< endl;
+            fclose(p);
+            return 1;
+        }
+    }
+    fclose(p);
+    return 0;
+}
+
 int ClienteArchivo::buscarPorNombre(char *nombre)
 {
     FILE *p=fopen(_nombreArchivo,"rb");
@@ -158,7 +182,7 @@ int ClienteArchivo::buscarPorNombre(char *nombre)
     for(int i=0;i< getCantidad() ;i++)
     {
         Cliente cliente=leer(i);
-        if(strcmp(nombre,cliente.getNombre())==0)
+        if(strcmp(nombre,cliente.getNombre())==0&&cliente.getEstado())
         {
 
             cliente.mostrarCliente();
@@ -181,10 +205,10 @@ int ClienteArchivo::buscarPorNumeroDeSocio(int numSocio)
     for(int i=0;i< getCantidad() ;i++)
     {
         Cliente cliente=leer(i);
-        if( numSocio == cliente.getNumeroDeSocio() )
+        if( numSocio == cliente.getNumeroDeSocio() && cliente.getEstado()==true)
         {
 
-             cliente.mostrarCliente();
+            cliente.mostrarCliente();
             fclose(p);
             return numSocio;
         }
@@ -203,10 +227,10 @@ int ClienteArchivo::buscarPorApellido(char *apellido)
     for(int i=0;i< getCantidad() ;i++)
     {
         Cliente cliente=leer(i);
-        if(strcmp(apellido,cliente.getApellido())==0)
+        if(strcmp(apellido,cliente.getApellido())==0&&cliente.getEstado())
         {
 
-             cliente.mostrarCliente();
+            cliente.mostrarCliente();
             fclose(p);
             return 1;
         }
@@ -218,8 +242,6 @@ int ClienteArchivo::buscarPorApellido(char *apellido)
 int ClienteArchivo::buscarPorEdad(int edad)
 {
 
-
-/*
     FILE *p=fopen(_nombreArchivo,"rb");
     if(p==NULL)
     {
@@ -232,7 +254,7 @@ int ClienteArchivo::buscarPorEdad(int edad)
 
         Fecha fechaNacimiento = cliente.getFechaNacimiento();
 
-        if(edad == cliente.calcularEdad( fechaNacimiento ) )
+        if(edad == cliente.calcularEdad(fechaNacimiento)&&cliente.getEstado())
         {
 
             cliente.mostrarCliente();
@@ -241,6 +263,6 @@ int ClienteArchivo::buscarPorEdad(int edad)
         }
     }
     fclose(p);
-*/
-    return 1;
+
+    return 0;
 }

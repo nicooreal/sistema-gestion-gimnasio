@@ -13,16 +13,7 @@ int Pago::getvAniosMeses()
 
 }
 
-void  Pago::MostrarRecaudacionAnual(float vRecaudacionAnual[12])
-{
-    for(int i=0; i<12; i++)
-    {
-        cout <<"Mes "<< i+1 << endl;
-        cout << "Recaudacion: "<< vRecaudacionAnual[i]<<endl;
 
-    }
-
-}
 
 int Pago::getDni()
 {

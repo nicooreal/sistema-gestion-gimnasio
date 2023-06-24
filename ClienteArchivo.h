@@ -24,6 +24,7 @@ public:
     int buscarPorApellido(char *apellido);
     int buscarPorEdad(int edad);
     int buscarPorNumeroDeSocio(int numSocio);
+    int buscarPorDni(int dni);
 };
 
 #endif // CLIENTEARCHIVO_H

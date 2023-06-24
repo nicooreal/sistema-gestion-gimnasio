@@ -9,7 +9,6 @@ using namespace std;
 class GimnasioMenu
 {
 private:
-    GimnasioTareas _gimnasioTareas;
     PagoTareas _pagoTareas;
 
 public:
