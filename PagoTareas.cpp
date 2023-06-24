@@ -96,13 +96,15 @@ void PagoTareas::recaudacionAnual()
 {
     PagoArchivos pagoArchi;
     Pago pago;
-    int CantArch=pagoArchi.getCantidad();
+    int CantArch=pagoArchi.getCantidad(), anio;
     float VrecaudacionAnual[12] {};
-
+cout <<"INGRESE EL ANIO DE LA RECAUDACION"<< endl;
+cin >> anio;
     for(int x=0; x<CantArch; x++)
     {
         pago=pagoArchi.leer(x);
-        VrecaudacionAnual[pago.getFecha().getMes()-1] += pago.getPago();
+
+       if (anio == pago.getFecha().getAnio() ) VrecaudacionAnual[pago.getFecha().getMes()-1] += pago.getPago();
 
     }
     mostrarRecaudacionAnual(VrecaudacionAnual) ;
@@ -112,8 +114,8 @@ void PagoTareas::mostrarRecaudacionAnual(float vRecaudacionAnual[12])
 {
     for(int i=0; i<12; i++)
     {
-        cout <<"Mes "<< i+1 << endl;
-        cout << "Recaudacion: "<< vRecaudacionAnual[i]<<endl;
+        cout <<"MES "<< i+1 << endl;
+        cout << "RECAUDACION: "<< vRecaudacionAnual[i]<<endl;
 
     }
 }
