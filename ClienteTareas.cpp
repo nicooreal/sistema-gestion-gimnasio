@@ -70,7 +70,8 @@ void ClienteTareas::consultarPorDni()
     else if(_archivoCliente.buscarPorDni(documento)==-1)
     {
         cout<<"NO SE PUDO ABRIR EL ARCHIVO"<<endl;
-    }else
+    }
+    else
     {
         cout<<"NO EXISTE UN CLIENTE CON ESE DNI O ESE CLIENTE ESTA DADO DE BAJA"<<endl;
     }
@@ -215,13 +216,12 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             break;
         case 7:
             cout<<"Ingrese la nueva fecha limite "<<endl;
-            fechaLimiteParaPagarAbono.cargar();
-            clienteModificado.setFechaLimite(fechaLimiteParaPagarAbono);
+
+
+            cambiarAlgunaFechaLimite(clienteModificado );
             break;
         case 8:
-            cout<<"Ingrese el nuevo abono mensual"<<endl;
-            cin>>abono;
-            clienteModificado.setAbonoMensual(abono);
+             cambiarMontoDeAlgunAbono(clienteModificado);
             break;
         case 9:
             cout<<"Ingrese el nuevo registro de Cliente"<<endl;
@@ -238,6 +238,113 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
     while(opcion!=0);
 
 }
+void ClienteTareas::cambiarMontoDeAlgunAbono( Cliente &clienteModificado)
+{
+    ClienteArchivo clienteArch;
+    int cantidadDeClientes = clienteArch.getCantidad();
+    int op;
+    int numeroRegistro = clienteModificado.getNumeroDeSocio();
+    Fecha nuevaFecha;
+    Boxeo box;
+    Yoga yog;
+ int nuevoMonto;
+
+    if ( clienteModificado.getBoxeo().getActivo() == true)   cout <<"INGRESE 1 PARA CAMBIAR EL MONTO DEL SERVICIO PESAS"<< endl;
+    if ( clienteModificado.getBoxeo().getActivo() == true)  cout <<"INGRESE 2 PARA CAMBIAR EL MONTO DEL SERVICIO DE BOXEO"<< endl;
+    if ( clienteModificado.getYoga().getActivo() == true)  cout <<"INGRESE 3 PARA CAMBIAR EL MONTO DEL SERVICIO DE YOGA"<< endl;
+
+
+    cout <<"INGRESE 0 PARA VOLVER" << endl;
+    cin >> op;
+    cout <<"INGRESE NUEVO MONTO"<< endl;
+    cin>>nuevoMonto;
+    if ( clienteModificado.getPesas() == true && op== 1 )
+    {
+
+
+        clienteModificado.setAbonoMensual(nuevoMonto);
+
+    }
+
+    if ( clienteModificado.getBoxeo().getActivo() == true && op == 2 )
+    {
+
+
+        box = clienteModificado.getBoxeo();
+        box.setCuotaMensual(nuevoMonto);
+        clienteModificado.setBoxeo(box);
+
+    }
+
+    if ( clienteModificado.getYoga().getActivo() == true  && op == 3)
+    {
+
+        yog = clienteModificado.getYoga();
+        yog.setCuotaMensual(nuevoMonto);
+        clienteModificado.setYoga(yog);
+
+    }
+
+  cout <<"VOLVIENDO AL MENU ANTERIOR"<< endl;
+
+
+
+
+}
+
+void ClienteTareas::cambiarAlgunaFechaLimite(Cliente &clienteModificado)
+{
+    ClienteArchivo clienteArch;
+    int cantidadDeClientes = clienteArch.getCantidad();
+    int op;
+    int numeroRegistro = clienteModificado.getNumeroDeSocio();
+    Fecha nuevaFecha;
+    Boxeo box;
+    Yoga yog;
+
+    if ( clienteModificado.getBoxeo().getActivo() == true)   cout <<"INGRESE 1 PARA CAMBIAR LA FECHA DEL SERVICIO PESAS"<< endl;
+    if ( clienteModificado.getBoxeo().getActivo() == true)  cout <<"INGRESE 2 PARA CAMBIAR LA FECHA DEL SERVICIO DE BOXEO"<< endl;
+    if ( clienteModificado.getYoga().getActivo() == true)  cout <<"INGRESE 3 PARA CAMBIAR LA FECHA DEL SERVICIO DE YOGA"<< endl;
+
+
+    cout <<"INGRESE 0 PARA VOLVER" << endl;
+    cin >> op;
+    if ( clienteModificado.getPesas() == true && op== 1 )
+    {
+
+        nuevaFecha.cargar();
+        clienteModificado.setFechaLimite(nuevaFecha);
+
+    }
+
+    if ( clienteModificado.getBoxeo().getActivo() == true && op == 2 )
+    {
+        nuevaFecha.cargar();
+
+        box = clienteModificado.getBoxeo();
+        box.setFechaLimitePago(nuevaFecha);
+        clienteModificado.setBoxeo(box);
+
+    }
+
+    if ( clienteModificado.getYoga().getActivo() == true  && op == 3)
+    {
+
+        nuevaFecha.cargar();
+
+        yog = clienteModificado.getYoga();
+        yog.setFechaLimitePago(nuevaFecha);
+        clienteModificado.setYoga(yog);
+
+    }
+
+  cout <<"VOLVIENDO AL MENU ANTERIOR"<< endl;
+
+
+
+
+}
+
 
 void ClienteTareas::limpiarArchivoClientes()
 {
@@ -299,8 +406,9 @@ void ClienteTareas::mostrarClientesConFechaPorVencer()
 
     Fecha fechaHoy;
     int cantidadRegistros =_archivoCliente.getCantidad();
-    if (fechaHoy.esBisiesto()==true){
-    int diasPorMes[12] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    if (fechaHoy.esBisiesto()==true)
+    {
+        int diasPorMes[12] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     }
     int diasPorMes[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     bool algunCliente=true;
@@ -323,15 +431,16 @@ void ClienteTareas::mostrarClientesConFechaPorVencer()
 
         if ( cliente.getFechaLimiteParaPagarAbono().getAnio()== fechaHoy.getAnio() && cliente.getFechaLimiteParaPagarAbono().getMes() != fechaHoy.getMes() && cliente.getEstado())
         {
-          int diasParaTerminarELmes = diasPorMes[ fechaHoy.getMes()- 1 ] - fechaHoy.getDia();
-          if (fechaHoy.getDia() > cliente.getFechaLimiteParaPagarAbono().getDia())
+            int diasParaTerminarELmes = diasPorMes[ fechaHoy.getMes()- 1 ] - fechaHoy.getDia();
+            if (fechaHoy.getDia() > cliente.getFechaLimiteParaPagarAbono().getDia())
             {
-              int diasRestantes = diasParaTerminarELmes + cliente.getFechaLimiteParaPagarAbono().getDia();
+                int diasRestantes = diasParaTerminarELmes + cliente.getFechaLimiteParaPagarAbono().getDia();
 
-              if (diasRestantes <=6){
-                algunCliente=false;
-                cliente.mostrarCliente();
-              }
+                if (diasRestantes <=6)
+                {
+                    algunCliente=false;
+                    cliente.mostrarCliente();
+                }
 
 
             }
@@ -344,7 +453,8 @@ void ClienteTareas::mostrarClientesConFechaPorVencer()
 
 
     }
-    if(algunCliente==true){
+    if(algunCliente==true)
+    {
         cout << "No se encontraron clientes con fechas por vencer (6 dias o menos de vencimiento)"<<endl;
     }
 
@@ -616,7 +726,7 @@ void ClienteTareas::listarTodosLosClientesDadosDeBaja()
         Cliente cliente = _archivoCliente.leer(i);
 
         cliente.mostrarClienteDadoDeBaja();
-        cout <<"----------------------------------------------" << endl;
+
     }
 }
 
@@ -955,7 +1065,8 @@ void ClienteTareas::consultaPorNombre()
     else if(_archivoCliente.buscarPorNombre(nombre)==-1)
     {
         cout<<"NO SE PUDO ABRIR EL ARCHIVO"<<endl;
-    }else
+    }
+    else
     {
         cout<<"NO EXISTE UN CLIENTE CON ESE NOMBRE O ESE CLIENTE ESTA DADO DE BAJA"<<endl;
     }
@@ -975,7 +1086,8 @@ void ClienteTareas::consultaPorApellido()
     else if(_archivoCliente.buscarPorApellido(apellido)==-1)
     {
         cout<<"NO SE PUDO ABRIR EL ARCHIVO"<<endl;
-    }else
+    }
+    else
     {
         cout<<"NO EXISTE UN CLIENTE CON ESE APELLIDO O ESE CLIENTE ESTA DADO DE BAJA"<<endl;
     }
@@ -1016,7 +1128,8 @@ void ClienteTareas::consultarPorNumeroSocio()
     else if(_archivoCliente.buscarPorNumeroDeSocio(NumSocio) == -1)
     {
         cout<<"NO SE PUDO ABRIR EL ARCHIVO"<<endl;
-    }else
+    }
+    else
     {
         cout<<"NO EXISTE UN CLIENTE CON ESE NUMERO DE SOCIO O ESE CLIENTE ESTA DADO DE BAJA"<<endl;
     }

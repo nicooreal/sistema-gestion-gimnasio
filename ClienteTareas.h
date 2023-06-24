@@ -38,6 +38,8 @@ void consultaPorNombre();
 void consultaPorApellido();
 void consultaPorEdad();
 void consultarPorNumeroSocio();
+void cambiarAlgunaFechaLimite(Cliente &clienteModificado);
+void cambiarMontoDeAlgunAbono(Cliente &clienteModificado);
 //void listarPorEdad();
 };
 
