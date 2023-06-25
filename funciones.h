@@ -6,6 +6,7 @@
 using namespace std;
 
 void cargarCadena(char *pal,int tam);
+void convertirAMayusculas(char* str);
 //int calcularAntiguedad() ;
 
 #endif // FUNCIONES_H_INCLUDED

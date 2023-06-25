@@ -598,19 +598,19 @@ void EmpleadoTareas::consultaPorApellido()
 void EmpleadoTareas::consultaPorEdad()
 {
     int edad;
-    cout<<"Ingrese la edad"<<endl;
+    cout<<"INGRESE LA EDAD"<<endl;
     cin>>edad;
     if(_archivo.buscarPorEdad(edad)>0)
     {
-        cout<<"EDAD Encontrada!"<<endl<<endl;
+        cout<<"EDAD ENCONTRADA!"<<endl<<endl;
     }
     else if(_archivo.buscarPorEdad(edad))
     {
-        cout<<"No se pudo abrir el archivo"<<endl;
+        cout<<"NO SE PUDO ABRIR EL ARCHIVO"<<endl;
     }
     else
     {
-        cout<<"No existe esa edad o esta dado de baja el registro"<<endl;
+        cout<<"NO EXISTE ESA EDAD O ESTA DADO DE BAJA EL REGISTRO"<<endl;
     }
 }
 
@@ -630,31 +630,38 @@ void EmpleadoTareas::cargar()
 
     int id=generarID();
 
-    cout<<"Nombre: ";
+    cout<<"NOMBRE: ";
     cargarCadena(nombre,29);
-    cout<<"Apellido: ";
+    convertirAMayusculas(nombre);
+    cout<<"APELLIDO: ";
     cargarCadena(apellido,29);
+    convertirAMayusculas(apellido);
     cout<<"DNI: ";
     cin>>dni;
-    cout<<"Fecha nacimiento: "<<endl;
+    cout<<"FECHA NACIMIENTO: "<<endl;
     fechaNacimiento.cargar();
     edad=calcularEdad(fechaNacimiento);
     do
     {
-        cout<<"Genero(M - MASCULINO, F - FEMENINO): ";
+        cout<<"GENERO (M - MASCULINO, F - FEMENINO): ";
         cin>>genero;
+        toupper(genero);
 
     }
     while(genero!='F'&&genero!='f'&&genero!='m'&&genero!='M');
 
+    do
+    {
+        cout <<"SUELDO: "<<endl;
+        cin >> sueldo;
+    }
+    while(sueldo<=0);
 
-    cout <<"Sueldo: "<<endl;
-    cin >> sueldo;
-    cout <<"Fecha De Ingreso: "<<endl;
+    cout <<"FECHA DE INGRESO: "<<endl;
     fechaIngreso.cargar();
     do
     {
-        cout <<"Especializacion(1 - Profesor, 2 - Administrativo, 3 - Limpieza): "<<endl;
+        cout <<"ESPECIALIZACION (1 - PROFESOR, 2 - ADMINISTRATIVO, 3 - LIMPIEZA): "<<endl;
         cin >> especializacion;
     }
     while(especializacion<1||especializacion>3);

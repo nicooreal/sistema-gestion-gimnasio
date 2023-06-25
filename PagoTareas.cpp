@@ -105,7 +105,7 @@ void PagoTareas::recaudacionPorClientes()
                 recaudacionPorCliente+=aux.getAbonoMensual()+aux.getYoga().getCuotaMensual()+aux.getBoxeo().getCuotaMensual();
             }
         }
-        cout<<i+1<<" - Nombre y apellido: "<<cliente.getNombre()<<" "<<cliente.getApellido()<<"---- DNI: "<<cliente.getDni()<<"---- "<<recaudacionPorCliente<<endl;
+        cout<<"NUMERO SOCIO #"<<cliente.getNumeroDeSocio()<<" - NOMBRE Y APELLIDO: "<<cliente.getNombre()<<" "<<cliente.getApellido()<<"---- DNI: "<<cliente.getDni()<<"---- "<<recaudacionPorCliente<<endl;
 
 
 

@@ -1,10 +1,12 @@
 #include "Fecha.h"
 #include <ctime>
+#include <cctype>
 
 
 
 
-Fecha::Fecha() {
+Fecha::Fecha()
+{
     time_t rawtime;
     struct tm timeinfo;
 
@@ -19,40 +21,53 @@ Fecha::Fecha() {
 
 void Fecha::fechaDeHoy()
 {
-Fecha(); // constructor con fecha de hoy
+    Fecha(); // constructor con fecha de hoy
 }
 
 
-bool Fecha::esBisiesto(){
-    if ((_anio % 4 == 0 && _anio % 100 != 0) || _anio % 400 == 0){
-      return true;
+bool Fecha::esBisiesto()
+{
+    if ((_anio % 4 == 0 && _anio % 100 != 0) || _anio % 400 == 0)
+    {
+        return true;
     }
     return false;
 }
 
-void Fecha::agregarDia(){
-   int dias[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-   if (esBisiesto()){
-      dias[1]++;
-   }
+void Fecha::agregarDia()
+{
+    int dias[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    if (esBisiesto())
+    {
+        dias[1]++;
+    }
 
-   _dia++;
-   if (_dia > dias[_mes-1]){
-      _dia = 1;
-      _mes++;
-      if (_mes > 12){
-         _mes = 1;
-         _anio++;
-      }
-   }
+    _dia++;
+    if (_dia > dias[_mes-1])
+    {
+        _dia = 1;
+        _mes++;
+        if (_mes > 12)
+        {
+            _mes = 1;
+            _anio++;
+        }
+    }
 }
 
 void Fecha::cargar()
 {
+    do
+    {
+        cout<<"DIA: ";
+        cin>>_dia;
+        cout<<"MES: ";
+        cin>>_mes;
+        cout<<"ANIO: ";
+        cin>>_anio;
+    }
+    while(_dia<=0||_mes<=0||_anio<=0);
 
-    cout<<"Dia: "; cin>>_dia;
-    cout<<"Mes: "; cin>>_mes;
-    cout<<"Anio: "; cin>>_anio;
 
 
 }
@@ -104,7 +119,8 @@ Fecha Fecha::calcularUnMesDeEntreno(Fecha fech)
         anio = fech.getAnio() + 1;
         dia = fech.getDia();
     }
-    if (fech.getMes()==2 && fech.getDia()==29) {
+    if (fech.getMes()==2 && fech.getDia()==29)
+    {
 
         dia = 31;
     }
@@ -129,7 +145,7 @@ Fecha Fecha::calcularUnMesDeEntreno(Fecha fech)
     fech.setMes(mes);
     fech.setAnio(anio);
 
-return fech;
+    return fech;
 }
 
 

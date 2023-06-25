@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "funciones.h"
 #include "Persona.h"
 #include "Empleado.h"
@@ -22,6 +23,12 @@ void cargarCadena(char *pal,int tam)
 
     fflush(stdin);
 
+}
+
+void convertirAMayusculas(char* str) {
+    transform(str, str + strlen(str), str, [](unsigned char c) {
+        return toupper(c);
+    });
 }
 
 

@@ -58,7 +58,7 @@ void Empleado::setEspecializacion(int especializacion)
 }
 char *Empleado::getEspecializacion()
 {
-    char especializaciones[3][15]= {"Profesor","Administrativo","Limpieza"};
+    char especializaciones[3][15]= {"PROFESOR","ADMINISTRATIVO","LIMPIEZA"};
     return especializaciones[_especializacion-1];
 }
 
@@ -67,13 +67,13 @@ void Empleado::mostrarEmpleado()
     if ( _estado == true )
     {
 
-        char especializaciones[3][15]= {"Profesor","Administrativo","Limpieza"};
+        char especializaciones[3][15]= {"PROFESOR","ADMINISTRATIVO","LIMPIEZA"};
         cout <<"ID DE EMPLEADO #" << _id << endl;
         mostrarPersona();
-        cout <<"Con un sueldo de $ "<<_sueldo<<endl;
-        cout <<"Ingreso el dia "    ;
+        cout <<"CON UN SUELDO DE $ "<<_sueldo<<endl;
+        cout <<"INGRESO EL DIA "    ;
         _fechaIngreso.mostrar();
-        cout <<"se especializa en " <<especializaciones[_especializacion-1]<<endl;
+        cout <<"SE ESPECIALIZA EN " <<especializaciones[_especializacion-1]<<endl;
 
         cout<<"----------------------------------"<< endl;
     }
@@ -84,13 +84,13 @@ void Empleado::mostrarEmpleadosDadosDeBaja()
     if(!_estado)
     {
         cout<<"\tESTE EMPLEADO ESTA DADO DE BAJA"<<endl;
-        char especializaciones[3][15]= {"Profesor","Administrativo","Limpieza"};
+        char especializaciones[3][15]= {"PROFESOR","ADMINISTRATIVO","LIMPIEZA"};
         cout<<"ID DE EMPLEADO #"<<_id<<endl;
         mostrarPersona();
-        cout<<"Con un sueldo de $ "<<_sueldo<<endl;
-        cout<<"Ingreso el dia ";
+        cout<<"CON UN SUELDO DE $ "<<_sueldo<<endl;
+        cout<<"INGRESO EL DIA ";
         _fechaIngreso.mostrar();
-        cout<<"se especializa en " <<especializaciones[_especializacion-1]<<endl;
+        cout<<"SE ESPECIALIZA EN " <<especializaciones[_especializacion-1]<<endl;
 
         cout<<"-----------------------------------------"<<endl;
 
