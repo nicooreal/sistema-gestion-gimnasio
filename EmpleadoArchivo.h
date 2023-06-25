@@ -31,6 +31,7 @@ public:
     int buscarPorNombre(char *nombre);
     int buscarPorApellido(char *apellido);
     int buscarPorEdad(int edad);
+    int existeEmpleado(Empleado empleado);
 
     int calcularEdad(Fecha fechaNacimiento);
 

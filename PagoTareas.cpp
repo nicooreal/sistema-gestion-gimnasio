@@ -87,6 +87,32 @@ int PagoTareas::calcularcantidadAniosDeRegistro()
 
 }
 
+void PagoTareas::recaudacionPorClientes()
+{
+    ClienteArchivo archivoClientes;
+    int cantidadClientes=archivoClientes.getCantidad();
+
+
+    for(int i=0; i<cantidadClientes; i++)
+    {
+        Cliente cliente=archivoClientes.leer(i);
+        float recaudacionPorCliente=0;
+        for(int x=0;x<cantidadClientes;x++)
+        {
+            Cliente aux=archivoClientes.leer(x);
+            if(cliente.getDni()==aux.getDni())
+            {
+                recaudacionPorCliente+=aux.getAbonoMensual()+aux.getYoga().getCuotaMensual()+aux.getBoxeo().getCuotaMensual();
+            }
+        }
+        cout<<i+1<<" - Nombre y apellido: "<<cliente.getNombre()<<" "<<cliente.getApellido()<<"---- DNI: "<<cliente.getDni()<<"---- "<<recaudacionPorCliente<<endl;
+
+
+
+    }
+
+}
+
 
 
 
@@ -98,13 +124,13 @@ void PagoTareas::recaudacionAnual()
     Pago pago;
     int CantArch=pagoArchi.getCantidad(), anio;
     float VrecaudacionAnual[12] {};
-cout <<"INGRESE EL ANIO DE LA RECAUDACION"<< endl;
-cin >> anio;
+    cout <<"INGRESE EL ANIO DE LA RECAUDACION"<< endl;
+    cin >> anio;
     for(int x=0; x<CantArch; x++)
     {
         pago=pagoArchi.leer(x);
 
-       if (anio == pago.getFecha().getAnio() ) VrecaudacionAnual[pago.getFecha().getMes()-1] += pago.getPago();
+        if (anio == pago.getFecha().getAnio() ) VrecaudacionAnual[pago.getFecha().getMes()-1] += pago.getPago();
 
     }
     mostrarRecaudacionAnual(VrecaudacionAnual) ;
@@ -140,7 +166,7 @@ void PagoTareas::mostrarTodos()
 
         if (pago.getEstado() == true )
         {
-        pago.mostrarPago();
+            pago.mostrarPago();
         }
 
     }
@@ -168,20 +194,20 @@ void PagoTareas::eliminarPago()
         if ( pago.getId() == id && pago.getEstado() == true )
         {
 
-           seEncontroPago == true;
+            seEncontroPago == true;
 
             cout <<"ESTA SEGURO QUE QUIERE ELIMINAR EL PAGO? NO SE PODRA RECUPERAR( 1 - SI o 0 - NO )"<< endl;
-           pago.mostrarPago();
+            pago.mostrarPago();
 
 
-           cin >> op;
+            cin >> op;
             if (op == 1 )
             {
 
-            pago.setEstado(false);
+                pago.setEstado(false);
 
-            pagoArch.editar(pago,id);
-            cout <<"PAGO ELIMINADO"<< endl;
+                pagoArch.editar(pago,id);
+                cout <<"PAGO ELIMINADO"<< endl;
 
             }
             else if (op == 0 )
@@ -197,7 +223,7 @@ void PagoTareas::eliminarPago()
 
     }
 
-cout<<"VOLVIENDO AL MENU ANTERIOR"<< endl;
+    cout<<"VOLVIENDO AL MENU ANTERIOR"<< endl;
 
 
 

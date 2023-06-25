@@ -57,9 +57,42 @@ bool ClienteArchivo::guardar(Cliente cliente) {
     if (p == NULL) {
         return false;
     }
-    bool ok = fwrite(&cliente, sizeof(Cliente), 1, p);
+    bool ok=false;
+    if(existeCliente(cliente)==0)
+    {
+        ok = fwrite(&cliente, sizeof(Cliente), 1, p);
+        cout<<"REGISTRO GUARDADO EXITOSAMENTE!"<<endl;
+    }else if(existeCliente(cliente)==-1)
+    {
+        cout<<"NO SE PUDO ABRIR EL ARCHIVO"<<endl;
+    }else
+    {
+        cout<<"YA EXISTE UN CLIENTE CON ESE DNI"<<endl;
+    }
     fclose(p);
     return ok;
+}
+
+int ClienteArchivo::existeCliente(Cliente cliente)
+{
+    FILE *p=fopen(_nombreArchivo,"rb");
+    if(p==NULL)
+    {
+        return -1;
+    }
+
+
+    for(int i=0;i<getCantidad();i++)
+    {
+        Cliente aux=leer(i);
+        if(cliente.getDni()==aux.getDni())
+        {
+            fclose(p);
+            return 1;
+        }
+    }
+    fclose(p);
+    return 0;
 }
 
 Cliente ClienteArchivo::leer(int nroRegistro) {

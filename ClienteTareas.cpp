@@ -10,9 +10,19 @@ void ClienteTareas::cargar()
     Cliente cliente;
     cliente.cargarCliente();
 
-    _archivoCliente.guardar(cliente);
-    cout <<"-------------------------------"<< endl;
-    pagoTareas.cargarPago(true,cliente.getDni());
+
+
+
+    if(_archivoCliente.guardar(cliente))
+    {
+
+        cout <<"-------------------------------"<< endl;
+        pagoTareas.cargarPago(true,cliente.getDni());
+    }
+
+
+
+
 
 }
 void ClienteTareas::modificar()
@@ -189,9 +199,15 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             clienteModificado.setApellido(apellido);
             break;
         case 3:
-            cout<<"Ingrese el nuevo DNI "<<endl;
-            cin>>dni;
-            clienteModificado.setDni(dni);
+            do
+            {
+                cout<<"Ingrese el nuevo DNI "<<endl;
+                cin>>dni;
+                clienteModificado.setDni(dni);
+
+            }
+            while(_archivoCliente.existeCliente(clienteModificado)!=0);
+
             break;
         case 4:
             do
@@ -221,7 +237,7 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             cambiarAlgunaFechaLimite(clienteModificado );
             break;
         case 8:
-             cambiarMontoDeAlgunAbono(clienteModificado);
+            cambiarMontoDeAlgunAbono(clienteModificado);
             break;
         case 9:
             cout<<"Ingrese el nuevo registro de Cliente"<<endl;
@@ -247,7 +263,7 @@ void ClienteTareas::cambiarMontoDeAlgunAbono( Cliente &clienteModificado)
     Fecha nuevaFecha;
     Boxeo box;
     Yoga yog;
- int nuevoMonto;
+    int nuevoMonto;
 
     if ( clienteModificado.getBoxeo().getActivo() == true)   cout <<"INGRESE 1 PARA CAMBIAR EL MONTO DEL SERVICIO PESAS"<< endl;
     if ( clienteModificado.getBoxeo().getActivo() == true)  cout <<"INGRESE 2 PARA CAMBIAR EL MONTO DEL SERVICIO DE BOXEO"<< endl;
@@ -285,7 +301,7 @@ void ClienteTareas::cambiarMontoDeAlgunAbono( Cliente &clienteModificado)
 
     }
 
-  cout <<"VOLVIENDO AL MENU ANTERIOR"<< endl;
+    cout <<"VOLVIENDO AL MENU ANTERIOR"<< endl;
 
 
 
@@ -338,7 +354,7 @@ void ClienteTareas::cambiarAlgunaFechaLimite(Cliente &clienteModificado)
 
     }
 
-  cout <<"VOLVIENDO AL MENU ANTERIOR"<< endl;
+    cout <<"VOLVIENDO AL MENU ANTERIOR"<< endl;
 
 
 
@@ -658,9 +674,6 @@ float ClienteTareas::acumularAbonos(int dni)
         {
 
             montoAcumulado   =  cliente.getYoga().getCuotaMensual() + cliente.getBoxeo().getCuotaMensual()  + cliente.getAbonoMensual();
-
-
-
 
         }
 

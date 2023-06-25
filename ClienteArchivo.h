@@ -9,7 +9,7 @@ private:
     char _nombreArchivo[30];
 
 public:
-     ClienteArchivo();/// CONSTRUCTOR PARA PONER POR DEFECTO clientes.dat
+    ClienteArchivo();/// CONSTRUCTOR PARA PONER POR DEFECTO clientes.dat
     ClienteArchivo(const char *nombreArchivo);/// CONSTRUCTOR PARA ELEGIR ALGUN OTRO NOMBRE QUE NO SEA clientes.dat
     int getCantidad();
     bool guardar(Cliente cliente);
@@ -25,6 +25,7 @@ public:
     int buscarPorEdad(int edad);
     int buscarPorNumeroDeSocio(int numSocio);
     int buscarPorDni(int dni);
+    int existeCliente(Cliente cliente);
 };
 
 #endif // CLIENTEARCHIVO_H

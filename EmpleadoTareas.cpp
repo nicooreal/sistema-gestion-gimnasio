@@ -529,7 +529,8 @@ void EmpleadoTareas::consultaPorId()
     else if(_archivo.buscarPorID(id)==-1)
     {
         cout<<"No se pudo abrir el archivo"<<endl;
-    }else
+    }
+    else
     {
         cout<<"No existe ese ID o esta dado de baja el registro"<<endl;
     }
@@ -548,7 +549,8 @@ void EmpleadoTareas::consultaPorDni()
     else if(_archivo.buscarPorDni(dni)==-1)
     {
         cout<<"No se pudo abrir el archivo"<<endl;
-    }else
+    }
+    else
     {
         cout<<"No existe ese DNI o esta dado de baja el registro"<<endl;
     }
@@ -566,7 +568,8 @@ void EmpleadoTareas::consultaPorNombre()
     else if(_archivo.buscarPorNombre(nombre)==-1)
     {
         cout<<"No se pudo abrir el archivo"<<endl;
-    }else
+    }
+    else
     {
         cout<<"No existe ese nombre o esta dado de baja el registro"<<endl;
     }
@@ -585,7 +588,8 @@ void EmpleadoTareas::consultaPorApellido()
     else if(_archivo.buscarPorApellido(apellido)==-1)
     {
         cout<<"No se pudo abrir el archivo"<<endl;
-    }else
+    }
+    else
     {
         cout<<"No existe ese apellido o esta dado de baja el registro"<<endl;
     }
@@ -603,7 +607,8 @@ void EmpleadoTareas::consultaPorEdad()
     else if(_archivo.buscarPorEdad(edad))
     {
         cout<<"No se pudo abrir el archivo"<<endl;
-    }else
+    }
+    else
     {
         cout<<"No existe esa edad o esta dado de baja el registro"<<endl;
     }
@@ -721,9 +726,18 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
             empleadoModificado.setApellido(apellido);
             break;
         case 3:
-            cout<<"Ingrese el nuevo DNI "<<endl;
-            cin>>dni;
-            empleadoModificado.setDni(dni);
+
+            do
+            {
+                cout<<"Ingrese el nuevo DNI "<<endl;
+                cin>>dni;
+                empleadoModificado.setDni(dni);
+            }
+            while(_archivo.existeEmpleado(empleadoModificado)!=0);
+
+
+
+
             break;
         case 4:
             do

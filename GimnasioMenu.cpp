@@ -26,13 +26,14 @@ void GimnasioMenu::mostrar()
             cout <<"5 - ELIMINAR PAGO ERRONEO" << endl;
             cout <<"6 - REGISTRAR INGRESOS" << endl;
             cout <<"7 - ELIMINAR TODOS LOS REGISTROS DE PAGOS"<<endl;
+            cout <<"8 - RECAUDACION POR CLIENTES"<<endl;
             cout<<"0 - SALIR"<<endl;
             cout<<"----------------------------------"<<endl;
             cout<<"OPCION: ";
             cin>>opcion;
             system("cls");
         }
-        while(opcion<0||opcion>7);
+        while(opcion<0||opcion>8);
 
         switch(opcion)
         {
@@ -68,6 +69,9 @@ void GimnasioMenu::mostrar()
             break;
         case 7:
             _pagoTareas.eliminarTodosLosPagos();
+            break;
+        case 8:
+            _pagoTareas.recaudacionPorClientes();
             break;
 
 

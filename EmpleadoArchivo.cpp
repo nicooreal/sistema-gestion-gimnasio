@@ -19,9 +19,44 @@ bool EmpleadoArchivo::guardar(Empleado empleado) {
     if (p == NULL) {
         return false;
     }
-    bool ok = fwrite(&empleado, sizeof(Empleado), 1, p);
+
+    bool ok=false;
+
+    if(existeEmpleado(empleado)==0)
+    {
+        ok = fwrite(&empleado, sizeof(Empleado), 1, p);
+        cout<<"REGISTRO GUARDADO EXITOSAMENTE"<<endl;
+    }else if(existeEmpleado(empleado)==-1)
+    {
+        cout<<"NO SE PUDO ABRIR EL ARCHIVO"<<endl;
+    }else
+    {
+        cout<<"YA EXISTE UN EMPLEADO CON ESE DNI"<<endl;
+    }
     fclose(p);
     return ok;
+}
+
+int EmpleadoArchivo::existeEmpleado(Empleado empleado)
+{
+    FILE *p=fopen(_nombreArchivo,"rb");
+    if(p==NULL)
+    {
+        return -1;
+    }
+
+
+    for(int i=0;i<cantidadEmpleados();i++)
+    {
+        Empleado aux=leer(i);
+        if(empleado.getDni()==aux.getDni())
+        {
+            fclose(p);
+            return 1;
+        }
+    }
+    fclose(p);
+    return 0;
 }
 
 Empleado EmpleadoArchivo::leer(int nroRegistro) {

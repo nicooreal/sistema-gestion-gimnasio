@@ -24,6 +24,7 @@ class PagoTareas
         void eliminarPago();
         void mostrarRecaudacionAnual(float vRecaudacionAnual[12]);
         void eliminarTodosLosPagos();
+        void recaudacionPorClientes();
 
 
 };
