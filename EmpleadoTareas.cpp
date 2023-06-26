@@ -729,12 +729,14 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
             cargarCadena(nombre,29);
             convertirAMayusculas(nombre);
             empleadoModificado.setNombre(nombre);
+            cout <<"NOMBRE CAMBIADO CON EXITO"<< endl;
             break;
         case 2:
             cout<<"INGRESE EL NUEVO APELLIDO"<<endl;
             cargarCadena(apellido,29);
             convertirAMayusculas(apellido);
             empleadoModificado.setApellido(apellido);
+              cout <<"APELLIDO CAMBIADO CON EXITO"<< endl;
             break;
         case 3:
 
@@ -746,7 +748,7 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
             }
             while(_archivo.existeEmpleado(empleadoModificado)!=0);
 
-
+  cout <<"DNI CAMBIADO CON EXITO"<< endl;
 
 
             break;
@@ -760,21 +762,25 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
             while(genero!='F'&&genero!='f'&&genero!='m'&&genero!='M');
 
             empleadoModificado.setSexo(genero);
+              cout <<"SEXO CAMBIADO CON EXITO"<< endl;
             break;
         case 5:
             cout<<"INGRESE LA NUEVA FECHA DE NACIMIENTO "<<endl;
             fechaNacimiento.cargar();
             empleadoModificado.setEdad(calcularEdad(fechaNacimiento));
             empleadoModificado.setFechaNacimiento(fechaNacimiento);
+              cout <<"FECHA CAMBIADA CON EXITO"<< endl;
             break;
         case 6:
             cout<<"INGRESE LA NUEVA FECHA DE ALTA"<<endl;
             fechaIngreso.cargar();
             empleadoModificado.setFechaIngreso(fechaIngreso);
+            cout <<"FECHA CAMBIADA CON EXITO"<< endl;
             break;
         case 7:
             cout<<"INGRESE EL NUEVO SUELDO"<<endl;
             cin>>sueldo;
+            cout <<"SUELDO CAMBIADO CON EXITO"<< endl;
             empleadoModificado.setSueldo(sueldo);
             break;
 
@@ -783,6 +789,7 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
             cout <<"ESPECIALIZACION (1 - PROFESOR, 2 - ADMINISTRATIVO, 3 - LIMPIEZA): "<<endl;
             cin >> especializacion;
             empleadoModificado.setEspecializacion(especializacion);
+            cout <<"ESPECIALIZACION CAMBIADA CON EXITO"<< endl;
             break;
 
         case 9:
