@@ -32,12 +32,3 @@ void convertirAMayusculas(char* str) {
 }
 
 
-/*int calcularAntiguedad(){
-   int antiguedad;
-    Empleado antig;
-    Fecha fechaAct;
-    antiguedad= aca deberia ir antig.xxxx - fechaAct.xxxx de esta forma llamandos metodos que devuevan enteros y que haga una resta entre si
-
-
-return antiguedad;
-} */
