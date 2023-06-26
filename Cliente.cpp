@@ -3,6 +3,7 @@
 #include "ClienteArchivo.h"
 #include "Boxeo.h"
 #include <limits>
+#include "funciones.h"
 
 
 
@@ -195,27 +196,40 @@ void Cliente::cargarCliente()
     if ( _pesas == true )
     {
 
-     _fechaLimiteParaPagarAbono = fecha.calcularUnMesDeEntreno(fecha);
-        bool esLetra=false;
-        do
+        _fechaLimiteParaPagarAbono = fecha.calcularUnMesDeEntreno(fecha);
+
+
+        cout <<"INGRESE LA OPCION(numero) PARA EL MONTO MENSUAL A PAGAR: " << endl;
+        cout <<"OPCION 1 - 3 Dias - $1000" << endl;
+        cout <<"OPCION 2 - 4 Dias - $1200" << endl;
+        cout <<"OPCION 3 - 5 PASE LIBRE $1400" << endl;
+        cin >>opcionMensual;
+
+        bool esValido=false;
+        while(!esValido)
         {
-            cout <<"INGRESE LA OPCION(numero) PARA EL MONTO MENSUAL A PAGAR: " << endl;
-            cout <<"OPCION 1 - 3 Dias - $1000" << endl;
-            cout <<"OPCION 2 - 4 Dias - $1200" << endl;
-            cout <<"OPCION 3 - 5 PASE LIBRE $1400" << endl;
-            cin >>opcionMensual;
-            if(!cin>>opcionMensual)
+            if(!validar(opcionMensual))
             {
-                cin.clear(); // Restablece el estado del flujo de entrada
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout<<"NO VALIDO"<<endl;
+                cin>>opcionMensual;
             }
             else
             {
-                esLetra=true;
+                if(opcionMensual<1||opcionMensual>3)
+                {
+                    cout<<"NO VALIDO"<<endl;
+                    cin>>opcionMensual;
+                }
             }
 
+            if(opcionMensual>=1&&opcionMensual<=3)
+            {
+                esValido=true;
+            }
+
+
         }
-        while(!esLetra||opcionMensual<1||opcionMensual>3);
+
 
 
     }

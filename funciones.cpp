@@ -36,33 +36,32 @@ void convertirAMayusculas(char* str)
 
 bool validar(int opcionMensual)
 {
+    bool esLetra=false;
 
-    cin>>opcionMensual;
-
-    if (cin >> opcionMensual)
+    if (cin)
     {
         // Se ingresó un entero correctamente
-        cout << "El número ingresado es: " << opcionMensual << endl;
-        return true;
+        esLetra=true;
     }
     else
     {
         // Se ingresó un valor no válido
-        cout << "Error: no se ingresó un número entero válido." << endl;
+
 
         // Limpiamos el estado de error de cin
         cin.clear();
 
         // Descartamos el contenido inválido ingresado por el usuario
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        return false;
+
     }
 
+
+    return esLetra;
 
 
 
 
 }
-
 
 

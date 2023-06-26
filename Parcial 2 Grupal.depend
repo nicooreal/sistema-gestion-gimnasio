@@ -125,7 +125,7 @@
 	<iostream>
 	"Fecha.h"
 
-1687799934 source:c:\users\alexi\github\sistema-gestion-gimnasio\funciones.cpp
+1687808209 source:c:\users\alexi\github\sistema-gestion-gimnasio\funciones.cpp
 	<algorithm>
 	"funciones.h"
 	"Persona.h"
@@ -197,7 +197,7 @@
 	"Persona.h"
 	"string.h"
 
-1686792680 source:c:\users\alexi\github\sistema-gestion-gimnasio\main.cpp
+1687806916 source:c:\users\alexi\github\sistema-gestion-gimnasio\main.cpp
 	<iostream>
 	<locale.h>
 	<stdlib.h>
@@ -385,7 +385,7 @@
 	<string.h>
 	"Empleado.h"
 
-1687793053 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
+1687808145 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
 	"EmpleadoTareas.h"
 	"funciones.h"
 
@@ -800,7 +800,7 @@
 1687790423 source:c:\users\alexi\github\sistema-gestion-gimnasio\yoga.cpp
 	"Yoga.h"
 
-1687799337 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.cpp
+1687805889 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.cpp
 	"ClienteTareas.h"
 	"Cliente.h"
 	"ClienteArchivo.h"
