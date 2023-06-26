@@ -273,7 +273,7 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
 
 
 void ClienteTareas::cambiarActividades(Cliente &clienteModificado){
-
+   Fecha fechaHoy;
     ClienteArchivo clienteArch;
     int op,opMensual;
     int numeroRegistro = clienteModificado.getNumeroDeSocio();
@@ -291,7 +291,7 @@ void ClienteTareas::cambiarActividades(Cliente &clienteModificado){
      if ( clienteModificado.getPesas() == true && op== 1 )
     {
 
-
+        clienteModificado.setAbonoMensual(0);
         clienteModificado.setPesas(false);
         cout <<"SERVICIO DE PESAS DESACTIVADO" << endl;
 
@@ -303,6 +303,7 @@ void ClienteTareas::cambiarActividades(Cliente &clienteModificado){
 
         box = clienteModificado.getBoxeo();
         box.setActivo(false) ;
+        box.setCuotaMensual(0);
         clienteModificado.setBoxeo(box);
      cout <<"SERVICIO DE BOXEO DESACTIVADO" << endl;
     }
@@ -312,6 +313,7 @@ void ClienteTareas::cambiarActividades(Cliente &clienteModificado){
 
         yog = clienteModificado.getYoga();
         yog.setActivo(false);
+        yog.setCuotaMensual(0);
         clienteModificado.setYoga(yog);
      cout <<"SERVICIO DE YOGA DESACTIVADO" << endl;
     }
@@ -336,18 +338,16 @@ void ClienteTareas::cambiarActividades(Cliente &clienteModificado){
     {
 
 
-        box = clienteModificado.getBoxeo();
-        box.setActivo(true) ;
-        clienteModificado.setBoxeo(box);
+
+        clienteModificado.setBoxeo(box); // el constructor por defecto pone los valores correspondientes a un alta
      cout <<"SERVICIO DE BOXEO ACTIVADO" << endl;
     }
 
  if ( clienteModificado.getYoga().getActivo() == false  && op == 6)
     {
 
-        yog = clienteModificado.getYoga();
-        yog.setActivo(true);
-        clienteModificado.setYoga(yog);
+
+        clienteModificado.setYoga(yog);  //el constructor por defecto pone los valores correspondientes a un alta
      cout <<"SERVICIO DE YOGA ACTIVADO" << endl;
     }
 
