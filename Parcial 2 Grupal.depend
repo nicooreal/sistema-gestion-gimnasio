@@ -201,10 +201,11 @@
 	"Empleado.h"
 	"Programa.h"
 
-1687640701 source:c:\users\alexi\github\sistema-gestion-gimnasio\cliente.cpp
+1687738723 source:c:\users\alexi\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 	"ClienteArchivo.h"
 	"Boxeo.h"
+	<limits>
 
 1687563823 c:\users\alexi\github\sistema-gestion-gimnasio\cliente.h
 	<iostream>
@@ -309,7 +310,7 @@
 
 1684202729 c:\users\alexi\github\sistema-gestion-gimnasio\include\menugim.h
 
-1687563629 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleado.cpp
+1687653786 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleado.cpp
 	<iostream>
 	<cstdlib>
 	"Empleado.h"
@@ -378,7 +379,7 @@
 	<string.h>
 	"Empleado.h"
 
-1687651507 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
+1687653786 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
 	"EmpleadoTareas.h"
 	"funciones.h"
 
