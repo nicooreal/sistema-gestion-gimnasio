@@ -121,6 +121,7 @@ void Cliente::hacePesas()
 
 void Cliente::setControlIngresos(int control)
 {
+
     _controlDeIngresosPesas = control;
 
 }
@@ -150,49 +151,13 @@ void Cliente::setFechaLimite(Fecha f)
 
 
 
-void Cliente::calcularUnMesDeEntreno()
-{
 
-    Fecha fecha;
-    int dia, mes,anio;
-
-
-    if (fecha.getMes() == 12)
-    {
-        mes = 1;
-        anio = fecha.getAnio() + 1;
-        dia = fecha.getDia();
-    }
-
-// falta ver lo del mes de Febrero y si es biciesto
-
-
-    if (fecha.getDia() == 31)
-    {
-        dia = 30;
-    }
-    else
-    {
-        dia = fecha.getDia();
-    }
-    mes = fecha.getMes() + 1;
-    anio = fecha.getAnio();
-
-
-
-
-
-    _fechaLimiteParaPagarAbono.setDia(dia);
-    _fechaLimiteParaPagarAbono.setMes(mes);
-    _fechaLimiteParaPagarAbono.setAnio(anio);
-
-}
 
 
 
 void Cliente::cargarCliente()
 {
-
+    Fecha fecha;
     ClienteArchivo clienteArch;
     int cantidadDeSocios = clienteArch.getCantidad();
     int opcionMensual = 0;
@@ -230,7 +195,7 @@ void Cliente::cargarCliente()
     if ( _pesas == true )
     {
 
-        calcularUnMesDeEntreno();
+     _fechaLimiteParaPagarAbono = fecha.calcularUnMesDeEntreno(fecha);
         bool esLetra=false;
         do
         {
@@ -256,7 +221,7 @@ void Cliente::cargarCliente()
     }
     cout<<"NOMBRE DE LA ACTIVIDAD EXTRA (1 - BOXEO $1000, 2 - YOGA $1000, 3 - BOXEO Y YOGA $1500 4 - NINGUNA )"<<endl;
     cin >> opcionExtra;
-    establecerPlanMensual(opcionMensual,_fechaDelAlta.getMes());
+    establecerPlanMensual(opcionMensual);
 
     establecerOpcionExtra(opcionExtra);
 
@@ -364,10 +329,8 @@ void Cliente::mostrarCliente()
 }
 
 
-void Cliente::establecerPlanMensual(int opc,int mes)
+void Cliente::establecerPlanMensual(int opc)
 {
-    int dias[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-
 
     if (opc == 1)
     {
@@ -382,7 +345,7 @@ void Cliente::establecerPlanMensual(int opc,int mes)
     if (opc == 3)
     {
         _abonoMensual = 1400;
-        _controlDeIngresosPesas=dias[mes-1];
+        _controlDeIngresosPesas = 31;
     }
 
 
