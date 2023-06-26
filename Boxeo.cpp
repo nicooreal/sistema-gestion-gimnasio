@@ -4,9 +4,9 @@
 Boxeo::Boxeo(){
 Fecha fecha;
 _fechaAlta = fecha;
-_fechaLimitePago = fecha; // falta funcion para calcular;
-_cuotaMensual =  0;
-
+_fechaLimitePago = fecha.calcularUnMesDeEntreno(fecha); // falta funcion para calcular;
+_cuotaMensual =  1000;
+_activo = true;
 }
 
 

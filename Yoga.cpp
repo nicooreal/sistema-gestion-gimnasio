@@ -3,9 +3,9 @@
 Yoga::Yoga(){
 Fecha fecha;
 _fechaAlta = fecha;
-_fechaLimitePago = fecha; // falta funcion para calcular;
-_cuotaMensual =  3000;
-
+_fechaLimitePago = fecha.calcularUnMesDeEntreno(fecha) ;
+_cuotaMensual =  1000;
+_activo = true;
 }
 
 
