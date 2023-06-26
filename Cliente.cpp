@@ -121,7 +121,6 @@ void Cliente::hacePesas()
 
 void Cliente::setControlIngresos(int control)
 {
-
     _controlDeIngresosPesas = control;
 
 }
@@ -257,7 +256,7 @@ void Cliente::cargarCliente()
     }
     cout<<"NOMBRE DE LA ACTIVIDAD EXTRA (1 - BOXEO $1000, 2 - YOGA $1000, 3 - BOXEO Y YOGA $1500 4 - NINGUNA )"<<endl;
     cin >> opcionExtra;
-    establecerPlanMensual(opcionMensual);
+    establecerPlanMensual(opcionMensual,_fechaDelAlta.getMes());
 
     establecerOpcionExtra(opcionExtra);
 
@@ -365,8 +364,10 @@ void Cliente::mostrarCliente()
 }
 
 
-void Cliente::establecerPlanMensual(int opc)
+void Cliente::establecerPlanMensual(int opc,int mes)
 {
+    int dias[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
 
     if (opc == 1)
     {
@@ -381,7 +382,7 @@ void Cliente::establecerPlanMensual(int opc)
     if (opc == 3)
     {
         _abonoMensual = 1400;
-        _controlDeIngresosPesas = 31;
+        _controlDeIngresosPesas=dias[mes-1];
     }
 
 

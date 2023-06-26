@@ -28,7 +28,7 @@ void PagoTareas::cargarPago(bool primerPago, int dni)
         {
 
 
-            pago.setId(cantidadDePagos );
+            pago.setId(cantidadDePagos+1);
             pago.setDni(dni);
             pago.setFechaPago( fechaHoy );
             pago.setPago( clienteTareas.acumularAbonos(dni)  ) ;  // generar un metodo con el abono total(boxeo,joya,etc),este metodo es solo pesas
@@ -206,7 +206,7 @@ void PagoTareas::eliminarPago()
 
                 pago.setEstado(false);
 
-                pagoArch.editar(pago,id);
+                pagoArch.editar(pago,i);
                 cout <<"PAGO ELIMINADO"<< endl;
 
             }

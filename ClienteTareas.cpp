@@ -380,9 +380,8 @@ void ClienteTareas::registrarIngresos()
 
 
     cout <<"NUMERO DE DOCUMENTO: " << endl; // ES PARA PODER VER CUANTOS INGRESOS LE QUEDA A CADA CLIENTE QUE VIENE
-
-
     cin >> documento;
+
     int cantidadDeClientes = _archivoCliente.getCantidad();
 
 
@@ -396,9 +395,9 @@ void ClienteTareas::registrarIngresos()
 
 
 
-            cout <<"nombre: " << cliente.getNombre() <<endl;
-            cout <<"apellido: " <<cliente.getApellido() <<endl;
-            cout<<"ingresos restantes: "<< cliente.getControlIngresos() - 1 << endl;
+            cout <<"NOMBRE: " << cliente.getNombre() <<endl;
+            cout <<"APELLIDO: " <<cliente.getApellido() <<endl;
+            cout<<"INGRESOS RESTANTES: "<< cliente.getControlIngresos() - 1 << endl;
             cout <<"fecha de vencimento: ";
             cliente.getFechaLimiteParaPagarAbono().mostrar();
 
@@ -422,11 +421,11 @@ void ClienteTareas::mostrarClientesConFechaPorVencer()
 
     Fecha fechaHoy;
     int cantidadRegistros =_archivoCliente.getCantidad();
+    int diasPorMes[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     if (fechaHoy.esBisiesto()==true)
     {
-        int diasPorMes[12] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        diasPorMes[1]++;
     }
-    int diasPorMes[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     bool algunCliente=true;
 
     for (int i = 0; i < cantidadRegistros; i++)
