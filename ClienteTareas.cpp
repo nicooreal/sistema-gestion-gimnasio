@@ -116,7 +116,7 @@ void ClienteTareas::darBajaCliente()
 {
     int op;
     int numeroRegistro = _archivoCliente.buscarRegistro();
-        Cliente cliente=_archivoCliente.leer(numeroRegistro);
+    Cliente cliente=_archivoCliente.leer(numeroRegistro);
     if (numeroRegistro>=0 && cliente.getEstado() == true )
     {
         cout <<"EL CLIENTE QUE USTED QUIERE DAR DE BAJA ES:" << endl << endl;
@@ -144,7 +144,8 @@ void ClienteTareas::darBajaCliente()
 
         }
 
-        if (op == 2 ){
+        if (op == 2 )
+        {
 
             cout <<"CLIENTE NO MODIFICADO"<< endl;
 
@@ -152,7 +153,11 @@ void ClienteTareas::darBajaCliente()
 
 
 
-    } else {cout <<"EL USUARIO NO SE ENCUENTRA"<< endl;}
+    }
+    else
+    {
+        cout <<"EL USUARIO NO SE ENCUENTRA"<< endl;
+    }
 
 }
 
@@ -272,8 +277,9 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
 }
 
 
-void ClienteTareas::cambiarActividades(Cliente &clienteModificado){
-   Fecha fechaHoy;
+void ClienteTareas::cambiarActividades(Cliente &clienteModificado)
+{
+    Fecha fechaHoy;
     ClienteArchivo clienteArch;
     int op,opMensual;
     int numeroRegistro = clienteModificado.getNumeroDeSocio();
@@ -281,14 +287,35 @@ void ClienteTareas::cambiarActividades(Cliente &clienteModificado){
     Boxeo box;
     Yoga yog;
 
-    if ( clienteModificado.getPesas() == true)              {cout <<"INGRESE 1 PARA DAR DE BAJA SERVICIO PESAS"<< endl;} else {cout <<"INGRESE 4 PARA DAR DE ALTA SERVICIO PESAS"<< endl;}
-    if ( clienteModificado.getBoxeo().getActivo() == true)  {cout <<"INGRESE 2 PARA DAR DE BAJA SERVICIO DE BOXEO"<< endl;} else  {cout <<"INGRESE 5 PARA DAR DE ALTA SERVICIO DE BOXEO"<< endl;}
-    if ( clienteModificado.getYoga().getActivo() == true)   {cout <<"INGRESE 3 PARA DAR DE BAJA SERVICIO DE YOGA"<< endl;}  else {cout <<"INGRESE 6 PARA DAR DE ALTA SERVICIO DE YOGA"<< endl;}
+    if ( clienteModificado.getPesas() == true)
+    {
+        cout <<"INGRESE 1 PARA DAR DE BAJA SERVICIO PESAS"<< endl;
+    }
+    else
+    {
+        cout <<"INGRESE 4 PARA DAR DE ALTA SERVICIO PESAS"<< endl;
+    }
+    if ( clienteModificado.getBoxeo().getActivo() == true)
+    {
+        cout <<"INGRESE 2 PARA DAR DE BAJA SERVICIO DE BOXEO"<< endl;
+    }
+    else
+    {
+        cout <<"INGRESE 5 PARA DAR DE ALTA SERVICIO DE BOXEO"<< endl;
+    }
+    if ( clienteModificado.getYoga().getActivo() == true)
+    {
+        cout <<"INGRESE 3 PARA DAR DE BAJA SERVICIO DE YOGA"<< endl;
+    }
+    else
+    {
+        cout <<"INGRESE 6 PARA DAR DE ALTA SERVICIO DE YOGA"<< endl;
+    }
 
     cout <<"INGRESE 0 PARA VOLVER" << endl;
     cin >> op;
 
-     if ( clienteModificado.getPesas() == true && op== 1 )
+    if ( clienteModificado.getPesas() == true && op== 1 )
     {
 
         clienteModificado.setAbonoMensual(0);
@@ -305,7 +332,7 @@ void ClienteTareas::cambiarActividades(Cliente &clienteModificado){
         box.setActivo(false) ;
         box.setCuotaMensual(0);
         clienteModificado.setBoxeo(box);
-     cout <<"SERVICIO DE BOXEO DESACTIVADO" << endl;
+        cout <<"SERVICIO DE BOXEO DESACTIVADO" << endl;
     }
 
     if ( clienteModificado.getYoga().getActivo() == true  && op == 3)
@@ -315,20 +342,20 @@ void ClienteTareas::cambiarActividades(Cliente &clienteModificado){
         yog.setActivo(false);
         yog.setCuotaMensual(0);
         clienteModificado.setYoga(yog);
-     cout <<"SERVICIO DE YOGA DESACTIVADO" << endl;
+        cout <<"SERVICIO DE YOGA DESACTIVADO" << endl;
     }
 
 
 
-     if ( clienteModificado.getPesas() == false && op== 4 )
+    if ( clienteModificado.getPesas() == false && op== 4 )
     {
 
 
         clienteModificado.setPesas(true);
-            cout <<"INGRESE LA OPCION(numero) PARA EL MONTO MENSUAL A PAGAR: " << endl;
-            cout <<"OPCION 1 - 3 Dias - $1000" << endl;
-            cout <<"OPCION 2 - 4 Dias - $1200" << endl;
-            cout <<"OPCION 3 - 5 PASE LIBRE $1400" << endl;
+        cout <<"INGRESE LA OPCION(numero) PARA EL MONTO MENSUAL A PAGAR: " << endl;
+        cout <<"OPCION 1 - 3 Dias - $1000" << endl;
+        cout <<"OPCION 2 - 4 Dias - $1200" << endl;
+        cout <<"OPCION 3 - 5 PASE LIBRE $1400" << endl;
         cin >> opMensual;
         clienteModificado.establecerPlanMensual(opMensual);
 
@@ -340,15 +367,15 @@ void ClienteTareas::cambiarActividades(Cliente &clienteModificado){
 
 
         clienteModificado.setBoxeo(box); // el constructor por defecto pone los valores correspondientes a un alta
-     cout <<"SERVICIO DE BOXEO ACTIVADO" << endl;
+        cout <<"SERVICIO DE BOXEO ACTIVADO" << endl;
     }
 
- if ( clienteModificado.getYoga().getActivo() == false  && op == 6)
+    if ( clienteModificado.getYoga().getActivo() == false  && op == 6)
     {
 
 
         clienteModificado.setYoga(yog);  //el constructor por defecto pone los valores correspondientes a un alta
-     cout <<"SERVICIO DE YOGA ACTIVADO" << endl;
+        cout <<"SERVICIO DE YOGA ACTIVADO" << endl;
     }
 
     cout <<"VOLVIENDO AL MENU ANTERIOR"<< endl;
@@ -380,7 +407,7 @@ void ClienteTareas::cambiarMontoDeAlgunAbono( Cliente &clienteModificado)
         cout <<"INGRESE NUEVO MONTO"<< endl;
         cin>>nuevoMonto;
         clienteModificado.setAbonoMensual(nuevoMonto);
-cout <<"MONTO CAMBIADO CON EXITO"<< endl;
+        cout <<"MONTO CAMBIADO CON EXITO"<< endl;
     }
 
     if ( clienteModificado.getBoxeo().getActivo() == true && op == 2 )
@@ -391,17 +418,17 @@ cout <<"MONTO CAMBIADO CON EXITO"<< endl;
         box = clienteModificado.getBoxeo();
         box.setCuotaMensual(nuevoMonto);
         clienteModificado.setBoxeo(box);
-       cout <<"MONTO CAMBIADO CON EXITO"<< endl;
+        cout <<"MONTO CAMBIADO CON EXITO"<< endl;
     }
 
     if ( clienteModificado.getYoga().getActivo() == true  && op == 3)
     {
-     cout <<"INGRESE NUEVO MONTO"<< endl;
-      cin>>nuevoMonto;
+        cout <<"INGRESE NUEVO MONTO"<< endl;
+        cin>>nuevoMonto;
         yog = clienteModificado.getYoga();
         yog.setCuotaMensual(nuevoMonto);
         clienteModificado.setYoga(yog);
-cout <<"MONTO CAMBIADO CON EXITO"<< endl;
+        cout <<"MONTO CAMBIADO CON EXITO"<< endl;
     }
 
     cout <<"VOLVIENDO AL MENU ANTERIOR"<< endl;
@@ -421,7 +448,7 @@ void ClienteTareas::cambiarAlgunaFechaLimite(Cliente &clienteModificado)
     Boxeo box;
     Yoga yog;
 
-    if ( clienteModificado.getBoxeo().getActivo() == true)   cout <<"INGRESE 1 PARA CAMBIAR LA FECHA DEL SERVICIO PESAS"<< endl;
+    if ( clienteModificado.getPesas() == true)   cout <<"INGRESE 1 PARA CAMBIAR LA FECHA DEL SERVICIO PESAS"<< endl;
     if ( clienteModificado.getBoxeo().getActivo() == true)  cout <<"INGRESE 2 PARA CAMBIAR LA FECHA DEL SERVICIO DE BOXEO"<< endl;
     if ( clienteModificado.getYoga().getActivo() == true)  cout <<"INGRESE 3 PARA CAMBIAR LA FECHA DEL SERVICIO DE YOGA"<< endl;
 
@@ -433,7 +460,7 @@ void ClienteTareas::cambiarAlgunaFechaLimite(Cliente &clienteModificado)
 
         nuevaFecha.cargar();
         clienteModificado.setFechaLimite(nuevaFecha);
-       cout <<"FECHA CAMBIADA CON EXITO"<< endl;
+        cout <<"FECHA CAMBIADA CON EXITO"<< endl;
     }
 
     if ( clienteModificado.getBoxeo().getActivo() == true && op == 2 )
@@ -443,7 +470,7 @@ void ClienteTareas::cambiarAlgunaFechaLimite(Cliente &clienteModificado)
         box = clienteModificado.getBoxeo();
         box.setFechaLimitePago(nuevaFecha);
         clienteModificado.setBoxeo(box);
-cout <<"FECHA CAMBIADA CON EXITO"<< endl;
+        cout <<"FECHA CAMBIADA CON EXITO"<< endl;
     }
 
     if ( clienteModificado.getYoga().getActivo() == true  && op == 3)
@@ -454,7 +481,7 @@ cout <<"FECHA CAMBIADA CON EXITO"<< endl;
         yog = clienteModificado.getYoga();
         yog.setFechaLimitePago(nuevaFecha);
         clienteModificado.setYoga(yog);
-cout <<"FECHA CAMBIADA CON EXITO"<< endl;
+        cout <<"FECHA CAMBIADA CON EXITO"<< endl;
     }
 
     cout <<"VOLVIENDO AL MENU ANTERIOR"<< endl;
@@ -802,20 +829,108 @@ void ClienteTareas::actualizarFechaPago(int dni)
 
     for (int i = 0; i < cantidadDeClientes; i++ )
     {
+
         Cliente cliente = _archivoCliente.leer(i);
-
-        Boxeo boxeoNuevo = cliente.getBoxeo();
-        boxeoNuevo.setFechaLimitePago(fechaHoy);
-
-        Yoga YogaNuevo = cliente.getYoga();
-        YogaNuevo.setFechaLimitePago(fechaHoy);
-
 
         if ( cliente.getDni()  == dni )
         {
 
+            Boxeo boxeoNuevo = cliente.getBoxeo();
+            Yoga YogaNuevo = cliente.getYoga();
 
-            cliente.setFechaLimite(fechaHoy);
+
+
+
+
+
+            Fecha fechaBox = boxeoNuevo.getFechaLimitePago();
+            Fecha fechaYog = YogaNuevo.getFechaLimitePago();              // declaro xq alfinal no puedo setear desde un get
+            Fecha fechaPesas = cliente.getFechaLimiteParaPagarAbono();
+
+            if ( boxeoNuevo.getActivo() == true )
+
+            {
+
+                if ( fechaBox.getMes() == 12 )
+
+                {
+
+
+                    fechaBox.setMes(1);
+
+                }
+
+                else
+
+
+                {
+
+                    fechaBox.setMes( fechaBox.getMes() + 1 );
+                }
+
+
+            }
+
+
+
+            if ( YogaNuevo.getActivo() == true )
+            {
+
+                if ( fechaYog.getMes() == 12 )
+
+                {
+
+
+                    fechaYog.setMes(1);
+
+                }
+
+
+                else
+                {
+
+
+                    fechaYog.setMes( fechaYog.getMes() + 1 );
+
+                }
+
+
+
+            }
+
+
+
+
+            if (cliente.getPesas() == true )
+
+            {
+
+                if (fechaPesas.getMes() == 12 )
+                {
+
+                    fechaPesas.setMes(1);
+
+                }
+
+                else
+
+                {
+
+                    fechaPesas.setMes(fechaPesas.getMes() + 1  );
+
+                }
+
+
+            }
+
+
+
+
+            boxeoNuevo.setFechaLimitePago( fechaBox);
+            YogaNuevo.setFechaLimitePago(fechaYog);
+
+
+            cliente.setFechaLimite(fechaPesas);
             cliente.setBoxeo( boxeoNuevo)  ;
             cliente.setYoga(YogaNuevo);
 
