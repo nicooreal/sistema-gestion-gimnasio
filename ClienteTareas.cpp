@@ -552,7 +552,8 @@ void ClienteTareas::registrarIngresos()
 }
 
 
-void ClienteTareas::mostrarClientesConFechaPorVencer()
+void ClienteTareas::mostrarClientesConFechaPorVencer() // hace los calculos sobre los 3 servicios
+
 {
 
     Fecha fechaHoy;
@@ -569,26 +570,104 @@ void ClienteTareas::mostrarClientesConFechaPorVencer()
     {
         Cliente cliente =_archivoCliente.leer(i);
 
-        if ( cliente.getFechaLimiteParaPagarAbono().getAnio() == fechaHoy.getAnio()&& cliente.getFechaLimiteParaPagarAbono().getMes() == fechaHoy.getMes() && cliente.getEstado()&&cliente.getPesas())
+
+        if (cliente.getPesas() && cliente.getEstado() )
+
         {
 
-            if ( cliente.getFechaLimiteParaPagarAbono().getDia() - fechaHoy.getDia() <= 6 )
+
+            if ( cliente.getFechaLimiteParaPagarAbono().getAnio() == fechaHoy.getAnio()&& cliente.getFechaLimiteParaPagarAbono().getMes() == fechaHoy.getMes() && cliente.getEstado())
             {
-                algunCliente=false;
-                cliente.mostrarCliente();
+
+                if ( cliente.getFechaLimiteParaPagarAbono().getDia() - fechaHoy.getDia() <= 6 )
+                {
+                    algunCliente=false;
+                    cliente.mostrarCliente();
+
+                }
+
+            }
+
+            if ( cliente.getFechaLimiteParaPagarAbono().getAnio()== fechaHoy.getAnio() && cliente.getFechaLimiteParaPagarAbono().getMes() != fechaHoy.getMes() && cliente.getEstado())
+            {
+                int diasParaTerminarELmes = diasPorMes[ fechaHoy.getMes()- 1 ] - fechaHoy.getDia();
+                if(diasParaTerminarELmes+cliente.getFechaLimiteParaPagarAbono().getDia()<=6)
+                {
+                    algunCliente=false;
+                    cliente.mostrarCliente();
+                }
+
+
 
             }
 
         }
 
-        if ( cliente.getFechaLimiteParaPagarAbono().getAnio()== fechaHoy.getAnio() && cliente.getFechaLimiteParaPagarAbono().getMes() != fechaHoy.getMes() && cliente.getEstado()&&cliente.getPesas())
+
+        if ( cliente.getBoxeo().getActivo() && cliente.getEstado() )
+
+
         {
-            int diasParaTerminarELmes = diasPorMes[ fechaHoy.getMes()- 1 ] - fechaHoy.getDia();
-            if(diasParaTerminarELmes+cliente.getFechaLimiteParaPagarAbono().getDia()<=6)
+
+            if ( cliente.getYoga().getFechaLimitePago().getAnio() == fechaHoy.getAnio() && cliente.getYoga().getFechaLimitePago().getMes() == fechaHoy.getMes())
             {
-                algunCliente=false;
-                cliente.mostrarCliente();
+
+                if ( cliente.getYoga().getFechaLimitePago().getDia() - fechaHoy.getDia() <= 6 )
+                {
+                    algunCliente=false;
+                    cliente.mostrarCliente();
+
+                }
+
             }
+
+            if ( cliente.getBoxeo().getFechaLimitePago().getAnio() == fechaHoy.getAnio() && cliente.getBoxeo().getFechaLimitePago().getMes() != fechaHoy.getMes())
+            {
+                int diasParaTerminarELmes = diasPorMes[ fechaHoy.getMes()- 1 ] - fechaHoy.getDia();
+                if(diasParaTerminarELmes + cliente.getBoxeo().getFechaLimitePago().getDia()<=6)
+                {
+                    algunCliente=false;
+                    cliente.mostrarCliente();
+                }
+
+            }
+
+
+
+        }
+
+
+
+
+        if ( cliente.getYoga().getActivo() && cliente.getEstado() )
+
+
+        {
+
+            if ( cliente.getYoga().getFechaLimitePago().getAnio() == fechaHoy.getAnio() && cliente.getYoga().getFechaLimitePago().getMes() == fechaHoy.getMes())
+            {
+
+                if ( cliente.getYoga().getFechaLimitePago().getDia() - fechaHoy.getDia() <= 6 )
+                {
+                    algunCliente=false;
+                    cliente.mostrarCliente();
+
+                }
+
+            }
+
+            if ( cliente.getYoga().getFechaLimitePago().getAnio() == fechaHoy.getAnio() && cliente.getYoga().getFechaLimitePago().getMes() != fechaHoy.getMes())
+            {
+                int diasParaTerminarELmes = diasPorMes[ fechaHoy.getMes()- 1 ] - fechaHoy.getDia();
+                if(diasParaTerminarELmes + cliente.getYoga().getFechaLimitePago().getDia()<=6)
+                {
+                    algunCliente=false;
+                    cliente.mostrarCliente();
+                }
+
+            }
+
+
 
 
 
@@ -598,12 +677,11 @@ void ClienteTareas::mostrarClientesConFechaPorVencer()
 
 
     }
-    if(algunCliente==true)
-    {
-        cout << "NO SE ENCONTRARON CLIENTES POR FECHA POR VENCER (6 DIAS O MEN0S DE VENCIMIENTO)"<<endl;
-    }
 
-
+        if(algunCliente==true)
+        {
+            cout << "NO SE ENCONTRARON CLIENTES POR FECHA POR VENCER (6 DIAS O MEN0S DE VENCIMIENTO)"<<endl;
+        }
 }
 
 
