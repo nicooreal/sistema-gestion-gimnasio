@@ -194,7 +194,7 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             cin>>opcion;
             system("cls");
         }
-        while(opcion<0||opcion>9);
+        while(opcion<0||opcion>10);
 
 
 
@@ -203,12 +203,14 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
         case 1:
             cout<<"INGRESE NUEVO NOMBRE"<<endl;
             cargarCadena(nombre,29);
+            convertirAMayusculas(nombre);
             clienteModificado.setNombre(nombre);
             cout <<"NOMBRE CAMBIADO CON EXITO"<< endl;
             break;
         case 2:
             cout<<"INGRESE NUEVO APELLIDO"<<endl;
             cargarCadena(apellido,29);
+            convertirAMayusculas(apellido);
             clienteModificado.setApellido(apellido);
             cout <<"APELLIDO CAMBIADO CON EXITO"<< endl;
             break;
@@ -228,6 +230,7 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             {
                 cout<<"INGRESE EL NUEVO GENERO (M - MASCULINO, F - FEMENINO) "<<endl;
                 cin>>genero;
+                toupper(genero);
             }
             while(genero!='F'&&genero!='f'&&genero!='m'&&genero!='M');
 
@@ -260,7 +263,9 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             break;
         case 10:
             cout<<"INGRESE EL NUEVO REGISTRO DEL CLIENTE"<<endl;
+            int socio=clienteModificado.getNumeroDeSocio();
             clienteModificado.cargarCliente();
+            clienteModificado.setNumeroDeSocio(socio);
             break;
 
 

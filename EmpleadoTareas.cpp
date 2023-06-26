@@ -561,6 +561,7 @@ void EmpleadoTareas::consultaPorNombre()
     char nombre[30];
     cout<<"Ingrese el nombre"<<endl;
     cargarCadena(nombre,29);
+    convertirAMayusculas(nombre);
     if(_archivo.buscarPorNombre(nombre)>0)
     {
         cout<<"NOMBRE Encontrado!"<<endl<<endl;
@@ -581,6 +582,7 @@ void EmpleadoTareas::consultaPorApellido()
     char apellido[30];
     cout<<"Ingrese el apellido"<<endl;
     cargarCadena(apellido,29);
+    convertirAMayusculas(apellido);
     if(_archivo.buscarPorApellido(apellido)>0)
     {
         cout<<"APELLIDO Encontrado!"<<endl<<endl;
@@ -723,20 +725,22 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
         switch(opcion)
         {
         case 1:
-            cout<<"Ingrese el nuevo nombre"<<endl;
+            cout<<"INGRESE EL NUEVO NOMBRE"<<endl;
             cargarCadena(nombre,29);
+            convertirAMayusculas(nombre);
             empleadoModificado.setNombre(nombre);
             break;
         case 2:
-            cout<<"Ingrese el nuevo apellido"<<endl;
+            cout<<"INGRESE EL NUEVO APELLIDO"<<endl;
             cargarCadena(apellido,29);
+            convertirAMayusculas(apellido);
             empleadoModificado.setApellido(apellido);
             break;
         case 3:
 
             do
             {
-                cout<<"Ingrese el nuevo DNI "<<endl;
+                cout<<"INGRESE EL NUEVO DNI "<<endl;
                 cin>>dni;
                 empleadoModificado.setDni(dni);
             }
@@ -749,39 +753,40 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
         case 4:
             do
             {
-                cout<<"Ingrese el nuevo genero(M - MASCULINO, F - FEMENINO) "<<endl;
+                cout<<"INGRESE EL NUEVO GENERO(M - MASCULINO, F - FEMENINO) "<<endl;
                 cin>>genero;
+                toupper(genero);
             }
             while(genero!='F'&&genero!='f'&&genero!='m'&&genero!='M');
 
             empleadoModificado.setSexo(genero);
             break;
         case 5:
-            cout<<"Ingrese la nueva fecha de nacimiento "<<endl;
+            cout<<"INGRESE LA NUEVA FECHA DE NACIMIENTO "<<endl;
             fechaNacimiento.cargar();
             empleadoModificado.setEdad(calcularEdad(fechaNacimiento));
             empleadoModificado.setFechaNacimiento(fechaNacimiento);
             break;
         case 6:
-            cout<<"Ingrese la nueva fecha de alta"<<endl;
+            cout<<"INGRESE LA NUEVA FECHA DE ALTA"<<endl;
             fechaIngreso.cargar();
             empleadoModificado.setFechaIngreso(fechaIngreso);
             break;
         case 7:
-            cout<<"Ingrese el nuevo sueldo"<<endl;
+            cout<<"INGRESE EL NUEVO SUELDO"<<endl;
             cin>>sueldo;
             empleadoModificado.setSueldo(sueldo);
             break;
 
         case 8:
-            cout<<"Ingrese la nueva especializacion"<< endl;
-            cout <<"Especializacion(1 - Profesor, 2 - Administrativo, 3 - Limpieza): "<<endl;
+            cout<<"INGRESE LA NUEVA ESPECIALIZACION"<< endl;
+            cout <<"ESPECIALIZACION (1 - PROFESOR, 2 - ADMINISTRATIVO, 3 - LIMPIEZA): "<<endl;
             cin >> especializacion;
             empleadoModificado.setEspecializacion(especializacion);
             break;
 
         case 9:
-            cout <<"modificar todo el registro" << endl;
+            cout <<"MODIFICAR TODO EL REGISTRO" << endl;
             char nombre[30],apellido[30];
             char genero;
             float sueldo;
@@ -792,40 +797,46 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
             int especializacion;
 
 
-            int id=generarID();
 
-            cout<<"Nombre: ";
+
+            cout<<"NOMBRE: ";
             cargarCadena(nombre,29);
-            cout<<"Apellido: ";
+            convertirAMayusculas(nombre);
+            cout<<"APELLIDO: ";
             cargarCadena(apellido,29);
-            cout<<"DNI: ";
-            cin>>dni;
-            cout<<"Fecha nacimiento: "<<endl;
+            convertirAMayusculas(apellido);
+            do
+            {
+                cout<<"INGRESE EL DNI "<<endl;
+                cin>>dni;
+                empleadoModificado.setDni(dni);
+            }
+            while(_archivo.existeEmpleado(empleadoModificado)!=0);
+            cout<<"FECHA NACIMIENTO: "<<endl;
             fechaNacimiento.cargar();
             edad=calcularEdad(fechaNacimiento);
             do
             {
-                cout<<"Genero(M - MASCULINO, F - FEMENINO): ";
+                cout<<"GENERO (M - MASCULINO, F - FEMENINO): ";
                 cin>>genero;
-
+                toupper(genero);
             }
             while(genero!='F'&&genero!='f'&&genero!='m'&&genero!='M');
 
 
-            cout <<"Sueldo: "<<endl;
+            cout <<"SUELDO: "<<endl;
             cin >> sueldo;
-            cout <<"Fecha De Ingreso: "<<endl;
+            cout <<"FECHA DE INGRESO: "<<endl;
             fechaIngreso.cargar();
             do
             {
-                cout <<"Especializacion(1 - Profesor, 2 - Administrativo, 3 - Limpieza): "<<endl;
+                cout <<"ESPECIALIZACION (1 - PROFESOR, 2 - ADMINISTRATIVO, 3 - LIMPIEZA): "<<endl;
                 cin >> especializacion;
             }
             while(especializacion<1||especializacion>3);
 
 
 
-            empleadoModificado.setId(id);
             empleadoModificado.setNombre(nombre);
             empleadoModificado.setApellido(apellido);
             empleadoModificado.setDni(dni);
@@ -860,11 +871,11 @@ void EmpleadoTareas::modificar()
     int numeroRegistro = _archivo.buscarRegistro();
     if (numeroRegistro>=0)
     {
-        cout << "Modifique al empleado"<<endl;
+        cout << "MODIFIQUE EL EMPLEADO"<<endl;
         Empleado empleadoModificado= _archivo.leer(numeroRegistro) ;
 
         cout << endl;
-        cout << "Usted va a modificar a:"<<endl;
+        cout << "USTED VA A MODIFICAR A:"<<endl;
         empleadoModificado.mostrarEmpleado();
         system("pause");
 
@@ -874,11 +885,11 @@ void EmpleadoTareas::modificar()
         bool exito = _archivo.editar(empleadoModificado, numeroRegistro);
         if (exito)
         {
-            cout << "Registro modificado exitosamente." << endl;
+            cout << "REGISTRO MODIFICADO EXITOSAMENTE." << endl;
         }
         else
         {
-            cout << "No se pudo modificar el registro." << endl;
+            cout << "NO SE PUDO MODIFICAR EL REGISTRO." << endl;
         }
     }
 }
