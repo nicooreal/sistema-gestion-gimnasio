@@ -11,7 +11,8 @@ void cargarCadena(char *pal,int tam)
 
     fflush(stdin);
 
-    for(i=0;i<tam;i++){
+    for(i=0; i<tam; i++)
+    {
 
         pal[i]=cin.get();
 
@@ -25,10 +26,43 @@ void cargarCadena(char *pal,int tam)
 
 }
 
-void convertirAMayusculas(char* str) {
-    transform(str, str + strlen(str), str, [](unsigned char c) {
+void convertirAMayusculas(char* str)
+{
+    transform(str, str + strlen(str), str, [](unsigned char c)
+    {
         return toupper(c);
     });
 }
+
+bool validar(int opcionMensual)
+{
+
+    cin>>opcionMensual;
+
+    if (cin >> opcionMensual)
+    {
+        // Se ingresó un entero correctamente
+        cout << "El número ingresado es: " << opcionMensual << endl;
+        return true;
+    }
+    else
+    {
+        // Se ingresó un valor no válido
+        cout << "Error: no se ingresó un número entero válido." << endl;
+
+        // Limpiamos el estado de error de cin
+        cin.clear();
+
+        // Descartamos el contenido inválido ingresado por el usuario
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        return false;
+    }
+
+
+
+
+
+}
+
 
 
