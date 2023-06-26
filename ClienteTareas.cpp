@@ -36,11 +36,11 @@ void ClienteTareas::modificar()
         if( cliente.getEstado() == true )
         {
 
-            cout <<"el cliente que usted quiere modificar es: " << endl;
+            cout <<"EL CLIENTE QUE USTED QUIERE MODIFICAR ES: " << endl << endl;
             cliente.mostrarCliente();
             system("pause");
             cout << endl;
-            cout << "Modifique al cliente"<<endl;
+            cout << "MODIFIQUE AL CLIENTE"<<endl;
 
 
             elegirQueModificar(cliente);
@@ -49,18 +49,18 @@ void ClienteTareas::modificar()
             bool exito = _archivoCliente.editar(cliente, numeroRegistro);
             if (exito)
             {
-                cout << "Registro modificado exitosamente." << endl;
+                cout << "REGISTRO MODIFICADO." << endl;
             }
             else
             {
-                cout << "No se pudo modificar el registro." << endl;
+                cout << "NO SE PUDO MODIFICAR EL REGISTRO." << endl;
             }
 
 
         }
         else
         {
-            cout <<"no se encontro el registro" << endl;
+            cout <<"NO SE ENCONTRO EL REGISTRO" << endl;
         }
     }
 }
@@ -116,14 +116,14 @@ void ClienteTareas::darBajaCliente()
 {
     int op;
     int numeroRegistro = _archivoCliente.buscarRegistro();
-    if (numeroRegistro>=0)
-    {
-        cout <<"el cliente que usted quiere dar de baja es: " << endl;
         Cliente cliente=_archivoCliente.leer(numeroRegistro);
+    if (numeroRegistro>=0 && cliente.getEstado() == true )
+    {
+        cout <<"EL CLIENTE QUE USTED QUIERE DAR DE BAJA ES:" << endl << endl;
         cliente.mostrarCliente();
         system("pause");
-        cout <<"¿desea dar la baja?" <<endl;
-        cout <<"1 - SI o 2 - NO" << endl;
+        cout <<"DESEA DAR LA BAJA?" <<endl;
+        cout <<"1 - SI o 0 - NO" << endl;
         cin >> op;
         if (op == 1)
         {
@@ -133,20 +133,26 @@ void ClienteTareas::darBajaCliente()
             bool exito = _archivoCliente.editar(clienteEnBaja, numeroRegistro);
             if (exito)
             {
-                cout << "Registro dado de baja exitosamente." << endl;
+                cout << "REGISTRO DADO DE BAJA EXITOSAMENTE." << endl;
 
             }
             else
             {
-                cout << "No se pudo modificar el registro." << endl;
+                cout << "NO SE PUDO MODIFICAR EL REGISTRO." << endl;
             }
 
 
         }
 
+        if (op == 2 ){
+
+            cout <<"CLIENTE NO MODIFICADO"<< endl;
+
+        }
 
 
-    }
+
+    } else {cout <<"EL USUARIO NO SE ENCUENTRA"<< endl;}
 
 }
 
@@ -158,7 +164,7 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
     int dni;
 
     Fecha fechaNacimiento,fechaAlta,fechaLimiteParaPagarAbono;
-    float abono;
+
 
     do
     {
@@ -167,15 +173,16 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             system("cls");
             cout<<"\tMODIFICAR CLIENTE"<<endl;
             cout<<"-------------------------------------"<<endl;
-            cout<<"1 - MODIFICAR NOMBRE"<<endl;
-            cout<<"2 - MODIFICAR APELLIDO"<<endl;
-            cout<<"3 - MODIFICAR DNI"<<endl;
-            cout<<"4 - MODIFICAR GENERO"<<endl;
-            cout<<"5 - MODIFICAR FECHA NACIMIENTO"<<endl;
-            cout<<"6 - MODIFICAR FECHA DE ALTA"<<endl;
-            cout<<"7 - MODIFICAR FECHA LIMITE PARA PAGAR ABONO"<<endl;
-            cout<<"8 - MODIFICAR ABONO MENSUAL"<<endl;
-            cout<<"9 - MODIFICAR TODO EL REGISTRO"<<endl;
+            cout<<"1  - MODIFICAR NOMBRE"<<endl;
+            cout<<"2  - MODIFICAR APELLIDO"<<endl;
+            cout<<"3  - MODIFICAR DNI"<<endl;
+            cout<<"4  - MODIFICAR GENERO"<<endl;
+            cout<<"5  - MODIFICAR FECHA NACIMIENTO"<<endl;
+            cout<<"6  - MODIFICAR FECHA DE ALTA"<<endl;
+            cout<<"7  - MODIFICAR FECHA LIMITE PARA PAGAR ABONO"<<endl;
+            cout<<"8  - MODIFICAR ABONO MENSUAL"<<endl;
+            cout<<"9  - MODIFICAR ACTIVIDADES" << endl;
+            cout<<"10 - MODIFICAR TODO EL REGISTRO"<<endl;
             cout<<"-------------------------------------"<<endl;
             cout<<"0 - SALIR"<<endl;
             cout<<"OPCION: ";
@@ -189,19 +196,21 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
         switch(opcion)
         {
         case 1:
-            cout<<"Ingrese el nuevo nombre"<<endl;
+            cout<<"INGRESE NUEVO NOMBRE"<<endl;
             cargarCadena(nombre,29);
             clienteModificado.setNombre(nombre);
+            cout <<"NOMBRE CAMBIADO CON EXITO"<< endl;
             break;
         case 2:
-            cout<<"Ingrese el nuevo apellido"<<endl;
+            cout<<"INGRESE NUEVO APELLIDO"<<endl;
             cargarCadena(apellido,29);
             clienteModificado.setApellido(apellido);
+            cout <<"APELLIDO CAMBIADO CON EXITO"<< endl;
             break;
         case 3:
             do
             {
-                cout<<"Ingrese el nuevo DNI "<<endl;
+                cout<<"INGRESE NUEVO DNI "<<endl;
                 cin>>dni;
                 clienteModificado.setDni(dni);
 
@@ -212,7 +221,7 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
         case 4:
             do
             {
-                cout<<"Ingrese el nuevo genero(M - MASCULINO, F - FEMENINO) "<<endl;
+                cout<<"INGRESE EL NUEVO GENERO (M - MASCULINO, F - FEMENINO) "<<endl;
                 cin>>genero;
             }
             while(genero!='F'&&genero!='f'&&genero!='m'&&genero!='M');
@@ -220,18 +229,20 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             clienteModificado.setSexo(genero);
             break;
         case 5:
-            cout<<"Ingrese la nueva fecha de nacimiento "<<endl;
+            cout<<"INGRESE NUEVA FECHA DE NACIMIENTO "<<endl;
             fechaNacimiento.cargar();
             clienteModificado.setFechaNacimiento(fechaNacimiento);
             clienteModificado.setEdad(calcularEdad(fechaNacimiento));
+            cout <<"FECHA CAMBIADA CON EXITO"<< endl;
             break;
         case 6:
-            cout<<"Ingrese la nueva fecha de alta"<<endl;
+            cout<<"INGRESE LA NUEVA FECHA DEL ALTA"<<endl;
             fechaAlta.cargar();
             clienteModificado.setFechaDelAlta(fechaAlta);
+            cout <<"FECHA CAMBIADA CON EXITO"<< endl;
             break;
         case 7:
-            cout<<"Ingrese la nueva fecha limite "<<endl;
+            cout<<"INGRESE LA NUEVA FECHA LIMITE "<<endl;
 
 
             cambiarAlgunaFechaLimite(clienteModificado );
@@ -240,9 +251,14 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             cambiarMontoDeAlgunAbono(clienteModificado);
             break;
         case 9:
-            cout<<"Ingrese el nuevo registro de Cliente"<<endl;
+            cambiarActividades(clienteModificado);
+            break;
+        case 10:
+            cout<<"INGRESE EL NUEVO REGISTRO DEL CLIENTE"<<endl;
             clienteModificado.cargarCliente();
             break;
+
+
         }
         if(opcion!=0)
         {
@@ -254,6 +270,91 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
     while(opcion!=0);
 
 }
+
+
+void ClienteTareas::cambiarActividades(Cliente &clienteModificado){
+
+    ClienteArchivo clienteArch;
+    int op,opMensual;
+    int numeroRegistro = clienteModificado.getNumeroDeSocio();
+    Fecha nuevaFecha;
+    Boxeo box;
+    Yoga yog;
+
+    if ( clienteModificado.getPesas() == true)              {cout <<"INGRESE 1 PARA DAR DE BAJA SERVICIO PESAS"<< endl;} else {cout <<"INGRESE 4 PARA DAR DE ALTA SERVICIO PESAS"<< endl;}
+    if ( clienteModificado.getBoxeo().getActivo() == true)  {cout <<"INGRESE 2 PARA DAR DE BAJA SERVICIO DE BOXEO"<< endl;} else  {cout <<"INGRESE 5 PARA DAR DE ALTA SERVICIO DE BOXEO"<< endl;}
+    if ( clienteModificado.getYoga().getActivo() == true)   {cout <<"INGRESE 3 PARA DAR DE BAJA SERVICIO DE YOGA"<< endl;}  else {cout <<"INGRESE 6 PARA DAR DE ALTA SERVICIO DE YOGA"<< endl;}
+
+    cout <<"INGRESE 0 PARA VOLVER" << endl;
+    cin >> op;
+
+     if ( clienteModificado.getPesas() == true && op== 1 )
+    {
+
+
+        clienteModificado.setPesas(false);
+        cout <<"SERVICIO DE PESAS DESACTIVADO" << endl;
+
+    }
+
+    if ( clienteModificado.getBoxeo().getActivo() == true && op == 2 )
+    {
+
+
+        box = clienteModificado.getBoxeo();
+        box.setActivo(false) ;
+        clienteModificado.setBoxeo(box);
+     cout <<"SERVICIO DE BOXEO DESACTIVADO" << endl;
+    }
+
+    if ( clienteModificado.getYoga().getActivo() == true  && op == 3)
+    {
+
+        yog = clienteModificado.getYoga();
+        yog.setActivo(false);
+        clienteModificado.setYoga(yog);
+     cout <<"SERVICIO DE YOGA DESACTIVADO" << endl;
+    }
+
+
+
+     if ( clienteModificado.getPesas() == false && op== 4 )
+    {
+
+
+        clienteModificado.setPesas(true);
+            cout <<"INGRESE LA OPCION(numero) PARA EL MONTO MENSUAL A PAGAR: " << endl;
+            cout <<"OPCION 1 - 3 Dias - $1000" << endl;
+            cout <<"OPCION 2 - 4 Dias - $1200" << endl;
+            cout <<"OPCION 3 - 5 PASE LIBRE $1400" << endl;
+        cin >> opMensual;
+        clienteModificado.establecerPlanMensual(opMensual);
+
+    }
+
+    if ( clienteModificado.getBoxeo().getActivo() == false && op == 5 )
+    {
+
+
+        box = clienteModificado.getBoxeo();
+        box.setActivo(true) ;
+        clienteModificado.setBoxeo(box);
+     cout <<"SERVICIO DE BOXEO ACTIVADO" << endl;
+    }
+
+ if ( clienteModificado.getYoga().getActivo() == false  && op == 6)
+    {
+
+        yog = clienteModificado.getYoga();
+        yog.setActivo(true);
+        clienteModificado.setYoga(yog);
+     cout <<"SERVICIO DE YOGA ACTIVADO" << endl;
+    }
+
+    cout <<"VOLVIENDO AL MENU ANTERIOR"<< endl;
+}
+
+
 void ClienteTareas::cambiarMontoDeAlgunAbono( Cliente &clienteModificado)
 {
     ClienteArchivo clienteArch;
@@ -265,40 +366,42 @@ void ClienteTareas::cambiarMontoDeAlgunAbono( Cliente &clienteModificado)
     Yoga yog;
     int nuevoMonto;
 
-    if ( clienteModificado.getBoxeo().getActivo() == true)   cout <<"INGRESE 1 PARA CAMBIAR EL MONTO DEL SERVICIO PESAS"<< endl;
+    if ( clienteModificado.getPesas() == true)   cout <<"INGRESE 1 PARA CAMBIAR EL MONTO DEL SERVICIO PESAS"<< endl;
     if ( clienteModificado.getBoxeo().getActivo() == true)  cout <<"INGRESE 2 PARA CAMBIAR EL MONTO DEL SERVICIO DE BOXEO"<< endl;
     if ( clienteModificado.getYoga().getActivo() == true)  cout <<"INGRESE 3 PARA CAMBIAR EL MONTO DEL SERVICIO DE YOGA"<< endl;
 
 
     cout <<"INGRESE 0 PARA VOLVER" << endl;
     cin >> op;
-    cout <<"INGRESE NUEVO MONTO"<< endl;
-    cin>>nuevoMonto;
+
     if ( clienteModificado.getPesas() == true && op== 1 )
     {
 
-
+        cout <<"INGRESE NUEVO MONTO"<< endl;
+        cin>>nuevoMonto;
         clienteModificado.setAbonoMensual(nuevoMonto);
-
+cout <<"MONTO CAMBIADO CON EXITO"<< endl;
     }
 
     if ( clienteModificado.getBoxeo().getActivo() == true && op == 2 )
     {
 
-
+        cout <<"INGRESE NUEVO MONTO"<< endl;
+        cin>>nuevoMonto;
         box = clienteModificado.getBoxeo();
         box.setCuotaMensual(nuevoMonto);
         clienteModificado.setBoxeo(box);
-
+       cout <<"MONTO CAMBIADO CON EXITO"<< endl;
     }
 
     if ( clienteModificado.getYoga().getActivo() == true  && op == 3)
     {
-
+     cout <<"INGRESE NUEVO MONTO"<< endl;
+      cin>>nuevoMonto;
         yog = clienteModificado.getYoga();
         yog.setCuotaMensual(nuevoMonto);
         clienteModificado.setYoga(yog);
-
+cout <<"MONTO CAMBIADO CON EXITO"<< endl;
     }
 
     cout <<"VOLVIENDO AL MENU ANTERIOR"<< endl;
@@ -330,7 +433,7 @@ void ClienteTareas::cambiarAlgunaFechaLimite(Cliente &clienteModificado)
 
         nuevaFecha.cargar();
         clienteModificado.setFechaLimite(nuevaFecha);
-
+       cout <<"FECHA CAMBIADA CON EXITO"<< endl;
     }
 
     if ( clienteModificado.getBoxeo().getActivo() == true && op == 2 )
@@ -340,7 +443,7 @@ void ClienteTareas::cambiarAlgunaFechaLimite(Cliente &clienteModificado)
         box = clienteModificado.getBoxeo();
         box.setFechaLimitePago(nuevaFecha);
         clienteModificado.setBoxeo(box);
-
+cout <<"FECHA CAMBIADA CON EXITO"<< endl;
     }
 
     if ( clienteModificado.getYoga().getActivo() == true  && op == 3)
@@ -351,7 +454,7 @@ void ClienteTareas::cambiarAlgunaFechaLimite(Cliente &clienteModificado)
         yog = clienteModificado.getYoga();
         yog.setFechaLimitePago(nuevaFecha);
         clienteModificado.setYoga(yog);
-
+cout <<"FECHA CAMBIADA CON EXITO"<< endl;
     }
 
     cout <<"VOLVIENDO AL MENU ANTERIOR"<< endl;
@@ -380,8 +483,9 @@ void ClienteTareas::registrarIngresos()
 
 
     cout <<"NUMERO DE DOCUMENTO: " << endl; // ES PARA PODER VER CUANTOS INGRESOS LE QUEDA A CADA CLIENTE QUE VIENE
-    cin >> documento;
 
+
+    cin >> documento;
     int cantidadDeClientes = _archivoCliente.getCantidad();
 
 
@@ -398,7 +502,7 @@ void ClienteTareas::registrarIngresos()
             cout <<"NOMBRE: " << cliente.getNombre() <<endl;
             cout <<"APELLIDO: " <<cliente.getApellido() <<endl;
             cout<<"INGRESOS RESTANTES: "<< cliente.getControlIngresos() - 1 << endl;
-            cout <<"fecha de vencimento: ";
+            cout <<"FECHA DE VENCIMIENTO: ";
             cliente.getFechaLimiteParaPagarAbono().mostrar();
 
             cliente.setControlIngresos( cliente.getControlIngresos() - 1);
@@ -421,11 +525,11 @@ void ClienteTareas::mostrarClientesConFechaPorVencer()
 
     Fecha fechaHoy;
     int cantidadRegistros =_archivoCliente.getCantidad();
-    int diasPorMes[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     if (fechaHoy.esBisiesto()==true)
     {
-        diasPorMes[1]++;
+        int diasPorMes[12] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     }
+    int diasPorMes[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     bool algunCliente=true;
 
     for (int i = 0; i < cantidadRegistros; i++)
@@ -470,7 +574,7 @@ void ClienteTareas::mostrarClientesConFechaPorVencer()
     }
     if(algunCliente==true)
     {
-        cout << "No se encontraron clientes con fechas por vencer (6 dias o menos de vencimiento)"<<endl;
+        cout << "NO SE ENCONTRARON CLIENTES POR FECHA POR VENCER (6 DIAS O MEN0S DE VENCIMIENTO)"<<endl;
     }
 
 
@@ -519,7 +623,7 @@ void ClienteTareas::listados()
             listarClientesPorAnioIngreso();
             break;
         case 5:
-            //metodo hecho pero no terminado
+            listarPorEdad();
 
             break;
         case 6:
@@ -789,7 +893,7 @@ void ClienteTareas::listarPorNombre()
     int orden;
     do
     {
-        cout<<"Ingrese el orden(1 - Ordenados de mayor a menor, 2 - Ordenados de menor a mayor)"<<endl;
+        cout<<"INGRESE EL ORDEN (1 - MAYOR A MENOR, 2 - MENOR A MAYOR)"<<endl;
         cin>>orden;
     }
     while(orden<1||orden>2);
@@ -800,7 +904,7 @@ void ClienteTareas::listarPorNombre()
     Cliente aux;
     if(vCliente==NULL)
     {
-        cout<<"Error al intentar cargar el vector dinamico"<<endl;
+        cout<<"ERROR AL INTENTAR CARGAR EL VECTOR DINAMICO"<<endl;
         return;
     }
     archivo.leerVector(vCliente,cantidad);
@@ -906,7 +1010,7 @@ void ClienteTareas::listarOrdenadosPorApellido()
     int orden;
     do
     {
-        cout<<"Ingrese el orden(1 - Ordenados de mayor a menor, 2 - Ordenados de menor a mayor)"<<endl;
+        cout<<"INGRESE EL ORDEN(1 - MAYOR A MENOR, 2 - MENOR A MAYOR)"<<endl;
         cin>>orden;
     }
     while(orden<1||orden>2);
@@ -917,7 +1021,7 @@ void ClienteTareas::listarOrdenadosPorApellido()
     Cliente aux;
     if(vCliente==NULL)
     {
-        cout<<"Error al intentar cargar el vector dinamico"<<endl;
+        cout<<"ERROR AL INTENTAR CARGAR EL VECTOR DINAMICO"<<endl;
         return;
     }
     archivo.leerVector(vCliente,cantidad);
@@ -980,7 +1084,7 @@ void ClienteTareas::listarOrdenadosPorApellido()
     delete []vCliente;
 }
 
-/*
+
 void ClienteTareas::listarPorEdad()
 {
     Fecha hoy;
@@ -988,7 +1092,7 @@ void ClienteTareas::listarPorEdad()
     int orden;
     do
     {
-        cout<<"Ingrese el orden (1 - Ordenados de mayor a menor, 2 - Ordenados de menor a mayor)"<<endl;
+        cout<<"INGRESE EL ORDEN (1 - MAYOR A MENOR, 2 - MENOR A MAYOR)"<<endl;
         cin>>orden;
 
     }
@@ -1057,12 +1161,12 @@ void ClienteTareas::listarPorEdad()
 
     for(int i=0; i<cantidad; i++)
     {
-        vCliente[i].mostrarCLiente();
+        vCliente[i].mostrarCliente();
         cout<<endl;
     }
     delete []vCliente;
 }
-*/
+
 
 
 void ClienteTareas::consultaPorNombre()
@@ -1070,6 +1174,7 @@ void ClienteTareas::consultaPorNombre()
     char nombre[30];
     cout<<"INGRESE EL NOMBRE"<<endl;
     cargarCadena(nombre,29);
+    convertirAMayusculas(nombre);
     if(_archivoCliente.buscarPorNombre(nombre)>0)
     {
         cout<<"NOMBRE ENCONTRADO!"<<endl<<endl;
@@ -1089,8 +1194,9 @@ void ClienteTareas::consultaPorNombre()
 void ClienteTareas::consultaPorApellido()
 {
     char apellido[30];
-    cout<<"Ingrese el apellido"<<endl;
+    cout<<"INGRESE APELLIDO"<<endl;
     cargarCadena(apellido,29);
+    convertirAMayusculas(apellido);
     if(_archivoCliente.buscarPorApellido(apellido)>0)
     {
         cout<<"APELLIDO ENCONTRADO!"<<endl<<endl;
@@ -1109,7 +1215,7 @@ void ClienteTareas::consultaPorApellido()
 void ClienteTareas::consultaPorEdad()
 {
     int edad;
-    cout<<"Ingrese la edad"<<endl;
+    cout<<"INGRESE EDAD"<<endl;
     cin>>edad;
     if(_archivoCliente.buscarPorEdad(edad)>0)
     {
