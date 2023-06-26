@@ -73,7 +73,7 @@ public:
     void setYoga(Yoga yoga);
 
     void hacePesas();
-    void establecerPlanMensual(int opcion);
+    void establecerPlanMensual(int opcion,int mes);
     void establecerOpcionExtra(int opcion);
     void calcularUnMesDeEntreno();
     void mostrarClienteDadoDeBaja();
