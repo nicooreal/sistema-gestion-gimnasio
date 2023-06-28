@@ -34,7 +34,7 @@ void convertirAMayusculas(char* str)
     });
 }
 
-bool validar(int opcionMensual)
+bool validar(int ingreso)
 {
     bool esLetra=false;
 
@@ -64,4 +64,20 @@ bool validar(int opcionMensual)
 
 }
 
+void validarIngresos(int &ingreso){
+bool esValido = false;
 
+     while(!esValido)
+        {
+            if(!validar(ingreso))
+            {
+                cout<<"NO VALIDO"<<endl;
+                cin>>ingreso;
+            }
+            else {break;}
+
+        }
+
+
+
+}

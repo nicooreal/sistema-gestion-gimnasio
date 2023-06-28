@@ -8,6 +8,8 @@ using namespace std;
 void cargarCadena(char *pal,int tam);
 void convertirAMayusculas(char* str);
 bool validar(int opcionMensual);
-//int calcularAntiguedad() ;
+void validarIngresos(int &ingreso);
+
 
 #endif // FUNCIONES_H_INCLUDED
+
