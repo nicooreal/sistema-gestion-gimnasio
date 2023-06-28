@@ -1,3 +1,4 @@
+#pragma once
 #ifndef EMPLEADOMENU_H
 #define EMPLEADOMENU_H
 #include <iostream>

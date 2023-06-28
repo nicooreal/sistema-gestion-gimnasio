@@ -1,3 +1,4 @@
+#pragma once
 #ifndef CLIENTEMENU_H
 #define CLIENTEMENU_H
 #include <iostream>

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef CLIENTETAREAS_H
 #define CLIENTETAREAS_H
 #include "ClienteArchivo.h"

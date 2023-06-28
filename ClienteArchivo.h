@@ -1,3 +1,4 @@
+#pragma once
 #ifndef CLIENTEARCHIVO_H
 #define CLIENTEARCHIVO_H
 #include "cliente.h"

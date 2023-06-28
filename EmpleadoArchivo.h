@@ -1,3 +1,4 @@
+#pragma once
 #ifndef EMPLEADOARCHIVO_H
 #define EMPLEADOARCHIVO_H
 #include <iostream>

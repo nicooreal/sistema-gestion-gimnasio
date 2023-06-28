@@ -1,3 +1,4 @@
+#pragma once
 #ifndef BOXEO_H
 #define BOXEO_H
 #include "Fecha.h"

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef PAGO_H
 #define PAGO_H
 #include "Cliente.h"

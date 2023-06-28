@@ -1,3 +1,4 @@
+#pragma once
 #ifndef CONFIGURACIONESMENU_H
 #define CONFIGURACIONESMENU_H
 #include "CopiaDeSeguridadTareas.h"

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef COPIADESEGURIDADTAREAS_H
 #define COPIADESEGURIDADTAREAS_H
 #include "ClienteArchivo.h"

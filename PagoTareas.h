@@ -1,3 +1,4 @@
+#pragma once
 #ifndef PAGOTAREAS_H
 #define PAGOTAREAS_H
 # include<iostream>

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef GIMNASIOMENU_H
 #define GIMNASIOMENU_H
 #include <iostream>

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef PAGOARCHIVOS_H
 #define PAGOARCHIVOS_H
 #include <iostream>

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef YOGA_H
 #define YOGA_H
 #include "Fecha.h"

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef PERSONA_H_INCLUDED
 #define PERSONA_H_INCLUDED
 #include <string.h>

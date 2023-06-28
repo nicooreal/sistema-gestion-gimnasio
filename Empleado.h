@@ -1,3 +1,4 @@
+#pragma once
 #ifndef EMPLEADO_H
 #define EMPLEADO_H
 #include "Persona.h"
