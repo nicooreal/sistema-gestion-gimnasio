@@ -4,7 +4,7 @@
 Boxeo::Boxeo(){
 Fecha fecha;
 _fechaAlta = fecha;
-_fechaLimitePago = fecha.calcularUnMesDeEntreno(fecha); // falta funcion para calcular;
+_fechaLimitePago = fecha.calcularUnMesDeEntreno(fecha); // el constructor establece por defecto un alta con cuota 1000 y pone la fecha de pago a un mes
 _cuotaMensual =  1000;
 _activo = true;
 }

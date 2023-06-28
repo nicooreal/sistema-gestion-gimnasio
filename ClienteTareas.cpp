@@ -10,11 +10,11 @@ void ClienteTareas::cargar()
 
     PagoTareas pagoTareas;
     Cliente cliente;
+
+
+
+
     cliente.cargarCliente();
-
-
-
-
     if(_archivoCliente.guardar(cliente))
     {
 
@@ -45,18 +45,16 @@ void ClienteTareas::modificar()
             cout << "MODIFIQUE AL CLIENTE"<<endl;
 
 
-            elegirQueModificar(cliente);
+            elegirQueModificar(cliente); // esta funcion manda la direccion de memoria de cliente
 
 
             bool exito = _archivoCliente.editar(cliente, numeroRegistro);
-            if (exito)
+            if (exito == false)
             {
-                cout << "REGISTRO MODIFICADO." << endl;
-            }
-            else
-            {
+
                 cout << "NO SE PUDO MODIFICAR EL REGISTRO." << endl;
             }
+
 
 
         }
@@ -70,14 +68,12 @@ void ClienteTareas::modificar()
 
 void ClienteTareas::consultarPorDni()
 {
-
-    bool esValido = false;
     int documento;
     cout <<"INGRESE EL DNI: " << endl;
     cin >> documento;
-
 validarIngresos(documento);
 validarQueNoSeaNegativa(documento);
+
 
 
 
@@ -108,7 +104,7 @@ void ClienteTareas::mostrarTodos()
     for (int i = 0; i < cantidadDeClientes; i++ )
     {
         Cliente cliente = _archivoCliente.leer(i);
-        if(cliente.getEstado())/// HICE ESTA COMPARACION PARA VERIFICAR QUE HAYAN CLIENTES
+        if(cliente.getEstado())
         {
             cliente.mostrarCliente();
             cout << endl;
@@ -128,11 +124,12 @@ void ClienteTareas::darBajaCliente()
 {
     int op;
     int numeroRegistro = _archivoCliente.buscarRegistro();
-    Cliente cliente=_archivoCliente.leer(numeroRegistro);
-    if (numeroRegistro>=0 && cliente.getEstado() == true )
+    Cliente clienteEnBaja = _archivoCliente.leer(numeroRegistro);
+
+    if (numeroRegistro>=0 && clienteEnBaja.getEstado() == true )
     {
         cout <<"EL CLIENTE QUE USTED QUIERE DAR DE BAJA ES:" << endl << endl;
-        cliente.mostrarCliente();
+        clienteEnBaja.mostrarCliente();
         system("pause");
         cout <<"DESEA DAR LA BAJA?" <<endl;
         cout <<"1 - SI o 0 - NO" << endl;
@@ -142,7 +139,7 @@ void ClienteTareas::darBajaCliente()
 
         if (op == 1)
         {
-            Cliente clienteEnBaja = cliente;
+
             clienteEnBaja.setEstado(false);
 
             bool exito = _archivoCliente.editar(clienteEnBaja, numeroRegistro);
@@ -159,7 +156,7 @@ void ClienteTareas::darBajaCliente()
 
         }
 
-        if (op == 2 )
+        if (op == 0 )
         {
 
             cout <<"CLIENTE NO MODIFICADO"<< endl;
@@ -227,6 +224,7 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             clienteModificado.setNombre(nombre);
             cout <<"NOMBRE CAMBIADO CON EXITO"<< endl;
             break;
+
         case 2:
             cout<<"INGRESE NUEVO APELLIDO"<<endl;
             cargarCadena(apellido,29);
@@ -234,18 +232,19 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             clienteModificado.setApellido(apellido);
             cout <<"APELLIDO CAMBIADO CON EXITO"<< endl;
             break;
+
         case 3:
             do
             {
                 cout<<"INGRESE NUEVO DNI "<<endl;
                 cin>>dni;
                 validarIngresos(dni);
+                validarQueNoSeaNegativa(dni);
                 clienteModificado.setDni(dni);
-
             }
             while(_archivoCliente.existeCliente(clienteModificado)!=0);
-
             break;
+
         case 4:
             do
             {
@@ -257,6 +256,7 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
 
             clienteModificado.setSexo(genero);
             break;
+
         case 5:
             cout<<"INGRESE NUEVA FECHA DE NACIMIENTO "<<endl;
             fechaNacimiento.cargar();
@@ -264,24 +264,27 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             clienteModificado.setEdad(calcularEdad(fechaNacimiento));
             cout <<"FECHA CAMBIADA CON EXITO"<< endl;
             break;
+
         case 6:
             cout<<"INGRESE LA NUEVA FECHA DEL ALTA"<<endl;
             fechaAlta.cargar();
             clienteModificado.setFechaDelAlta(fechaAlta);
             cout <<"FECHA CAMBIADA CON EXITO"<< endl;
             break;
+
         case 7:
             cout<<"INGRESE LA NUEVA FECHA LIMITE "<<endl;
-
-
             cambiarAlgunaFechaLimite(clienteModificado );
             break;
+
         case 8:
             cambiarMontoDeAlgunAbono(clienteModificado);
             break;
+
         case 9:
             cambiarActividades(clienteModificado);
             break;
+
         case 10:
             cout<<"INGRESE EL NUEVO REGISTRO DEL CLIENTE"<<endl;
             int socio=clienteModificado.getNumeroDeSocio();
@@ -321,6 +324,8 @@ void ClienteTareas::cambiarActividades(Cliente &clienteModificado)
     {
         cout <<"INGRESE 4 PARA DAR DE ALTA SERVICIO PESAS"<< endl;
     }
+
+
     if ( clienteModificado.getBoxeo().getActivo() == true)
     {
         cout <<"INGRESE 2 PARA DAR DE BAJA SERVICIO DE BOXEO"<< endl;
@@ -329,6 +334,8 @@ void ClienteTareas::cambiarActividades(Cliente &clienteModificado)
     {
         cout <<"INGRESE 5 PARA DAR DE ALTA SERVICIO DE BOXEO"<< endl;
     }
+
+
     if ( clienteModificado.getYoga().getActivo() == true)
     {
         cout <<"INGRESE 3 PARA DAR DE BAJA SERVICIO DE YOGA"<< endl;
@@ -420,23 +427,23 @@ void ClienteTareas::cambiarMontoDeAlgunAbono( Cliente &clienteModificado)
     Fecha nuevaFecha;
     Boxeo box;
     Yoga yog;
-    int nuevoMonto;
+    float nuevoMonto;
 
-    if ( clienteModificado.getPesas() == true)   cout <<"INGRESE 1 PARA CAMBIAR EL MONTO DEL SERVICIO PESAS"<< endl;
+    if ( clienteModificado.getPesas() == true)              cout <<"INGRESE 1 PARA CAMBIAR EL MONTO DEL SERVICIO PESAS"<< endl;
     if ( clienteModificado.getBoxeo().getActivo() == true)  cout <<"INGRESE 2 PARA CAMBIAR EL MONTO DEL SERVICIO DE BOXEO"<< endl;
-    if ( clienteModificado.getYoga().getActivo() == true)  cout <<"INGRESE 3 PARA CAMBIAR EL MONTO DEL SERVICIO DE YOGA"<< endl;
+    if ( clienteModificado.getYoga().getActivo() == true)   cout <<"INGRESE 3 PARA CAMBIAR EL MONTO DEL SERVICIO DE YOGA"<< endl;
 
 
     cout <<"INGRESE 0 PARA VOLVER" << endl;
     cin >> op;
-validarDosRangos(op,1,3);
+validarDosRangos(op,0,3);
 
     if ( clienteModificado.getPesas() == true && op== 1 )
     {
 
         cout <<"INGRESE NUEVO MONTO"<< endl;
         cin>>nuevoMonto;
-        validarIngresos(nuevoMonto);
+        //validarIngresos(nuevoMonto);
 
         clienteModificado.setAbonoMensual(nuevoMonto);
         cout <<"MONTO CAMBIADO CON EXITO"<< endl;
@@ -447,8 +454,8 @@ validarDosRangos(op,1,3);
 
         cout <<"INGRESE NUEVO MONTO"<< endl;
         cin>>nuevoMonto;
-        //
-        validarIngresos(nuevoMonto);
+        //validarIngresos(nuevoMonto);
+
 
         box = clienteModificado.getBoxeo();
         box.setCuotaMensual(nuevoMonto);
@@ -460,8 +467,8 @@ validarDosRangos(op,1,3);
     {
         cout <<"INGRESE NUEVO MONTO"<< endl;
         cin>>nuevoMonto;
-        validarIngresos(nuevoMonto);
-         //
+       //validarIngresos(nuevoMonto);
+
         yog = clienteModificado.getYoga();
         yog.setCuotaMensual(nuevoMonto);
         clienteModificado.setYoga(yog);
@@ -485,14 +492,14 @@ void ClienteTareas::cambiarAlgunaFechaLimite(Cliente &clienteModificado)
     Boxeo box;
     Yoga yog;
 
-    if ( clienteModificado.getPesas() == true)   cout <<"INGRESE 1 PARA CAMBIAR LA FECHA DEL SERVICIO PESAS"<< endl;
+    if ( clienteModificado.getPesas() == true)              cout <<"INGRESE 1 PARA CAMBIAR LA FECHA DEL SERVICIO PESAS"<< endl;
     if ( clienteModificado.getBoxeo().getActivo() == true)  cout <<"INGRESE 2 PARA CAMBIAR LA FECHA DEL SERVICIO DE BOXEO"<< endl;
-    if ( clienteModificado.getYoga().getActivo() == true)  cout <<"INGRESE 3 PARA CAMBIAR LA FECHA DEL SERVICIO DE YOGA"<< endl;
+    if ( clienteModificado.getYoga().getActivo() == true)   cout <<"INGRESE 3 PARA CAMBIAR LA FECHA DEL SERVICIO DE YOGA"<< endl;
 
 
     cout <<"INGRESE 0 PARA VOLVER" << endl;
     cin >> op;
-    validarDosRangos(op,1,3);
+    validarDosRangos(op,0,3);
 
     if ( clienteModificado.getPesas() == true && op== 1 )
     {
@@ -536,10 +543,6 @@ void ClienteTareas::limpiarArchivoClientes()
     _archivoCliente.vaciar();
 }
 
-int ClienteTareas::generarID()
-{
-    return _archivoCliente.getCantidad()+1;
-}
 
 
 void ClienteTareas::registrarIngresos()
@@ -601,7 +604,7 @@ void ClienteTareas::mostrarClientesConFechaPorVencer() // hace los calculos sobr
     {
         diasPorMes[1]++;
     }
-    bool algunCliente=true;
+    bool noHayClientesPorVencer=true;
 
     for (int i = 0; i < cantidadRegistros; i++)
     {
@@ -618,7 +621,7 @@ void ClienteTareas::mostrarClientesConFechaPorVencer() // hace los calculos sobr
 
                 if ( cliente.getFechaLimiteParaPagarAbono().getDia() - fechaHoy.getDia() <= 6 )
                 {
-                    algunCliente=false;
+                    noHayClientesPorVencer=false;
                     cliente.mostrarCliente();
 
                 }
@@ -630,7 +633,7 @@ void ClienteTareas::mostrarClientesConFechaPorVencer() // hace los calculos sobr
                 int diasParaTerminarELmes = diasPorMes[ fechaHoy.getMes()- 1 ] - fechaHoy.getDia();
                 if(diasParaTerminarELmes+cliente.getFechaLimiteParaPagarAbono().getDia()<=6)
                 {
-                    algunCliente=false;
+                    noHayClientesPorVencer=false;
                     cliente.mostrarCliente();
                 }
 
@@ -651,7 +654,7 @@ void ClienteTareas::mostrarClientesConFechaPorVencer() // hace los calculos sobr
 
                 if ( cliente.getYoga().getFechaLimitePago().getDia() - fechaHoy.getDia() <= 6 )
                 {
-                    algunCliente=false;
+                    noHayClientesPorVencer=false;
                     cliente.mostrarCliente();
 
                 }
@@ -663,7 +666,7 @@ void ClienteTareas::mostrarClientesConFechaPorVencer() // hace los calculos sobr
                 int diasParaTerminarELmes = diasPorMes[ fechaHoy.getMes()- 1 ] - fechaHoy.getDia();
                 if(diasParaTerminarELmes + cliente.getBoxeo().getFechaLimitePago().getDia()<=6)
                 {
-                    algunCliente=false;
+                    noHayClientesPorVencer=false;
                     cliente.mostrarCliente();
                 }
 
@@ -686,7 +689,7 @@ void ClienteTareas::mostrarClientesConFechaPorVencer() // hace los calculos sobr
 
                 if ( cliente.getYoga().getFechaLimitePago().getDia() - fechaHoy.getDia() <= 6 )
                 {
-                    algunCliente=false;
+                    noHayClientesPorVencer=false;
                     cliente.mostrarCliente();
 
                 }
@@ -698,7 +701,7 @@ void ClienteTareas::mostrarClientesConFechaPorVencer() // hace los calculos sobr
                 int diasParaTerminarELmes = diasPorMes[ fechaHoy.getMes()- 1 ] - fechaHoy.getDia();
                 if(diasParaTerminarELmes + cliente.getYoga().getFechaLimitePago().getDia()<=6)
                 {
-                    algunCliente=false;
+                    noHayClientesPorVencer=false;
                     cliente.mostrarCliente();
                 }
 
@@ -715,7 +718,7 @@ void ClienteTareas::mostrarClientesConFechaPorVencer() // hace los calculos sobr
 
     }
 
-        if(algunCliente==true)
+        if(noHayClientesPorVencer==true)
         {
             cout << "NO SE ENCONTRARON CLIENTES POR FECHA POR VENCER (6 DIAS O MEN0S DE VENCIMIENTO)"<<endl;
         }
@@ -881,30 +884,6 @@ void ClienteTareas::listarClientesYoga()
 
     }
 }
-void ClienteTareas::listarClientesDadosDeBaja()
-{
-
-
-    int cantidadDeClientes = _archivoCliente.getCantidad();
-    for (int i = 0; i < cantidadDeClientes; i++ )
-    {
-        Cliente cliente = _archivoCliente.leer(i);
-        if(cliente.getEstado() == false  )
-        {
-            cliente.setEstado(true);
-            cliente.mostrarCliente();
-            cliente.setEstado(false);
-            cout << endl;
-            cout <<"--------------------------------------"<< endl;
-        }
-
-
-
-    }
-
-
-
-}
 
 
 float ClienteTareas::acumularAbonos(int dni)
@@ -962,7 +941,7 @@ void ClienteTareas::actualizarFechaPago(int dni)
 
 
             Fecha fechaBox = boxeoNuevo.getFechaLimitePago();
-            Fecha fechaYog = YogaNuevo.getFechaLimitePago();              // declaro xq alfinal no puedo setear desde un get
+            Fecha fechaYog = YogaNuevo.getFechaLimitePago();
             Fecha fechaPesas = cliente.getFechaLimiteParaPagarAbono();
 
             if ( boxeoNuevo.getActivo() == true )
@@ -1337,6 +1316,7 @@ void ClienteTareas::listarPorEdad()
     {
         cout<<"INGRESE EL ORDEN (1 - MAYOR A MENOR, 2 - MENOR A MAYOR)"<<endl;
         cin>>orden;
+ validarDosRangos(orden,1,2);
 
     }
     while(orden<1||orden>2);

@@ -209,6 +209,8 @@ void PagoTareas::eliminarPago()
 
 
             cin >> op;
+            validarDosRangos(op,0,1);
+
             if (op == 1 )
             {
 

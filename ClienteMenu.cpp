@@ -7,17 +7,17 @@
 void ClienteMenu::mostrar()
 {
     ClienteTareas clienteTareas;
-    // marco_menu marco;
+
     int opcion;
     do
     {
         system("cls");
-        // marco.mostrar_cliente();
+
         cout<<"----------------------------------"<<endl;
         cout<<"\tMENU CLIENTES"<<endl;
         cout<<"1 - CARGAR "<<endl;
         cout<<"2 - EDITAR "<<endl;
-        cout<<"3 - LISTADOS"<<endl;/// Y MAS OPCIONES
+        cout<<"3 - LISTADOS"<<endl;
         cout<<"4 - CONSULTAS "<<endl;
         cout<<"5 - DAR DE BAJA UN CLIENTE"<<endl;
         cout<<"6 - REACTIVAR UN CLIENTE"<<endl;

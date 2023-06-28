@@ -30,7 +30,7 @@ void ClienteArchivo::leerVector(Cliente *vec,int cantidadRegistros)
     FILE *p = fopen(_nombreArchivo, "rb");
     if (p == NULL)
     {
-        return;
+        return; // el return es valido? es una funcion void, se puede usar exit(1) sino;
     }
 
     fread(&vec[0], sizeof(Cliente), cantidadRegistros, p);
@@ -109,31 +109,17 @@ Cliente ClienteArchivo::leer(int nroRegistro) {
 
 }
 
-int ClienteArchivo::buscarRegistroCliente(char nombre[30])     {
-cout <<1;
-
-    int cant = getCantidad();
-    int x;
-    for (x = 0; x < cant; x++) {
-        Cliente cliente = leer(x); // Leer el cliente en la posición x
-        if (strcmp(cliente.getNombre(), nombre) == 0) { // Acceder al método getNombre() del cliente
-            return x;
-        }
-    }
-    cout <<"no se encontro el registro" << endl;
-    return -1;
-    }
 
 int ClienteArchivo::buscarRegistro()
 {
     int numeroRegistro,dni;
-    cout <<"Ingrese DNI del cliente que desea editar"<<endl;
+    cout <<"INGRESE EL DNI DEL CLIENTE QUE QUIERE BUSCAR"<<endl;
     cout <<"DNI: ";
     cin >> dni;
     FILE* p = fopen(_nombreArchivo, "rb");
     if (p == NULL)
     {
-        cout << "No se pudo abrir el archivo." <<endl;
+        cout << "NO SE PUDO ABRIR EL ARCHIVO." <<endl;
         return -1;
     }
 
@@ -151,7 +137,7 @@ int ClienteArchivo::buscarRegistro()
     }
 
     fclose(p);
-    cout <<"No existe el numero de DNI" <<endl;
+    cout <<"No EXISTE NUMERO DE DNI" <<endl;
     system("pause");
     return -2;
 }
@@ -159,7 +145,7 @@ bool ClienteArchivo::editar(Cliente cliente, int nroRegistro) {
 
     FILE* p = fopen(_nombreArchivo,"rb+");
     if (p== NULL) {
-        cout << "No se pudo abrir el archivo." <<endl;
+        cout << "NO SE PUDO ABRIR EL ARCHIVO." <<endl;
         return false;
     }
 

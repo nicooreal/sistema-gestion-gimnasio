@@ -93,11 +93,11 @@ bool Cliente::getPesas()
     if ( _pesas == true)
     {
 
-        return true; //cout <<"Realiza el servicio de pesas" << endl;
+        return true;
     }
     else
     {
-        // cout<< "No realiza el servicio de pesas"<< endl;
+
     }
 
     return _pesas;
@@ -162,38 +162,22 @@ void Cliente::cargarCliente()
     ClienteArchivo clienteArch;
     int cantidadDeSocios = clienteArch.getCantidad();
     int opcionMensual = 0;
-    int opcionExtra;
+    int opcionExtra = 0, serPesas = 0;
     Persona::cargarPersona(); // metodo de persona.h
     _numeroDeSocio = cantidadDeSocios + 1;
     _fechaDelAlta.fechaDeHoy();
 
-    bool esBool=false;
-    do
-    {
+
         cout <<"SERVICIO DE PESAS:(ingrese 1-SI o 0-NO ):" << endl;
         cin>>_pesas;
-        if(!cin)
-        {
-            cout<<"NO VALIDO. POR FAVOR INGRESE 0 o 1"<<endl;
-            cin.clear(); // Restablece el estado del flujo de entrada
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        }
-        else if(_pesas!=0&&_pesas!=1)
-        {
-            cout<<"NO VALIDO. POR FAVOR INGRESE 0 o 1"<<endl;
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        }
-        else
-        {
-            esBool=true;
-        }
+        if (_pesas == true) serPesas = 1;
+        if (_pesas == false ) serPesas = 0;
+
+        validarDosRangos(serPesas,0,1);
 
 
 
-    }
-    while(!esBool);
 
-    bool esValido=false;
     if ( _pesas == true )
     {
 
@@ -214,31 +198,12 @@ void Cliente::cargarCliente()
     establecerPlanMensual(opcionMensual);
     cout<<"NOMBRE DE LA ACTIVIDAD EXTRA (1 - BOXEO $1000, 2 - YOGA $1000, 3 - BOXEO Y YOGA $1500 4 - NINGUNA )"<<endl;
     cin >> opcionExtra;
-    esValido=false;
-    while(!esValido)
-    {
-        if(!validar(opcionExtra))
-        {
-            cout<<"NO VALIDO"<<endl;
-            cin>>opcionExtra;
-        }
-        else
-        {
-            if(opcionExtra<1||opcionExtra>4)
-            {
-                cout<<"NO VALIDO"<<endl;
-                cin>>opcionExtra;
-            }
-        }
-
-        if(opcionExtra>=1&&opcionExtra<=4)
-        {
-            esValido=true;
-        }
+ validarDosRangos(opcionExtra,1,4);
 
 
 
-    }
+
+
 
     establecerOpcionExtra(opcionExtra);
 
@@ -301,16 +266,16 @@ void Cliente::mostrarCliente()
     if (_estado == true)
     {
         Persona::mostrarPersona();
-        cout<<"Numero de socio "<<_numeroDeSocio<<endl;
-        cout<<"Fecha de alta: ";
+        cout<<"NUMERO DE SOCIO "<<_numeroDeSocio<<endl;
+        cout<<"FECHA DE ALTA: ";
         _fechaDelAlta.mostrar();
-        cout <<"Servicio de pesas: ";
+        cout <<"SERVICIO DE PESAS: ";
         hacePesas();
         if ( _pesas == true )
         {
-            cout<<"Abono mensual: "<<_abonoMensual<<endl;
-            cout <<"Control de ingresos para pesas: " << _controlDeIngresosPesas << endl;
-            cout<<"Fecha limite para pagar abono: ";
+            cout<<"ABONO MENSUAL: "<<_abonoMensual<<endl;
+            cout <<"CONTROL DE INGRESOS PESAS: " << _controlDeIngresosPesas << endl;
+            cout<<"FECHA LIMITE PARA PAGAR ABONO: ";
             _fechaLimiteParaPagarAbono.mostrar();
         }
         cout << endl;
@@ -320,20 +285,20 @@ void Cliente::mostrarCliente()
         if (_boxeo.getActivo() == true  )
         {
             cout <<"BOXEO"<<endl;
-            cout << "fecha del alta: " ;
+            cout << "FECHA DEL ALTA: " ;
             _boxeo.getFechaAlta().mostrar();
-            cout << "cuota mensual: " << _boxeo.getCuotaMensual() << endl;
-            cout << "fecha limite para pagar: ";
+            cout << "CUOTA MENSUAL: " << _boxeo.getCuotaMensual() << endl;
+            cout << "FECHA LIMITE PARA PAGAR: ";
             _boxeo.getFechaLimitePago().mostrar();
             cout <<"++++++++++++++++++++++++++++++++++++"<< endl;
         }
         if (_yoga.getActivo() == true )
         {
             cout <<"YOGA" << endl;
-            cout << "fecha del alta: " ;
+            cout << "FECHA DE ALTA: " ;
             _yoga.getFechaAlta().mostrar();
-            cout << "cuota mensual: " << _yoga.getCuotaMensual() << endl;
-            cout << "fecha limite para pagar: " ;
+            cout << "CUOTA MENSUAL: " << _yoga.getCuotaMensual() << endl;
+            cout << "FECHA LIMITE PARA PAGAR: " ;
             _yoga.getFechaLimitePago().mostrar();
 
 
@@ -378,16 +343,16 @@ void Cliente::mostrarClienteDadoDeBaja()
     if (_estado == false)
     {
         mostrarPersona();
-        cout<<"Numero de socio "<<_numeroDeSocio<<endl;
-        cout<<"Fecha de alta: ";
+        cout<<"NUMERO DE SOCIO: "<<_numeroDeSocio<<endl;
+        cout<<"FECHA DEL ALTA: ";
         _fechaDelAlta.mostrar();
-        cout <<"Servicio de pesas: ";
+        cout <<"SERVICIO DE PESAS: ";
         hacePesas();
         if ( _pesas == true )
         {
-            cout<<"Abono mensual: "<<_abonoMensual<<endl;
-            cout <<"Control de ingresos para pesas: " << _controlDeIngresosPesas << endl;
-            cout<<"Fecha limite para pagar abono: ";
+            cout<<"ABONO MENSUAL: "<<_abonoMensual<<endl;
+            cout <<"CONTROL DE INGRESOS PESAS: " << _controlDeIngresosPesas << endl;
+            cout<<"FECHA LIMITE PARA PAGAR ABONO: ";
             _fechaLimiteParaPagarAbono.mostrar();
         }
         cout << endl;
@@ -396,27 +361,27 @@ void Cliente::mostrarClienteDadoDeBaja()
         if (_boxeo.getActivo() == true  )
         {
             cout <<"BOXEO"<<endl;
-            cout << "fecha del alta: " ;
+            cout << "FECHA DEL ALTA: " ;
             _boxeo.getFechaAlta().mostrar();
-            cout << "cuota mensual: " << _boxeo.getCuotaMensual() << endl;
-            cout << "fecha limite para pagar: ";
+            cout << "CUOTA MENSUAL: " << _boxeo.getCuotaMensual() << endl;
+            cout << "FECHA LIMITE PARA PAGAR: ";
             _boxeo.getFechaLimitePago().mostrar();
             cout <<"++++++++++++++++++++++++++++++++++++"<< endl;
         }
         if (_yoga.getActivo() == true )
         {
             cout <<"YOGA" << endl;
-            cout << "fecha del alta: " ;
+            cout << "FECHA DEL ALTA: " ;
             _yoga.getFechaAlta().mostrar();
-            cout << "cuota mensual: " << _yoga.getCuotaMensual() << endl;
-            cout << "fecha limite para pagar: " ;
+            cout << "CUOTA MENSUAL: " << _yoga.getCuotaMensual() << endl;
+            cout << "FECHA LIMITE PARA PAGAR: " ;
             _yoga.getFechaLimitePago().mostrar();
 
 
 
         }
 
-        cout<<"------------------------"<< endl;
+        cout<<"----------------------------"<< endl;
 
     }
 

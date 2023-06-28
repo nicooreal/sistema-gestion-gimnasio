@@ -9,7 +9,6 @@ class ClienteTareas
    private:
 
    ClienteArchivo _archivoCliente;
-   int generarID();
    void elegirQueModificar(Cliente &clienteModificado);
    int calcularEdad(Fecha fechaNacimiento);
 
@@ -27,7 +26,6 @@ void listados();
 void consultas();
 void listarClientesBoxeo();
 void listarClientesYoga();
-void listarClientesDadosDeBaja();
 float acumularAbonos(int dni);
 void actualizarFechaPago(int dni);
 void listarTodosLosClientesDadosDeBaja();

@@ -186,11 +186,11 @@ void CopiaDeSeguridadTareas::ElegirTipoBackup()
             cout<<"-----------------------------------"<<endl;
             cout<<"OPCION: ";
             cin>>opcion;
-            validar(opcion);
+            validarDosRangos(opcion,0,4);
             system("cls");
 
         }
-        while(opcion<0||opcion>3);
+        while(opcion<0||opcion>4);
         switch(opcion)
         {
         case 1:
@@ -233,11 +233,11 @@ void CopiaDeSeguridadTareas::ElegirRestaurarTipoBackup()
             cout<<"-----------------------------------"<<endl;
             cout<<"OPCION: ";
             cin>>opcion;
-            validar(opcion);
+            validarDosRangos(opcion,0,4) ;
             system("cls");
 
         }
-        while(opcion<0||opcion>3);
+        while(opcion<0||opcion>4);
         switch(opcion)
         {
         case 1:

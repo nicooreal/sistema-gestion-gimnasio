@@ -16,7 +16,6 @@ public:
     bool guardar(Cliente cliente);
     bool editar(Cliente cliente, int nroRegistro);
     Cliente leer(int nroRegistro);
-    int buscarRegistroCliente(char nombre[30]);
     int buscarRegistro();      // busc registros por dni
     void vaciar();
     void leerVector(Cliente *vec,int cantidadRegistros);

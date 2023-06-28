@@ -11,15 +11,6 @@ using namespace std;
 #include "string.h"
 
 
-
-
-
-
-
-//clase boxeo, yoga y pago(vector dinamico, para calcular los anios minimos y maximos de los pagos)
-
-
-
 class Cliente : public Persona
 {
 private:
@@ -32,11 +23,6 @@ private:
     Yoga _yoga;
     bool _pesas;
     int _controlDeIngresosPesas;
-
-//bool boxeo;
-//bool yoga;
-
-//string _actividad;
 
 public:
 
@@ -78,8 +64,7 @@ public:
     void establecerOpcionExtra(int opcion);
     void calcularUnMesDeEntreno();
     void mostrarClienteDadoDeBaja();
-//string getNombreActividad();
-//void setNombreDeActividad(string nombreAct);
+
 };
 
 #endif // CLIENTE_H
