@@ -193,7 +193,7 @@ void Cliente::cargarCliente()
     }
     while(!esBool);
 
-        bool esValido=false;
+    bool esValido=false;
     if ( _pesas == true )
     {
 
@@ -206,29 +206,7 @@ void Cliente::cargarCliente()
         cout <<"OPCION 3 - 5 PASE LIBRE $1400" << endl;
         cin >>opcionMensual;
 
-        while(!esValido)
-        {
-            if(!validar(opcionMensual))
-            {
-                cout<<"NO VALIDO"<<endl;
-                cin>>opcionMensual;
-            }
-            else
-            {
-                if(opcionMensual<1||opcionMensual>3)
-                {
-                    cout<<"NO VALIDO"<<endl;
-                    cin>>opcionMensual;
-                }
-            }
-
-            if(opcionMensual>=1&&opcionMensual<=3)
-            {
-                esValido=true;
-            }
-
-
-        }
+        validarDosRangos(opcionMensual,1,3);
 
 
 
@@ -236,31 +214,31 @@ void Cliente::cargarCliente()
     establecerPlanMensual(opcionMensual);
     cout<<"NOMBRE DE LA ACTIVIDAD EXTRA (1 - BOXEO $1000, 2 - YOGA $1000, 3 - BOXEO Y YOGA $1500 4 - NINGUNA )"<<endl;
     cin >> opcionExtra;
-      esValido=false;
-      while(!esValido)
+    esValido=false;
+    while(!esValido)
+    {
+        if(!validar(opcionExtra))
         {
-            if(!validar(opcionExtra))
+            cout<<"NO VALIDO"<<endl;
+            cin>>opcionExtra;
+        }
+        else
+        {
+            if(opcionExtra<1||opcionExtra>4)
             {
                 cout<<"NO VALIDO"<<endl;
                 cin>>opcionExtra;
             }
-            else
-            {
-                if(opcionExtra<1||opcionExtra>4)
-                {
-                    cout<<"NO VALIDO"<<endl;
-                    cin>>opcionExtra;
-                }
-            }
+        }
 
-            if(opcionExtra>=1&&opcionExtra<=4)
-            {
-                esValido=true;
-            }
+        if(opcionExtra>=1&&opcionExtra<=4)
+        {
+            esValido=true;
+        }
 
 
 
-}
+    }
 
     establecerOpcionExtra(opcionExtra);
 

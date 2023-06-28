@@ -59,25 +59,64 @@ bool validar(int ingreso)
 
     return esLetra;
 
-
-
-
 }
 
-void validarIngresos(int &ingreso){
-bool esValido = false;
+void validarDosRangos(int &ingreso,int rangoMin,int rangoMax)
+{
+    bool esValido=false;
 
-     while(!esValido)
+    while(!esValido)
+    {
+        if(!validar(ingreso)||ingreso<rangoMin||ingreso>rangoMax)
         {
-            if(!validar(ingreso))
-            {
-                cout<<"INGRESE UN CARACTER VALIDO"<<endl;
-                cin>>ingreso;
-            }
-            else {break;}
+            cout<<"INGRESO UN CARACTER O UN NUMERO FUERA DEL RANGO, POR FAVOR, INTENTE DENUEVO "<<endl;
+            cin>>ingreso;
+        }
 
+        if(validar(ingreso)&&ingreso>=rangoMin&&ingreso<=rangoMax)
+        {
+            esValido=true;
+        }
+    }
+}
+
+void validarQueNoSeaNegativa(int &ingreso)
+{
+    bool esValido=false;
+
+    while(!esValido)
+    {
+        if(!validar(ingreso)||ingreso<0)
+        {
+            cout<<"INGRESO UN CARACTER O UN NUMERO NEGATIVO, POR FAVOR, INTENTE DENUEVO "<<endl;
+            cin>>ingreso;
+        }else
+        {
+            esValido=true;
         }
 
 
+    }
+}
+
+
+
+void validarIngresos(int &ingreso)
+{
+    bool esValido = false;
+
+    while(!esValido)
+    {
+        if(!validar(ingreso))
+        {
+            cout<<"INGRESE UN CARACTER VALIDO"<<endl;
+            cin>>ingreso;
+        }
+        else
+        {
+            break;
+        }
+
+    }
 
 }

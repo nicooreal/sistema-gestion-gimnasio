@@ -1,6 +1,5 @@
 #include "Persona.h"
 #include "funciones.h"
-#include "funciones.h"
 #include <cctype>
 
 
@@ -49,11 +48,10 @@ void Persona::cargarPersona()
     cout<<"APELLIDO: ";
     cargarCadena(_apellido,29);
     convertirAMayusculas(_apellido);
-    do
-    {
-       cout<<"DNI: ";
-       cin>>_dni;
-    }while(_dni<=0);
+
+    cout<<"DNI: ";
+    cin>>_dni;
+    validarQueNoSeaNegativa(_dni);
 
     cout<<"Fecha nacimiento: "<<endl;
     _fechaNacimiento.cargar();

@@ -95,14 +95,15 @@
 	<iostream>
 	<string.h>
 
-1687799934 c:\users\alexi\github\sistema-gestion-gimnasio\funciones.h
+1687919259 c:\users\alexi\github\sistema-gestion-gimnasio\funciones.h
 	<iostream>
 	<string.h>
 
-1687653155 source:c:\users\alexi\github\sistema-gestion-gimnasio\fecha.cpp
+1687918071 source:c:\users\alexi\github\sistema-gestion-gimnasio\fecha.cpp
 	"Fecha.h"
 	<ctime>
 	<cctype>
+	"funciones.h"
 
 1687640701 c:\users\alexi\github\sistema-gestion-gimnasio\fecha.h
 	<iostream>
@@ -113,9 +114,8 @@
 1683151931 c:\users\alexi\github\sistema-gestion-gimnasio\gimnasio.h
 	<iostream>
 
-1687653419 source:c:\users\alexi\github\sistema-gestion-gimnasio\persona.cpp
+1687920451 source:c:\users\alexi\github\sistema-gestion-gimnasio\persona.cpp
 	"Persona.h"
-	"funciones.h"
 	"funciones.h"
 	<cctype>
 
@@ -125,7 +125,7 @@
 	<iostream>
 	"Fecha.h"
 
-1687808209 source:c:\users\alexi\github\sistema-gestion-gimnasio\funciones.cpp
+1687920500 source:c:\users\alexi\github\sistema-gestion-gimnasio\funciones.cpp
 	<algorithm>
 	"funciones.h"
 	"Persona.h"
@@ -208,7 +208,7 @@
 	"Empleado.h"
 	"Programa.h"
 
-1687799934 source:c:\users\alexi\github\sistema-gestion-gimnasio\cliente.cpp
+1687920440 source:c:\users\alexi\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 	"ClienteArchivo.h"
 	"Boxeo.h"
@@ -341,10 +341,11 @@
 1684285040 c:\users\alexi\github\sistema-gestion-gimnasio\include\empleadoarchivo.h
 	"Empleado.h"
 
-1687299659 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadomenu.cpp
+1687918071 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadomenu.cpp
 	"EmpleadoMenu.h"
 	"marco_menu.h"
 	"rlutil.h"
+	"funciones.h"
 
 1687100557 c:\users\alexi\github\sistema-gestion-gimnasio\empleadomenu.h
 	<iostream>
@@ -379,15 +380,16 @@
 	"marco_menu.h"
 	"rlutil.h"
 
-1687646948 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadoarchivo.cpp
+1687918071 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadoarchivo.cpp
 	"EmpleadoArchivo.h"
+	"funciones.h"
 
 1687646925 c:\users\alexi\github\sistema-gestion-gimnasio\empleadoarchivo.h
 	<iostream>
 	<string.h>
 	"Empleado.h"
 
-1687808145 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
+1687918071 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
 	"EmpleadoTareas.h"
 	"funciones.h"
 
@@ -401,7 +403,7 @@
 	<iostream>
 	"EmpleadoArchivo.h"
 
-1687642549 source:c:\users\alexi\github\sistema-gestion-gimnasio\gimnasiomenu.cpp
+1687918071 source:c:\users\alexi\github\sistema-gestion-gimnasio\gimnasiomenu.cpp
 	"GimnasioMenu.h"
 	"marco_menu.h"
 	"rlutil.h"
@@ -804,7 +806,7 @@
 1687790423 source:c:\users\alexi\github\sistema-gestion-gimnasio\yoga.cpp
 	"Yoga.h"
 
-1687805889 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.cpp
+1687918071 source:c:\users\alexi\github\sistema-gestion-gimnasio\clientetareas.cpp
 	"ClienteTareas.h"
 	"Cliente.h"
 	"ClienteArchivo.h"
