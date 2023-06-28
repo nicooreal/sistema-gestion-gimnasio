@@ -1,7 +1,7 @@
 #include "EmpleadoMenu.h"
 #include"marco_menu.h"
 #include "rlutil.h"
-
+#include "funciones.h"
 
 
 void EmpleadoMenu::mostrar()
@@ -24,7 +24,10 @@ void EmpleadoMenu::mostrar()
         cout<<"0 - SALIR"<<endl;
         cout<<"----------------------------------"<<endl;
 
-        cout<<"OPCION: "; cin>>opcion;
+        cout<<"OPCION: ";
+        cin>>opcion;
+        validarIngresos(opcion);
+
         system("cls");
 
         switch(opcion)

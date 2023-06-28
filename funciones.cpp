@@ -71,7 +71,7 @@ bool esValido = false;
         {
             if(!validar(ingreso))
             {
-                cout<<"NO VALIDO"<<endl;
+                cout<<"INGRESE UN CARACTER VALIDO"<<endl;
                 cin>>ingreso;
             }
             else {break;}

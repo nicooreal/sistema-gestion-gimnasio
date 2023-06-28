@@ -22,6 +22,8 @@ void EmpleadoTareas::listados()
             cout<<"--------------------------------------------"<<endl;
             cout<<"OPCION: ";
             cin>>opcion;
+            validarIngresos(opcion);
+
             system("cls");
 
         }
@@ -82,6 +84,8 @@ void EmpleadoTareas::listarEmpleadosPorAnio()
     int anio;
     cout<<"Ingrese el anio de ingreso para listar empleados"<<endl;
     cin>>anio;
+    validarIngresos(anio);
+
     cout<<endl;
     _archivo.buscarPorAnio(anio);
 
@@ -94,6 +98,7 @@ void EmpleadoTareas::listarOrdenadosPorNombre()
     {
         cout<<"Ingrese el orden(1 - Ordenados de mayor a menor, 2 - Ordenados de menor a mayor)"<<endl;
         cin>>orden;
+     validarIngresos(orden);
     }
     while(orden<1||orden>2);
     EmpleadoArchivo archivo("empleados.dat");
@@ -173,6 +178,7 @@ void EmpleadoTareas::listarOrdenadosPorApellido()
     {
         cout<<"Ingrese el orden(1 - Ordenados de mayor a menor, 2 - Ordenados de menor a mayor)"<<endl;
         cin>>orden;
+    validarIngresos(orden);
     }
     while(orden<1||orden>2);
     EmpleadoArchivo archivo("empleados.dat");
@@ -254,6 +260,7 @@ void EmpleadoTareas::listarPorEdad()
     {
         cout<<"Ingrese el orden (1 - Ordenados de mayor a menor, 2 - Ordenados de menor a mayor)"<<endl;
         cin>>orden;
+     validarIngresos(orden);
 
     }
     while(orden<1||orden>2);
@@ -334,6 +341,7 @@ void EmpleadoTareas::listarPorSueldo()
     {
         cout<<"Ingrese el orden (1 - Ordenados de sueldo maximo a minimo, 2 - Ordenados de sueldo minimo a maximo)"<<endl;
         cin>>orden;
+    validarIngresos(orden);
 
     }
     while(orden<1||orden>2);
@@ -425,6 +433,8 @@ void EmpleadoTareas::darDeBajaEmpleado()
     int id;
     cout<<"Ingrese el ID del empleado que quiere dar de baja"<<endl;
     cin>>id;
+    validarIngresos(id);
+
     archivo.bajaLogica(id);
 }
 
@@ -441,6 +451,8 @@ void EmpleadoTareas::reactivarEmpleado()
         cout <<"¿desea reactivar?" <<endl;
         cout <<"1 - SI o 2 - NO" << endl;
         cin >> op;
+       validarIngresos(op);
+
         if (op == 1)
         {
 
@@ -487,6 +499,8 @@ void EmpleadoTareas::consultas()
             cout<<"---------------------------------"<<endl;
             cout<<"OPCION: ";
             cin>>opcion;
+            validarIngresos(opcion);
+
             system("cls");
         }
         while(opcion<0||opcion>5);
@@ -522,6 +536,8 @@ void EmpleadoTareas::consultaPorId()
     int id;
     cout<<"Ingrese el id"<<endl;
     cin>>id;
+    validarIngresos(id);
+
     if(_archivo.buscarPorID(id)>0)
     {
         cout<<"ID Encontrado!"<<endl<<endl;
@@ -542,6 +558,8 @@ void EmpleadoTareas::consultaPorDni()
     int dni;
     cout<<"Ingrese el DNI"<<endl;
     cin>>dni;
+    validarIngresos(dni);
+
     if(_archivo.buscarPorDni(dni)>0)
     {
         cout<<"DNI Encontrado!"<<endl<<endl;
@@ -602,6 +620,8 @@ void EmpleadoTareas::consultaPorEdad()
     int edad;
     cout<<"INGRESE LA EDAD"<<endl;
     cin>>edad;
+    validarIngresos(edad);
+
     if(_archivo.buscarPorEdad(edad)>0)
     {
         cout<<"EDAD ENCONTRADA!"<<endl<<endl;
@@ -640,6 +660,8 @@ void EmpleadoTareas::cargar()
     convertirAMayusculas(apellido);
     cout<<"DNI: ";
     cin>>dni;
+    validarIngresos(dni);
+
     cout<<"FECHA NACIMIENTO: "<<endl;
     fechaNacimiento.cargar();
     edad=calcularEdad(fechaNacimiento);
@@ -656,6 +678,8 @@ void EmpleadoTareas::cargar()
     {
         cout <<"SUELDO: "<<endl;
         cin >> sueldo;
+   // validarIngresos(sueldo);
+
     }
     while(sueldo<=0);
 
@@ -716,7 +740,9 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
             cout<<"0 - SALIR"<<endl;
             cout<<"OPCION: ";
             cin>>opcion;
-            system("cls");
+            validarIngresos(opcion);
+
+             system("cls");
         }
         while(opcion<0||opcion>9);
 
@@ -744,6 +770,8 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
             {
                 cout<<"INGRESE EL NUEVO DNI "<<endl;
                 cin>>dni;
+                validarIngresos(dni);
+
                 empleadoModificado.setDni(dni);
             }
             while(_archivo.existeEmpleado(empleadoModificado)!=0);
@@ -816,6 +844,8 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
             {
                 cout<<"INGRESE EL DNI "<<endl;
                 cin>>dni;
+                validarIngresos(dni);
+
                 empleadoModificado.setDni(dni);
             }
             while(_archivo.existeEmpleado(empleadoModificado)!=0);

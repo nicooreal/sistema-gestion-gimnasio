@@ -31,6 +31,7 @@ void GimnasioMenu::mostrar()
             cout<<"----------------------------------"<<endl;
             cout<<"OPCION: ";
             cin>>opcion;
+            validarIngresos(opcion);
             system("cls");
         }
         while(opcion<0||opcion>8);

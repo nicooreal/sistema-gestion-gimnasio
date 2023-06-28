@@ -1,7 +1,7 @@
 #include "Fecha.h"
 #include <ctime>
 #include <cctype>
-
+#include "funciones.h"
 
 
 
@@ -61,10 +61,13 @@ void Fecha::cargar()
     {
         cout<<"DIA: ";
         cin>>_dia;
+        validarIngresos(_dia);
         cout<<"MES: ";
         cin>>_mes;
+        validarIngresos(_mes);
         cout<<"ANIO: ";
         cin>>_anio;
+    validarIngresos(_anio);
     }
     while(_dia<=0||_mes<=0||_anio<=0);
 
