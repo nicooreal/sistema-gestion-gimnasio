@@ -66,12 +66,21 @@ void ClienteTareas::modificar()
 }
 
 
-
 void ClienteTareas::consultarPorDni()
 {
+
+    bool esValido = false;
     int documento;
     cout <<"INGRESE EL DNI: " << endl;
     cin >> documento;
+
+validarIngresos(documento);
+
+
+
+
+
+
 
     if(_archivoCliente.buscarPorDni(documento)>0)
     {
@@ -85,6 +94,7 @@ void ClienteTareas::consultarPorDni()
     {
         cout<<"NO EXISTE UN CLIENTE CON ESE DNI O ESE CLIENTE ESTA DADO DE BAJA"<<endl;
     }
+
 
 
 
@@ -124,7 +134,10 @@ void ClienteTareas::darBajaCliente()
         system("pause");
         cout <<"DESEA DAR LA BAJA?" <<endl;
         cout <<"1 - SI o 0 - NO" << endl;
+
         cin >> op;
+        validarIngresos(op);
+
         if (op == 1)
         {
             Cliente clienteEnBaja = cliente;
@@ -192,6 +205,11 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             cout<<"0 - SALIR"<<endl;
             cout<<"OPCION: ";
             cin>>opcion;
+           validarIngresos(opcion);
+
+
+
+
             system("cls");
         }
         while(opcion<0||opcion>10);
@@ -219,6 +237,7 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             {
                 cout<<"INGRESE NUEVO DNI "<<endl;
                 cin>>dni;
+                validarIngresos(dni);
                 clienteModificado.setDni(dni);
 
             }
@@ -319,6 +338,7 @@ void ClienteTareas::cambiarActividades(Cliente &clienteModificado)
 
     cout <<"INGRESE 0 PARA VOLVER" << endl;
     cin >> op;
+validarIngresos(op);
 
     if ( clienteModificado.getPesas() == true && op== 1 )
     {
@@ -405,12 +425,15 @@ void ClienteTareas::cambiarMontoDeAlgunAbono( Cliente &clienteModificado)
 
     cout <<"INGRESE 0 PARA VOLVER" << endl;
     cin >> op;
+validarIngresos(op);
 
     if ( clienteModificado.getPesas() == true && op== 1 )
     {
 
         cout <<"INGRESE NUEVO MONTO"<< endl;
         cin>>nuevoMonto;
+        validarIngresos(nuevoMonto);
+
         clienteModificado.setAbonoMensual(nuevoMonto);
         cout <<"MONTO CAMBIADO CON EXITO"<< endl;
     }
@@ -420,6 +443,8 @@ void ClienteTareas::cambiarMontoDeAlgunAbono( Cliente &clienteModificado)
 
         cout <<"INGRESE NUEVO MONTO"<< endl;
         cin>>nuevoMonto;
+        validarIngresos(nuevoMonto);
+
         box = clienteModificado.getBoxeo();
         box.setCuotaMensual(nuevoMonto);
         clienteModificado.setBoxeo(box);
@@ -430,6 +455,8 @@ void ClienteTareas::cambiarMontoDeAlgunAbono( Cliente &clienteModificado)
     {
         cout <<"INGRESE NUEVO MONTO"<< endl;
         cin>>nuevoMonto;
+        validarIngresos(nuevoMonto);
+
         yog = clienteModificado.getYoga();
         yog.setCuotaMensual(nuevoMonto);
         clienteModificado.setYoga(yog);
@@ -460,6 +487,8 @@ void ClienteTareas::cambiarAlgunaFechaLimite(Cliente &clienteModificado)
 
     cout <<"INGRESE 0 PARA VOLVER" << endl;
     cin >> op;
+    validarIngresos(op);
+
     if ( clienteModificado.getPesas() == true && op== 1 )
     {
 
@@ -518,6 +547,8 @@ void ClienteTareas::registrarIngresos()
 
 
     cin >> documento;
+    validarIngresos(documento);
+
     int cantidadDeClientes = _archivoCliente.getCantidad();
 
 
