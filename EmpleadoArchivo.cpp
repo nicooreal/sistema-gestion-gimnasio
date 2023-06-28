@@ -283,7 +283,7 @@ int opcion = 0;
         em.mostrarEmpleado();
         cout<<endl;
         cin >> opcion;
-        validarIngresos(opcion);
+        validarDosRangos(opcion,0,1);
         if ( opcion = 1)  {
 
         em.setEstado(false);
@@ -348,7 +348,8 @@ int EmpleadoArchivo::buscarRegistro()
     cout <<"Ingrese DNI del empleado que desea editar"<<endl;
     cout <<"DNI: ";
     cin >> dni;
-    validarIngresos(dni);
+     validarIngresos(dni);
+     validarQueNoSeaNegativa(dni);
 
     FILE* p = fopen(_nombreArchivo, "rb");
     if (p == NULL)

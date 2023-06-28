@@ -16,7 +16,8 @@ void PagoTareas::cargarPago(bool primerPago, int dni)
     {
         cout <<"ingrese el dni del cliente a pagar "<< endl;
         cin >> dni;
-
+         validarIngresos(dni);
+         validarQueNoSeaNegativa(dni);
 
     }
 
@@ -126,6 +127,9 @@ void PagoTareas::recaudacionAnual()
     float VrecaudacionAnual[12] {};
     cout <<"INGRESE EL ANIO DE LA RECAUDACION"<< endl;
     cin >> anio;
+    validarIngresos(anio);
+    validarQueNoSeaNegativa(anio);
+
     for(int x=0; x<CantArch; x++)
     {
         pago=pagoArchi.leer(x);
@@ -185,6 +189,9 @@ void PagoTareas::eliminarPago()
     int id, op;
     cout <<"INGRESE EL ID DEL PAGO QUE SE VA A ELIMINAR"<< endl;
     cin >> id;
+    validarIngresos(id);
+    validarQueNoSeaNegativa(id);
+
     int cantidadDePagos = pagoArch.getCantidad();
     for(int i = 0; i < cantidadDePagos; i++)
     {

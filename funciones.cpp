@@ -36,12 +36,12 @@ void convertirAMayusculas(char* str)
 
 bool validar(int ingreso)
 {
-    bool esLetra=false;
+    bool esNumero=false;
 
     if (cin)
     {
         // Se ingresó un entero correctamente
-        esLetra=true;
+        esNumero=true;
     }
     else
     {
@@ -57,7 +57,7 @@ bool validar(int ingreso)
     }
 
 
-    return esLetra;
+    return esNumero;
 
 }
 
@@ -73,7 +73,7 @@ void validarDosRangos(int &ingreso,int rangoMin,int rangoMax)
             cin>>ingreso;
         }
 
-        if(validar(ingreso)&&ingreso>=rangoMin&&ingreso<=rangoMax)
+        else
         {
             esValido=true;
         }

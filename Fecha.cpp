@@ -62,12 +62,16 @@ void Fecha::cargar()
         cout<<"DIA: ";
         cin>>_dia;
         validarIngresos(_dia);
+        validarQueNoSeaNegativa(_dia);
+
         cout<<"MES: ";
         cin>>_mes;
         validarIngresos(_mes);
+        validarQueNoSeaNegativa(_mes);
         cout<<"ANIO: ";
         cin>>_anio;
     validarIngresos(_anio);
+    validarQueNoSeaNegativa(_anio);
     }
     while(_dia<=0||_mes<=0||_anio<=0);
 

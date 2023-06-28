@@ -1,6 +1,7 @@
 #include "Programa.h"
 #include"marco_menu.h"
 #include "rlutil.h"
+#include "funciones.h"
 
 void Programa::ejecutar()
 {
@@ -23,6 +24,9 @@ void Programa::ejecutar()
 
             cout<<"OPCION: ";
             cin>>opcion;
+     validarDosRangos(opcion,0,4);
+
+
             system("cls");
         }
         while(opcion<0||opcion>4);

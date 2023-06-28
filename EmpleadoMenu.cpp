@@ -26,7 +26,7 @@ void EmpleadoMenu::mostrar()
 
         cout<<"OPCION: ";
         cin>>opcion;
-        validarIngresos(opcion);
+        validarDosRangos(opcion,0,7);
 
         system("cls");
 

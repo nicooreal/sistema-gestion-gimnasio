@@ -1,4 +1,5 @@
 #include "ConfiguracionesMenu.h"
+#include "funciones.h"
 
 void ConfiguracionesMenu::mostrar()
 {
@@ -15,7 +16,10 @@ void ConfiguracionesMenu::mostrar()
         cout<<"2 - RESTAURAR COPIA DE SEGURIDAD"<<endl;
         cout<<"0 - SALIR"<<endl;
         cout<<"---------------------------------------"<<endl;
-        cout<<"OPCION: "; cin>>opcion;
+        cout<<"OPCION: ";
+        cin>>opcion;
+        validarDosRangos(opcion,0,2);
+
         system("cls");
 
         switch(opcion)

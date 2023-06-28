@@ -1,4 +1,5 @@
 #include "CopiaDeSeguridadTareas.h"
+#include "funciones.h"
 
 void CopiaDeSeguridadTareas::hacerCopiaDeClientes()
 {
@@ -129,7 +130,9 @@ void CopiaDeSeguridadTareas::ElegirTipoBackup()
             cout<<"3 - BACKUP A TODOS LOS ARCHIVOS"<<endl;
             cout<<"0 - SALIR"<<endl;
             cout<<"-----------------------------------"<<endl;
-            cout<<"OPCION: ";cin>>opcion;
+            cout<<"OPCION: ";
+            cin>>opcion;
+            validar(opcion);
             system("cls");
 
         }
@@ -170,7 +173,9 @@ void CopiaDeSeguridadTareas::ElegirRestaurarTipoBackup()
             cout<<"3 - RESTAURAR A TODOS LOS ARCHIVOS"<<endl;
             cout<<"0 - SALIR"<<endl;
             cout<<"-----------------------------------"<<endl;
-            cout<<"OPCION: ";cin>>opcion;
+            cout<<"OPCION: ";
+            cin>>opcion;
+            validar(opcion);
             system("cls");
 
         }

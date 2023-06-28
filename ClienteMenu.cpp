@@ -25,9 +25,8 @@ void ClienteMenu::mostrar()
         cout<<"0 - SALIR"<<endl;
         cout<<"----------------------------------"<<endl;
         cout<<"OPCION: ";
-        rlutil::locate(10,22);
-        cout<<"OPCION: ";
         cin>>opcion;
+        validarDosRangos(opcion,0,7);
         system("cls");
 
         switch(opcion)

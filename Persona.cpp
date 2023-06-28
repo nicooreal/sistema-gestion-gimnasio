@@ -51,6 +51,7 @@ void Persona::cargarPersona()
 
     cout<<"DNI: ";
     cin>>_dni;
+    validarIngresos(_dni);
     validarQueNoSeaNegativa(_dni);
 
     cout<<"Fecha nacimiento: "<<endl;

@@ -83,7 +83,7 @@ void Empleado::mostrarEmpleadosDadosDeBaja()
 {
     if(!_estado)
     {
-        cout<<"\tESTE EMPLEADO ESTA DADO DE BAJA"<<endl;
+       // cout<<"\tESTE EMPLEADO ESTA DADO DE BAJA"<<endl;
         char especializaciones[3][15]= {"PROFESOR","ADMINISTRATIVO","LIMPIEZA"};
         cout<<"ID DE EMPLEADO #"<<_id<<endl;
         mostrarPersona();

@@ -3,6 +3,8 @@
 #include "ClienteArchivo.h"
 #include "GimnasioMenu.h"
 #include "PagoTareas.h"
+#include "funciones.h"
+
 void ClienteTareas::cargar()
 {
 
@@ -75,7 +77,7 @@ void ClienteTareas::consultarPorDni()
     cin >> documento;
 
 validarIngresos(documento);
-
+validarQueNoSeaNegativa(documento);
 
 
 
@@ -136,7 +138,7 @@ void ClienteTareas::darBajaCliente()
         cout <<"1 - SI o 0 - NO" << endl;
 
         cin >> op;
-        validarIngresos(op);
+        validarDosRangos(op,0,1);
 
         if (op == 1)
         {
@@ -205,7 +207,7 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
             cout<<"0 - SALIR"<<endl;
             cout<<"OPCION: ";
             cin>>opcion;
-           validarIngresos(opcion);
+           validarDosRangos(opcion,0,10);
 
 
 
@@ -338,7 +340,7 @@ void ClienteTareas::cambiarActividades(Cliente &clienteModificado)
 
     cout <<"INGRESE 0 PARA VOLVER" << endl;
     cin >> op;
-validarIngresos(op);
+validarDosRangos(op,0,6);
 
     if ( clienteModificado.getPesas() == true && op== 1 )
     {
@@ -382,6 +384,8 @@ validarIngresos(op);
         cout <<"OPCION 2 - 4 Dias - $1200" << endl;
         cout <<"OPCION 3 - 5 PASE LIBRE $1400" << endl;
         cin >> opMensual;
+        validarDosRangos(opMensual,1,3);
+
         clienteModificado.establecerPlanMensual(opMensual);
 
     }
@@ -425,7 +429,7 @@ void ClienteTareas::cambiarMontoDeAlgunAbono( Cliente &clienteModificado)
 
     cout <<"INGRESE 0 PARA VOLVER" << endl;
     cin >> op;
-validarIngresos(op);
+validarDosRangos(op,1,3);
 
     if ( clienteModificado.getPesas() == true && op== 1 )
     {
@@ -443,6 +447,7 @@ validarIngresos(op);
 
         cout <<"INGRESE NUEVO MONTO"<< endl;
         cin>>nuevoMonto;
+        //
         validarIngresos(nuevoMonto);
 
         box = clienteModificado.getBoxeo();
@@ -456,7 +461,7 @@ validarIngresos(op);
         cout <<"INGRESE NUEVO MONTO"<< endl;
         cin>>nuevoMonto;
         validarIngresos(nuevoMonto);
-
+         //
         yog = clienteModificado.getYoga();
         yog.setCuotaMensual(nuevoMonto);
         clienteModificado.setYoga(yog);
@@ -487,7 +492,7 @@ void ClienteTareas::cambiarAlgunaFechaLimite(Cliente &clienteModificado)
 
     cout <<"INGRESE 0 PARA VOLVER" << endl;
     cin >> op;
-    validarIngresos(op);
+    validarDosRangos(op,1,3);
 
     if ( clienteModificado.getPesas() == true && op== 1 )
     {
@@ -548,6 +553,7 @@ void ClienteTareas::registrarIngresos()
 
     cin >> documento;
     validarIngresos(documento);
+    validarQueNoSeaNegativa(documento);
 
     int cantidadDeClientes = _archivoCliente.getCantidad();
 
@@ -739,10 +745,12 @@ void ClienteTareas::listados()
             cout<<"--------------------------------------------"<<endl;
             cout<<"OPCION: ";
             cin>>opcion;
+           validarDosRangos(opcion,0,8);
+
             system("cls");
 
         }
-        while(opcion<0||opcion>9);
+        while(opcion<0||opcion>8);
         switch(opcion)
         {
         case 1:
@@ -805,6 +813,8 @@ void ClienteTareas::consultas()
             cout<<"---------------------------------"<<endl;
             cout<<"OPCION: ";
             cin>>opcion;
+            validarDosRangos(opcion,0,5);
+
             system("cls");
         }
         while(opcion<0||opcion>5);
@@ -1076,6 +1086,9 @@ void ClienteTareas::reactivarCliente()
     int dni,op = 2;
     cout <<"INGRESE EL DOCUMENTO DEL CLIENTE QUE QUIERE REACTICVAR"<< endl;
     cin >> dni;
+    validarIngresos(dni);
+    validarQueNoSeaNegativa(dni);
+
     int cantidadDeClientes = _archivoCliente.getCantidad();
     for (int i = 0; i < cantidadDeClientes; i++ )
     {
@@ -1092,6 +1105,8 @@ void ClienteTareas::reactivarCliente()
             cout <<"ESTA SEGURO?"<< endl;
             cout <<"1 - SI o 0 - NO" << endl;
             cin >> op;
+            validarDosRangos(op,0,1);
+
             if (op == 1)
             {
 
@@ -1118,6 +1133,7 @@ void ClienteTareas::listarPorNombre()
     {
         cout<<"INGRESE EL ORDEN (1 - MAYOR A MENOR, 2 - MENOR A MAYOR)"<<endl;
         cin>>orden;
+        validarDosRangos(orden,1,2);
     }
     while(orden<1||orden>2);
     ClienteArchivo archivo("clientes.dat");
@@ -1197,6 +1213,9 @@ void ClienteTareas::listarClientesPorAnioIngreso()
     int anio;
     cout<<"INGRESE EL ANIO DE INGRESO PARA LISTAR LOS CLIENTES"<<endl;
     cin>>anio;
+    validarIngresos(anio);
+    validarQueNoSeaNegativa(anio);
+
     cout<<endl;
 
     for (int i = 0; i < _archivoCliente.getCantidad(); i++ )
@@ -1235,6 +1254,7 @@ void ClienteTareas::listarOrdenadosPorApellido()
     {
         cout<<"INGRESE EL ORDEN(1 - MAYOR A MENOR, 2 - MENOR A MAYOR)"<<endl;
         cin>>orden;
+        validarDosRangos(orden,1,2);
     }
     while(orden<1||orden>2);
     ClienteArchivo archivo("clientes.dat");
@@ -1440,6 +1460,9 @@ void ClienteTareas::consultaPorEdad()
     int edad;
     cout<<"INGRESE EDAD"<<endl;
     cin>>edad;
+    validarIngresos(edad);
+    validarQueNoSeaNegativa(edad);
+
     if(_archivoCliente.buscarPorEdad(edad)>0)
     {
         cout<<"EDAD ENCONTRADA!"<<endl<<endl;
@@ -1460,6 +1483,9 @@ void ClienteTareas::consultarPorNumeroSocio()
     int NumSocio;
     cout <<"INGRESE EL NUMERO DE SOCIO:" << endl;
     cin >> NumSocio;
+    validarIngresos(NumSocio);
+    validarQueNoSeaNegativa(NumSocio);
+
     if (_archivoCliente.buscarPorNumeroDeSocio(NumSocio) == NumSocio )
     {
 

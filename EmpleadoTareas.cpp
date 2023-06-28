@@ -22,7 +22,7 @@ void EmpleadoTareas::listados()
             cout<<"--------------------------------------------"<<endl;
             cout<<"OPCION: ";
             cin>>opcion;
-            validarIngresos(opcion);
+            validarDosRangos(opcion,0,7);
 
             system("cls");
 
@@ -85,6 +85,7 @@ void EmpleadoTareas::listarEmpleadosPorAnio()
     cout<<"Ingrese el anio de ingreso para listar empleados"<<endl;
     cin>>anio;
     validarIngresos(anio);
+    validarQueNoSeaNegativa(anio);
 
     cout<<endl;
     _archivo.buscarPorAnio(anio);
@@ -98,7 +99,7 @@ void EmpleadoTareas::listarOrdenadosPorNombre()
     {
         cout<<"Ingrese el orden(1 - Ordenados de mayor a menor, 2 - Ordenados de menor a mayor)"<<endl;
         cin>>orden;
-     validarIngresos(orden);
+       validarDosRangos(orden,1,2);
     }
     while(orden<1||orden>2);
     EmpleadoArchivo archivo("empleados.dat");
@@ -178,7 +179,7 @@ void EmpleadoTareas::listarOrdenadosPorApellido()
     {
         cout<<"Ingrese el orden(1 - Ordenados de mayor a menor, 2 - Ordenados de menor a mayor)"<<endl;
         cin>>orden;
-    validarIngresos(orden);
+      validarDosRangos(orden,1,2);
     }
     while(orden<1||orden>2);
     EmpleadoArchivo archivo("empleados.dat");
@@ -260,7 +261,7 @@ void EmpleadoTareas::listarPorEdad()
     {
         cout<<"Ingrese el orden (1 - Ordenados de mayor a menor, 2 - Ordenados de menor a mayor)"<<endl;
         cin>>orden;
-     validarIngresos(orden);
+       validarDosRangos(orden,1,2);
 
     }
     while(orden<1||orden>2);
@@ -341,7 +342,7 @@ void EmpleadoTareas::listarPorSueldo()
     {
         cout<<"Ingrese el orden (1 - Ordenados de sueldo maximo a minimo, 2 - Ordenados de sueldo minimo a maximo)"<<endl;
         cin>>orden;
-    validarIngresos(orden);
+    validarDosRangos(orden,1,2);
 
     }
     while(orden<1||orden>2);
@@ -434,6 +435,7 @@ void EmpleadoTareas::darDeBajaEmpleado()
     cout<<"Ingrese el ID del empleado que quiere dar de baja"<<endl;
     cin>>id;
     validarIngresos(id);
+    validarQueNoSeaNegativa(id);
 
     archivo.bajaLogica(id);
 }
@@ -446,12 +448,12 @@ void EmpleadoTareas::reactivarEmpleado()
     {
         cout <<"el empleado que usted quiere reactivar es: " << endl;
         Empleado empleado= _archivo.leer(numeroRegistro);
-        empleado.mostrarEmpleado();
+        empleado.mostrarEmpleadosDadosDeBaja();
         system("pause");
         cout <<"¿desea reactivar?" <<endl;
-        cout <<"1 - SI o 2 - NO" << endl;
+        cout <<"1 - SI o 0 - NO" << endl;
         cin >> op;
-       validarIngresos(op);
+       validarDosRangos(op,0,1);
 
         if (op == 1)
         {
@@ -464,7 +466,7 @@ void EmpleadoTareas::reactivarEmpleado()
                 cout << "Registro activado exitosamente." << endl;
 
             }
-            else
+            else if (op == 0 )
             {
                 cout << "No se pudo modificar el registro." << endl;
             }
@@ -499,7 +501,7 @@ void EmpleadoTareas::consultas()
             cout<<"---------------------------------"<<endl;
             cout<<"OPCION: ";
             cin>>opcion;
-            validarIngresos(opcion);
+            validarDosRangos(opcion,0,5);
 
             system("cls");
         }
@@ -537,6 +539,7 @@ void EmpleadoTareas::consultaPorId()
     cout<<"Ingrese el id"<<endl;
     cin>>id;
     validarIngresos(id);
+    validarQueNoSeaNegativa(id);
 
     if(_archivo.buscarPorID(id)>0)
     {
@@ -559,6 +562,7 @@ void EmpleadoTareas::consultaPorDni()
     cout<<"Ingrese el DNI"<<endl;
     cin>>dni;
     validarIngresos(dni);
+    validarQueNoSeaNegativa(dni);
 
     if(_archivo.buscarPorDni(dni)>0)
     {
@@ -620,7 +624,9 @@ void EmpleadoTareas::consultaPorEdad()
     int edad;
     cout<<"INGRESE LA EDAD"<<endl;
     cin>>edad;
+    validarQueNoSeaNegativa(edad);
     validarIngresos(edad);
+
 
     if(_archivo.buscarPorEdad(edad)>0)
     {
@@ -661,6 +667,7 @@ void EmpleadoTareas::cargar()
     cout<<"DNI: ";
     cin>>dni;
     validarIngresos(dni);
+    validarQueNoSeaNegativa(dni);
 
     cout<<"FECHA NACIMIENTO: "<<endl;
     fechaNacimiento.cargar();
@@ -689,7 +696,13 @@ void EmpleadoTareas::cargar()
     {
         cout <<"ESPECIALIZACION (1 - PROFESOR, 2 - ADMINISTRATIVO, 3 - LIMPIEZA): "<<endl;
         cin >> especializacion;
+         validarDosRangos(especializacion,1,3);
+
+
     }
+
+
+
     while(especializacion<1||especializacion>3);
 
     estado=true;
@@ -740,7 +753,7 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
             cout<<"0 - SALIR"<<endl;
             cout<<"OPCION: ";
             cin>>opcion;
-            validarIngresos(opcion);
+            validarDosRangos(opcion,0,9);
 
              system("cls");
         }
@@ -771,6 +784,7 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
                 cout<<"INGRESE EL NUEVO DNI "<<endl;
                 cin>>dni;
                 validarIngresos(dni);
+                validarQueNoSeaNegativa(dni);
 
                 empleadoModificado.setDni(dni);
             }
@@ -808,6 +822,7 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
         case 7:
             cout<<"INGRESE EL NUEVO SUELDO"<<endl;
             cin>>sueldo;
+           //
             cout <<"SUELDO CAMBIADO CON EXITO"<< endl;
             empleadoModificado.setSueldo(sueldo);
             break;
@@ -844,7 +859,10 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
             {
                 cout<<"INGRESE EL DNI "<<endl;
                 cin>>dni;
-                validarIngresos(dni);
+                 validarIngresos(dni);
+                 validarQueNoSeaNegativa(dni);
+
+
 
                 empleadoModificado.setDni(dni);
             }
@@ -869,6 +887,7 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
             {
                 cout <<"ESPECIALIZACION (1 - PROFESOR, 2 - ADMINISTRATIVO, 3 - LIMPIEZA): "<<endl;
                 cin >> especializacion;
+                validar(especializacion);
             }
             while(especializacion<1||especializacion>3);
 
