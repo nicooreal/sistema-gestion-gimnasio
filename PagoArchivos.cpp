@@ -68,6 +68,31 @@ bool PagoArchivos::editar(Pago pago, int identificador) {
     fclose(p);
     return ok;
 }
+void PagoArchivos::leerVector(Pago *vec,int cantidadRegistros)
+{
+    FILE *p = fopen(_nombreArchivo, "rb");
+    if (p == NULL)
+    {
+        return;
+    }
+
+    fread(&vec[0], sizeof(Pago), cantidadRegistros, p);
+    fclose(p);
+
+}
+bool PagoArchivos::guardarVector(Pago *vec,int cantidadRegistros)
+{
+
+    FILE *p = fopen(_nombreArchivo, "ab");
+    if (p == NULL)
+    {
+        return false;
+    }
+
+    int cantidadRegistrosEscritos=fwrite(&vec[0], sizeof(Pago), cantidadRegistros, p);
+    fclose(p);
+    return cantidadRegistrosEscritos==cantidadRegistros;
+}
 
 void PagoArchivos::vaciar()
 {

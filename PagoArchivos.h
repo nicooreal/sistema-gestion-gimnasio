@@ -18,6 +18,8 @@ public:
     Pago leer(int nroRegistro);
     int getCantidad();
     bool editar(Pago pago, int identificador);
+    void leerVector(Pago *vec,int cantidadRegistros);
+    bool guardarVector(Pago*vec,int cantidadRegistros);
     void vaciar();
 };
 

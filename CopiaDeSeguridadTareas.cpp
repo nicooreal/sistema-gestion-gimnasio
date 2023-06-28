@@ -48,6 +48,29 @@ void CopiaDeSeguridadTareas::hacerCopiaDeEmpleados()
 
     delete[]vEmpleados;
 }
+void CopiaDeSeguridadTareas::hacerCopiaDePagos()
+{
+    PagoArchivos archivo;
+    int cantidadPagos=archivo.getCantidad();
+    Pago *vPagos=new Pago[cantidadPagos];
+    if(vPagos==nullptr)
+    {
+        cout<<"FALLA AL REALIZAR BACKUP"<<endl;
+        return;
+    }
+    archivo.leerVector(vPagos,cantidadPagos);
+    _archivoBackupPagos.vaciar();
+    if(_archivoBackupPagos.guardarVector(vPagos,cantidadPagos))
+    {
+        cout<<"BACKUP REALIZADO CORRECTAMENTE"<<endl;
+    }
+    else
+    {
+        cout<<"FALLA AL REALIZAR BACKUP"<<endl;
+    }
+
+    delete[]vPagos;
+}
 
 void CopiaDeSeguridadTareas::restaurarCopiaDeClientes()
 {
@@ -103,16 +126,46 @@ void CopiaDeSeguridadTareas::restaurarCopiaDeEmpleados()
     delete [] vec;
 }
 
+void CopiaDeSeguridadTareas::restaurarCopiaPagos()
+{
+    PagoArchivos archivo;
+    int cantidadRegistros=_archivoBackupPagos.getCantidad();
+    Pago *vec=new Pago[cantidadRegistros];
+
+    if(vec==nullptr)
+    {
+        cout<<"Falla al restaurar backup "<<endl;
+        return;
+    }
+
+    _archivoBackupPagos.leerVector(vec,cantidadRegistros);
+    archivo.vaciar();
+    if(archivo.guardarVector(vec,cantidadRegistros))
+    {
+        cout<<"Backup restaurado correctamente"<<endl;
+    }
+    else
+    {
+        cout<<"Falla al restaurar backup"<<endl;
+    }
+
+
+    delete [] vec;
+}
+
+
 void CopiaDeSeguridadTareas::hacerCopiaDeTodo()
 {
     hacerCopiaDeClientes();
     hacerCopiaDeEmpleados();
+    hacerCopiaDePagos();
 }
 
 void CopiaDeSeguridadTareas::restaurarCopiaDeTodo()
 {
     restaurarCopiaDeClientes();
     restaurarCopiaDeEmpleados();
+    restaurarCopiaPagos();
 }
 
 void CopiaDeSeguridadTareas::ElegirTipoBackup()
@@ -127,7 +180,8 @@ void CopiaDeSeguridadTareas::ElegirTipoBackup()
             cout<<"-----------------------------------"<<endl;
             cout<<"1 - BACKUP CLIENTES"<<endl;
             cout<<"2 - BACKUP EMPLEADOS"<<endl;
-            cout<<"3 - BACKUP A TODOS LOS ARCHIVOS"<<endl;
+            cout<<"3 - BACKUP PAGOS"<<endl;
+            cout<<"4 - BACKUP A TODOS LOS ARCHIVOS"<<endl;
             cout<<"0 - SALIR"<<endl;
             cout<<"-----------------------------------"<<endl;
             cout<<"OPCION: ";
@@ -146,6 +200,9 @@ void CopiaDeSeguridadTareas::ElegirTipoBackup()
             hacerCopiaDeEmpleados();
             break;
         case 3:
+            hacerCopiaDePagos();
+            break;
+        case 4:
             hacerCopiaDeTodo();
             break;
         }
@@ -170,7 +227,8 @@ void CopiaDeSeguridadTareas::ElegirRestaurarTipoBackup()
             cout<<"-----------------------------------"<<endl;
             cout<<"1 - RESTAURAR CLIENTES"<<endl;
             cout<<"2 - RESTAURAR EMPLEADOS"<<endl;
-            cout<<"3 - RESTAURAR A TODOS LOS ARCHIVOS"<<endl;
+            cout<<"3 - RESTAURAR PAGOS"<<endl;
+            cout<<"4 - RESTAURAR A TODOS LOS ARCHIVOS"<<endl;
             cout<<"0 - SALIR"<<endl;
             cout<<"-----------------------------------"<<endl;
             cout<<"OPCION: ";
@@ -189,6 +247,9 @@ void CopiaDeSeguridadTareas::ElegirRestaurarTipoBackup()
             restaurarCopiaDeEmpleados();
             break;
         case 3:
+            restaurarCopiaPagos();
+            break;
+        case 4:
             restaurarCopiaDeTodo();
             break;
         }
