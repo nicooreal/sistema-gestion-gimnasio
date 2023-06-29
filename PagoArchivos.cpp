@@ -59,7 +59,7 @@ bool PagoArchivos::editar(Pago pago, int identificador) {
 
     FILE* p = fopen(_nombreArchivo,"rb+");
     if (p== NULL) {
-        cout << "No se pudo abrir el archivo." <<endl;
+        cout << "NO SE PUDO ABRIR EL ARCHIVO." <<endl;
         return false;
     }
 

@@ -395,7 +395,7 @@
 	<string.h>
 	"Empleado.h"
 
-1688008243 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
+1688009035 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
 	"EmpleadoTareas.h"
 	"funciones.h"
 
@@ -409,7 +409,7 @@
 	<iostream>
 	"EmpleadoArchivo.h"
 
-1687989983 source:c:\users\alexi\github\sistema-gestion-gimnasio\gimnasiomenu.cpp
+1688009083 source:c:\users\alexi\github\sistema-gestion-gimnasio\gimnasiomenu.cpp
 	"GimnasioMenu.h"
 	"marco_menu.h"
 	"rlutil.h"

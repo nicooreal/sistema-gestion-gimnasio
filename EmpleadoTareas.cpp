@@ -718,29 +718,27 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
 
     do
     {
-        do
-        {
-            system("cls");
-            cout<<"\tMODIFICAR EMPLEADO"<<endl;
-            cout<<"-------------------------------------"<<endl;
-            cout<<"1 - MODIFICAR NOMBRE"<<endl;
-            cout<<"2 - MODIFICAR APELLIDO"<<endl;
-            cout<<"3 - MODIFICAR DNI"<<endl;
-            cout<<"4 - MODIFICAR GENERO"<<endl;
-            cout<<"5 - MODIFICAR FECHA NACIMIENTO"<<endl;
-            cout<<"6 - MODIFICAR FECHA DE ALTA"<<endl;
-            cout<<"7 - MODIFICAR SUELDO"<<endl;
-            cout<<"8 - MODIFICAR ESPECIALIZACION"<< endl;
-            cout<<"9 - MODIFICAR TODO EL REGISTRO"<< endl;
-            cout<<"-------------------------------------"<<endl;
-            cout<<"0 - SALIR"<<endl;
-            cout<<"OPCION: ";
-            cin>>opcion;
-            validarDosRangos(opcion,0,9);
 
-            system("cls");
-        }
-        while(opcion<0||opcion>9);
+        system("cls");
+        cout<<"\tMODIFICAR EMPLEADO"<<endl;
+        cout<<"-------------------------------------"<<endl;
+        cout<<"1 - MODIFICAR NOMBRE"<<endl;
+        cout<<"2 - MODIFICAR APELLIDO"<<endl;
+        cout<<"3 - MODIFICAR DNI"<<endl;
+        cout<<"4 - MODIFICAR GENERO"<<endl;
+        cout<<"5 - MODIFICAR FECHA NACIMIENTO"<<endl;
+        cout<<"6 - MODIFICAR FECHA DE ALTA"<<endl;
+        cout<<"7 - MODIFICAR SUELDO"<<endl;
+        cout<<"8 - MODIFICAR ESPECIALIZACION"<< endl;
+        cout<<"9 - MODIFICAR TODO EL REGISTRO"<< endl;
+        cout<<"-------------------------------------"<<endl;
+        cout<<"0 - SALIR"<<endl;
+        cout<<"OPCION: ";
+        cin>>opcion;
+        validarDosRangos(opcion,0,9);
+
+        system("cls");
+
 
 
 
@@ -778,13 +776,11 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
 
             break;
         case 4:
-            do
-            {
-                cout<<"INGRESE EL NUEVO GENERO(M - MASCULINO, F - FEMENINO) "<<endl;
-                cin>>genero;
-                toupper(genero);
-            }
-            while(genero!='F'&&genero!='f'&&genero!='m'&&genero!='M');
+
+            cout<<"INGRESE EL NUEVO GENERO(M - MASCULINO, F - FEMENINO) "<<endl;
+            cin>>genero;
+            validarGenero(genero);
+
 
             empleadoModificado.setSexo(genero);
             cout <<"SEXO CAMBIADO CON EXITO"<< endl;
@@ -805,6 +801,7 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
         case 7:
             cout<<"INGRESE EL NUEVO SUELDO"<<endl;
             cin>>sueldo;
+            validarQueNoSeaNegativa(sueldo);
             //
             cout <<"SUELDO CAMBIADO CON EXITO"<< endl;
             empleadoModificado.setSueldo(sueldo);
@@ -814,6 +811,7 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
             cout<<"INGRESE LA NUEVA ESPECIALIZACION"<< endl;
             cout <<"ESPECIALIZACION (1 - PROFESOR, 2 - ADMINISTRATIVO, 3 - LIMPIEZA): "<<endl;
             cin >> especializacion;
+            validarDosRangos(especializacion,1,3);
             empleadoModificado.setEspecializacion(especializacion);
             cout <<"ESPECIALIZACION CAMBIADA CON EXITO"<< endl;
             break;
@@ -853,26 +851,23 @@ void EmpleadoTareas::elegirQueModificar(Empleado &empleadoModificado)
             cout<<"FECHA NACIMIENTO: "<<endl;
             fechaNacimiento.cargar();
             edad=calcularEdad(fechaNacimiento);
-            do
-            {
-                cout<<"GENERO (M - MASCULINO, F - FEMENINO): ";
-                cin>>genero;
-                toupper(genero);
-            }
-            while(genero!='F'&&genero!='f'&&genero!='m'&&genero!='M');
+
+            cout<<"GENERO (M - MASCULINO, F - FEMENINO): ";
+            cin>>genero;
+            validarGenero(genero);
+
 
 
             cout <<"SUELDO: "<<endl;
             cin >> sueldo;
+            validarQueNoSeaNegativa(sueldo);
             cout <<"FECHA DE INGRESO: "<<endl;
             fechaIngreso.cargar();
-            do
-            {
-                cout <<"ESPECIALIZACION (1 - PROFESOR, 2 - ADMINISTRATIVO, 3 - LIMPIEZA): "<<endl;
-                cin >> especializacion;
-                validar(especializacion);
-            }
-            while(especializacion<1||especializacion>3);
+
+            cout <<"ESPECIALIZACION (1 - PROFESOR, 2 - ADMINISTRATIVO, 3 - LIMPIEZA): "<<endl;
+            cin >> especializacion;
+            validarDosRangos(especializacion,1,3);
+
 
 
 
@@ -922,14 +917,11 @@ void EmpleadoTareas::modificar()
 
 
         bool exito = _archivo.editar(empleadoModificado, numeroRegistro);
-        if (exito)
-        {
-            cout << "REGISTRO MODIFICADO EXITOSAMENTE." << endl;
-        }
-        else
+        if (exito==false)
         {
             cout << "NO SE PUDO MODIFICAR EL REGISTRO." << endl;
         }
+
     }
 }
 

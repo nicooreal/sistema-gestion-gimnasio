@@ -15,7 +15,7 @@ void PagoTareas::cargarPago(bool primerPago, int dni)
 
     if (primerPago == false)
     {
-        cout <<"ingrese el dni del cliente a pagar "<< endl;
+        cout <<"INGRESE EL DNI DEL CLIENTE A PAGAR"<< endl;
         cin >> dni;
         validarIngresos(dni);
         validarQueNoSeaNegativa(dni);
