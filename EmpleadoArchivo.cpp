@@ -14,9 +14,11 @@ EmpleadoArchivo::EmpleadoArchivo(const char *nombreArchivo)
 }
 
 
-bool EmpleadoArchivo::guardar(Empleado empleado) {
+bool EmpleadoArchivo::guardar(Empleado empleado)
+{
     FILE* p = fopen(_nombreArchivo, "ab");
-    if (p == NULL) {
+    if (p == NULL)
+    {
         return false;
     }
 
@@ -26,10 +28,12 @@ bool EmpleadoArchivo::guardar(Empleado empleado) {
     {
         ok = fwrite(&empleado, sizeof(Empleado), 1, p);
         cout<<"REGISTRO GUARDADO EXITOSAMENTE"<<endl;
-    }else if(existeEmpleado(empleado)==-1)
+    }
+    else if(existeEmpleado(empleado)==-1)
     {
         cout<<"NO SE PUDO ABRIR EL ARCHIVO"<<endl;
-    }else
+    }
+    else
     {
         cout<<"YA EXISTE UN EMPLEADO CON ESE DNI"<<endl;
     }
@@ -46,7 +50,7 @@ int EmpleadoArchivo::existeEmpleado(Empleado empleado)
     }
 
 
-    for(int i=0;i<cantidadEmpleados();i++)
+    for(int i=0; i<cantidadEmpleados(); i++)
     {
         Empleado aux=leer(i);
         if(empleado.getDni()==aux.getDni())
@@ -59,11 +63,13 @@ int EmpleadoArchivo::existeEmpleado(Empleado empleado)
     return 0;
 }
 
-Empleado EmpleadoArchivo::leer(int nroRegistro) {
+Empleado EmpleadoArchivo::leer(int nroRegistro)
+{
     Empleado empleado;
     FILE* p;
     p = fopen(_nombreArchivo, "rb");
-    if (p == NULL) {
+    if (p == NULL)
+    {
         return empleado;
     }
     fseek(p, nroRegistro * sizeof(Empleado), SEEK_SET);
@@ -185,7 +191,7 @@ int EmpleadoArchivo::buscarPorEdad(int edad)
         return -1;
     }
 
-    for(int i=0;i<cantidadEmpleados();i++)
+    for(int i=0; i<cantidadEmpleados(); i++)
     {
         Empleado em=leer(i);
 
@@ -208,7 +214,7 @@ int EmpleadoArchivo::buscarPorNombre(char *nombre)
         return -1;
     }
 
-    for(int i=0;i<cantidadEmpleados();i++)
+    for(int i=0; i<cantidadEmpleados(); i++)
     {
         Empleado em=leer(i);
         if(strcmp(nombre,em.getNombre())==0&&em.getEstado())
@@ -229,7 +235,7 @@ int EmpleadoArchivo::buscarPorApellido(char *apellido)
     {
         return -1;
     }
-    for(int i=0;i<cantidadEmpleados();i++)
+    for(int i=0; i<cantidadEmpleados(); i++)
     {
         Empleado em=leer(i);
         if(strcmp(apellido,em.getApellido())==0&&em.getEstado())
@@ -251,7 +257,7 @@ int EmpleadoArchivo::buscarRegistroPorId(int id)
         return -1;
     }
     int pos=0;
-    for(int i=0;i<cantidadEmpleados();i++)
+    for(int i=0; i<cantidadEmpleados(); i++)
     {
         Empleado em=leer(i);
         if(id==em.getId())
@@ -268,7 +274,7 @@ int EmpleadoArchivo::buscarRegistroPorId(int id)
 
 void EmpleadoArchivo::bajaLogica(int id)
 {
-int opcion = 0;
+    int opcion = 0;
     FILE *p=fopen(_nombreArchivo,"rb+");
     if(p==NULL)
     {
@@ -278,28 +284,31 @@ int opcion = 0;
     int nroRegistro=buscarRegistroPorId(id);
     if(nroRegistro>=0)
     {
-        cout<<"Va a eliminar el registro de empleado, esta seguro? (1- SI o 0 - NO)"<<endl;
+        cout<<"VA A ELIMINAR EL REGISTRO DE EMPLEADO, ESTA SEGURO? (1- SI o 0 - NO)"<<endl;
         Empleado em=leer(nroRegistro);
         em.mostrarEmpleado();
         cout<<endl;
         cin >> opcion;
-        validarDosRangos(opcion,0,1);
-        if ( opcion = 1)  {
+        validarQueNoSeaNegativa(opcion);
+        if ( opcion == 1)
+        {
 
-        em.setEstado(false);
-        fseek(p,sizeof(Empleado)*nroRegistro,0);
-        fwrite(&em,sizeof(Empleado),1,p);
-        fclose(p);
+            em.setEstado(false);
+            fseek(p,sizeof(Empleado)*nroRegistro,0);
+            fwrite(&em,sizeof(Empleado),1,p);
+            fclose(p);
         }
 
-        else if (opcion = 0) {  }
 
-    }else if(nroRegistro==-2)
+
+    }
+    else if(nroRegistro==-2)
     {
-        cout<<"No existe ese ID"<<endl;
-    }else
+        cout<<"NO EXISTE ESE ID"<<endl;
+    }
+    else
     {
-        cout<<"No se pudo abrir el archivo"<<endl;
+        cout<<"NO SE PUDO ABRIR EL ARCHIVO"<<endl;
     }
 
 }
@@ -327,7 +336,7 @@ int EmpleadoArchivo::buscarPorDni(int dni)
         return -1;
     }
 
-    for(int i=0;i<cantidadEmpleados();i++)
+    for(int i=0; i<cantidadEmpleados(); i++)
     {
         Empleado em=leer(i);
         if(dni==em.getDni()&&em.getEstado())
@@ -345,16 +354,16 @@ int EmpleadoArchivo::buscarPorDni(int dni)
 int EmpleadoArchivo::buscarRegistro()
 {
     int numeroRegistro,dni;
-    cout <<"Ingrese DNI del empleado que desea editar"<<endl;
+    cout <<"INGRESE EL DNI DEL EMPLEADO QUE DESEA EDITAR"<<endl;
     cout <<"DNI: ";
     cin >> dni;
-     validarIngresos(dni);
-     validarQueNoSeaNegativa(dni);
+    validarIngresos(dni);
+    validarQueNoSeaNegativa(dni);
 
     FILE* p = fopen(_nombreArchivo, "rb");
     if (p == NULL)
     {
-        cout << "No se pudo abrir el archivo." <<endl;
+        cout << "NO SE PUDO ABRIR EL ARCHIVO" <<endl;
         return -1;
     }
 
@@ -367,19 +376,21 @@ int EmpleadoArchivo::buscarRegistro()
             fclose(p);
             return numeroRegistro;
         }
-            numeroRegistro++;
+        numeroRegistro++;
 
     }
 
     fclose(p);
-    cout <<"No existe el numero de DNI" <<endl;
+    cout <<"NO EXISTE EL NUMERO DE DNI" <<endl;
     return -2;
 }
-bool EmpleadoArchivo::editar(Empleado empleado, int nroRegistro) {
+bool EmpleadoArchivo::editar(Empleado empleado, int nroRegistro)
+{
 
     FILE* p = fopen(_nombreArchivo,"rb+");
-    if (p== NULL) {
-        cout << "No se pudo abrir el archivo." <<endl;
+    if (p== NULL)
+    {
+        cout << "NO SE PUDO ABRIR EL ARCHIVO." <<endl;
         return 0;
     }
 

@@ -54,7 +54,7 @@ void EmpleadoMenu::mostrar()
             _empleadoTareas.reactivarEmpleado();
             break;
 
-                case 7:
+        case 7:
             _empleadoTareas.borrarRegistros();
             break;
         }
@@ -63,5 +63,6 @@ void EmpleadoMenu::mostrar()
             system("pause");
         }
 
-    }while(opcion!=0);
+    }
+    while(opcion!=0);
 }

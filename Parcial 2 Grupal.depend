@@ -346,7 +346,7 @@
 1684285040 c:\users\alexi\github\sistema-gestion-gimnasio\include\empleadoarchivo.h
 	"Empleado.h"
 
-1687989983 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadomenu.cpp
+1688007369 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadomenu.cpp
 	"EmpleadoMenu.h"
 	"marco_menu.h"
 	"rlutil.h"
@@ -386,7 +386,7 @@
 	"marco_menu.h"
 	"rlutil.h"
 
-1687989982 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadoarchivo.cpp
+1688007369 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadoarchivo.cpp
 	"EmpleadoArchivo.h"
 	"funciones.h"
 
@@ -395,7 +395,7 @@
 	<string.h>
 	"Empleado.h"
 
-1687989983 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
+1688008243 source:c:\users\alexi\github\sistema-gestion-gimnasio\empleadotareas.cpp
 	"EmpleadoTareas.h"
 	"funciones.h"
 
@@ -827,7 +827,7 @@
 	"PagoTareas.h"
 	"funciones.h"
 
-1687989982 source:c:\users\alexi\github\sistema-gestion-gimnasio\copiadeseguridadtareas.cpp
+1688006954 source:c:\users\alexi\github\sistema-gestion-gimnasio\copiadeseguridadtareas.cpp
 	"CopiaDeSeguridadTareas.h"
 	"funciones.h"
 

@@ -80,7 +80,7 @@ void CopiaDeSeguridadTareas::restaurarCopiaDeClientes()
 
     if(vec==nullptr)
     {
-        cout<<"Falla al restaurar backup "<<endl;
+        cout<<"FALLA AL RESTAURAR BACKUP"<<endl;
         return;
     }
 
@@ -88,11 +88,11 @@ void CopiaDeSeguridadTareas::restaurarCopiaDeClientes()
     archivo.vaciar();
     if(archivo.guardarVector(vec,cantidadRegistros))
     {
-        cout<<"Backup restaurado correctamente"<<endl;
+        cout<<"BACKUP RESTAURADO CORRECTAMENTE"<<endl;
     }
     else
     {
-        cout<<"Falla al restaurar backup"<<endl;
+        cout<<"FALLA AL RESTAURAR BACKUP"<<endl;
     }
 
 
@@ -107,7 +107,7 @@ void CopiaDeSeguridadTareas::restaurarCopiaDeEmpleados()
 
     if(vec==nullptr)
     {
-        cout<<"Falla al restaurar backup"<<endl;
+        cout<<"FALLA AL RESTAURAR BACKUP"<<endl;
         return;
     }
 
@@ -115,11 +115,11 @@ void CopiaDeSeguridadTareas::restaurarCopiaDeEmpleados()
     archivo.vaciar();
     if(archivo.guardarVector(vec,cantidadRegistros))
     {
-        cout<<"Backup restaurado correctamente"<<endl;
+        cout<<"BACKUP RESTAURADO CORRECTAMENTE"<<endl;
     }
     else
     {
-        cout<<"Falla al restaurar backup"<<endl;
+        cout<<"FALLA AL RESTAURAR BACKUP"<<endl;
     }
 
 
@@ -134,7 +134,7 @@ void CopiaDeSeguridadTareas::restaurarCopiaPagos()
 
     if(vec==nullptr)
     {
-        cout<<"Falla al restaurar backup "<<endl;
+        cout<<"FALLA AL RESTAURAR BACKUP "<<endl;
         return;
     }
 
@@ -142,11 +142,11 @@ void CopiaDeSeguridadTareas::restaurarCopiaPagos()
     archivo.vaciar();
     if(archivo.guardarVector(vec,cantidadRegistros))
     {
-        cout<<"Backup restaurado correctamente"<<endl;
+        cout<<"BACKUP RESTAURADO CORRECTAMENTE"<<endl;
     }
     else
     {
-        cout<<"Falla al restaurar backup"<<endl;
+        cout<<"FALLA AL RESTAURAR BACKUP"<<endl;
     }
 
 
@@ -173,24 +173,22 @@ void CopiaDeSeguridadTareas::ElegirTipoBackup()
     int opcion;
     do
     {
-        do
-        {
-            system("cls");
-            cout<<"\tTIPO BACKUP"<<endl;
-            cout<<"-----------------------------------"<<endl;
-            cout<<"1 - BACKUP CLIENTES"<<endl;
-            cout<<"2 - BACKUP EMPLEADOS"<<endl;
-            cout<<"3 - BACKUP PAGOS"<<endl;
-            cout<<"4 - BACKUP A TODOS LOS ARCHIVOS"<<endl;
-            cout<<"0 - SALIR"<<endl;
-            cout<<"-----------------------------------"<<endl;
-            cout<<"OPCION: ";
-            cin>>opcion;
-            validarDosRangos(opcion,0,4);
-            system("cls");
 
-        }
-        while(opcion<0||opcion>4);
+        system("cls");
+        cout<<"\tTIPO BACKUP"<<endl;
+        cout<<"-----------------------------------"<<endl;
+        cout<<"1 - BACKUP CLIENTES"<<endl;
+        cout<<"2 - BACKUP EMPLEADOS"<<endl;
+        cout<<"3 - BACKUP PAGOS"<<endl;
+        cout<<"4 - BACKUP A TODOS LOS ARCHIVOS"<<endl;
+        cout<<"0 - SALIR"<<endl;
+        cout<<"-----------------------------------"<<endl;
+        cout<<"OPCION: ";
+        cin>>opcion;
+        validarDosRangos(opcion,0,4);
+        system("cls");
+
+
         switch(opcion)
         {
         case 1:
@@ -220,24 +218,22 @@ void CopiaDeSeguridadTareas::ElegirRestaurarTipoBackup()
     int opcion;
     do
     {
-        do
-        {
-            system("cls");
-            cout<<"\tTIPO RESTAURACION BACKUP"<<endl;
-            cout<<"-----------------------------------"<<endl;
-            cout<<"1 - RESTAURAR CLIENTES"<<endl;
-            cout<<"2 - RESTAURAR EMPLEADOS"<<endl;
-            cout<<"3 - RESTAURAR PAGOS"<<endl;
-            cout<<"4 - RESTAURAR A TODOS LOS ARCHIVOS"<<endl;
-            cout<<"0 - SALIR"<<endl;
-            cout<<"-----------------------------------"<<endl;
-            cout<<"OPCION: ";
-            cin>>opcion;
-            validarDosRangos(opcion,0,4) ;
-            system("cls");
 
-        }
-        while(opcion<0||opcion>4);
+        system("cls");
+        cout<<"\tTIPO RESTAURACION BACKUP"<<endl;
+        cout<<"-----------------------------------"<<endl;
+        cout<<"1 - RESTAURAR CLIENTES"<<endl;
+        cout<<"2 - RESTAURAR EMPLEADOS"<<endl;
+        cout<<"3 - RESTAURAR PAGOS"<<endl;
+        cout<<"4 - RESTAURAR A TODOS LOS ARCHIVOS"<<endl;
+        cout<<"0 - SALIR"<<endl;
+        cout<<"-----------------------------------"<<endl;
+        cout<<"OPCION: ";
+        cin>>opcion;
+        validarDosRangos(opcion,0,4) ;
+        system("cls");
+
+
         switch(opcion)
         {
         case 1:
