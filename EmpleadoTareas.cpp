@@ -270,7 +270,7 @@ void EmpleadoTareas::listarPorEdad()
         return;
     }
 
-    if(orden==1)
+    if(orden==2)
     {
         int mayor=0;
         for(int i=0; i<cantidad-1; i++)
@@ -928,6 +928,8 @@ void EmpleadoTareas::modificar()
 void EmpleadoTareas::borrarRegistros()
 {
     _archivo.vaciar();
+
+cout <<"REALIZO EL BORRADO DE REGISTRO"<< endl;
 }
 
 int EmpleadoTareas::generarID()

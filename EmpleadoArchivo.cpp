@@ -185,6 +185,7 @@ int EmpleadoArchivo::calcularEdad(Fecha fechaNacimiento)
 
 int EmpleadoArchivo::buscarPorEdad(int edad)
 {
+    int hayEdad = 0;
     FILE *p=fopen(_nombreArchivo,"rb");
     if(p==NULL)
     {
@@ -198,16 +199,18 @@ int EmpleadoArchivo::buscarPorEdad(int edad)
         if(edad==calcularEdad(em.getFechaNacimiento())&&em.getEstado())
         {
             em.mostrarEmpleado();
-            fclose(p);
-            return 1;
+            hayEdad = 1;
+            //fclose(p);
+            //return 1;
         }
     }
     fclose(p);
-    return 0;
+    return hayEdad;
 }
 
 int EmpleadoArchivo::buscarPorNombre(char *nombre)
 {
+    int hayNombre = 0;
     FILE *p=fopen(_nombreArchivo,"rb");
     if(p==NULL)
     {
@@ -220,16 +223,18 @@ int EmpleadoArchivo::buscarPorNombre(char *nombre)
         if(strcmp(nombre,em.getNombre())==0&&em.getEstado())
         {
             em.mostrarEmpleado();
-            fclose(p);
-            return 1;
+            //fclose(p);
+            //return 1;
+        hayNombre = 1;
         }
     }
     fclose(p);
-    return 0;
+    return hayNombre;
 }
 
 int EmpleadoArchivo::buscarPorApellido(char *apellido)
 {
+    int hayNombre = 0;
     FILE *p=fopen(_nombreArchivo,"rb");
     if(p==NULL)
     {
@@ -241,12 +246,13 @@ int EmpleadoArchivo::buscarPorApellido(char *apellido)
         if(strcmp(apellido,em.getApellido())==0&&em.getEstado())
         {
             em.mostrarEmpleado();
-            fclose(p);
-            return 1;
+            hayNombre = 1;
+            //fclose(p);
+            //return 1;
         }
     }
     fclose(p);
-    return 0;
+    return hayNombre;
 }
 
 int EmpleadoArchivo::buscarRegistroPorId(int id)
