@@ -57,23 +57,23 @@ void Fecha::agregarDia()
 
 void Fecha::cargar()
 {
-    do
-    {
+
+
         cout<<"DIA: ";
         cin>>_dia;
-        validarIngresos(_dia);
+        validarDosRangos(_dia,1,31);
         validarQueNoSeaNegativa(_dia);
 
         cout<<"MES: ";
         cin>>_mes;
-        validarIngresos(_mes);
+        validarDosRangos(_mes,1,12);
         validarQueNoSeaNegativa(_mes);
         cout<<"ANIO: ";
         cin>>_anio;
     validarIngresos(_anio);
     validarQueNoSeaNegativa(_anio);
-    }
-    while(_dia<=0||_mes<=0||_anio<=0);
+
+
 
 
 

@@ -61,6 +61,7 @@ void ClienteTareas::modificar()
         else
         {
             cout <<"NO SE ENCONTRO EL REGISTRO" << endl;
+        system("pause");
         }
     }
 }
@@ -130,7 +131,7 @@ void ClienteTareas::darBajaCliente()
     {
         cout <<"EL CLIENTE QUE USTED QUIERE DAR DE BAJA ES:" << endl << endl;
         clienteEnBaja.mostrarCliente();
-        system("pause");
+       // system("pause");
         cout <<"DESEA DAR LA BAJA?" <<endl;
         cout <<"1 - SI o 0 - NO" << endl;
 
@@ -250,6 +251,7 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
 
 
             clienteModificado.setSexo(genero);
+            cout<<"GENERO CAMBIADO"<< endl;
             break;
 
         case 5:
@@ -297,6 +299,7 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
 
 
 
+   system("pause");
     }
     while(opcion!=0);
 
@@ -411,7 +414,7 @@ void ClienteTareas::cambiarActividades(Cliente &clienteModificado)
         cout <<"SERVICIO DE YOGA ACTIVADO" << endl;
     }
 
-    cout <<"VOLVIENDO AL MENU ANTERIOR"<< endl;
+
 }
 
 
@@ -475,7 +478,7 @@ void ClienteTareas::cambiarMontoDeAlgunAbono( Cliente &clienteModificado)
         cout <<"MONTO CAMBIADO CON EXITO"<< endl;
     }
 
-    cout <<"VOLVIENDO AL MENU ANTERIOR"<< endl;
+
 
 
 
@@ -530,7 +533,7 @@ void ClienteTareas::cambiarAlgunaFechaLimite(Cliente &clienteModificado)
         cout <<"FECHA CAMBIADA CON EXITO"<< endl;
     }
 
-    cout <<"VOLVIENDO AL MENU ANTERIOR"<< endl;
+
 
 
 
@@ -541,6 +544,7 @@ void ClienteTareas::cambiarAlgunaFechaLimite(Cliente &clienteModificado)
 void ClienteTareas::limpiarArchivoClientes()
 {
     _archivoCliente.vaciar();
+cout <<"REALIZADO CON EXITO"<< endl;
 }
 
 
@@ -1069,7 +1073,7 @@ void ClienteTareas::listarTodosLosClientesDadosDeBaja()
 
 void ClienteTareas::reactivarCliente()
 {
-    int dni,op = 2;
+    int dni,op, hayCliente = 0;
     cout <<"INGRESE EL DOCUMENTO DEL CLIENTE QUE QUIERE REACTICVAR"<< endl;
     cin >> dni;
     validarIngresos(dni);
@@ -1087,6 +1091,7 @@ void ClienteTareas::reactivarCliente()
 
             cout <<"USTED VA A REACTIVAR A:"<< endl;
             cliente.mostrarClienteDadoDeBaja();
+            hayCliente = 1;
             cout <<endl;
             cout <<"ESTA SEGURO?"<< endl;
             cout <<"1 - SI o 0 - NO" << endl;
@@ -1101,6 +1106,7 @@ void ClienteTareas::reactivarCliente()
 
                 cout << endl;
                 cout <<"REGISTRO ACTIVADO"<< endl;
+
             }
 
         }
@@ -1108,6 +1114,7 @@ void ClienteTareas::reactivarCliente()
 
 
     }
+if ( hayCliente == 0) cout <<"NO SE ENCONTRO EL REGISTRO"<< endl;
 }
 
 

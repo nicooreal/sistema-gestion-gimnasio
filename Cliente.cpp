@@ -308,10 +308,10 @@ void Cliente::mostrarCliente()
             cout << "CUOTA MENSUAL: " << _boxeo.getCuotaMensual() << endl;
             cout << "FECHA LIMITE PARA PAGAR: ";
             _boxeo.getFechaLimitePago().mostrar();
-            cout <<"++++++++++++++++++++++++++++++++++++"<< endl;
         }
         if (_yoga.getActivo() == true )
         {
+            cout <<"++++++++++++++++++++++++++++++++++++"<< endl;
             cout <<"YOGA" << endl;
             cout << "FECHA DE ALTA: " ;
             _yoga.getFechaAlta().mostrar();

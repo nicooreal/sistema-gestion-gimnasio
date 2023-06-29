@@ -143,7 +143,7 @@
 	<iostream>
 	<string.h>
 
-1687925168 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\fecha.cpp
+1688018164 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\fecha.cpp
 	"Fecha.h"
 	<ctime>
 	<cctype>
@@ -184,7 +184,7 @@
 	"funciones.h"
 	<cctype>
 
-1688010469 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
+1688015721 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\cliente.cpp
 	"Cliente.h"
 	"ClienteArchivo.h"
 	"Boxeo.h"
@@ -421,7 +421,7 @@
 	"GimnasioTareas.h"
 	"PagoTareas.h"
 
-1687959944 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientemenu.cpp
+1688018734 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientemenu.cpp
 	"ClienteMenu.h"
 	"ClienteTareas.h"
 	"marco_menu.h"
@@ -520,14 +520,14 @@
 1687962565 c:\users\nico\documents\github\sistema-gestion-gimnasio\clientearchivo.h
 	"cliente.h"
 
-1688010469 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientearchivo.cpp
+1688016633 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientearchivo.cpp
 	"ClienteArchivo.h"
 	"Cliente.h"
 	<iostream>
 	<cstring>
 	"funciones.h"
 
-1688010469 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.cpp
+1688018916 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.cpp
 	"ClienteTareas.h"
 	"Cliente.h"
 	"ClienteArchivo.h"

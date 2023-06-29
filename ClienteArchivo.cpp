@@ -194,6 +194,7 @@ int ClienteArchivo::buscarPorDni(int dni)
 
 int ClienteArchivo::buscarPorNombre(char *nombre)
 {
+    int hayNombre = 0;
     FILE *p=fopen(_nombreArchivo,"rb");
     if(p==NULL)
     {
@@ -207,13 +208,15 @@ int ClienteArchivo::buscarPorNombre(char *nombre)
         {
 
             cliente.mostrarCliente();
-            cout <<"----------------------------"<< endl;
-            fclose(p);
-            return 1;
+            hayNombre = 1;
+            cout <<"--------------------------------------"<< endl;
+
+            //fclose(p);
+            //return 1;
         }
     }
     fclose(p);
-    return 0;
+    return hayNombre;
 }
 
 int ClienteArchivo::buscarPorNumeroDeSocio(int numSocio)
@@ -230,6 +233,7 @@ int ClienteArchivo::buscarPorNumeroDeSocio(int numSocio)
         {
 
             cliente.mostrarCliente();
+            cout <<"--------------------------------------"<< endl;
             fclose(p);
             return numSocio;
         }
@@ -240,6 +244,7 @@ int ClienteArchivo::buscarPorNumeroDeSocio(int numSocio)
 
 int ClienteArchivo::buscarPorApellido(char *apellido)
 {
+    int hayApellido = 0;
     FILE *p=fopen(_nombreArchivo,"rb");
     if(p==NULL)
     {
@@ -252,17 +257,20 @@ int ClienteArchivo::buscarPorApellido(char *apellido)
         {
 
             cliente.mostrarCliente();
-            fclose(p);
-            return 1;
+            cout <<"--------------------------------------"<< endl;
+            hayApellido = 1;
+            //fclose(p);
+            //return 1;
         }
     }
     fclose(p);
-    return 0;
+    return hayApellido;
 }
 
 int ClienteArchivo::buscarPorEdad(int edad)
 {
 
+    int hayEdad = 0;
     FILE *p=fopen(_nombreArchivo,"rb");
     if(p==NULL)
     {
@@ -279,11 +287,13 @@ int ClienteArchivo::buscarPorEdad(int edad)
         {
 
             cliente.mostrarCliente();
-            fclose(p);
-            return 1;
+            cout <<"--------------------------------------"<< endl;
+            hayEdad = 1;
+            //fclose(p);
+            //return 1;
         }
     }
     fclose(p);
 
-    return 0;
+    return hayEdad;
 }
