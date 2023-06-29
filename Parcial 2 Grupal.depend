@@ -527,7 +527,7 @@
 	<cstring>
 	"funciones.h"
 
-1688018916 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.cpp
+1688019864 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\clientetareas.cpp
 	"ClienteTareas.h"
 	"Cliente.h"
 	"ClienteArchivo.h"
@@ -991,7 +991,7 @@
 	"PagoArchivos.h"
 	"Cliente.h"
 
-1688010469 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\pagotareas.cpp
+1688060487 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\pagotareas.cpp
 	"PagoTareas.h"
 
 1688009261 source:c:\users\alexi\github\sistema-gestion-gimnasio\pagoarchivos.cpp

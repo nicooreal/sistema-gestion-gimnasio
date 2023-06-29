@@ -93,18 +93,21 @@ void PagoTareas::recaudacionPorClientes()
 {
     ClienteArchivo archivoClientes;
     int cantidadClientes=archivoClientes.getCantidad();
+    PagoArchivos archivoPagos;
+    int cantidadPagos=archivoPagos.getCantidad();
 
 
     for(int i=0; i<cantidadClientes; i++)
     {
-        Cliente cliente=archivoClientes.leer(i);
         float recaudacionPorCliente=0;
-        for(int x=0; x<cantidadClientes; x++)
+        Cliente cliente=archivoClientes.leer(i);
+
+        for(int x=0; x<cantidadPagos; x++)
         {
-            Cliente aux=archivoClientes.leer(x);
-            if(cliente.getDni()==aux.getDni())
+            Pago pagoAux=archivoPagos.leer(x);
+            if(cliente.getDni()== pagoAux.getDni() )
             {
-                recaudacionPorCliente+=aux.getAbonoMensual()+aux.getYoga().getCuotaMensual()+aux.getBoxeo().getCuotaMensual();
+                recaudacionPorCliente+=cliente.getAbonoMensual()+cliente.getYoga().getCuotaMensual()+cliente.getBoxeo().getCuotaMensual();
             }
         }
         cout<<"NUMERO SOCIO #"<<cliente.getNumeroDeSocio()<<" - NOMBRE Y APELLIDO: "<<cliente.getNombre()<<" "<<cliente.getApellido()<<"---- DNI: "<<cliente.getDni()<<"---- "<<recaudacionPorCliente<<endl;
