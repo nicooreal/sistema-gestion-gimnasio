@@ -375,7 +375,7 @@
 1684377359 c:\users\alexi\github\sistema-gestion-gimnasio\proveedormenu.h
 	<iostream>
 
-1687989983 source:c:\users\alexi\github\sistema-gestion-gimnasio\programa.cpp
+1688009518 source:c:\users\alexi\github\sistema-gestion-gimnasio\programa.cpp
 	"Programa.h"
 	"marco_menu.h"
 	"rlutil.h"
@@ -943,7 +943,7 @@
 	"Cliente.h"
 	"Fecha.h"
 
-1687995723 source:c:\users\alexi\github\sistema-gestion-gimnasio\pagotareas.cpp
+1688009261 source:c:\users\alexi\github\sistema-gestion-gimnasio\pagotareas.cpp
 	"PagoTareas.h"
 
 1687929173 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\configuracionesmenu.cpp
@@ -993,7 +993,7 @@
 1687958905 source:c:\users\nico\documents\github\sistema-gestion-gimnasio\pagotareas.cpp
 	"PagoTareas.h"
 
-1687989983 source:c:\users\alexi\github\sistema-gestion-gimnasio\pagoarchivos.cpp
+1688009261 source:c:\users\alexi\github\sistema-gestion-gimnasio\pagoarchivos.cpp
 	"PagoArchivos.h"
 
 1687989983 c:\users\alexi\github\sistema-gestion-gimnasio\pagoarchivos.h
