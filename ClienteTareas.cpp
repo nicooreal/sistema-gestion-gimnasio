@@ -300,42 +300,38 @@ void ClienteTareas::mostrarClientesConFechaPorVencer()
     Fecha fechaHoy;
     int cantidadRegistros =_archivoCliente.getCantidad();
     int diasPorMes[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-
+    bool algunCliente=true;
     for (int i = 0; i < cantidadRegistros; i++)
     {
         Cliente cliente =_archivoCliente.leer(i);
 
-        if ( cliente.getFechaLimiteParaPagarAbono().getMes() == fechaHoy.getMes())
+        if ( cliente.getFechaLimiteParaPagarAbono().getAnio() == fechaHoy.getAnio()&& cliente.getFechaLimiteParaPagarAbono().getMes() == fechaHoy.getMes() && cliente.getEstado())
         {
 
-            if ( cliente.getFechaLimiteParaPagarAbono().getDia() - fechaHoy.getDia() <= 7 )
+            if ( cliente.getFechaLimiteParaPagarAbono().getDia() - fechaHoy.getDia() <= 6 )
             {
-
+                algunCliente=false;
                 cliente.mostrarCliente();
 
             }
 
         }
 
-        if ( cliente.getFechaLimiteParaPagarAbono().getMes() != fechaHoy.getMes())
+        if ( cliente.getFechaLimiteParaPagarAbono().getAnio()== fechaHoy.getAnio() && cliente.getFechaLimiteParaPagarAbono().getMes() != fechaHoy.getMes() && cliente.getEstado())
         {
-
-
-            int diasParaTerminarELmes = diasPorMes[ fechaHoy.getMes()- 1 ] - fechaHoy.getDia();
-
-
-            if ( diasParaTerminarELmes + cliente.getFechaLimiteParaPagarAbono().getDia() <= 7 )
-
+          int diasParaTerminarELmes = diasPorMes[ fechaHoy.getMes()- 1 ] - fechaHoy.getDia();
+          if (fechaHoy.getDia() > cliente.getFechaLimiteParaPagarAbono().getDia())
             {
+              int diasRestantes = diasParaTerminarELmes + cliente.getFechaLimiteParaPagarAbono().getDia();
 
-
+              if (diasRestantes <=6){
+                algunCliente=false;
                 cliente.mostrarCliente();
+              }
 
 
             }
 
-
-            // incompleto, mejor habria q hacer un metodo para contar los dias del anio
 
 
         }
@@ -344,7 +340,9 @@ void ClienteTareas::mostrarClientesConFechaPorVencer()
 
 
     }
-
+    if(algunCliente==true){
+        cout << "No se encontraron clientes con fechas por vencer (6 dias o menos de vencimiento)"<<endl;
+    }
 
 
 }
