@@ -167,13 +167,31 @@ void Cliente::cargarCliente()
     _numeroDeSocio = cantidadDeSocios + 1;
     _fechaDelAlta.fechaDeHoy();
 
-
-        cout <<"SERVICIO DE PESAS:(ingrese 1-SI o 0-NO ):" << endl;
+    bool esBool=false;
+    do
+    {
+        cout <<"SERVICIO DE PESAS:(INGRESE 1-SI o 0-NO ):" << endl;
         cin>>_pesas;
-        if (_pesas == true) serPesas = 1;
-        if (_pesas == false ) serPesas = 0;
+        if(!cin)
+        {
+            cout<<"NO VALIDO. POR FAVOR INGRESE 0 o 1"<<endl;
+            cin.clear(); // Restablece el estado del flujo de entrada
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+        else if(_pesas!=0&&_pesas!=1)
+        {
+            cout<<"NO VALIDO. POR FAVOR INGRESE 0 o 1"<<endl;
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+        else
+        {
+            esBool=true;
+        }
+    }
+    while(!esBool);
 
-        validarDosRangos(serPesas,0,1);
+
+
 
 
 
@@ -198,7 +216,7 @@ void Cliente::cargarCliente()
     establecerPlanMensual(opcionMensual);
     cout<<"NOMBRE DE LA ACTIVIDAD EXTRA (1 - BOXEO $1000, 2 - YOGA $1000, 3 - BOXEO Y YOGA $1500 4 - NINGUNA )"<<endl;
     cin >> opcionExtra;
- validarDosRangos(opcionExtra,1,4);
+    validarDosRangos(opcionExtra,1,4);
 
 
 

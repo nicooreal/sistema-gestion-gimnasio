@@ -99,6 +99,25 @@ void validarQueNoSeaNegativa(int &ingreso)
     }
 }
 
+void validarQueNoSeaNegativa(float &ingreso)
+{
+    bool esValido=false;
+
+    while(!esValido)
+    {
+        if(!validar(ingreso)||ingreso<0)
+        {
+            cout<<"INGRESO UN CARACTER O UN NUMERO NEGATIVO, POR FAVOR, INTENTE DENUEVO "<<endl;
+            cin>>ingreso;
+        }else
+        {
+            esValido=true;
+        }
+
+
+    }
+}
+
 
 
 void validarIngresos(int &ingreso)
@@ -120,3 +139,21 @@ void validarIngresos(int &ingreso)
     }
 
 }
+
+void validarGenero(char &letra)
+{
+    bool esValido=false;
+    while(!esValido)
+    {
+        if(letra=='F'||letra=='M')
+        {
+            esValido=true;
+        }else
+        {
+            cout<<"INGRESE M O F"<<endl;
+            cin>>letra;
+        }
+    }
+}
+
+

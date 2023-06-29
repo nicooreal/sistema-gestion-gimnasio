@@ -57,14 +57,13 @@ void Persona::cargarPersona()
     cout<<"Fecha nacimiento: "<<endl;
     _fechaNacimiento.cargar();
     _edad=calcularEdad(_fechaNacimiento);
-    do
-    {
-        cout<<"GENERO (M - MASCULINO, F - FEMENINO): ";
-        cin>>_genero;
-        toupper(_genero);
 
-    }
-    while(_genero!='F'&&_genero!='f'&&_genero!='m'&&_genero!='M');
+    cout<<"GENERO (M - MASCULINO, F - FEMENINO): ";
+    cin>>_genero;
+    toupper(_genero);
+    validarGenero(_genero);
+
+
     _estado=true;
 }
 

@@ -12,6 +12,9 @@ bool validar(int opcionMensual);
 void validarIngresos(int &ingreso);
 void validarDosRangos(int &ingreso,int rangoMin,int rangoMax);
 void validarQueNoSeaNegativa(int &ingreso);
+void validarQueNoSeaNegativa(float &ingreso);
+void validarGenero(char &letra);
+
 
 
 #endif // FUNCIONES_H_INCLUDED

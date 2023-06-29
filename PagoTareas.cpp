@@ -17,8 +17,8 @@ void PagoTareas::cargarPago(bool primerPago, int dni)
     {
         cout <<"ingrese el dni del cliente a pagar "<< endl;
         cin >> dni;
-         validarIngresos(dni);
-         validarQueNoSeaNegativa(dni);
+        validarIngresos(dni);
+        validarQueNoSeaNegativa(dni);
 
     }
 
@@ -99,7 +99,7 @@ void PagoTareas::recaudacionPorClientes()
     {
         Cliente cliente=archivoClientes.leer(i);
         float recaudacionPorCliente=0;
-        for(int x=0;x<cantidadClientes;x++)
+        for(int x=0; x<cantidadClientes; x++)
         {
             Cliente aux=archivoClientes.leer(x);
             if(cliente.getDni()==aux.getDni())

@@ -2,6 +2,7 @@
 #include "Cliente.h"
 #include <iostream>
 #include <cstring>
+#include "funciones.h"
 
 ClienteArchivo::ClienteArchivo()
 {
@@ -116,6 +117,7 @@ int ClienteArchivo::buscarRegistro()
     cout <<"INGRESE EL DNI DEL CLIENTE QUE QUIERE BUSCAR"<<endl;
     cout <<"DNI: ";
     cin >> dni;
+    validarQueNoSeaNegativa(dni);
     FILE* p = fopen(_nombreArchivo, "rb");
     if (p == NULL)
     {
