@@ -55,7 +55,8 @@ void PagoTareas::cargarPago(bool primerPago, int dni)
         if (primerPago == false)
         {
             clienteTareas.actualizarFechaPago(dni);
-        }
+
+       }
         cout <<"PAGO GUARDADO EXITOSAMENTE"<< endl;
         cout <<"EL MONTO QUE SE GUARDO ES "<<clienteTareas.acumularAbonos(dni)<< endl;
         cout <<"DEL CLIENTE CON DNI: " << dni << endl;
@@ -92,8 +93,8 @@ int PagoTareas::calcularcantidadAniosDeRegistro()
 void PagoTareas::recaudacionPorClientes()
 {
     ClienteArchivo archivoClientes;
-    int cantidadClientes=archivoClientes.getCantidad();
     PagoArchivos archivoPagos;
+    int cantidadClientes=archivoClientes.getCantidad();
     int cantidadPagos=archivoPagos.getCantidad();
 
 

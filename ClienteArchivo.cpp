@@ -31,10 +31,10 @@ void ClienteArchivo::leerVector(Cliente *vec,int cantidadRegistros)
     FILE *p = fopen(_nombreArchivo, "rb");
     if (p == NULL)
     {
-        return; // el return es valido? es una funcion void, se puede usar exit(1) sino;
+        return;
     }
 
-    fread(&vec[0], sizeof(Cliente), cantidadRegistros, p);
+    fread(&vec[0], sizeof(Cliente), cantidadRegistros, p); //esta grabando en la direccion de memoria(&vec) los registros del archivo
     fclose(p);
 
 }

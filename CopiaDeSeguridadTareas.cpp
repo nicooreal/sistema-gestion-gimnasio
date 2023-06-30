@@ -112,7 +112,7 @@ void CopiaDeSeguridadTareas::restaurarCopiaDeEmpleados()
     }
 
     _archivoBackupEmpleado.leerVector(vec,cantidadRegistros);
-    archivo.vaciar();
+    archivo.vaciar(); // vacia el archivo q no es backup
     if(archivo.guardarVector(vec,cantidadRegistros))
     {
         cout<<"BACKUP RESTAURADO CORRECTAMENTE"<<endl;
