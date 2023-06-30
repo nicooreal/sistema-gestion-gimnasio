@@ -45,7 +45,7 @@ void GimnasioMenu::mostrar()
             break;
 
         case 3:
-            clienteTareas.mostrarClientesConFechaPorVencer(); //metodo incompleto
+            clienteTareas.mostrarClientesConFechaPorVencer();
 
             break;
 

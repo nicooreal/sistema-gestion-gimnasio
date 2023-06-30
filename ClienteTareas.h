@@ -14,7 +14,7 @@ class ClienteTareas
 
     public:
 void cargar();
-void modificar() ;
+void modificar();
 void cambiarAlgunaFechaLimite(Cliente &clienteModificado);
 void cambiarMontoDeAlgunAbono(Cliente &clienteModificado);
 void cambiarActividades(Cliente &clienteModificado);

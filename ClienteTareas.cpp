@@ -61,7 +61,7 @@ void ClienteTareas::modificar()
         else
         {
             cout <<"NO SE ENCONTRO EL REGISTRO" << endl;
-        system("pause");
+            system("pause");
         }
     }
 }
@@ -131,7 +131,7 @@ void ClienteTareas::darBajaCliente()
     {
         cout <<"EL CLIENTE QUE USTED QUIERE DAR DE BAJA ES:" << endl << endl;
         clienteEnBaja.mostrarCliente();
-       // system("pause");
+        // system("pause");
         cout <<"DESEA DAR LA BAJA?" <<endl;
         cout <<"1 - SI o 0 - NO" << endl;
 
@@ -299,7 +299,7 @@ void ClienteTareas::elegirQueModificar(Cliente &clienteModificado)
 
 
 
-   system("pause");
+        system("pause");
     }
     while(opcion!=0);
 
@@ -544,7 +544,7 @@ void ClienteTareas::cambiarAlgunaFechaLimite(Cliente &clienteModificado)
 void ClienteTareas::limpiarArchivoClientes()
 {
     _archivoCliente.vaciar();
-cout <<"REALIZADO CON EXITO"<< endl;
+    cout <<"REALIZADO CON EXITO"<< endl;
 }
 
 
@@ -962,7 +962,7 @@ void ClienteTareas::actualizarFechaPago(int dni)
 
 
                     fechaBox.setMes(1);
-                    fechaBox.setAnio(fechaActual.getAnio()+1);
+                    fechaBox.setAnio(fechaBox.getAnio()+1);
 
                 }
 
@@ -988,7 +988,7 @@ void ClienteTareas::actualizarFechaPago(int dni)
 
 
                     fechaYog.setMes(1);
-                    fechaYog.setAnio(fechaActual.getAnio()+1);
+                    fechaYog.setAnio(fechaYog.getAnio()+1);
 
                 }
 
@@ -1011,12 +1011,15 @@ void ClienteTareas::actualizarFechaPago(int dni)
             if (cliente.getPesas() == true )
 
             {
+                if(cliente.getAbonoMensual()==1000) cliente.setControlIngresos(12);
+                if(cliente.getAbonoMensual()==1200) cliente.setControlIngresos(16);
+                if(cliente.getAbonoMensual()==1400) cliente.setControlIngresos(31);
 
                 if (fechaPesas.getMes() == 12 )
                 {
 
                     fechaPesas.setMes(1);
-                    fechaPesas.setAnio(fechaActual.getAnio()+1);
+                    fechaPesas.setAnio(fechaPesas.getAnio()+1);
 
                 }
 
@@ -1114,7 +1117,7 @@ void ClienteTareas::reactivarCliente()
 
 
     }
-if ( hayCliente == 0) cout <<"NO SE ENCONTRO EL REGISTRO"<< endl;
+    if ( hayCliente == 0) cout <<"NO SE ENCONTRO EL REGISTRO"<< endl;
 }
 
 
